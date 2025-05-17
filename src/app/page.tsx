@@ -339,7 +339,7 @@ export default function LandingPage() {
                   <Card key={i} className="text-left">
                     <CardContent className="pt-6">
                       <div className="space-y-4">
-                        <p className="text-muted-foreground">"{testimonial.quote}"</p>
+                        <p className="text-muted-foreground">{testimonial.quote}</p>
                         <div>
                           <p className="font-medium">{testimonial.author}</p>
                           <p className="text-sm text-muted-foreground">{testimonial.position}</p>
