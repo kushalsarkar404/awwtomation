@@ -1,0 +1,729 @@
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Check,
+  ChevronRight,
+  Code,
+  Cog,
+  Database,
+  Facebook,
+  Github,
+  Instagram,
+  Layers,
+  LifeBuoy,
+  Linkedin,
+  Twitter,
+  Zap,
+} from "lucide-react"
+
+export default function LandingPage() {
+  return (
+    <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="flex items-center">
+              <Image
+                src="/full-logo.svg"
+                alt="Awwtomation Logo"
+                fill={false}
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="h-auto w-auto"
+                priority
+              />
+            </div>
+          </div>
+
+          <nav className="hidden md:flex gap-6">
+            <Link href="#services" className="text-sm font-medium hover:text-primary">
+              Services
+            </Link>
+            <Link href="#pricing" className="text-sm font-medium hover:text-primary">
+              Pricing
+            </Link>
+            <Link href="#contact" className="text-sm font-medium hover:text-primary">
+              Contact
+            </Link>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <Button asChild size="sm">
+              <a 
+                href="https://calendly.com/kushal-sarkar011"
+                target="_blank"
+                rel="noopener noreferrer">
+                Book an Appointment
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    We Save You Time. You Make More Money.
+                  </h1>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Streamline your business operations with automation and boost your profits effortlessly. Book a free consultation today to discover how we can save you time and scale your growth.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button asChild size="lg">
+                    <a 
+                      href="https://calendly.com/kushal-sarkar011"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      Book an Appointment
+                      <ChevronRight className="ml-1 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="lg">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+              <Image
+                src="/hero-image.png"
+                width={550}
+                height={550}
+                alt="Business Process Automation"
+                className="mx-auto object-contain lg:order-last"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Services</div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Automate What Matters Most
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  We help all size businesses automate time-consuming business processes — so you can focus on scaling instead of juggling tools.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+              <Image
+                src="/happy-people.png"
+                width={550}
+                height={550}
+                alt="Automation Services"
+                className="mx-auto object-contain sm:w-full"
+              />
+              <div className="flex flex-col justify-center space-y-4">
+                <ul className="grid gap-6">
+                  <li className="flex gap-4 items-start">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <Cog className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">CRM Automation</h3>
+                      <p className="text-muted-foreground">
+                        Automatically update lead stages, sync deal statuses, and assign follow-ups inside tools like HubSpot, Zoho, and Pipedrive.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <Database className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Appointment Workflow</h3>
+                      <p className="text-muted-foreground">
+                        Auto-confirm bookings, send reminders, and notify your team — synced with Calendly, Google Calendar, and more.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <Code className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">SEO Reporting</h3>
+                      <p className="text-muted-foreground">
+                        Get scheduled keyword rankings, competitor alerts, and performance summaries — all sent to your preferred inbox.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                      <Zap className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Custom Dashboards</h3>
+                      <p className="text-muted-foreground">
+                        Build live dashboards in Notion, Airtable, or Google Sheets that pull data from your CRM, socials, and more.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Pricing</div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Simple pricing designed for clarity
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Choose the plan that fits your goals. Every plan includes a strategy call with our automation experts.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-4xl gap-6 py-12 lg:grid-cols-2">
+              {[{
+                name: "Free Consultation",
+                price: "$0",
+                description: "A 30-minute discovery call to explore your business needs and how automation can help.",
+                features: [
+                  "One-on-one consultation",
+                  "Process review",
+                  "Opportunity identification",
+                  "Actionable next steps"
+                ]
+              }, {
+                name: "Launch Promo",
+                price: "$1000",
+                description: "Limited-time offer — Get started for half the price. Valid for the next 30 days only. Regular price $1999.",
+                features: [
+                  "Full workflow automation setup",
+                  "Up to 3 system integrations",
+                  "2 months of support",
+                  "Priority onboarding"
+                ],
+                popular: true
+              }].map((plan, i) => (
+                <Card key={i} className={`relative ${plan.popular ? "border-primary" : ""}`}>
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                      Promotional Offer
+                    </div>
+                  )}
+                  <CardHeader className="flex flex-col items-center justify-center space-y-2">
+                    <CardTitle className="text-xl">{plan.name}</CardTitle>
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-bold">{plan.price}</span>
+                      {plan.price !== "Custom" && <span className="text-muted-foreground">/one-time</span>}
+                    </div>
+                    <CardDescription className="text-center">{plan.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex flex-col items-center justify-center space-y-4">
+                    <ul className="space-y-2 text-left">
+                      {plan.features.map((feature, j) => (
+                        <li key={j} className="flex items-center gap-2">
+                          <Check className="h-4 w-4 text-primary" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                      <a href="https://calendly.com/kushal-sarkar011" target="_blank" rel="noopener noreferrer">
+                        {plan.name === "Free Consultation" ? "Book Now" : "Claim Offer"}
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Ready to save time and multiply your profits?
+                </h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Book an appointment with our automation experts today and discover how we can transform your business
+                  processes.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Button asChild size="lg">
+                  <a 
+                    href="https://calendly.com/kushal-sarkar011"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Book an Appointment
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">Free consultation. No obligation.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      {/* You can paste your original footer code here if needed */}
+    </div>
+  )
+}
+
+
+
+
+------------ original ------------
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Check,
+  ChevronRight,
+  Code,
+  Cog,
+  Database,
+  Facebook,
+  Github,
+  Instagram,
+  Layers,
+  LifeBuoy,
+  Linkedin,
+  Twitter,
+  Zap,
+} from "lucide-react"
+
+export default function LandingPage() {
+  return (
+    <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2">
+          <div className="flex items-center">
+  <Image
+    src="/full-logo.svg"
+    alt="Awwtomation Logo"
+    fill={false}
+    width={0}
+    height={0}
+    sizes="100vw"
+    className="h-auto w-auto"
+    priority
+  />
+</div>
+          </div>
+
+          <nav className="hidden md:flex gap-6">
+            <Link href="#services" className="text-sm font-medium hover:text-primary">
+              Services
+            </Link>
+            <Link href="#pricing" className="text-sm font-medium hover:text-primary">
+              Pricing
+            </Link>
+            <Link href="#contact" className="text-sm font-medium hover:text-primary">
+              Contact
+            </Link>
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <Button asChild size="sm">
+              <a 
+              href="https://calendly.com/kushal-sarkar011"
+              target="_blank"
+              rel="noopener noreferrer">
+              Book an Appointment
+              <ChevronRight className="ml-1 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  We Save You Time. You Make More Money.
+                  </h1>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  Streamline your business operations with automation and boost your profits effortlessly. Book a free consultation today to discover how we can save you time and scale your growth.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button asChild size="lg">
+                  <a 
+              href="https://calendly.com/kushal-sarkar011"
+              target="_blank"
+              rel="noopener noreferrer">
+                    Book an Appointment
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="lg">
+                    Learn More
+                  </Button>
+                </div>
+              </div>
+              <Image
+  src="/hero-image.png"
+  width={550}
+  height={550}
+  alt="Business Process Automation"
+  className="mx-auto object-contain lg:order-last"
+/>
+
+            </div>
+          </div>
+        </section>
+
+       {/* Services Section */}
+<section id="services" className="w-full py-12 md:py-24 lg:py-32">
+  <div className="container px-4 md:px-6">
+    <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="space-y-2">
+        <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Services</div>
+        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          Automate What Matters Most
+        </h2>
+        <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          We help all size businesses automate time-consuming business processes — so you can focus on scaling instead of juggling tools.
+        </p>
+      </div>
+    </div>
+    <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+      <Image
+        src="/happy-people.png"
+        width={550}
+        height={550}
+        alt="Automation Services"
+        className="mx-auto object-contain sm:w-full"
+      />
+      <div className="flex flex-col justify-center space-y-4">
+        <ul className="grid gap-6">
+          <li className="flex gap-4 items-start">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+              <Cog className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold">CRM Automation</h3>
+              <p className="text-muted-foreground">
+                Automatically update lead stages, sync deal statuses, and assign follow-ups inside tools like HubSpot, Zoho, and Pipedrive.
+              </p>
+            </div>
+          </li>
+          <li className="flex gap-4 items-start">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+              <Database className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold">Appointment Workflow</h3>
+              <p className="text-muted-foreground">
+                Auto-confirm bookings, send reminders, and notify your team — synced with Calendly, Google Calendar, and more.
+              </p>
+            </div>
+          </li>
+          <li className="flex gap-4 items-start">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+              <Code className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold">SEO Reporting</h3>
+              <p className="text-muted-foreground">
+                Get scheduled keyword rankings, competitor alerts, and performance summaries — all sent to your preffered inbox.
+              </p>
+            </div>
+          </li>
+          <li className="flex gap-4 items-start">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+              <Zap className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold">Custom Dashboards</h3>
+              <p className="text-muted-foreground">
+                Build live dashboards in Notion, Airtable, or Google Sheets that pull data from your CRM, socials, and more.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        {/* Pricing Section */}
+        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Pricing</div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Transparent pricing for businesses of all sizes
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Choose the plan that fits your business needs. All plans include a free consultation.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
+              {[
+                {
+                  name: "Starter",
+                  price: "$1,999",
+                  description: "Perfect for small businesses looking to automate basic processes",
+                  features: [
+                    "Process assessment",
+                    "Basic workflow automation",
+                    "Email support",
+                    "1 month of maintenance",
+                  ],
+                },
+                {
+                  name: "Business",
+                  price: "$4,999",
+                  description: "Ideal for growing businesses with more complex automation needs",
+                  features: [
+                    "Comprehensive process assessment",
+                    "Advanced workflow automation",
+                    "Data integration",
+                    "Priority support",
+                    "3 months of maintenance",
+                  ],
+                  popular: true,
+                },
+                {
+                  name: "Enterprise",
+                  price: "Custom",
+                  description: "Advanced solutions for large organizations with complex requirements",
+                  features: [
+                    "End-to-end process optimization",
+                    "Custom software development",
+                    "Full system integration",
+                    "Dedicated account manager",
+                    "12 months of maintenance",
+                    "24/7 support",
+                  ],
+                },
+              ].map((plan, i) => (
+                <Card key={i} className={plan.popular ? "border-primary" : ""}>
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                      Most Popular
+                    </div>
+                  )}
+                  <CardHeader className="flex flex-col items-center justify-center space-y-2">
+                    <CardTitle className="text-xl">{plan.name}</CardTitle>
+                    <div className="flex items-baseline">
+                      <span className="text-3xl font-bold">{plan.price}</span>
+                      {plan.price !== "Custom" && <span className="text-muted-foreground">/project</span>}
+                    </div>
+                    <CardDescription className="text-center">{plan.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex flex-col items-center justify-center space-y-4">
+                    <ul className="space-y-2 text-left">
+                      {plan.features.map((feature, j) => (
+                        <li key={j} className="flex items-center gap-2">
+                          <Check className="h-4 w-4 text-primary" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter>
+                    <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
+                      Book a Consultation
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Ready to save time and multiply your profits?
+                </h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Book an appointment with our automation experts today and discover how we can transform your business
+                  processes.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Button asChild size="lg">
+                <a 
+              href="https://calendly.com/kushal-sarkar011"
+              target="_blank"
+              rel="noopener noreferrer">
+                  Book an Appointment
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">Free consultation. No obligation.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full border-t py-12 md:py-16">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+              <Image
+    src="/full-logo.svg"
+    alt="Awwtomation Logo"
+    fill={false}
+    width={0}
+    height={0}
+    sizes="100vw"
+    className="h-auto w-auto"
+    priority
+  />
+              </div>
+              <p className="text-sm text-muted-foreground">Automate. Accelerate. Assert.</p>
+              <div className="flex gap-4">
+                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Twitter className="h-5 w-5" />
+                  <span className="sr-only">Twitter</span>
+                </Link>
+                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Facebook className="h-5 w-5" />
+                  <span className="sr-only">Facebook</span>
+                </Link>
+                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Instagram className="h-5 w-5" />
+                  <span className="sr-only">Instagram</span>
+                </Link>
+                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </Link>
+                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </Link>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-sm font-medium">Services</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Workflow Automation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Data Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Custom Software
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Process Optimization
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-sm font-medium">Company</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Case Studies
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-sm font-medium">Support</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                    <LifeBuoy className="h-4 w-4" />
+                    <span>Support</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-muted-foreground">
+  © 2025 Awwtomation. All rights reserved.
+</p>
+
+            <div className="flex gap-4 text-xs text-muted-foreground">
+              <Link href="#" className="hover:text-foreground">
+                Terms of Service
+              </Link>
+              <Link href="#" className="hover:text-foreground">
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
