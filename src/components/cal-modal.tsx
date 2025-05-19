@@ -1,12 +1,19 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { X } from 'lucide-react'
+import { X } from "lucide-react"
 
 interface CalModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   calLink: string
+}
+
+// Define a global type for window.Cal
+declare global {
+  interface Window {
+    Cal?: any
+  }
 }
 
 export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
@@ -15,60 +22,62 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
   useEffect(() => {
     setIsMounted(true)
 
-    // Initialize Cal on mount
     if (typeof window !== "undefined") {
-      // @ts-ignore
-(function (C: any, A: string, L: string) {
-    const p = function (a: any, ar: any) {
-      a.q.push(ar)
-    }
-    const d = C.document
-  
+      // @ts-expect-error We expect Cal to be injected dynamically
+      (function (C: any, A: string, L: string) {
+        const p = (a: any, ar: any) => {
+          a.q.push(ar)
+        }
+
+        const d = C.document
         C.Cal =
           C.Cal ||
-          function () {
+          function (...args: any[]) {
             const cal = C.Cal
-const ar = [...arguments]
-
             if (!cal.loaded) {
               cal.ns = {}
               cal.q = cal.q || []
-              d.head.appendChild(d.createElement("script")).src = A
+              const script = d.createElement("script")
+              script.src = A
+              d.head.appendChild(script)
               cal.loaded = true
             }
-            if (ar[0] === L) {
-              const api = function () {
-                p(api, arguments)
+
+            if (args[0] === L) {
+              const api = function (...innerArgs: any[]) {
+                p(api, innerArgs)
               }
-              const namespace = ar[1]
+              const namespace = args[1]
               api.q = api.q || []
               if (typeof namespace === "string") {
                 cal.ns[namespace] = cal.ns[namespace] || api
-                p(cal.ns[namespace], ar)
+                p(cal.ns[namespace], args)
                 p(cal, ["initNamespace", namespace])
-              } else p(cal, ar)
+              } else {
+                p(cal, args)
+              }
               return
             }
-            p(cal, ar)
+
+            p(cal, args)
           }
       })(window, "https://app.cal.com/embed/embed.js", "init")
 
-      ;(window as any).Cal("init", "initial-consultation", { origin: "https://cal.com" })
+      window.Cal("init", "initial-consultation", { origin: "https://cal.com" })
     }
   }, [])
 
   useEffect(() => {
-    if (open && isMounted && typeof window !== "undefined" && (window as any).Cal?.ns) {
+    if (open && isMounted && typeof window !== "undefined" && window.Cal?.ns) {
       setTimeout(() => {
         try {
-          // Dynamically load the correct calLink
-          ;(window as any).Cal.ns["initial-consultation"]("inline", {
+          window.Cal.ns["initial-consultation"]("inline", {
             elementOrSelector: "#my-cal-inline",
             config: { layout: "month_view" },
-            calLink: calLink,
+            calLink,
           })
 
-          ;(window as any).Cal.ns["initial-consultation"]("ui", {
+          window.Cal.ns["initial-consultation"]("ui", {
             hideEventTypeDetails: false,
             layout: "month_view",
           })
@@ -88,7 +97,7 @@ const ar = [...arguments]
           <h2 className="text-xl font-semibold text-center flex-1 pr-8">
             Book a meeting with our automation experts and transform your business processes!
           </h2>
-          <button 
+          <button
             onClick={() => onOpenChange(false)}
             className="rounded-full p-1 hover:bg-muted"
           >
