@@ -49,7 +49,7 @@ export default function LandingPage() {
 
             <div className="flex items-center gap-4">
             <Button size="lg" onClick={() => {
-  setSelectedCalLink("awwtomation/awwtomation-consultation?layout=mobile")
+  setSelectedCalLink("awwtomation/awwtomation-consultation")
   setCalModalOpen(true)
 }}>
             Automate Now
@@ -93,7 +93,7 @@ export default function LandingPage() {
                   </Parallax>
                   <Parallax speed={15} className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button size="lg" onClick={() => {
-  setSelectedCalLink("awwtomation/awwtomation-consultation?layout=mobile")
+  setSelectedCalLink("awwtomation/awwtomation-consultation")
   setCalModalOpen(true)
 }}>
             Automate Your Process Now
@@ -295,7 +295,6 @@ export default function LandingPage() {
                 onClick={() => {
                   setSelectedCalLink(plan.calLink)
                   setCalModalOpen(true)
-                  console.log(selectedCalLink)
                 }}
               >
                 Get a Quote
@@ -394,7 +393,7 @@ export default function LandingPage() {
                 </Parallax>
                 <Parallax speed={10} className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button size="lg" onClick={() => {
-  setSelectedCalLink("awwtomation/awwtomation-consultation?layout=mobile")
+  setSelectedCalLink("awwtomation/awwtomation-consultation")
   setCalModalOpen(true)
 }}>
             Book an Appointment

@@ -1,29 +1,12 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { X } from "lucide-react"
+import { X } from 'lucide-react'
 
 interface CalModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   calLink: string
-}
-
-type CalNamespaceFn = (action: string, options: Record<string, unknown>) => void
-
-declare global {
-  interface Window {
-    Cal?: {
-      loaded?: boolean
-      ns?: Record<string, CalNamespaceFn>
-      q?: unknown[]
-      (
-        command: string,
-        namespace?: string | unknown,
-        options?: Record<string, unknown>
-      ): void
-    }
-  }
 }
 
 export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
@@ -32,59 +15,64 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
   useEffect(() => {
     setIsMounted(true)
 
-    if (typeof window !== "undefined" && !window.Cal?.loaded) {
-      const d = document
-      const script = d.createElement("script")
-      script.src = "https://app.cal.com/embed/embed.js"
-      script.async = true
-      d.head.appendChild(script)
-
-      const calFn = function (
-        command: string,
-        namespace?: string | unknown,
-        options?: Record<string, unknown>
-      ) {
-        const cal = window.Cal!
-        cal.q = cal.q || []
-        if (command === "init" && typeof namespace === "string") {
-          cal.ns = cal.ns || {}
-          const api: CalNamespaceFn = (action, opts) => {
-            cal.q?.push([action, opts])
+    // Initialize Cal on mount
+    if (typeof window !== "undefined") {
+      // @ts-ignore
+(function (C: any, A: string, L: string) {
+    const p = function (a: any, ar: any) {
+      a.q.push(ar)
+    }
+    const d = C.document
+  
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal
+            let ar = arguments
+            if (!cal.loaded) {
+              cal.ns = {}
+              cal.q = cal.q || []
+              d.head.appendChild(d.createElement("script")).src = A
+              cal.loaded = true
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments)
+              }
+              const namespace = ar[1]
+              api.q = api.q || []
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api
+                p(cal.ns[namespace], ar)
+                p(cal, ["initNamespace", namespace])
+              } else p(cal, ar)
+              return
+            }
+            p(cal, ar)
           }
-          cal.ns[namespace] = api
-          cal.q.push(["initNamespace", namespace])
-        } else {
-          cal.q.push([command, namespace, options])
-        }
-      }
+      })(window, "https://app.cal.com/embed/embed.js", "init")
 
-      window.Cal = Object.assign(calFn, {
-        loaded: true,
-        q: [],
-        ns: {},
-      })
+      ;(window as any).Cal("init", "initial-consultation", { origin: "https://cal.com" })
     }
   }, [])
 
   useEffect(() => {
-    if (open && isMounted && typeof window !== "undefined") {
+    if (open && isMounted && typeof window !== "undefined" && (window as any).Cal?.ns) {
       setTimeout(() => {
         try {
-          const ns = window.Cal?.ns?.["initial-consultation"]
-          if (!ns) return
-
-          ns("inline", {
+          // Dynamically load the correct calLink
+          ;(window as any).Cal.ns["initial-consultation"]("inline", {
             elementOrSelector: "#my-cal-inline",
             config: { layout: "month_view" },
-            calLink,
+            calLink: calLink,
           })
 
-          ns("ui", {
+          ;(window as any).Cal.ns["initial-consultation"]("ui", {
             hideEventTypeDetails: false,
             layout: "month_view",
           })
-        } catch (err) {
-          console.error("Cal inline embed failed", err)
+        } catch (error) {
+          console.error("Error initializing Cal:", error)
         }
       }, 100)
     }
@@ -99,7 +87,7 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
           <h2 className="text-xl font-semibold text-center flex-1 pr-8">
             Book a meeting with our automation experts and transform your business processes!
           </h2>
-          <button
+          <button 
             onClick={() => onOpenChange(false)}
             className="rounded-full p-1 hover:bg-muted"
           >
