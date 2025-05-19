@@ -1,14 +1,19 @@
 "use client"
+import { useState } from "react"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ChevronRight, Code, Cog, Database, Instagram, Linkedin, Zap } from "lucide-react"
+import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt } from "lucide-react"
+import { CalModal } from "@/components/cal-modal"
 
 import { ParallaxMouse } from "@/components/parallax-mouse"
 
+
 export default function LandingPage() {
+  const [calModalOpen, setCalModalOpen] = useState(false)
+  const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
   return(
     <ParallaxProvider>
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
@@ -43,12 +48,13 @@ export default function LandingPage() {
             </nav>
 
             <div className="flex items-center gap-4">
-              <Button asChild size="sm">
-                <a href="https://calendly.com/kushal-sarkar011" target="_blank" rel="noopener noreferrer">
-                  Book an Appointment
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </a>
-              </Button>
+            <Button size="lg" onClick={() => {
+  setSelectedCalLink("awwtomation/awwtomation-consultation?layout=mobile")
+  setCalModalOpen(true)
+}}>
+            Automate Now
+            <ChevronRight className="ml-1 h-4 w-4" />
+          </Button>
             </div>
           </div>
         </header>
@@ -86,14 +92,15 @@ export default function LandingPage() {
                     </p>
                   </Parallax>
                   <Parallax speed={15} className="flex flex-col gap-2 min-[400px]:flex-row">
-                    <Button asChild size="lg">
-                      <a href="https://calendly.com/kushal-sarkar011" target="_blank" rel="noopener noreferrer">
-                        Book an Appointment
-                        <ChevronRight className="ml-1 h-4 w-4" />
-                      </a>
-                    </Button>
+                  <Button size="lg" onClick={() => {
+  setSelectedCalLink("awwtomation/awwtomation-consultation?layout=mobile")
+  setCalModalOpen(true)
+}}>
+            Automate Your Process Now
+            <ChevronRight className="ml-1 h-4 w-4" />
+          </Button>
                     <Button variant="outline" size="lg">
-                      Learn More
+                    Not Now? Message Us 
                     </Button>
                   </Parallax>
                 </div>
@@ -163,20 +170,18 @@ export default function LandingPage() {
                       <div>
                         <h3 className="text-xl font-bold">CRM Automation</h3>
                         <p className="text-muted-foreground">
-                          Automatically update lead stages, sync deal statuses, and assign follow-ups inside tools like
-                          HubSpot, Zoho, and Pipedrive.
+                          Autamated Lead Capture/ Nurture; Integrate Data to Your CRM From Any App; Build Custom Workflows For Your Requirements
                         </p>
                       </div>
                     </li>
                     <li className="flex gap-4 items-start">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                        <Database className="h-5 w-5 text-primary" />
+                        <SquareChartGantt className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">Appointment Workflow</h3>
+                        <h3 className="text-xl font-bold">Social Planner</h3>
                         <p className="text-muted-foreground">
-                          Auto-confirm bookings, send reminders, and notify your team — synced with Calendly, Google
-                          Calendar, and more.
+                        Schedule Post Across Any Social Platform; Automated Content Generation & Detailed Analytics Dashboard.
                         </p>
                       </div>
                     </li>
@@ -185,22 +190,20 @@ export default function LandingPage() {
                         <Code className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">SEO Reporting</h3>
+                        <h3 className="text-xl font-bold">SEO Automation</h3>
                         <p className="text-muted-foreground">
-                          Get scheduled keyword rankings, competitor alerts, and performance summaries — all sent to
-                          your preferred inbox.
+                          Query/ Pages Rank Tracking, Automated Comprehensive SEO Reporting & Customized Reporting Dashboard.
                         </p>
                       </div>
                     </li>
                     <li className="flex gap-4 items-start">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                        <Zap className="h-5 w-5 text-primary" />
+                        <NotebookPen className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">Custom Dashboards</h3>
+                        <h3 className="text-xl font-bold">Blog Agent</h3>
                         <p className="text-muted-foreground">
-                          Build live dashboards in Notion, Airtable, or Google Sheets that pull data from your CRM,
-                          socials, and more.
+                        Automated SEO Optimized / Humanized Blogs; Publish Directly to Your CMS & Analytics Reporting Dashboard.
                         </p>
                       </div>
                     </li>
@@ -210,87 +213,102 @@ export default function LandingPage() {
             </div>
           </section>
 
-          {/* Pricing Section */}
-          <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Pricing</div>
-                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                    Simple pricing designed for long-term growth
-                  </h2>
-                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    We build lasting systems for your business. Start simple, grow with automation.
-                  </p>
-                </div>
+{/* Pricing Section */}
+<section id="pricing" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+  <div className="container px-4 md:px-6">
+    <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <div className="space-y-2">
+        <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Pricing</div>
+        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+          Simple pricing designed for long-term growth
+        </h2>
+        <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          We build lasting systems for your business. Start simple, grow with automation.
+        </p>
+      </div>
+    </div>
+    <div className="mx-auto grid max-w-6xl gap-6 py-12 lg:grid-cols-3">
+      {[
+        {
+          name: "Creator Plan",
+          description: "Designed for Influencers, Content Creators, Bloggers, and Writers",
+          features: [
+            "Automated content generation",
+            "Social media planning and scheduling",
+            "SEO-optimized blog creation",
+          ],
+          cta: "Looking to scale your content with ease?",
+          popular: false,
+          calLink: "awwtomation/creator-initial-consultation",
+        },
+        {
+          name: "Small and Medium-sized Business",
+          description: "Designed for E-commerce Stores, Marketing/SEO Agencies, Local Businesses",
+          features: [
+            "Email marketing automation",
+            "Marketing and SEO process automation",
+            "Client engagement workflows",
+          ],
+          cta: "Ready to streamline and grow your business?",
+          popular: true,
+          calLink: "awwtomation/smb-awwtomation-consultation",
+        },
+        {
+          name: "Enterprise Plan",
+          description: "Designed for Large Organizations and Teams with Complex Workflow Needs",
+          features: [
+            "Fully tailored workflow automation",
+            "Advanced integration and analytics",
+            "High-priority support and dedicated onboarding",
+          ],
+          cta: "Looking for enterprise-grade automation at scale?",
+          popular: false,
+          calLink: "awwtomation/enterprise-awwtomation-consultation",
+        },
+      ].map((plan, i) => (
+        <Parallax key={i} speed={5 + i * 5} className="flex">
+          <Card className={`relative w-full h-full flex flex-col justify-between ${plan.popular ? "border-primary" : ""}`}>
+            {plan.popular && (
+              <div className="absolute -top-3 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground z-10">
+                Most Popular
               </div>
-              <div className="mx-auto grid max-w-4xl gap-6 py-12 lg:grid-cols-2">
-                {[
-                  {
-                    name: "Custom Plan",
-                    price: "Starts From $2000",
-                    description: "For businesses ready to scale with serious automation",
-                    features: [
-                      "Comprehensive discovery and strategy call",
-                      "Custom proposal with long-term roadmap",
-                      "Automation of complex workflows",
-                      "Multi-platform integrations",
-                      "Ongoing support and optimization",
-                      "Quarterly review and dashboard delivery",
-                    ],
-                  },
-                  {
-                    name: "Starter Plan",
-                    price: "$999",
-                    description: "Best for small teams looking to kickstart automation",
-                    features: [
-                      "Initial consultation (60 mins)",
-                      "3 business workflows automated",
-                      "2 integrations (CRM, Email, Calendar)",
-                      "Training & handoff documentation",
-                      "1-month monitoring support",
-                    ],
-                    popular: true,
-                  },
-                ].map((plan, i) => (
-                  <Parallax key={i} speed={i === 0 ? 5 : 15} className="flex">
-                    <Card className={`relative w-full ${plan.popular ? "border-primary" : ""}`}>
-                      {plan.popular && (
-                        <div className="absolute -top-3 left-0 right-0 mx-auto w-fit rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                          Promotional Offer (will be $1500)
-                        </div>
-                      )}
-                      <CardHeader className="flex flex-col items-center justify-center space-y-2">
-                        <CardTitle className="text-xl">{plan.name}</CardTitle>
-                        <div className="flex items-baseline">
-                          <span className="text-3xl font-bold">{plan.price}</span>
-                          {plan.price !== "Custom" && <span className="text-muted-foreground">/project</span>}
-                        </div>
-                        <CardDescription className="text-center">{plan.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="flex flex-col items-center justify-center space-y-4">
-                        <ul className="space-y-2 text-left">
-                          {plan.features.map((feature, j) => (
-                            <li key={j} className="flex items-center gap-2">
-                              <Check className="h-4 w-4 text-primary" />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                      <CardFooter>
-                        <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
-                          <a href="https://calendly.com/kushal-sarkar011" target="_blank" rel="noopener noreferrer">
-                            {plan.name === "Custom Plan" ? "Book Discovery Call" : "Claim Offer"}
-                          </a>
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  </Parallax>
+            )}
+            <CardHeader className="flex flex-col items-center justify-center space-y-2 text-center">
+              <CardTitle className="text-xl font-bold">{plan.name}</CardTitle>
+              <CardDescription className="text-muted-foreground">{plan.description}</CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center justify-center space-y-4">
+              <ul className="space-y-2 text-left">
+                {plan.features.map((feature, j) => (
+                  <li key={j} className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span>{feature}</span>
+                  </li>
                 ))}
-              </div>
-            </div>
-          </section>
+              </ul>
+            </CardContent>
+            <CardFooter className="flex flex-col space-y-3 items-center text-center">
+              <p className="font-medium">{plan.cta}</p>
+              <Button
+                className="w-full"
+                variant={plan.popular ? "default" : "outline"}
+                onClick={() => {
+                  setSelectedCalLink(plan.calLink)
+                  setCalModalOpen(true)
+                  console.log(selectedCalLink)
+                }}
+              >
+                Get a Quote
+              </Button>
+            </CardFooter>
+          </Card>
+        </Parallax>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
           {/* Testimonials Section */}
           <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
@@ -375,12 +393,13 @@ export default function LandingPage() {
                   </p>
                 </Parallax>
                 <Parallax speed={10} className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button asChild size="lg">
-                    <a href="https://calendly.com/kushal-sarkar011" target="_blank" rel="noopener noreferrer">
-                      Book an Appointment
-                      <ChevronRight className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
+                <Button size="lg" onClick={() => {
+  setSelectedCalLink("awwtomation/awwtomation-consultation?layout=mobile")
+  setCalModalOpen(true)
+}}>
+            Book an Appointment
+            <ChevronRight className="ml-1 h-4 w-4" />
+          </Button>
                 </Parallax>
                 <p className="text-xs text-muted-foreground">Free consultation. No obligation.</p>
               </div>
@@ -463,11 +482,21 @@ export default function LandingPage() {
                 </div>
                 <p className="text-sm text-muted-foreground">Automate. Accelerate. Assert.</p>
                 <div className="flex gap-4">
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                <Link
+  href="https://www.instagram.com/awwtomation/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-muted-foreground hover:text-foreground"
+>
                     <Instagram className="h-5 w-5" />
                     <span className="sr-only">Instagram</span>
                   </Link>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
+                  <Link
+  href="https://www.linkedin.com/company/awwtomation/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-muted-foreground hover:text-foreground"
+>
                     <Linkedin className="h-5 w-5" />
                     <span className="sr-only">LinkedIn</span>
                   </Link>
@@ -502,7 +531,7 @@ export default function LandingPage() {
                 <h3 className="text-sm font-medium">Support</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground">
+                    <Link href="mailto:contact@awwtomation.com" className="text-muted-foreground hover:text-foreground">
                       Contact
                     </Link>
                   </li>
@@ -523,7 +552,9 @@ export default function LandingPage() {
             </div>
           </div>
         </footer>
+        <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
       </div>
+      
     </ParallaxProvider>
   )
 }
