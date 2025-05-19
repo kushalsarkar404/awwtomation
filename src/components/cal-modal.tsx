@@ -18,16 +18,18 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
     // Initialize Cal on mount
     if (typeof window !== "undefined") {
       // @ts-ignore
-      (function (C, A, L) {
-        let p = function (a, ar) {
-          a.q.push(ar)
-        }
-        let d = C.document
+(function (C: any, A: string, L: string) {
+    const p = function (a: any, ar: any) {
+      a.q.push(ar)
+    }
+    const d = C.document
+  
         C.Cal =
           C.Cal ||
           function () {
-            let cal = C.Cal
-            let ar = arguments
+            const cal = C.Cal
+const ar = [...arguments]
+
             if (!cal.loaded) {
               cal.ns = {}
               cal.q = cal.q || []
