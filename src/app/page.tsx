@@ -170,7 +170,7 @@ export default function LandingPage() {
                       <div>
                         <h3 className="text-xl font-bold">CRM Automation</h3>
                         <p className="text-muted-foreground">
-                          Autamated Lead Capture/ Nurture; Integrate Data to Your CRM From Any App; Build Custom Workflows For Your Requirements
+                          Autaomated Lead Capture / Nurture; Integrate Data to Your CRM From Any App; Build Custom Workflows For Your Requirements.
                         </p>
                       </div>
                     </li>
@@ -192,7 +192,7 @@ export default function LandingPage() {
                       <div>
                         <h3 className="text-xl font-bold">SEO Automation</h3>
                         <p className="text-muted-foreground">
-                          Query/ Pages Rank Tracking, Automated Comprehensive SEO Reporting & Customized Reporting Dashboard.
+                          Query / Pages Rank Tracking, Automated Comprehensive SEO Reporting & Customized Reporting Dashboard.
                         </p>
                       </div>
                     </li>
