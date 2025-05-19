@@ -2,10 +2,9 @@
 
 import { useEffect } from "react"
 
-// Extend the global Window type
 declare global {
   interface Window {
-    $crisp: any[]
+    $crisp: unknown[]
     CRISP_WEBSITE_ID: string
   }
 }
@@ -13,7 +12,7 @@ declare global {
 export default function CrispChat() {
   useEffect(() => {
     if (typeof window === "undefined") return
-    if (window.$crisp) return
+    if (window.$crisp?.length) return
 
     window.$crisp = []
     window.CRISP_WEBSITE_ID = "754ebcca-6b64-4d41-9636-c73e85b7eac0"

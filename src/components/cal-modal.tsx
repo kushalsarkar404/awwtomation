@@ -9,10 +9,16 @@ interface CalModalProps {
   calLink: string
 }
 
-// Define a global type for window.Cal
+type CalNamespaceFn = (action: string, options: Record<string, unknown>) => void
+
 declare global {
   interface Window {
-    Cal?: any
+    Cal?: {
+      loaded?: boolean
+      ns?: Record<string, CalNamespaceFn>
+      q?: unknown[]
+      (command: string, namespace?: string | unknown, options?: Record<string, unknown>): void
+    }
   }
 }
 
@@ -22,53 +28,37 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
   useEffect(() => {
     setIsMounted(true)
 
-    if (typeof window !== "undefined") {
-      // @ts-expect-error We expect Cal to be injected dynamically
-      (function (C: any, A: string, L: string) {
-        const p = (a: any, ar: any) => {
-          a.q.push(ar)
-        }
+    if (typeof window !== "undefined" && !window.Cal?.loaded) {
+      const d = document
+      const script = d.createElement("script")
+      script.src = "https://app.cal.com/embed/embed.js"
+      script.async = true
+      d.head.appendChild(script)
 
-        const d = C.document
-        C.Cal =
-          C.Cal ||
-          function (...args: any[]) {
-            const cal = C.Cal
-            if (!cal.loaded) {
-              cal.ns = {}
-              cal.q = cal.q || []
-              const script = d.createElement("script")
-              script.src = A
-              d.head.appendChild(script)
-              cal.loaded = true
-            }
-
-            if (args[0] === L) {
-              const api = function (...innerArgs: any[]) {
-                p(api, innerArgs)
-              }
-              const namespace = args[1]
-              api.q = api.q || []
-              if (typeof namespace === "string") {
-                cal.ns[namespace] = cal.ns[namespace] || api
-                p(cal.ns[namespace], args)
-                p(cal, ["initNamespace", namespace])
-              } else {
-                p(cal, args)
-              }
-              return
-            }
-
-            p(cal, args)
+      window.Cal = function (
+        command: string,
+        namespace?: string | unknown,
+        options?: Record<string, unknown>
+      ) {
+        const cal = window.Cal as any
+        cal.q = cal.q || []
+        if (command === "init" && typeof namespace === "string") {
+          cal.ns = cal.ns || {}
+          const api = function (action: string, opts: Record<string, unknown>) {
+            cal.q.push([action, opts])
           }
-      })(window, "https://app.cal.com/embed/embed.js", "init")
-
-      window.Cal("init", "initial-consultation", { origin: "https://cal.com" })
+          cal.ns[namespace] = api
+          cal.q.push(["initNamespace", namespace])
+        } else {
+          cal.q.push([command, namespace, options])
+        }
+      }
+      window.Cal.loaded = true
     }
   }, [])
 
   useEffect(() => {
-    if (open && isMounted && typeof window !== "undefined" && window.Cal?.ns) {
+    if (open && isMounted && window.Cal?.ns?.["initial-consultation"]) {
       setTimeout(() => {
         try {
           window.Cal.ns["initial-consultation"]("inline", {
@@ -81,8 +71,8 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
             hideEventTypeDetails: false,
             layout: "month_view",
           })
-        } catch (error) {
-          console.error("Error initializing Cal:", error)
+        } catch (err) {
+          console.error("Cal inline embed failed", err)
         }
       }, 100)
     }
