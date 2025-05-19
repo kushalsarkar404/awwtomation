@@ -10,13 +10,20 @@ interface CalModalProps {
 }
 
 // Define types for Cal.com integration
+interface CalNamespace {
+  (action: string, ...args: unknown[]): void
+  q: unknown[]
+}
+
+interface CalObject {
+  (method: string, ...args: unknown[]): void
+  loaded?: boolean
+  ns: Record<string, CalNamespace>
+  q: unknown[]
+}
+
 interface CalWindow extends Window {
-  Cal?: {
-    loaded?: boolean
-    ns: Record<string, CallableFunction>
-    q: unknown[]
-    (method: string, ...args: unknown[]): void
-  }
+  Cal?: CalObject
 }
 
 export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
@@ -38,31 +45,31 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
         const calWindow = C as CalWindow
         calWindow.Cal =
           calWindow.Cal ||
-          function () {
-            const cal = calWindow.Cal
-            const ar = arguments
+          function (this: unknown, ...args: unknown[]) {
+            const cal = calWindow.Cal as CalObject
+            const ar = args
             if (!cal?.loaded) {
-              cal!.ns = {}
-              cal!.q = cal?.q || []
+              cal.ns = cal.ns || {}
+              cal.q = cal.q || []
               const script = d.head.appendChild(d.createElement("script"))
               script.src = A
-              cal!.loaded = true
+              cal.loaded = true
             }
             if (ar[0] === L) {
-              const api = function () {
-                p(api as unknown as { q: unknown[] }, arguments as unknown as unknown[])
-              }
-              const namespace = ar[1]
-              api.q = api.q || []
+              const api = function (this: unknown, ...callArgs: unknown[]) {
+                p(api as unknown as { q: unknown[] }, callArgs)
+              } as CalNamespace
+              api.q = []
+              const namespace = ar[1] as string
               if (typeof namespace === "string") {
-                cal!.ns[namespace] = cal!.ns[namespace] || api as unknown as CallableFunction
-                p(cal!.ns[namespace] as unknown as { q: unknown[] }, ar as unknown as unknown[])
+                cal.ns[namespace] = cal.ns[namespace] || api
+                p(cal.ns[namespace] as unknown as { q: unknown[] }, ar)
                 p(cal as unknown as { q: unknown[] }, ["initNamespace", namespace])
-              } else p(cal as unknown as { q: unknown[] }, ar as unknown as unknown[])
+              } else p(cal as unknown as { q: unknown[] }, ar)
               return
             }
-            p(cal as unknown as { q: unknown[] }, ar as unknown as unknown[])
-          }
+            p(cal as unknown as { q: unknown[] }, ar)
+          } as CalObject
       })(window, "https://app.cal.com/embed/embed.js", "init")
 
       // Initialize Cal with the specific namespace
