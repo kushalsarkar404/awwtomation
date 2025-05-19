@@ -17,7 +17,11 @@ declare global {
       loaded?: boolean
       ns?: Record<string, CalNamespaceFn>
       q?: unknown[]
-      (command: string, namespace?: string | unknown, options?: Record<string, unknown>): void
+      (
+        command: string,
+        namespace?: string | unknown,
+        options?: Record<string, unknown>
+      ): void
     }
   }
 }
@@ -35,17 +39,17 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
       script.async = true
       d.head.appendChild(script)
 
-      window.Cal = function (
+      const calFn = function (
         command: string,
         namespace?: string | unknown,
         options?: Record<string, unknown>
       ) {
-        const cal = window.Cal as any
+        const cal = window.Cal!
         cal.q = cal.q || []
         if (command === "init" && typeof namespace === "string") {
           cal.ns = cal.ns || {}
-          const api = function (action: string, opts: Record<string, unknown>) {
-            cal.q.push([action, opts])
+          const api: CalNamespaceFn = (action, opts) => {
+            cal.q?.push([action, opts])
           }
           cal.ns[namespace] = api
           cal.q.push(["initNamespace", namespace])
@@ -53,21 +57,29 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
           cal.q.push([command, namespace, options])
         }
       }
-      window.Cal.loaded = true
+
+      window.Cal = Object.assign(calFn, {
+        loaded: true,
+        q: [],
+        ns: {},
+      })
     }
   }, [])
 
   useEffect(() => {
-    if (open && isMounted && window.Cal?.ns?.["initial-consultation"]) {
+    if (open && isMounted && typeof window !== "undefined") {
       setTimeout(() => {
         try {
-          window.Cal.ns["initial-consultation"]("inline", {
+          const ns = window.Cal?.ns?.["initial-consultation"]
+          if (!ns) return
+
+          ns("inline", {
             elementOrSelector: "#my-cal-inline",
             config: { layout: "month_view" },
             calLink,
           })
 
-          window.Cal.ns["initial-consultation"]("ui", {
+          ns("ui", {
             hideEventTypeDetails: false,
             layout: "month_view",
           })
