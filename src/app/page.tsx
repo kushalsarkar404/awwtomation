@@ -7,12 +7,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt } from "lucide-react"
 import { CalModal } from "@/components/cal-modal"
+import { MessageModal } from "@/components/message-modal"
 
 import { ParallaxMouse } from "@/components/parallax-mouse"
 
 
 export default function LandingPage() {
   const [calModalOpen, setCalModalOpen] = useState(false)
+  const [messageModalOpen, setMessageModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
   return(
     <ParallaxProvider>
@@ -99,8 +101,8 @@ export default function LandingPage() {
             Automate Your Process Now
             <ChevronRight className="ml-1 h-4 w-4" />
           </Button>
-                    <Button variant="outline" size="lg">
-                    Not Now? Message Us 
+          <Button variant="outline" size="lg" onClick={() => setMessageModalOpen(true)}>
+                      Not Now? Message Us
                     </Button>
                   </Parallax>
                 </div>
@@ -552,6 +554,7 @@ export default function LandingPage() {
           </div>
         </footer>
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
+        <MessageModal open={messageModalOpen} onOpenChange={setMessageModalOpen} />
       </div>
       
     </ParallaxProvider>
