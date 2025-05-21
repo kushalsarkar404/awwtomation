@@ -94,7 +94,7 @@ export function MessageModal({ open, onOpenChange }: MessageModalProps) {
           message: result.error || "Failed to send message. Please try again later.",
         })
       }
-    } catch (error) {
+    } catch {
       setNotification({
         type: "error",
         message: "Something went wrong. Please try again later.",
@@ -109,7 +109,7 @@ export function MessageModal({ open, onOpenChange }: MessageModalProps) {
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>Send us a message</DialogTitle>
-          <DialogDescription>Fill out the form below and we'll get back to you ASAP!</DialogDescription>
+          <DialogDescription>Fill out the form below and we&apos;ll get back to you ASAP!</DialogDescription>
         </DialogHeader>
 
         {notification.type && (
