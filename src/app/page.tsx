@@ -608,6 +608,7 @@ export default function LandingPage() {
           </div>
         </footer>
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
+        <MessageModal open={messageModalOpen} onOpenChange={setMessageModalOpen} />
         
       </div>
       
