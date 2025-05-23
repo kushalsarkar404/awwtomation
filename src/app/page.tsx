@@ -63,7 +63,9 @@ export default function LandingPage() {
 
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="w-full min-h-screen flex items-top py-40 md:py-40 lg:py-30 xl:py-24 relative overflow-hidden">
+          <section className="w-full pt-24 pb-16 md:pt-28 md:pb-12 lg:pt-32 lg:pb-24 xl:pt-40 xl:pb-32 relative overflow-hidden">
+
+            
   {/* Background Blur Layers */}
   <div className="absolute inset-0 z-0">
     <Parallax speed={-20} className="w-full h-full">
@@ -88,7 +90,8 @@ export default function LandingPage() {
 
   {/* Main Hero Content */}
   <div className="container px-4 md:px-6 relative z-20">
-    <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+  <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
+
       {/* Text Block */}
       <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
         <Parallax speed={25} className="space-y-2">
@@ -115,17 +118,22 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Image */}
-      <Parallax speed={-10} className="flex justify-center">
-        <ParallaxMouse speed={0.02}>
-          <Image
-            src="/hero-image.png"
-            alt="Business Process Automation"
-            width={550}
-            height={550}
-            className="object-contain w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
-          />
-        </ParallaxMouse>
-      </Parallax>
+      {/* Hero Image */}
+      {/* Hero Image — Hidden on mobile */}
+      <div className="hidden sm:flex justify-center w-full">
+  <Parallax speed={0}>
+    <ParallaxMouse speed={0.01}>
+      <Image
+        src="/hero-image.png"
+        alt="Business Process Automation"
+        width={550}
+        height={550}
+        className="object-contain w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+      />
+    </ParallaxMouse>
+  </Parallax>
+</div>
+
     </div>
   </div>
 </section>
@@ -485,10 +493,11 @@ export default function LandingPage() {
         {/* Team */}
 
         <section className="w-full py-16 bg-background text-foreground" id="team">
+        <Parallax speed={-5}>
   <div className="container px-4 md:px-6 text-center space-y-4">
     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Who We Are</h2>
     <p className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg">
-      We are two builders obsessed with automation. From coffee-fueled brainstorming sessions to cutting-edge workflow design — we build systems that make businesses smoother, smarter, and stronger.
+    We are two computer science grads on a mission to automate the most annoying workflows—so you do not have to. From coffee-fueled brainstorming sessions to cutting-edge workflow design — we build systems that make businesses smoother, smarter, and stronger.
     </p>
   </div>
 
@@ -515,6 +524,7 @@ export default function LandingPage() {
       <p className="text-sm text-muted-foreground">Co-founder, ATLANTA 🇺🇸</p>
     </div>
   </div>
+  </Parallax>
 </section>
 
 
