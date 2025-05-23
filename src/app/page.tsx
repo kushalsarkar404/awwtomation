@@ -63,82 +63,100 @@ export default function LandingPage() {
 
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative overflow-hidden">
-            <div className="absolute inset-0 z-0">
-              <Parallax speed={-20} className="w-full h-full">
-                <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-background z-10"></div>
-                <div className="w-full h-full bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center"></div>
-              </Parallax>
-            </div>
-            <div className="container px-4 md:px-6 relative z-10">
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <Parallax speed={-15} className="absolute -top-20 -left-20">
-                  <div className="w-40 h-40 rounded-full bg-muted blur-3xl"></div>
-                </Parallax>
-                <Parallax speed={-10} className="absolute top-1/3 -right-20">
-                  <div className="w-60 h-60 rounded-full bg-muted blur-3xl"></div>
-                </Parallax>
-                <Parallax speed={-20} className="absolute -bottom-20 left-1/4">
-                  <div className="w-40 h-40 rounded-full bg-muted blur-3xl"></div>
-                </Parallax>
-              </div>
-              <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-                <div className="flex flex-col justify-center space-y-4">
-                  <Parallax speed={25} className="space-y-2">
-                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                      We Save You Time. You Make More Money!
-                    </h1>
-                    <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                      Streamline your business operations with automation and boost your profits effortlessly. Book a
-                      free consultation today to discover how we can save you time and scale your growth.
-                    </p>
-                  </Parallax>
-                  <Parallax speed={15} className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" onClick={() => {
-  setSelectedCalLink("awwtomation/awwtomation-consultation")
-  setCalModalOpen(true)
-}}>
+          <section className="w-full min-h-screen flex items-top py-40 md:py-40 lg:py-30 xl:py-24 relative overflow-hidden">
+  {/* Background Blur Layers */}
+  <div className="absolute inset-0 z-0">
+    <Parallax speed={-20} className="w-full h-full">
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-background z-10"></div>
+      {/* Removed broken background URL */}
+      <div className="w-full h-full bg-background"></div>
+    </Parallax>
+  </div>
+
+  {/* Decorative Parallax Blurs */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+    <Parallax speed={-15} className="absolute -top-20 -left-20">
+      <div className="w-40 h-40 rounded-full bg-muted blur-3xl"></div>
+    </Parallax>
+    <Parallax speed={-10} className="absolute top-1/3 -right-20">
+      <div className="w-60 h-60 rounded-full bg-muted blur-3xl"></div>
+    </Parallax>
+    <Parallax speed={-20} className="absolute -bottom-20 left-1/4">
+      <div className="w-40 h-40 rounded-full bg-muted blur-3xl"></div>
+    </Parallax>
+  </div>
+
+  {/* Main Hero Content */}
+  <div className="container px-4 md:px-6 relative z-20">
+    <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+      {/* Text Block */}
+      <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
+        <Parallax speed={25} className="space-y-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
+            We Save You Time. You Make More Money!
+          </h1>
+          <p className="max-w-xl text-muted-foreground md:text-xl mx-auto lg:mx-0">
+            Streamline your business operations with automation and boost your profits effortlessly. Book a free consultation today to discover how we can save you time and scale your growth.
+          </p>
+        </Parallax>
+
+        <Parallax speed={15} className="flex flex-col gap-3 sm:flex-row justify-center lg:justify-start">
+          <Button size="lg" onClick={() => {
+            setSelectedCalLink("awwtomation/awwtomation-consultation")
+            setCalModalOpen(true)
+          }}>
             Automate Your Process Now
             <ChevronRight className="ml-1 h-4 w-4" />
           </Button>
           <Button variant="outline" size="lg" onClick={() => setMessageModalOpen(true)}>
-                      Not Now? Message Us
-                    </Button>
-                  </Parallax>
-                </div>
-                <Parallax speed={-10} className="mx-auto lg:order-last">
-                  <ParallaxMouse speed={0.02}>
-                    <Image
-                      src="/hero-image.png"
-                      width={550}
-                      height={550}
-                      alt="Business Process Automation"
-                      className="object-contain"
-                    />
-                  </ParallaxMouse>
-                </Parallax>
-              </div>
-            </div>
-          </section>
+            Not Now? Message Us
+          </Button>
+        </Parallax>
+      </div>
+
+      {/* Hero Image */}
+      <Parallax speed={-10} className="flex justify-center">
+        <ParallaxMouse speed={0.02}>
+          <Image
+            src="/hero-image.png"
+            alt="Business Process Automation"
+            width={550}
+            height={550}
+            className="object-contain w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+          />
+        </ParallaxMouse>
+      </Parallax>
+    </div>
+  </div>
+</section>
+
+
 
           {/*tools marquee*/}
           {/* Tools Marquee */}
           <section className="w-full py-8 bg-muted/50">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <p className="text-sm text-muted-foreground">TRUSTED BY BUSINESSES USING</p>
-                <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
-                  {["HubSpot", "Zoho", "Pipedrive", "Calendly", "Google", "Notion", "Airtable"].map((tool, index) => (
-                    <ParallaxMouse key={tool} speed={0.01 * (index + 1)}>
-                      <div className="flex items-center justify-center">
-                        <p className="text-xl font-semibold text-muted-foreground/70">{tool}</p>
-                      </div>
-                    </ParallaxMouse>
-                  ))}
-                </div>
-              </div>
+  <div className="container px-4 md:px-6">
+    <div className="flex flex-col items-center justify-center space-y-4 text-center">
+      <p className="text-sm text-muted-foreground">TRUSTED BY BUSINESSES USING</p>
+      <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
+        {["HubSpot", "Zoho", "Pipedrive", "Calendly", "Google", "Notion", "Airtable", "HighLevel"].map((tool, index) => (
+          <ParallaxMouse key={tool} speed={0.01 * (1)}>
+            <div className="flex items-center justify-center w-24 h-10">
+              <Image
+                src={`/${tool}.png`}
+                alt={`${tool} logo`}
+                width={192*2}
+                height={80*2}
+                className="object-contain"
+              />
             </div>
-          </section>
+          </ParallaxMouse>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
           {/* Services Section */}
           <section id="services" className="w-full py-12 md:py-24 lg:py-32">
@@ -338,15 +356,15 @@ export default function LandingPage() {
                 {[
                   {
                     quote:
-                      "Awwtomation saved us 15+ hours per week on CRM updates alone. Our sales team can focus on closing deals instead of data entry.",
-                    author: "Sarah Johnson",
-                    position: "Sales Director, TechCorp",
+                      "Awwtomation saved us $3,000/mo and 15+ hrs/week by automating our whole hotel booking and order system. Our other staffs can focus on other priorities.",
+                    author: "Yam Bhd. Khatri",
+                    position: "Owner, Kathmandu Kitchen- JAPAN",
                   },
                   {
                     quote:
-                      "The custom dashboard they built pulls data from 5 different platforms. I finally have a single source of truth for all our metrics.",
-                    author: "Michael Chen",
-                    position: "Marketing Manager, GrowthBrand",
+                      "The custom dashboard they built pulls data from multiple platforms. I finally have a single source of truth for all our metrics.",
+                    author: "Prajwal Adhikari",
+                    position: "Founder, RoomieNow",
                   },
                   {
                     quote:
@@ -464,6 +482,42 @@ export default function LandingPage() {
           </section>
         </main>
 
+        {/* Team */}
+
+        <section className="w-full py-16 bg-background text-foreground" id="team">
+  <div className="container px-4 md:px-6 text-center space-y-4">
+    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Who We Are</h2>
+    <p className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg">
+      We're two builders obsessed with automation. From coffee-fueled brainstorming sessions to cutting-edge workflow design — we build systems that make businesses smoother, smarter, and stronger.
+    </p>
+  </div>
+
+  <div className="mt-24 grid gap-2 sm:grid-cols-1 md:grid-cols-2 items-center justify-center px-6 md:px-16 lg:px-64">
+    {/* Team Member 1 */}
+
+    {/* Team Member 2 */}
+    <div className="flex flex-col items-center text-center space-y-2">
+      <img
+        src="/prakhyat.png"
+        alt="Prakhyat Shrestha"
+        className="rounded-full object-cover w-60 h-60 border border-muted shadow"
+      />
+      <h3 className="font-semibold text-lg">Prakhyat Shrestha</h3>
+      <p className="text-sm text-muted-foreground">Co-founder, KATHMANDU 🇳🇵</p>
+    </div>
+    <div className="flex flex-col items-center text-center space-y-2">
+      <img
+        src="/kushal.png"
+        alt="Kushal Sarkar"
+        className="rounded-full object-cover w-60 h-60 border border-muted shadow"
+      />
+      <h3 className="font-semibold text-lg">Kushal Sarkar</h3>
+      <p className="text-sm text-muted-foreground">Co-founder, ATLANTA 🇺🇸</p>
+    </div>
+  </div>
+</section>
+
+
         {/* Footer */}
         <footer className="w-full border-t py-12 md:py-16">
           <div className="container px-4 md:px-6">
@@ -554,7 +608,7 @@ export default function LandingPage() {
           </div>
         </footer>
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
-        <MessageModal open={messageModalOpen} onOpenChange={setMessageModalOpen} />
+        
       </div>
       
     </ParallaxProvider>
