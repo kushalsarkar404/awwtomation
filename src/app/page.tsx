@@ -139,7 +139,7 @@ export default function LandingPage() {
     <div className="flex flex-col items-center justify-center space-y-4 text-center">
       <p className="text-sm text-muted-foreground">TRUSTED BY BUSINESSES USING</p>
       <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
-        {["HubSpot", "Zoho", "Pipedrive", "Calendly", "Google", "Notion", "Airtable", "HighLevel"].map((tool, index) => (
+        {["HubSpot", "Zoho", "Pipedrive", "Calendly", "Google", "Notion", "Airtable", "HighLevel"].map((tool) => (
           <ParallaxMouse key={tool} speed={0.01 * (1)}>
             <div className="flex items-center justify-center w-24 h-10">
               <Image
@@ -488,7 +488,7 @@ export default function LandingPage() {
   <div className="container px-4 md:px-6 text-center space-y-4">
     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Who We Are</h2>
     <p className="max-w-2xl mx-auto text-muted-foreground text-base sm:text-lg">
-      We're two builders obsessed with automation. From coffee-fueled brainstorming sessions to cutting-edge workflow design — we build systems that make businesses smoother, smarter, and stronger.
+      We are two builders obsessed with automation. From coffee-fueled brainstorming sessions to cutting-edge workflow design — we build systems that make businesses smoother, smarter, and stronger.
     </p>
   </div>
 
