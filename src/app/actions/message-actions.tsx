@@ -18,7 +18,7 @@ export async function sendMessageToMake(formData: FormData) {
     }
 
     // Get the webhook URL from environment variables
-    const webhookUrl = "https://hook.eu2.make.com/63ygccw4xa914ky2ki62i5td9wttitcg"
+    const webhookUrl = "https://n8n.awwtomation.com/webhook/contact-form"
 
     if (!webhookUrl) {
       console.error("MAKE_WEBHOOK_URL environment variable is not set")
