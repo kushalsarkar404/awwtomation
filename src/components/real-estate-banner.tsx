@@ -39,7 +39,7 @@ interface RealEstateBannerProps {
   const handleDismiss = () => {
     setIsVisible(false)
     const now = Date.now()
-    const oneWeekInMs = 7 * 24 * 60 * 60 * 1000
+    const oneWeekInMs = 1 * 24 * 60 * 60 * 1000
     localStorage.setItem("realEstateBannerDismissed", JSON.stringify({ dismissedAt: now, reappearAfter: oneWeekInMs }))
     setVisible?.(false)
     onClose?.()

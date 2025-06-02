@@ -69,6 +69,7 @@ export default function SocialMediaAutomationPage() {
         {/* Hero Section */}
         {/* Hero Section with Floating Social Media Logos */}
       <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <div className="hidden sm:flex justify-center w-full">
         {/* Floating Social Media Logos */}
         <div className="absolute inset-0 z-0">
           {/* Facebook */}
@@ -143,7 +144,7 @@ export default function SocialMediaAutomationPage() {
             </div>
           </div>
         </div>
-
+        </div>
         {/* Gradient Overlay for Better Text Contrast */}
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/30 via-transparent to-background/20" />
 
