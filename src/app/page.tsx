@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState , useEffect} from "react"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax"
 import Link from "next/link"
 import Image from "next/image"
@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt } from "lucide-react"
 import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
-
+import RealEstateBanner from "@/components/real-estate-banner"
 import { ParallaxMouse } from "@/components/parallax-mouse"
 
 
@@ -16,9 +16,25 @@ export default function LandingPage() {
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [messageModalOpen, setMessageModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
+  const [bannerVisible, setBannerVisible] = useState(true) // <- default true
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem("realEstateBannerDismissed")
+    if (dismissed === "true") {
+      setBannerVisible(false)
+    }
+  }, [])
   return(
+  
     <ParallaxProvider>
-      <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
+     
+
+     <div className={`flex min-h-[100dvh] flex-col px-4 md:px-12 transition-all duration-300 ${bannerVisible ? 'pt-14' : ''}`}>
+
+      <>
+    {/* Real Estate Feature Banner */}
+    <RealEstateBanner position="top" onClose={() => setBannerVisible(false)}/>
+
         {/* Header */}
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
@@ -50,7 +66,7 @@ export default function LandingPage() {
             </nav>
 
             <div className="flex items-center gap-4">
-            <Button size="lg" onClick={() => {
+            <Button size="lg" className="hover:bg-blue-700" onClick={() => {
   setSelectedCalLink("awwtomation/awwtomation-consultation")
   setCalModalOpen(true)
 }}>
@@ -104,7 +120,7 @@ export default function LandingPage() {
         </Parallax>
 
         <Parallax speed={15} className="flex flex-col gap-3 sm:flex-row justify-center lg:justify-start">
-          <Button size="lg" onClick={() => {
+          <Button size="lg" className=" hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"onClick={() => {
             setSelectedCalLink("awwtomation/awwtomation-consultation")
             setCalModalOpen(true)
           }}>
@@ -420,7 +436,7 @@ export default function LandingPage() {
                   </p>
                 </Parallax>
                 <Parallax speed={10} className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" onClick={() => {
+                <Button size="lg" className=" hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" onClick={() => {
   setSelectedCalLink("awwtomation/awwtomation-consultation")
   setCalModalOpen(true)
 }}>
@@ -576,8 +592,8 @@ export default function LandingPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      Appointment Workflow
+                    <Link href="/services/social-media-automation" className="text-muted-foreground hover:text-foreground">
+                      Social Media Automation
                     </Link>
                   </li>
                   <li>
@@ -619,9 +635,10 @@ export default function LandingPage() {
         </footer>
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
         <MessageModal open={messageModalOpen} onOpenChange={setMessageModalOpen} />
-        
+        </>
       </div>
       
     </ParallaxProvider>
+
   )
 }
