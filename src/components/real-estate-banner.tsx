@@ -9,8 +9,6 @@ interface RealEstateBannerProps {
     position?: "top" | "bottom"
     setVisible?: (visible: boolean) => void
   }
-  
-  
 
   export default function RealEstateBanner({ onClose, position = "top", setVisible }: RealEstateBannerProps) {
   const [isVisible, setIsVisible] = useState(false)
@@ -24,6 +22,7 @@ interface RealEstateBannerProps {
         const now = Date.now()
         if (now - dismissedAt < reappearAfter) {
           setVisible?.(false)
+          setHasCheckedStorage(true)
           return
         }
       } catch {}
@@ -32,8 +31,10 @@ interface RealEstateBannerProps {
     setTimeout(() => {
       setIsVisible(true)
       setVisible?.(true)
+      setHasCheckedStorage(true)
     }, 1000)
   }, [])
+  
   
   const handleDismiss = () => {
     setIsVisible(false)

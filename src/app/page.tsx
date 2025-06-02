@@ -1,5 +1,5 @@
 "use client"
-import { useState , useEffect} from "react"
+import { useState } from "react"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax"
 import Link from "next/link"
 import Image from "next/image"
