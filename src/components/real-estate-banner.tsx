@@ -2,15 +2,17 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { X, Home, FileText, Sparkles } from "lucide-react"
-import Link from "next/link"
+import { X, Home, Sparkles } from "lucide-react"
 
 interface RealEstateBannerProps {
-  onClose?: () => void
-  position?: "top" | "bottom"
-}
+    onClose?: () => void
+    position?: "top" | "bottom"
+    setVisible?: (visible: boolean) => void
+  }
+  
+  
 
-export default function RealEstateBanner({ onClose, position = "top" }: RealEstateBannerProps) {
+  export default function RealEstateBanner({ onClose, position = "top", setVisible }: RealEstateBannerProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [hasCheckedStorage, setHasCheckedStorage] = useState(false)
 
@@ -21,42 +23,30 @@ export default function RealEstateBanner({ onClose, position = "top" }: RealEsta
         const { dismissedAt, reappearAfter } = JSON.parse(stored)
         const now = Date.now()
         if (now - dismissedAt < reappearAfter) {
-          setHasCheckedStorage(true)
-          return // don't show yet
+          setVisible?.(false)
+          return
         }
-      } catch {
-        // fallback
-      }
+      } catch {}
     }
   
     setTimeout(() => {
       setIsVisible(true)
-      setHasCheckedStorage(true)
+      setVisible?.(true)
     }, 1000)
   }, [])
   
-  if (!isVisible || !hasCheckedStorage) return null
-  
-
   const handleDismiss = () => {
     setIsVisible(false)
-    const now = new Date().getTime()
-    const oneWeekInMs =7*24 * 60 * 60 * 1000
+    const now = Date.now()
+    const oneWeekInMs = 7 * 24 * 60 * 60 * 1000
     localStorage.setItem("realEstateBannerDismissed", JSON.stringify({ dismissedAt: now, reappearAfter: oneWeekInMs }))
+    setVisible?.(false)
     onClose?.()
   }
   
-
-  const handleLearnMore = () => {
-    // Track engagement for analytics
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "click", {
-        event_category: "Real Estate Banner",
-        event_label: "Learn More",
-      })
-    }
-  }
-
+  
+  if (!isVisible || !hasCheckedStorage) return null
+  
 
   return (
     <div

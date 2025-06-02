@@ -4,15 +4,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ParallaxProvider, Parallax } from "react-scroll-parallax"
+import { ParallaxProvider } from "react-scroll-parallax"
 import { CalModal } from "@/components/cal-modal"
 import {
-  Calendar,
-  BarChart3,
-  Users,
   Globe,
   Zap,
-  CheckCircle,
   ChevronRight,
   Facebook,
   Instagram,
@@ -157,7 +153,7 @@ export default function SocialMediaAutomationPage() {
             Social Media Automation
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-            Plan, Schedule, and Grow with Awwtomation's Social Planner
+            Plan, Schedule, and Grow with Awwtomation&apos;s Social Planner
           </h1>
           <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
             Automate your entire social media presence from one powerful tool. Save time, stay consistent, and increase

@@ -18,12 +18,7 @@ export default function LandingPage() {
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
   const [bannerVisible, setBannerVisible] = useState(true) // <- default true
 
-  useEffect(() => {
-    const dismissed = localStorage.getItem("realEstateBannerDismissed")
-    if (dismissed === "true") {
-      setBannerVisible(false)
-    }
-  }, [])
+
   return(
   
     <ParallaxProvider>
@@ -31,9 +26,11 @@ export default function LandingPage() {
 
      <div className={`flex min-h-[100dvh] flex-col px-4 md:px-12 transition-all duration-300 ${bannerVisible ? 'pt-14' : ''}`}>
 
+
       <>
     {/* Real Estate Feature Banner */}
-    <RealEstateBanner position="top" onClose={() => setBannerVisible(false)}/>
+    <RealEstateBanner position="top" setVisible={setBannerVisible} />
+
 
         {/* Header */}
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
