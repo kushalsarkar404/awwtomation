@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt } from "lucide-react"
+import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt, Twitter, Youtube } from "lucide-react"
 import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
 import RealEstateBanner from "@/components/real-estate-banner"
@@ -185,7 +185,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Services</div>
-                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Automate What Matters Most</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Automate Your Business Processes with Awwtomation</h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     We help all size businesses automate time-consuming business processes — so you can focus on scaling
                     instead of juggling tools.
@@ -577,6 +577,24 @@ export default function LandingPage() {
 >
                     <Linkedin className="h-5 w-5" />
                     <span className="sr-only">LinkedIn</span>
+                  </Link>
+                  <Link
+  href="https://youtube.com/@Awwtomation"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-muted-foreground hover:text-foreground"
+>
+                    <Youtube className="h-5 w-5" />
+                    <span className="sr-only">YouTube</span>
+                  </Link>
+                  <Link
+  href="https://x.com/awwtomation"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-muted-foreground hover:text-foreground"
+>
+                    <Twitter className="h-5 w-5" />
+                    <span className="sr-only">X</span>
                   </Link>
                 </div>
               </div>
