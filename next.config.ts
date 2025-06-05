@@ -1,25 +1,17 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            key: "host",
-            value: "www.awwtomation.com",
-          },
-        ],
-        destination: "https://awwtomation.com/:path*",
-        permanent: true,
-      },
-      {
-        source: "/index.html",
-        destination: "/",
-        permanent: true,
-      },
-    ];
-  },
+  redirects: async () => [
+    {
+      source: "www.awwtomation.com/:path*",
+      destination: "https://awwtomation.com/:path*",
+      permanent: true,
+    },
+    {
+      source: "http://awwtomation.com/:path*",
+      destination: "https://awwtomation.com/:path*",
+      permanent: true,
+    },
+  ],
 };
 
 export default nextConfig;
