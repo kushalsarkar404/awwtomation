@@ -2,12 +2,7 @@
 const nextConfig = {
   redirects: async () => [
     {
-      source: "www.awwtomation.com/:path*",
-      destination: "https://awwtomation.com/:path*",
-      permanent: true,
-    },
-    {
-      source: "http://awwtomation.com/:path*",
+      source: "/:path*",
       destination: "https://awwtomation.com/:path*",
       permanent: true,
     },
