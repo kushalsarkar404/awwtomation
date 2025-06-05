@@ -1,12 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  redirects: async () => [
-    {
-      source: "/:path*",
-      destination: "https://awwtomation.com/:path*",
-      permanent: true,
-    },
-  ],
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
 };
 
 export default nextConfig;
