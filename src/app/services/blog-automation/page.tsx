@@ -194,6 +194,7 @@ export default function BlogAutomationPage() {
         throw new Error("Submission failed")
       }
     } catch (error) {
+      console.log(error)
       alert("There was an error submitting the form. Please try again.")
     } finally {
       setIsSubmitting(false)
