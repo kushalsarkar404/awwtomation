@@ -244,6 +244,7 @@ export default function BlogAutomationPage() {
   <div className="container mx-auto  flex h-16 items-center justify-between">
 
     <div className="flex items-center gap-2">
+      <Link href="/">
       <Image
         src="/full-logo.svg"
         alt="Awwtomation Logo"
@@ -254,6 +255,7 @@ export default function BlogAutomationPage() {
         className="h-auto w-auto"
         priority
       />
+      </Link>
     </div>
 
     <nav className="hidden md:flex gap-8 relative items-center">
@@ -317,8 +319,8 @@ export default function BlogAutomationPage() {
         </div>
       </div>
 
-      <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
-      <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
+      <Link href="/#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
+      <Link href="/#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
     </nav>
     
     <div className="hidden md:flex items-center gap-4">
@@ -371,7 +373,8 @@ export default function BlogAutomationPage() {
       {/* Hero Section with Form */}
       <section className="w-full min-h-[90vh] flex items-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         {/* Floating Blog Icons */}
-        <div className="absolute inset-0 z-0">
+        
+        {/* <div className="hidden sm:flex justify-center w-full">
           <div className="absolute floating-icon floating-icon-1" style={{ top: "15%", left: "10%" }}>
             <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
               <PenTool className="w-6 h-6 md:w-8 md:h-8 text-white" />
@@ -392,7 +395,7 @@ export default function BlogAutomationPage() {
               <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-white" />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="z-20 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
@@ -792,7 +795,9 @@ export default function BlogAutomationPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-4">
+               
                 <div className="flex items-center gap-2">
+                <Link href="/">
                   <Image
                     src="/full-logo.svg"
                     alt="Awwtomation Logo"
@@ -801,8 +806,8 @@ export default function BlogAutomationPage() {
                     height={0}
                     sizes="100vw"
                     className="h-auto w-auto"
-                    priority
                   />
+                   </Link>
                 </div>
                 <p className="text-sm text-muted-foreground">Automate. Accelerate. Assert.</p>
                 <div className="flex gap-4">
@@ -859,12 +864,12 @@ export default function BlogAutomationPage() {
                   </li>
                   <li>
                     <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      SEO Reporting
+                      CRM Automation
                     </Link>
                   </li>
                   <li>
                     <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      Custom Dashboards
+                      SEO Automation
                     </Link>
                   </li>
                 </ul>

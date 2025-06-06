@@ -45,6 +45,7 @@ export default function SocialMediaAutomationPage() {
   <div className="container mx-auto  flex h-16 items-center justify-between">
 
     <div className="flex items-center gap-2">
+      <Link href="/">
       <Image
         src="/full-logo.svg"
         alt="Awwtomation Logo"
@@ -55,6 +56,7 @@ export default function SocialMediaAutomationPage() {
         className="h-auto w-auto"
         priority
       />
+      </Link>
     </div>
 
     <nav className="hidden md:flex gap-8 relative items-center">
@@ -118,8 +120,8 @@ export default function SocialMediaAutomationPage() {
         </div>
       </div>
 
-      <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
-      <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
+      <Link href="/#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
+      <Link href="/#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
     </nav>
     
     <div className="hidden md:flex items-center gap-4">
@@ -492,6 +494,7 @@ export default function SocialMediaAutomationPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
+                  <Link href="/">
                   <Image
                     src="/full-logo.svg"
                     alt="Awwtomation Logo"
@@ -502,6 +505,7 @@ export default function SocialMediaAutomationPage() {
                     className="h-auto w-auto"
                     priority
                   />
+                  </Link>
                 </div>
                 <p className="text-sm text-muted-foreground">Automate. Accelerate. Assert.</p>
                 <div className="flex gap-4">
@@ -558,12 +562,12 @@ export default function SocialMediaAutomationPage() {
                   </li>
                   <li>
                     <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      SEO Reporting
+                      CRM Automation
                     </Link>
                   </li>
                   <li>
                     <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      Custom Dashboards
+                      SEO Automation
                     </Link>
                   </li>
                 </ul>
