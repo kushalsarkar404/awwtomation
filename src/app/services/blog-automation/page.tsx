@@ -321,18 +321,44 @@ export default function BlogAutomationPage() {
                   Type *
                 </Label>
                 <Select
-                  value={formData.blog}
-                  onValueChange={(value) => setFormData({ ...formData, blog: value })}
-                  required
-                >
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Select type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="General Blog Agent">General Blog Agent</SelectItem>
-                    <SelectItem value="Real Estate Blog Agent">Real Estate Blog Agent</SelectItem>
-                  </SelectContent>
-                </Select>
+    value={formData.blog}
+    onValueChange={(value) => setFormData({ ...formData, blog: value })}
+    required
+  >
+    <SelectTrigger className="mt-2 w-full">
+      <SelectValue placeholder="Select type" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="General Blog Agent">General Blog Agent</SelectItem>
+      <SelectItem value="Real Estate Blog Agent">Real Estate Blog Agent</SelectItem>
+
+      {/* Disabled options with "Soon" tag */}
+      <SelectItem value="Healthcare Blog Agent" disabled>
+        <div className="flex justify-between items-center w-full">
+          <span>Healthcare Blog Agent</span>
+          <span className="text-xs text-muted-foreground ml-2">Coming Soon</span>
+        </div>
+      </SelectItem>
+      <SelectItem value="Technology Blog Agent" disabled>
+        <div className="flex justify-between items-center w-full">
+          <span>Technology Blog Agent</span>
+          <span className="text-xs text-muted-foreground ml-2">Coming Soon</span>
+        </div>
+      </SelectItem>
+      <SelectItem value="Finance Blog Agent" disabled>
+        <div className="flex justify-between items-center w-full">
+          <span>Finance Blog Agent</span>
+          <span className="text-xs text-muted-foreground ml-2">Coming Soon</span>
+        </div>
+      </SelectItem>
+      <SelectItem value="E-commerce Blog Agent" disabled>
+        <div className="flex justify-between items-center w-full">
+          <span>E-commerce Blog Agent</span>
+          <span className="text-xs text-muted-foreground ml-2">Coming Soon</span>
+        </div>
+      </SelectItem>
+    </SelectContent>
+  </Select>
               </div>
               <div>
                 <Label htmlFor="name" className="mb-1">
@@ -418,59 +444,61 @@ export default function BlogAutomationPage() {
                 />
               </div>
 
-              <div>
-                <Label htmlFor="tone" className="mb-1">
-                  Tone *
-                </Label>
-                <Select
-                  value={formData.tone}
-                  onValueChange={(value) => setFormData({ ...formData, tone: value })}
-                  required
-                >
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Select tone" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Professional">Professional</SelectItem>
-                    <SelectItem value="Conversational">Conversational</SelectItem>
-                    <SelectItem value="Persuasive">Persuasive</SelectItem>
-                    <SelectItem value="Inspirational">Inspirational</SelectItem>
-                    <SelectItem value="Informative">Informative</SelectItem>
-                    <SelectItem value="Authoritative">Authoritative</SelectItem>
-                    <SelectItem value="Friendly">Friendly</SelectItem>
-                    <SelectItem value="Formal">Formal</SelectItem>
-                    <SelectItem value="Empathetic">Empathetic</SelectItem>
-                    <SelectItem value="Optimistic">Optimistic</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <div className="flex flex-col md:flex-row gap-4">
+  {/* Tone */}
+  <div className="flex flex-col md:flex-row gap-4 w-full">
+  <div className="w-full">
+    <Label htmlFor="tone" className="mb-1">Tone *</Label>
+    <Select
+      value={formData.tone}
+      onValueChange={(value) => setFormData({ ...formData, tone: value })}
+      required
+    >
+      <SelectTrigger className="mt-2 w-full">
+        <SelectValue placeholder="Select tone" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="Professional">Professional</SelectItem>
+        <SelectItem value="Conversational">Conversational</SelectItem>
+        <SelectItem value="Persuasive">Persuasive</SelectItem>
+        <SelectItem value="Inspirational">Inspirational</SelectItem>
+        <SelectItem value="Informative">Informative</SelectItem>
+        <SelectItem value="Authoritative">Authoritative</SelectItem>
+        <SelectItem value="Friendly">Friendly</SelectItem>
+        <SelectItem value="Formal">Formal</SelectItem>
+        <SelectItem value="Empathetic">Empathetic</SelectItem>
+        <SelectItem value="Optimistic">Optimistic</SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
 
-              <div>
-                <Label htmlFor="style" className="mb-1">
-                  Style *
-                </Label>
-                <Select
-                  value={formData.style}
-                  onValueChange={(value) => setFormData({ ...formData, style: value })}
-                  required
-                >
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Select style" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="informative">Informative/Educational</SelectItem>
-                    <SelectItem value="listicle">Listicle</SelectItem>
-                    <SelectItem value="how_to_step_by_step_guide">How-To/Step-by-Step Guide</SelectItem>
-                    <SelectItem value="market_analysis_trend_report">Market Analysis/Trend Report</SelectItem>
-                    <SelectItem value="case_study_success_story">Case Study/Success Story</SelectItem>
-                    <SelectItem value="opinion_thought_leadership">Opinion/Thought Leadership</SelectItem>
-                    <SelectItem value="interview_profile">Interview/Profile</SelectItem>
-                    <SelectItem value="comparison_review">Comparison/Review</SelectItem>
-                    <SelectItem value="news_update">News Update</SelectItem>
-                    <SelectItem value="storytelling_narrative">Storytelling/Narrative</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+  <div className="w-full">
+    <Label htmlFor="style" className="mb-1">Style *</Label>
+    <Select
+      value={formData.style}
+      onValueChange={(value) => setFormData({ ...formData, style: value })}
+      required
+    >
+      <SelectTrigger className="mt-2 w-full">
+        <SelectValue placeholder="Select style" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="informative">Informative/Educational</SelectItem>
+        <SelectItem value="listicle">Listicle</SelectItem>
+        <SelectItem value="how_to_step_by_step_guide">How-To/Step-by-Step Guide</SelectItem>
+        <SelectItem value="market_analysis_trend_report">Market Analysis/Trend Report</SelectItem>
+        <SelectItem value="case_study_success_story">Case Study/Success Story</SelectItem>
+        <SelectItem value="opinion_thought_leadership">Opinion/Thought Leadership</SelectItem>
+        <SelectItem value="interview_profile">Interview/Profile</SelectItem>
+        <SelectItem value="comparison_review">Comparison/Review</SelectItem>
+        <SelectItem value="news_update">News Update</SelectItem>
+        <SelectItem value="storytelling_narrative">Storytelling/Narrative</SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
+</div>
+
+</div>
 
               <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
                 <p className="text-sm text-green-700 font-medium">
