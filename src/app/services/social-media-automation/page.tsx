@@ -390,7 +390,6 @@ export default function SocialMediaAutomationPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-4">
                 <div className="flex items-center gap-2">
-                <Link href="/">
                   <Image
                     src="/full-logo.svg"
                     alt="Awwtomation Logo"
@@ -398,10 +397,9 @@ export default function SocialMediaAutomationPage() {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className="h-auto w-auto cursor-pointer"
+                    className="h-auto w-auto"
                     priority
                   />
-                  </Link>
                 </div>
                 <p className="text-sm text-muted-foreground">Automate. Accelerate. Assert.</p>
                 <div className="flex gap-4">
@@ -423,14 +421,32 @@ export default function SocialMediaAutomationPage() {
                     <Linkedin className="h-5 w-5" />
                     <span className="sr-only">LinkedIn</span>
                   </Link>
+                  <Link
+  href="https://youtube.com/@Awwtomation"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-muted-foreground hover:text-foreground"
+>
+                    <Youtube className="h-5 w-5" />
+                    <span className="sr-only">YouTube</span>
+                  </Link>
+                  <Link
+  href="https://x.com/awwtomation"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-muted-foreground hover:text-foreground"
+>
+                    <Twitter className="h-5 w-5" />
+                    <span className="sr-only">X</span>
+                  </Link>
                 </div>
               </div>
               <div className="space-y-4">
                 <h3 className="text-sm font-medium">Services</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      CRM Automation
+                    <Link href="/services/blog-automation" className="text-muted-foreground hover:text-foreground">
+                      Blog Agent
                     </Link>
                   </li>
                   <li>

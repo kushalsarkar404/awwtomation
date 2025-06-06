@@ -211,7 +211,7 @@ export default function LandingPage() {
                       <div>
                         <h3 className="text-xl font-bold">CRM Automation</h3>
                         <p className="text-muted-foreground">
-                          Autaomated Lead Capture / Nurture; Integrate Data to Your CRM From Any App; Build Custom Workflows For Your Requirements.
+                          Automated Lead Capture / Nurture; Integrate Data to Your CRM From Any App; Build Custom Workflows For Your Requirements.
                         </p>
                       </div>
                     </li>
@@ -220,7 +220,7 @@ export default function LandingPage() {
                         <SquareChartGantt className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold">Social Planner</h3>
+                        <h3 className="text-xl font-bold">Social Media Automation</h3>
                         <p className="text-muted-foreground">
                         Schedule Post Across Any Social Platform; Automated Content Generation & Detailed Analytics Dashboard.
                         </p>
@@ -602,8 +602,8 @@ export default function LandingPage() {
                 <h3 className="text-sm font-medium">Services</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <Link href="#" className="text-muted-foreground hover:text-foreground">
-                      CRM Automation
+                    <Link href="/services/blog-automation" className="text-muted-foreground hover:text-foreground">
+                      Blog Agent
                     </Link>
                   </li>
                   <li>
