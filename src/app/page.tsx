@@ -1,11 +1,11 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ParallaxProvider, Parallax } from "react-scroll-parallax"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt, Twitter, Youtube } from "lucide-react"
+import { Check, ChevronRight, Code, Cog, Instagram, Linkedin, NotebookPen, SquareChartGantt, Twitter, Youtube, Menu, X } from "lucide-react"
 import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
 import RealEstateBanner from "@/components/real-estate-banner"
@@ -13,12 +13,26 @@ import { ParallaxMouse } from "@/components/parallax-mouse"
 
 
 export default function LandingPage() {
+  const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [messageModalOpen, setMessageModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
   const [bannerVisible, setBannerVisible] = useState(true) // <- default true
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && (menuRef.current as HTMLElement).contains(event.target as Node) === false) {
+        setMobileMenuOpen(false)
+      }
+    }
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [mobileMenuOpen])
   return(
   
     <ParallaxProvider>
@@ -31,48 +45,134 @@ export default function LandingPage() {
     {/* Real Estate Feature Banner */}
     <RealEstateBanner position="top" setVisible={setBannerVisible} />
 
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div className="container mx-auto  flex h-16 items-center justify-between">
 
-        {/* Header */}
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container flex h-16 items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="flex items-center">
-                <Image
-                  src="/full-logo.svg"
-                  alt="Awwtomation Logo"
-                  fill={false}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="h-auto w-auto"
-                  priority
-                />
+    <div className="flex items-center gap-2">
+      <Image
+        src="/full-logo.svg"
+        alt="Awwtomation Logo"
+        fill={false}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="h-auto w-auto"
+        priority
+      />
+    </div>
+
+    <nav className="hidden md:flex gap-8 relative items-center">
+      <div className="relative group/menu">
+        <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
+          <span className="relative">
+            Services
+            <span className="absolute -top-2 -right-6 bg-red-500 text-white text-[8px] px-1.5 py-0.5 rounded-full">NEW</span>
+          </span>
+        </div>
+
+        <div className="absolute left-0 top-full pt-2 hidden group-hover/menu:flex bg-white border shadow-2xl rounded-xl w-[640px] p-6 z-40">
+          <div className="grid grid-cols-2 gap-6">
+            {/* Blog Agent */}
+            <Link href="/services/blog-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                <NotebookPen className="h-5 w-5 text-blue-600" />
               </div>
-            </div>
+              <div>
+                <div className="flex items-center gap-2 font-medium text-gray-800">
+                  Blog Agent
+                  <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-md">NEW</span>
+                </div>
+                <p className="text-sm text-gray-500">Multi-purpose blog generator with SEO-ready content</p>
+              </div>
+            </Link>
 
-            <nav className="hidden md:flex gap-6">
-              <Link href="#services" className="text-sm font-medium hover:text-primary">
-                Services
-              </Link>
-              <Link href="#pricing" className="text-sm font-medium hover:text-primary">
-                Pricing
-              </Link>
-              <Link href="#contact" className="text-sm font-medium hover:text-primary">
-                Contact
-              </Link>
-            </nav>
+            {/* Social Media Automation */}
+            <Link href="/services/social-media-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100">
+                <SquareChartGantt className="h-5 w-5 text-pink-600" />
+              </div>
+              <div>
+                <div className="font-medium text-gray-800">Social Media Automation</div>
+                <p className="text-sm text-gray-500">Schedule, optimize, and automate social campaigns</p>
+              </div>
+            </Link>
 
-            <div className="flex items-center gap-4">
-            <Button size="lg" className="hover:bg-blue-700" onClick={() => {
-  setSelectedCalLink("awwtomation/awwtomation-consultation")
-  setCalModalOpen(true)
-}}>
+            {/* SEO Automation */}
+            <Link href="/services/seo-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
+                <Code className="h-5 w-5 text-green-600" />
+              </div>
+              <div>
+                <div className="font-medium text-gray-800">SEO Automation</div>
+                <p className="text-sm text-gray-500">AI meta generation, audits, and keyword clustering</p>
+              </div>
+            </Link>
+
+            {/* CRM Automation */}
+            <Link href="/services/crm-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
+                <Cog className="h-5 w-5 text-yellow-600" />
+              </div>
+              <div>
+                <div className="font-medium text-gray-800">CRM Automation</div>
+                <p className="text-sm text-gray-500">Lead flows, auto-reminders & 3rd-party integration</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
+      <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
+    </nav>
+    
+    <div className="hidden md:flex items-center gap-4">
+      <Button size="lg" className="hover:bg-blue-700" onClick={() => {
+        setSelectedCalLink("awwtomation/awwtomation-consultation");
+        setCalModalOpen(true);
+      }}>
+        Automate Now
+        <ChevronRight className="ml-1 h-4 w-4" />
+      </Button>
+      
+    </div>
+    <div ref={menuRef} className="md:hidden block" style={{ zIndex: 60 }}>
+    <button
+  onClick={(e) => {
+    e.stopPropagation()
+    setMobileMenuOpen(prev => !prev)
+  }}
+  className="p-2 rounded-md border border-gray-300"
+>
+  {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+</button>
+
+
+      {/* Mobile Menu Panel */}
+      {mobileMenuOpen && (
+        <div ref={menuRef} className="fixed left-0 right-0 top-16 z-50 bg-white border-t shadow px-4 py-6 space-y-4 md:hidden">
+          <Link href="/services/blog-automation" className="block font-medium text-gray-700">Blog Agent</Link>
+          <Link href="/services/social-media-automation" className="block font-medium text-gray-700">Social Media Automation</Link>
+          <Link href="/services/seo-automation" className="block font-medium text-gray-700">SEO Automation</Link>
+          <Link href="/services/crm-automation" className="block font-medium text-gray-700">CRM Automation</Link>
+          <Link href="#pricing" className="block text-gray-700">Pricing</Link>
+          <Link href="#contact" className="block text-gray-700">Contact</Link>
+          <Button size="lg" className="w-full hover:bg-blue-700" onClick={() => {
+            setSelectedCalLink("awwtomation/awwtomation-consultation")
+            setCalModalOpen(true)
+          }}>
             Automate Now
             <ChevronRight className="ml-1 h-4 w-4" />
           </Button>
-            </div>
-          </div>
-        </header>
+        </div>
+      )}
+        </div>
+  </div>
+
+
+  
+</header>
+
 
         <main className="flex-1">
           {/* Hero Section */}
