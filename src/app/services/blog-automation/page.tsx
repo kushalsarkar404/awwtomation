@@ -22,8 +22,6 @@ import {
   ChevronLeft,
   Instagram,
   Linkedin,
-  BookOpen,
-  TrendingUp,
   Users,
   Zap,
   Target,
