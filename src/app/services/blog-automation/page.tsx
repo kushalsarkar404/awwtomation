@@ -3560,7 +3560,7 @@ export default function BlogAutomationPage() {
         },
         body: JSON.stringify(formData),
       })
-
+console.log(payload)
       const result =await response.json()
       if (result.success === "true") {
         setFeedbackMessage(result.message || "Your Blog is Getting Read. Check your email in 3 minutes!")
