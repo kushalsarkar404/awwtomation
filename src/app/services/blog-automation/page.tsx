@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { CalModal } from "@/components/cal-modal"
 import {
   PenTool,
@@ -3510,6 +3510,10 @@ category:'Real Estate Market'
 
 export default function BlogAutomationPage() {
   const menuRef = useRef(null)
+  const [feedbackOpen, setFeedbackOpen] = useState(false)
+  const [feedbackMessage, setFeedbackMessage] = useState("")
+  const [isError, setIsError] = useState(false)
+
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
   const [blogModalOpen, setBlogModalOpen] = useState(false)
@@ -3529,7 +3533,7 @@ export default function BlogAutomationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const validateBusinessEmail = (email: string) => {
-    const businessDomains = ["gmail.com", "hotmail.com", "outlook.com", "yahoo.com"]
+    const businessDomains = ["gmail.com", "hotmail.com", "outlook.com", "yahoo.com", "icloud.com", ]
     const domain = email.split("@")[1]?.toLowerCase()
     return domain && !businessDomains.includes(domain)
   }
@@ -3538,7 +3542,7 @@ export default function BlogAutomationPage() {
     e.preventDefault()
 
     if (!validateBusinessEmail(formData.email)) {
-      alert("Please use a business email address (not Gmail, Hotmail, or Outlook)")
+      alert("Please use a business email address (not Gmail, Hotmail, Outlook, etc.)")
       return
     }
 
@@ -3554,11 +3558,14 @@ export default function BlogAutomationPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
-        alert("Form submitted successfully!")
+      const result =await response.json()
+      if (result.success === "true") {
+        setFeedbackMessage(result.message || "Your Blog is Getting Read. Check your email in 3 minutes!")
+        setIsError(false)
+        setFeedbackOpen(true)
         setFormData({
           blog:"",
           name: "",
@@ -3571,11 +3578,15 @@ export default function BlogAutomationPage() {
           style: "",
         })
       } else {
-        throw new Error("Submission failed")
+        setFeedbackMessage(result.reason || "Something went wrong.")
+        setIsError(true)
+        setFeedbackOpen(true)
       }
     } catch (error) {
-      console.log(error)
-      alert("There was an error submitting the form. Please try again.")
+      console.error(error)
+      setFeedbackMessage("There was an error submitting the form. Please try again.")
+      setIsError(true)
+      setFeedbackOpen(true)
     } finally {
       setIsSubmitting(false)
     }
@@ -3747,6 +3758,32 @@ export default function BlogAutomationPage() {
 
   
 </header>
+<Dialog open={feedbackOpen} onOpenChange={setFeedbackOpen}>
+  <DialogContent className="max-w-md w-full text-center">
+    <DialogHeader>
+      <DialogTitle className={isError ? "text-red-600" : "text-green-600"}>
+        {isError ? "Oops!" : "Success"}
+      </DialogTitle>
+      <DialogDescription className="pt-2 text-base text-muted-foreground">
+        {feedbackMessage}
+      </DialogDescription>
+    </DialogHeader>
+
+    <div className="mt-4 flex justify-center">
+    <Button size="lg" className="hover:bg-blue-700" onClick={() => {
+        setSelectedCalLink("awwtomation/awwtomation-consultation");
+        setCalModalOpen(true);
+        setFeedbackOpen(false);
+      }}>
+        Automate More
+        <ChevronRight className="ml-1 h-4 w-4" />
+      </Button>
+    </div>
+  </DialogContent>
+</Dialog>
+
+
+
 
       {/* Hero Section with Form */}
       <section className="w-full min-h-[90vh] flex items-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
