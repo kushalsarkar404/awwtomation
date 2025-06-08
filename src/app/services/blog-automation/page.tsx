@@ -31,8 +31,6 @@ import {
   Building2,
   X, Menu, Cog, NotebookPen, SquareChartGantt, Code
 } from "lucide-react"
-import { title } from "process"
-import { Content } from "next/font/google"
 
 // Sample blog data
 const blogSamples = {
