@@ -10,7 +10,7 @@ import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
 import RealEstateBanner from "@/components/real-estate-banner"
 import { ParallaxMouse } from "@/components/parallax-mouse"
-
+import TrustpilotCollector from '@/components/TrustPilotCollector';
 
 export default function LandingPage() {
   const menuRef = useRef(null)
@@ -189,7 +189,7 @@ export default function LandingPage() {
       <div className="w-full h-full bg-background"></div>
     </Parallax>
   </div>
-
+  
   {/* Decorative Parallax Blurs */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
     <Parallax speed={-15} className="absolute -top-20 -left-20">
@@ -205,11 +205,13 @@ export default function LandingPage() {
 
   {/* Main Hero Content */}
   <div className="container px-4 md:px-6 relative z-20">
+    
   <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
 
       {/* Text Block */}
       <div className="flex flex-col justify-center space-y-6 text-center lg:text-left">
         <Parallax speed={25} className="space-y-2">
+        
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
             We Save You Time. You Make More Money!
           </h1>
@@ -229,7 +231,9 @@ export default function LandingPage() {
           <Button variant="outline" size="lg" onClick={() => setMessageModalOpen(true)}>
             Not Now? Message Us
           </Button>
+   
         </Parallax>
+
       </div>
 
       {/* Hero Image */}
@@ -258,7 +262,11 @@ export default function LandingPage() {
           {/*tools marquee*/}
           {/* Tools Marquee */}
           <section className="w-full py-8 bg-muted/50">
+          
   <div className="container px-4 md:px-6">
+  <section className="mb-8 mt-8">
+        <TrustpilotCollector />
+      </section>
     <div className="flex flex-col items-center justify-center space-y-4 text-center">
       <p className="text-sm text-muted-foreground">TRUSTED BY BUSINESSES USING</p>
       <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16">
@@ -469,7 +477,11 @@ export default function LandingPage() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Testimonials</div>
+                  <section className="mb-8 mt-8">
+        <TrustpilotCollector />
+      </section>
                   <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">What Our Clients Say</h2>
+                  
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Hear from businesses that have transformed their operations with our automation solutions.
                   </p>
@@ -509,6 +521,7 @@ export default function LandingPage() {
                   </Card>
                 ))}
               </div>
+             
             </div>
           </section>
 
