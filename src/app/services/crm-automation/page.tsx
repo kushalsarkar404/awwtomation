@@ -1054,7 +1054,7 @@ export default function CRMAutomationPage() {
         {/* Call to Action */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Let's Automate Your CRM Today</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Let`&apos;`s Automate Your CRM Today</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               Don not let manual tasks hold your business back. Let`&apos;`s build a smarter, automated CRM that scales with you
               and delivers measurable results.
