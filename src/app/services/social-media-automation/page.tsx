@@ -725,7 +725,7 @@ export default function SocialMediaAutomationPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
                     Automatically post at optimal times for each region.
-                    <span className="font-semibold text-blue-600"> Reach global audiences</span> when they`&apos;`re most
+                    <span className="font-semibold text-blue-600"> Reach global audiences</span> when they&apos;re most
                     active.
                   </p>
                 </div>
@@ -785,7 +785,7 @@ export default function SocialMediaAutomationPage() {
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-3xl md:text-4xl font-bold">Perfect for Growing Businesses</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Whether you`&apos;`re a solo entrepreneur or managing multiple brands, our automation scales with your needs
+                Whether you&apos;re a solo entrepreneur or managing multiple brands, our automation scales with your needs
                 and delivers measurable results.
               </p>
             </div>
@@ -845,7 +845,7 @@ export default function SocialMediaAutomationPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation?</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                We don`&apos;`t just provide tools - we deliver complete automation solutions that transform how you manage
+                We don&apos;t just provide tools - we deliver complete automation solutions that transform how you manage
                 social media and grow your business.
               </p>
             </div>

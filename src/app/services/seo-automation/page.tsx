@@ -903,7 +903,7 @@ export default function SEOAutomationPage() {
                     Audit & Roadmap
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    We`&apos;`ll review your current setup and propose a tailored SEO automation roadmap.
+                    We&apos;ll review your current setup and propose a tailored SEO automation roadmap.
                   </p>
                 </div>
               </div>
@@ -956,7 +956,7 @@ export default function SEOAutomationPage() {
             </div>
             <div className="pt-8">
               <p className="text-muted-foreground mb-6">
-                Let`&apos;`s transform how you approach SEO—making it more efficient, data-driven, and scalable with our SEO
+                Let&apos;s transform how you approach SEO—making it more efficient, data-driven, and scalable with our SEO
                 automation expertise.
               </p>
               <Button
