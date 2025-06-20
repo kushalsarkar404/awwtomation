@@ -17,7 +17,6 @@ import {
   PenTool,
   FileText,
   Youtube,
-  Twitter,
   ChevronRight,
   ChevronLeft,
   Instagram,

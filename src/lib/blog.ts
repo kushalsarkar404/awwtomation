@@ -39,6 +39,7 @@ export async function getPostBySlug(slug: string) {
       coverImage: data.coverImage,
     }
   } catch (error) {
+    console.log(error)
     return null
   }
 }

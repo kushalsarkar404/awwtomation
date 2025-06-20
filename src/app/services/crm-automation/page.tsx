@@ -775,7 +775,7 @@ export default function CRMAutomationPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">Proven Results & Measurable ROI</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Our CRM automation delivers immediate impact and long-term growth. Here's what you can expect from your
+                Our CRM automation delivers immediate impact and long-term growth. Here is what you can expect from your
                 investment.
               </p>
             </div>
@@ -891,7 +891,7 @@ export default function CRMAutomationPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for CRM Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                We don't just implement tools—we transform your entire customer lifecycle with intelligent automation
+                We do not just implement tools—we transform your entire customer lifecycle with intelligent automation
                 that delivers measurable results.
               </p>
             </div>
@@ -937,7 +937,7 @@ export default function CRMAutomationPage() {
                     Dedicated Support
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    From implementation to long-term success, we're your automation partner.
+                    From implementation to long-term success, we are your automation partner.
                     <span className="font-semibold text-purple-600"> 24/7 expert support</span> and ongoing
                     optimization.
                   </p>
@@ -1056,7 +1056,7 @@ export default function CRMAutomationPage() {
           <div className="max-w-5xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold">Let's Automate Your CRM Today</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Don't let manual tasks hold your business back. Let's build a smarter, automated CRM that scales with you
+              Don not let manual tasks hold your business back. Let`&apos;`s build a smarter, automated CRM that scales with you
               and delivers measurable results.
             </p>
             <div className="pt-8">
