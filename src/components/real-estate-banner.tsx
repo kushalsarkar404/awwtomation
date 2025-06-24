@@ -80,8 +80,8 @@ interface RealEstateBannerProps {
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                   <h2 className="text-sm font-semibold text-emerald-800 dark:text-emerald-200 flex items-center gap-1">
-                    <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full text-xs font-medium">
-                      Coming Soon!!
+                    <span className="bg-blue-700 dark:bg-blue-700 text-white dark:text-white px-2 py-0.5 rounded-full text-xs font-bold">
+                    Live
                     </span>
                     Real Estate Automation
                   </h2>
