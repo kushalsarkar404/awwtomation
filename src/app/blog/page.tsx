@@ -6,7 +6,9 @@ export default function BlogPage() {
   const posts = getSortedPostsData()
 
   return (
+    
     <div className="max-w-5xl mx-auto px-4 py-12">
+        
       {/* Back to homepage */}
       <div className="mb-8">
         <Link href="/" className="text-sm text-muted-foreground hover:underline">
