@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -7,9 +8,8 @@ import { Badge } from "@/components/ui/badge"
 import { ParallaxProvider } from "react-scroll-parallax"
 import { CalModal } from "@/components/cal-modal"
 import {
-    Mail,
-  Search,
-  BarChart3,
+  Mail,
+  Users,
   ChevronRight,
   TrendingUp,
   Target,
@@ -20,13 +20,17 @@ import {
   NotebookPen,
   SquareGanttChartIcon as SquareChartGantt,
   Code,
-  FileText,
   Zap,
   Eye,
+  Heart,
+  ShoppingCart,
+  BarChart3,
+  Clock,
+  Send,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function SEOAutomationPage() {
+export default function EmailMarketingAutomationPage() {
   const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
@@ -38,13 +42,16 @@ export default function SEOAutomationPage() {
         setMobileMenuOpen(false)
       }
     }
+
     if (mobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside)
     } else {
       document.removeEventListener("mousedown", handleClickOutside)
     }
+
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [mobileMenuOpen])
+
   return (
     <ParallaxProvider>
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
@@ -180,7 +187,7 @@ export default function SEOAutomationPage() {
           <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">Email Marketing Automation</Link>
           <Link href="#pricing" className="block text-gray-700">Pricing</Link>
           <Link href="#contact" className="block text-gray-700">Contact</Link>
-          <Link href="/about" className="block font-medium text-gray-700">About</Link>
+          <Link href="/about" className="block text-gray-700">About</Link>
           <Button size="lg" className="w-full hover:bg-blue-700" onClick={() => {
             setSelectedCalLink("awwtomation/awwtomation-consultation")
             setCalModalOpen(true)
@@ -196,16 +203,16 @@ export default function SEOAutomationPage() {
 
   
 </header>
-        {/* Hero Section */}
-        {/* Hero Section with Floating SEO Icons */}
-        <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-green-50 to-emerald-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+
+        {/* Hero Section with Floating Email Marketing Icons */}
+        <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
           <div className="hidden sm:flex justify-center w-full">
-            {/* Floating SEO Icons */}
+            {/* Floating Email Marketing Icons */}
             <div className="absolute inset-0 z-0">
-              {/* Google */}
+              {/* Email */}
               <div className="absolute floating-logo floating-logo-1" style={{ top: "15%", left: "10%" }}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Search className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
 
@@ -216,65 +223,69 @@ export default function SEOAutomationPage() {
                 </div>
               </div>
 
-              {/* SEO Trends */}
+              {/* Users/Segmentation */}
               <div className="absolute floating-logo floating-logo-3" style={{ top: "60%", left: "8%" }}>
-                <div className="w-11 h-11 md:w-15 md:h-15 bg-green-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <TrendingUp className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                <div className="w-11 h-11 md:w-15 md:h-15 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Users className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
               </div>
 
-              {/* Keywords */}
+              {/* Target/Personalization */}
               <div className="absolute floating-logo floating-logo-4" style={{ top: "40%", right: "8%" }}>
-                <div className="w-13 h-13 md:w-17 md:h-17 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                <div className="w-13 h-13 md:w-17 md:h-17 bg-green-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
                   <Target className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
 
-              {/* Global SEO */}
+              {/* Shopping Cart */}
               <div className="absolute floating-logo floating-logo-5" style={{ top: "70%", right: "20%" }}>
                 <div className="w-10 h-10 md:w-14 md:h-14 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Globe className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                  <ShoppingCart className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
               </div>
 
-              {/* Content */}
+              {/* Heart/Engagement */}
               <div className="absolute floating-logo floating-logo-6" style={{ top: "20%", left: "25%" }}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-teal-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <FileText className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-pink-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <Heart className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
 
-              {/* Speed/Performance */}
+              {/* Clock/Automation */}
               <div className="absolute floating-logo floating-logo-7" style={{ top: "50%", left: "20%" }}>
                 <div className="w-9 h-9 md:w-13 md:h-13 bg-yellow-500 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Zap className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                  <Clock className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
               </div>
 
-              {/* Visibility */}
+              {/* Send */}
               <div className="absolute floating-logo floating-logo-8" style={{ top: "35%", left: "35%" }}>
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-pink-500 rounded-xl flex items-center justify-center shadow-lg opacity-15 hover:opacity-35 transition-opacity">
-                  <Eye className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-teal-500 rounded-xl flex items-center justify-center shadow-lg opacity-15 hover:opacity-35 transition-opacity">
+                  <Send className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
               </div>
             </div>
           </div>
+
           {/* Gradient Overlay for Better Text Contrast */}
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/30 via-transparent to-background/20" />
 
           {/* Hero Content */}
           <div className="z-20 text-center max-w-3xl mx-auto space-y-6 relative">
             <Badge variant="secondary" className="bg-white/90 text-slate-700 border-slate-200 shadow-sm">
-              SEO Automation
+              Email Marketing Automation
             </Badge>
+
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-              Data-Driven SEO Automation Made Simple
+              Automate Your Email Marketing for Unprecedented Growth
             </h1>
+
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              Automatically collect and visualize analytics, track keyword positions, and generate optimized content
-              with AI. Integrate with your CMS for hands off publishing and republishing, empowering you to maintain a
-              competitive edge in search.
+              Effortlessly nurture leads, boost conversions, and build lasting customer loyalty with advanced email
+              marketing automation. Deliver personalized, timely, and highly relevant messages to your audience,
+              ensuring the right message reaches the right person at the perfect moment.
             </p>
+
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
                 size="lg"
@@ -284,7 +295,7 @@ export default function SEOAutomationPage() {
                   setCalModalOpen(true)
                 }}
               >
-                Start Optimizing <ChevronRight className="ml-1 h-4 w-4" />
+                Start Automating <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -296,13 +307,11 @@ export default function SEOAutomationPage() {
             50% { transform: translateY(-10px) translateX(-15px) rotate(-3deg); }
             75% { transform: translateY(-25px) translateX(5px) rotate(2deg); }
           }
-
           @keyframes float2 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             33% { transform: translateY(-15px) translateX(-20px) rotate(-4deg); }
             66% { transform: translateY(-30px) translateX(10px) rotate(6deg); }
           }
-
           @keyframes float3 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             20% { transform: translateY(-18px) translateX(8px) rotate(3deg); }
@@ -310,13 +319,11 @@ export default function SEOAutomationPage() {
             60% { transform: translateY(-22px) translateX(-5px) rotate(4deg); }
             80% { transform: translateY(-8px) translateX(15px) rotate(-1deg); }
           }
-
           @keyframes float4 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             30% { transform: translateY(-25px) translateX(-8px) rotate(-5deg); }
             70% { transform: translateY(-12px) translateX(18px) rotate(3deg); }
           }
-
           .floating-logo-1 { animation: float1 12s ease-in-out infinite; }
           .floating-logo-2 { animation: float2 15s ease-in-out infinite; }
           .floating-logo-3 { animation: float3 18s ease-in-out infinite; }
@@ -325,268 +332,133 @@ export default function SEOAutomationPage() {
           .floating-logo-6 { animation: float2 13s ease-in-out infinite reverse; }
           .floating-logo-7 { animation: float3 17s ease-in-out infinite reverse; }
           .floating-logo-8 { animation: float4 11s ease-in-out infinite reverse; }
-
           .floating-logo {
             filter: blur(0.5px);
           }
-
           .floating-logo:hover {
             filter: blur(0px);
           }
         `}</style>
         </section>
-        {/* What is SEO Automation */}
+
+        {/* Why Email Marketing Automation */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">SEO Reporting Automation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Why Email Marketing Automation is Essential for Your Business
+            </h2>
             <p className="text-muted-foreground md:text-xl">
-              Automatically gather, consolidate, and visualize data from platforms like Google Analytics 4 (GA4) and
-              Google Search Console (GSC) for effective SEO performance tracking.
+              Manual data entry, delayed follow-ups, and generic messaging lead to missed opportunities and disengaged
+              customers. Our email marketing automation services eliminate these inefficiencies, integrating seamlessly
+              with your existing systems to provide a holistic view of your customer interactions.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Custom Dashboards & Scheduled Reports</h3>
+                <h3 className="text-xl font-semibold">Real-Time Updates & Personalization</h3>
                 <p className="text-muted-foreground">
-                  Configure SEO dashboards tailored to your KPIs (organic traffic growth, bounce rate improvements,
-                  conversion rate optimization) and set scheduled email or Slack reports (daily/weekly/monthly) so
-                  stakeholders stay informed without manual exports.
+                  Enable real-time updates and hyper-personalized communication with data-driven strategies that fuel
+                  sustainable growth. Every interaction is tracked and leveraged for better customer experiences.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Visualization & Insights</h3>
+                <h3 className="text-xl font-semibold">Complete Customer Journey Automation</h3>
                 <p className="text-muted-foreground">
-                  Generate charts showing SEO trends over time, compare periods for seasonal SEO performance, identify
-                  top-performing pages, and highlight issues needing attention (crawl errors, indexation drops).
+                  Whether you're onboarding new subscribers, recovering abandoned carts, or re-engaging dormant
+                  customers, our email automation workflows keep your team productive and your customer data accurate,
+                  leading to higher engagement and better ROI.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SEO Tool-Specific Automation */}
+        {/* Core Email Marketing Automation Capabilities */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
-            {/* Keyword Rank Tracking */}
+            {/* Intelligent Lead Nurturing */}
             <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center">
-                Keyword Rank Tracking & Page Performance Monitoring
+                Intelligent Lead Nurturing & Welcome Sequences
               </h2>
               <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
-                Continuously observe how your keywords perform in search and how individual pages fare in terms of
-                clicks, impressions, and position for better keyword optimization.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                      <Search className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                      Automated Rank Checks
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Schedule daily or weekly rank tracking for your target keyword sets across regions and devices.
-                      Detect ranking fluctuations early.
-                    </p>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                      <BarChart3 className="w-6 h-6 text-green-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                      Automated Page Insights
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Track top performing pages & their metrics (click-through rate, average position) to prioritize
-                      optimization.
-                    </p>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                      <Target className="w-6 h-6 text-purple-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                      Competitive Benchmarking
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Include competitor keywords to see relative positions and spot new SEO opportunities.
-                    </p>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                      <TrendingUp className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                      Historical Data & Trends
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Keep archives of past performance to analyze seasonality and its impact on organic traffic.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* AI-Powered Content Creation */}
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center">AI-Powered Content Creation</h2>
-              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
-                Harness AI to draft content at scale while ensuring alignment with your brand voice and SEO best
-                practices for higher search rankings.
+                Guide your prospects through the sales funnel with automated, behavior-driven email sequences that
+                convert leads into loyal customers.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                      <Target className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                      Topic & Keyword Research
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Generate a prioritized list of content ideas and longtail keyword opportunities based on your
-                      niche and competitor analysis.
-                    </p>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                      <FileText className="w-6 h-6 text-green-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                      Draft Generation
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Produce SEO-friendly blog posts, articles, meta titles/descriptions, product pages, or FAQs
-                      tailored to target keywords.
-                    </p>
-                  </div>
-                </div>
                 <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
                     <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                      <Zap className="w-6 h-6 text-purple-600" />
+                      <Mail className="w-6 h-6 text-purple-600" />
                     </div>
                     <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                      On-Page Optimization
+                      Automated Welcome Series
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Automatically analyze drafts for keyword usage, readability, structure, internal linking
-                      opportunities, and image alt-text recommendations.
+                      Instantly greet new subscribers with engaging emails that introduce your brand, highlight key
+                      offerings, and set expectations for future communications.
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Content Republishing */}
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center">Content Republishing & Distribution</h2>
-              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
-                Ensure your evergreen content stays fresh and reaches the right audiences across channels,
-                automatically.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                      <FileText className="w-6 h-6 text-teal-600" />
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                      <Clock className="w-6 h-6 text-blue-600" />
                     </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                      Content Audit & Republish
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                      Drip Campaigns
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Identify top-performing older posts, check for outdated statistics, and automatically publish
-                      refreshed versions with updated timestamps.
+                      Set up pre-scheduled campaigns to deliver valuable content over time, educating leads and moving
+                      them closer to conversion without manual intervention.
                     </p>
                   </div>
                 </div>
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors duration-300">
-                      <Globe className="w-6 h-6 text-indigo-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors duration-300">
-                      Syndication & Social Sharing
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Automatically share new or refreshed content to social platforms or email newsletters via API
-                      integrations with UTM-tagged links.
-                    </p>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                      <BarChart3 className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                      Tracking & Attribution
-                    </h3>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Tag redistributed content with UTM parameters and feed results back into the reporting dashboard
-                      to measure engagement and conversions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* CMS Integration */}
-            <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center">CMS Integration</h2>
-              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
-                Seamlessly plug into your content management system (WordPress, Drupal, headless CMS, custom platforms)
-                for end-to-end SEO automation workflows.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
                     <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                      <Zap className="w-6 h-6 text-green-600" />
+                      <Users className="w-6 h-6 text-green-600" />
                     </div>
                     <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                      Automatic Publishing
+                      Onboarding Flows
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Push AI-generated or refreshed content directly into drafts or live posts, with options for
-                      scheduling, categorization, and metadata population.
+                      Streamline customer onboarding with automated emails providing essential information, tutorials,
+                      and support resources for a smooth start.
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Behavior-Triggered Campaigns */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">Behavior-Triggered Campaigns</h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Leverage customer actions (or inactions) to send perfectly timed, relevant messages that drive
+                engagement and sales automatically.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                      <Code className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                      <ShoppingCart className="w-6 h-6 text-orange-600" />
                     </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                      Template & Schema Injection
+                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                      Abandoned Cart Recovery
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Automate insertion of schema markup (FAQ, HowTo, Product) based on content type; ensure consistent
-                      meta tags across pages.
+                      Automatically send reminders and enticing offers to customers who leave items in their cart,
+                      significantly boosting sales recovery rates.
                     </p>
                   </div>
                 </div>
+
                 <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
@@ -594,11 +466,219 @@ export default function SEOAutomationPage() {
                       <Eye className="w-6 h-6 text-purple-600" />
                     </div>
                     <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                      User Permissions & Review Flows
+                      Browse Abandonment
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Configure roles so that automated steps occur in staging or drafts first, with human approvals
-                      before going live.
+                      Re-engage visitors who viewed specific products but didn't convert, with personalized
+                      recommendations and incentives.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                      <Heart className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                      Post-Purchase Follow-ups
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Enhance satisfaction and encourage repeat business with automated thank-you notes, usage tips, and
+                      cross-sell opportunities.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                      <TrendingUp className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                      Re-engagement Campaigns
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Identify and target inactive subscribers with tailored messages designed to rekindle interest and
+                      bring them back.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Advanced Segmentation & Personalization */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">Advanced Segmentation & Personalization</h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Deliver truly personalized emails that resonate with your audience by segmenting them based on their
+                unique characteristics and behaviors.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
+                      <Zap className="w-6 h-6 text-teal-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
+                      Dynamic Content
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Automatically tailor email content, product recommendations, and offers based on individual
+                      preferences, purchase history, and engagement levels.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors duration-300">
+                      <Target className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors duration-300">
+                      Audience Segmentation
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Divide your email list into highly specific groups using demographics, interests, past
+                      interactions, and lifecycle stage for maximum relevance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
+                      <BarChart3 className="w-6 h-6 text-yellow-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-yellow-700 transition-colors duration-300">
+                      A/B Testing Automation
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Continuously optimize campaigns by automatically testing different subject lines, CTAs, and
+                      content variations to identify top performers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Automated Reporting & Analytics */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">Automated Reporting & Analytics</h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Gain deep insights into your email marketing performance with real-time dashboards and comprehensive
+                reports that drive data-driven decisions.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                      <BarChart3 className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                      Custom Dashboards
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Track key metrics like open rates, click-through rates, conversion rates, and revenue generated
+                      from your automated campaigns in real-time.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                      <TrendingUp className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                      Performance Monitoring
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Identify trends, pinpoint areas for improvement, and make data-driven decisions to continuously
+                      optimize your email marketing strategy.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                      <Globe className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                      Attribution Tracking
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Understand the full impact of your email automation on your overall marketing and sales funnels
+                      with comprehensive attribution analysis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Seamless Integrations */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">
+                Seamless Integrations & CRM Email Marketing
+              </h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Connect your email automation with your entire tech stack for a unified customer view and streamlined
+                operations across all touchpoints.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                      <Cog className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                      CRM Integration
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Sync customer data between your email platform and CRM (HubSpot, Salesforce) to ensure consistent
+                      messaging and empower sales teams with rich insights.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
+                      <ShoppingCart className="w-6 h-6 text-teal-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
+                      E-commerce Platform Sync
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Automate order confirmations, shipping updates, and product recommendations directly from your
+                      e-commerce store for seamless customer experiences.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors duration-300">
+                      <Globe className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors duration-300">
+                      Marketing Automation Ecosystem
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Integrate with other marketing tools, analytics platforms, and customer service systems to create
+                      a comprehensive marketing automation solution.
                     </p>
                   </div>
                 </div>
@@ -607,30 +687,23 @@ export default function SEOAutomationPage() {
           </div>
         </section>
 
-        {/* Workflow Integrations */}
+        {/* Benefits & ROI */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Benefits & ROI</h2>
+            <h2 className="text-3xl font-bold">Benefits & ROI of Email Marketing Automation</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <Clock className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Time Savings
+                    Increased Efficiency & Time Savings
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Free up SEO specialists and content teams from repetitive data gathering, manual reporting, and
-                    basic content drafting.
+                    Automate repetitive tasks like sending follow-ups, segmenting lists, and scheduling campaigns,
+                    freeing up your team to focus on strategy and creativity.
                   </p>
                 </div>
               </div>
@@ -639,21 +712,14 @@ export default function SEOAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                      />
-                    </svg>
+                    <TrendingUp className="w-6 h-6 text-green-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Data-Driven Decisions
+                    Higher Conversions & Revenue
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Real-time insights and alerts facilitate prompt actions, capitalizing on opportunities or mitigating
-                    negative trends quickly.
+                    Deliver timely, personalized messages that guide customers through their journey, leading to
+                    increased engagement, sales, and customer lifetime value.
                   </p>
                 </div>
               </div>
@@ -662,21 +728,14 @@ export default function SEOAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                    <Heart className="w-6 h-6 text-purple-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Scalability
+                    Enhanced Customer Engagement
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Publish and update content at scale without proportionally increasing headcount, enabled by
-                    AI-driven content automation.
+                    Build stronger relationships by consistently providing relevant and valuable content, fostering
+                    loyalty and trust with your audience.
                   </p>
                 </div>
               </div>
@@ -685,21 +744,14 @@ export default function SEOAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <Zap className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Consistency & Quality
+                    Scalable Growth
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automated checks ensure SEO best practices are applied uniformly; AI-assisted drafting maintains
-                    brand voice.
+                    Allow your email marketing efforts to grow with your business without proportionally increasing
+                    manual workload or resources.
                   </p>
                 </div>
               </div>
@@ -708,21 +760,14 @@ export default function SEOAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
+                    <BarChart3 className="w-6 h-6 text-teal-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Better Resource Allocation
+                    Data-Driven Decisions
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Teams can focus on high-level strategy, creative ideation, and complex problem-solving rather than
-                    manual chores.
+                    Access comprehensive analytics to understand what works, optimize your campaigns, and make informed
+                    strategic choices for better ROI.
                   </p>
                 </div>
               </div>
@@ -741,10 +786,11 @@ export default function SEOAutomationPage() {
                     </svg>
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors duration-300">
-                    Improved ROI
+                    Reduced Errors & Costs
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Better resource allocation and automated processes lead to improved ROI from SEO investments.
+                    Minimize human error and operational costs associated with manual email management while improving
+                    overall campaign effectiveness.
                   </p>
                 </div>
               </div>
@@ -752,10 +798,14 @@ export default function SEOAutomationPage() {
           </div>
         </section>
 
-        {/* Local SEO */}
+        {/* Why Choose Awwtomation */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-4xl mx-auto space-y-6 text-center">
-            <h2 className="text-3xl font-bold">Why Choose Our SEO Automation Service</h2>
+            <h2 className="text-3xl font-bold">Why Choose Awwtomation for Your Email Marketing Automation?</h2>
+            <p className="text-muted-foreground text-lg">
+              At Awwtomation, we specialize in building powerful, end-to-end email marketing automation solutions that
+              are tailored to your unique business needs.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -764,14 +814,15 @@ export default function SEOAutomationPage() {
                     <Cog className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Tailored Implementation
+                    Customized Workflows
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    We adapt to your existing tech stack and business objectives—no one-size-fits-all templates. We
-                    deliver a custom SEO automation solution for your needs.
+                    We don't offer one-size-fits-all solutions. Our team designs bespoke email automation workflows that
+                    align perfectly with your customer journey and business objectives.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -779,14 +830,15 @@ export default function SEOAutomationPage() {
                     <Target className="w-6 h-6 text-green-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Expertise in SEO & Automation
+                    Expertise & Experience
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Deep experience combining SEO best practices with robust automation frameworks and AI tools. Benefit
-                    from our SEO process automation know-how.
+                    With deep knowledge in both email marketing best practices and robust automation frameworks, we
+                    deliver solutions that are both effective and efficient.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -794,26 +846,27 @@ export default function SEOAutomationPage() {
                     <Globe className="w-6 h-6 text-purple-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Transparent Communication
+                    Seamless Integration
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Regular check-ins, clear documentation, and training for your team to understand and trust the
-                    automated workflows.
+                    Leveraging our expertise in workflow automation, we ensure your email marketing platform integrates
+                    flawlessly with your existing CRM, e-commerce, and other critical business systems.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <TrendingUp className="w-6 h-6 text-orange-600" />
+                    <Heart className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Ongoing Support & Evolution
+                    Dedicated Support & Proven Results
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    As search engines and AI capabilities evolve, we keep your automation pipelines updated and
-                    effective, offering continuous SEO optimization.
+                    From initial setup and strategy development to ongoing optimization and support, Awwtomation is your
+                    partner in achieving long-term success with proven track record of transforming marketing efforts.
                   </p>
                 </div>
               </div>
@@ -821,12 +874,11 @@ export default function SEOAutomationPage() {
           </div>
         </section>
 
-        {/* Who Is This For */}
         {/* FAQ Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/20 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="w-full h-full">
-              <div className="absolute top-1/3 -left-20 w-80 h-80 bg-green-200/30 rounded-full blur-3xl"></div>
+              <div className="absolute top-1/3 -left-20 w-80 h-80 bg-purple-200/30 rounded-full blur-3xl"></div>
               <div className="absolute bottom-1/3 -right-20 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
             </div>
           </div>
@@ -836,31 +888,36 @@ export default function SEOAutomationPage() {
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">FAQ</div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Frequently Asked Questions</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Get answers to common questions about our SEO automation services.
+                  Get answers to common questions about our email marketing automation services.
                 </p>
               </div>
             </div>
             <div className="mx-auto grid max-w-3xl gap-6 py-12">
               {[
                 {
-                  question: "How soon can I see results?",
+                  question: "What types of businesses can benefit from email marketing automation?",
                   answer:
-                    "While initial automated reporting dashboards and alerts are live within days, SEO improvements depend on factors like website history, industry competition, and content volume. Many clients observe clearer insights and quicker responses to issues within the first month, with cumulative ranking gains over 3–6 months using our SEO automation best practices.",
+                    "Any business that communicates with its customers or leads via email can benefit. This includes e-commerce stores, SaaS companies, service providers, B2B organizations, and more. If you send welcome emails, promotional offers, newsletters, or follow-ups, automation can significantly enhance your efforts.",
                 },
                 {
-                  question: "What level of human involvement remains?",
+                  question: "How quickly can I see results from email automation?",
                   answer:
-                    "Automation handles data collection, preliminary analysis, draft generation, and routine checks. You still review AI-generated drafts, approve updates, and make strategic decisions. We design workflows so human expertise is focused where it matters most in human-in-the-loop SEO automation.",
+                    "While comprehensive results build over time, many clients observe immediate improvements in efficiency and engagement within weeks. Automated welcome sequences and abandoned cart reminders often show quick returns by capturing immediate opportunities. We focus on implementing high-impact automated email campaigns first to demonstrate value rapidly.",
                 },
                 {
-                  question: "Which CMS platforms do you support?",
+                  question: "Will Awwtomation integrate with my existing email marketing platform?",
                   answer:
-                    "Common platforms (WordPress, Drupal, Joomla, headless CMSs) and custom solutions via API/webhooks. If yours is less common, we assess and develop the necessary connectors for SEO CMS integration. We've successfully integrated with 50+ different platforms.",
+                    "Our solutions are designed to be flexible and integrate with most popular email marketing platforms and CRMs that support APIs or webhooks. Whether you use Mailchimp, HubSpot, Klaviyo, or a custom setup, we can build the necessary connectors to automate your processes.",
                 },
                 {
-                  question: "How is data privacy handled?",
+                  question: "How does email automation help with personalization?",
                   answer:
-                    "We follow best practices: secure credential storage, least-privilege API access, compliance with GDPR/CCPA where applicable, and clear data retention policies in our secure SEO automation processes. Your data security is our top priority.",
+                    "Email automation allows for advanced segmentation of your audience based on their behavior, demographics, and preferences. This enables us to create dynamic content and trigger specific messages that are highly relevant to each individual, making them feel seen and valued.",
+                },
+                {
+                  question: "Is email marketing automation secure?",
+                  answer:
+                    "Yes, security and data privacy are paramount. We adhere to best practices for data handling, including secure credential storage, encrypted API connections, and compliance with relevant data protection regulations like GDPR. Your customer data is always protected within our secure email automation processes.",
                 },
               ].map((faq, i) => (
                 <Card key={i} className="text-left">
@@ -876,29 +933,32 @@ export default function SEOAutomationPage() {
           </div>
         </section>
 
-        {/* Why Awwtomation */}
+        {/* Next Steps */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Next Steps</h2>
+            <h2 className="text-3xl font-bold">Ready to Transform Your Email Marketing?</h2>
             <p className="text-muted-foreground text-lg">
-              Ready to elevate your SEO with automation? Contact us for a complimentary consultation:
+              Don't let manual tasks limit your potential. Let Awwtomation build a smarter, more effective email
+              marketing automation system that scales with your business.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Search className="w-6 h-6 text-blue-600" />
+                    <Mail className="w-6 h-6 text-blue-600" />
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">1</div>
                   <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Audit & Roadmap
+                    Strategy Review
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    We&apos;ll review your current setup and propose a tailored SEO automation roadmap.
+                    We'll review your current email strategy and propose a tailored automation roadmap for maximum
+                    impact.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -907,14 +967,15 @@ export default function SEOAutomationPage() {
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">2</div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Pilot Project
+                    Pilot Implementation
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Start with a focused pilot (automated SEO reporting + keyword rank tracking) to demonstrate value
-                    quickly.
+                    Start with focused automation (welcome sequences + abandoned cart recovery) to demonstrate immediate
+                    value and ROI.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -923,13 +984,15 @@ export default function SEOAutomationPage() {
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">3</div>
                   <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Full Deployment
+                    Full Automation Suite
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Expand automation across reporting, AI content pipelines, republishing, and CMS integration.
+                    Expand to comprehensive automation including segmentation, personalization, and advanced behavioral
+                    triggers.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -938,18 +1001,20 @@ export default function SEOAutomationPage() {
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">4</div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Ongoing Partnership
+                    Ongoing Optimization
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Continuous monitoring, optimization, and scaling as your objectives evolve.
+                    Continuous monitoring, A/B testing, and optimization as your business grows and evolves.
                   </p>
                 </div>
               </div>
             </div>
+
             <div className="pt-8">
               <p className="text-muted-foreground mb-6">
-                Let&apos;s transform how you approach SEO—making it more efficient, data-driven, and scalable with our SEO
-                automation expertise.
+                Contact us today for a complimentary consultation. We'll review your current email strategy and propose
+                a tailored roadmap to unlock efficiency, boost engagement, and drive significant revenue growth. Let's
+                make your email marketing truly Awwtomated!
               </p>
               <Button
                 size="lg"
@@ -964,6 +1029,7 @@ export default function SEOAutomationPage() {
             </div>
           </div>
         </section>
+
         {/* Footer */}
         <footer className="w-full border-t py-12 md:py-16">
           <div className="container px-4 md:px-6">
@@ -1110,6 +1176,7 @@ export default function SEOAutomationPage() {
             </div>
           </div>
         </footer>
+
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
       </div>
     </ParallaxProvider>
