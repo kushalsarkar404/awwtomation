@@ -326,11 +326,11 @@ export default function TermsPage() {
           {/* Introduction */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              These Terms and Conditions ("Terms") govern your access to and use of the website{" "}
+              These Terms and Conditions govern your access to and use of the website{" "}
               <Link href="https://www.awwtomation.com" className="text-blue-600 hover:underline">
                 https://www.awwtomation.com
               </Link>{" "}
-              (the "Site") and the automation services provided by Awwtomation ("we," "us," or "our").
+              the Site and the automation services provided by Awwtomation.
             </p>
             <p className="text-lg leading-relaxed">
               By accessing or using the Site and our Services, you agree to be bound by these Terms. If you disagree
@@ -364,7 +364,7 @@ export default function TermsPage() {
                   Awwtomation provides various business automation services, including but not limited to: blog
                   automation, CRM automation, SEO automation, and social media automation. The specific details, scope,
                   and pricing of the services will be outlined in a separate proposal, statement of work, or service
-                  agreement (the "Service Agreement") entered into between Awwtomation and the client.
+                  agreement entered into between Awwtomation and the client.
                 </p>
                 <p>
                   In the event of any conflict between these Terms and a Service Agreement, the terms of the Service
@@ -487,7 +487,7 @@ export default function TermsPage() {
               </CardHeader>
               <CardContent className="prose max-w-none">
                 <p>
-                  Our Site and Services are provided on an "as is" and "as available" basis, without any warranties of
+                  Our Site and Services are provided on an &apos;as is&apos; and &apos;as available&apos; basis, without any warranties of
                   any kind, either express or implied, including but not limited to implied warranties of
                   merchantability, fitness for a particular purpose, non-infringement, or course of performance.
                   Awwtomation does not warrant that the Services will be uninterrupted, secure, or error-free.
@@ -531,7 +531,7 @@ export default function TermsPage() {
                   You agree to defend, indemnify, and hold harmless Awwtomation and its licensees and licensors, and
                   their employees, contractors, agents, officers, and directors, from and against any and all claims,
                   damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to
-                  attorney's fees), resulting from or arising out of:
+                  attorney&apos;s fees), resulting from or arising out of:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>your use and access of the Service, by you or any person using your account and password</li>
@@ -564,7 +564,7 @@ export default function TermsPage() {
               <CardContent className="prose max-w-none">
                 <p>
                   We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
-                  revision is material, we will provide at least 30 days' notice prior to any new terms taking effect.
+                  revision is material, we will provide at least 30 days&apos; notice prior to any new terms taking effect.
                   What constitutes a material change will be determined at our sole discretion.
                 </p>
                 <p>

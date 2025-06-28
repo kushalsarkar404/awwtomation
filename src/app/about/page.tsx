@@ -372,7 +372,7 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
               <h2 className="text-3xl md:text-4xl font-bold">What We Specialize In</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
                 We craft intelligent automation solutions that transform how businesses operate, grow, and succeed in
-                today's digital landscape.
+                today&apos;s digital landscape.
               </p>
             </div>
 
@@ -388,7 +388,7 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
                     Our AI-powered blog agent generates SEO-optimized articles tailored to your brand in minutes. No
-                    more writer's block or last minute deadlines.
+                    more writer&apos;s block or last minute deadlines.
                   </p>
                 </div>
               </div>
@@ -467,7 +467,7 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                     Custom Business Process Automation
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Whether it's syncing data between tools, automating internal approvals, or integrating platforms, we
+                    Whether it&apos;s syncing data between tools, automating internal approvals, or integrating platforms, we
                     craft smart, no-code/low-code systems that save time.
                   </p>
                 </div>
@@ -484,9 +484,9 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
               Automate. Accelerate. Assert.
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Because we believe every business, big or small, deserves tools that don't just save time, but transform
+              Because we believe every business, big or small, deserves tools that don&apos;t just save time, but transform
               how they grow. Backed by a product-driven mindset and the hunger to build systems that actually work,
-              we're not just riding the automation wave — we're helping shape its future.
+              we&apos;re not just riding the automation wave — we&apos;re helping shape its future.
             </p>
           </div>
         </section>

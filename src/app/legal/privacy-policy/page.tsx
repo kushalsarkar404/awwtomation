@@ -309,7 +309,7 @@ export default function PrivacyPage() {
                   7. Third-Party Links
                 </Link>
                 <Link href="#children" className="text-blue-600 hover:text-blue-800 hover:underline">
-                  8. Children's Privacy
+                  8. Children&apos;s Privacy
                 </Link>
                 <Link href="#changes" className="text-blue-600 hover:text-blue-800 hover:underline">
                   9. Changes to This Policy
@@ -324,7 +324,7 @@ export default function PrivacyPage() {
           {/* Introduction */}
           <div className="prose prose-lg max-w-none">
             <p className="text-lg leading-relaxed">
-              This Privacy Policy describes how Awwtomation ("we," "us," or "our") collects, uses, and discloses your
+              This Privacy Policy describes how Awwtomation collects, uses, and discloses your
               information when you visit our website at{" "}
               <Link href="https://www.awwtomation.com" className="text-blue-600 hover:underline">
                 https://www.awwtomation.com
@@ -601,7 +601,7 @@ export default function PrivacyPage() {
             {/* Section 8 */}
             <Card id="children">
               <CardHeader>
-                <CardTitle className="text-xl">8. Children's Privacy</CardTitle>
+                <CardTitle className="text-xl">8. Children&apos;s Privacy</CardTitle>
               </CardHeader>
               <CardContent className="prose max-w-none">
                 <p>
@@ -624,13 +624,13 @@ export default function PrivacyPage() {
               <CardContent className="prose max-w-none">
                 <p>
                   We may update our Privacy Policy from time to time. We will notify you of any changes by posting the
-                  new Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy
+                  new Privacy Policy on this page and updating the &apos;Last Updated&apos; date at the top of this Privacy
                   Policy.
                 </p>
                 <p>
                   You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy
                   Policy are effective when they are posted on this page. For material changes, we will provide at least
-                  30 days' notice prior to the changes taking effect.
+                  30 days&apos; notice prior to the changes taking effect.
                 </p>
               </CardContent>
             </Card>
@@ -668,8 +668,8 @@ export default function PrivacyPage() {
                 <Shield className="w-12 h-12 text-green-600 mx-auto" />
                 <h3 className="text-xl font-semibold">Your Privacy Matters to Us</h3>
                 <p className="text-muted-foreground">
-                  We're committed to protecting your personal data and respecting your privacy rights. If you have any
-                  questions or concerns about how we handle your information, don't hesitate to reach out.
+                  We&apos;re committed to protecting your personal data and respecting your privacy rights. If you have any
+                  questions or concerns about how we handle your information, don&apos;t hesitate to reach out.
                 </p>
                 <Button
                   onClick={() => {

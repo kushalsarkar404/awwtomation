@@ -363,7 +363,7 @@ export default function EmailMarketingAutomationPage() {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Complete Customer Journey Automation</h3>
                 <p className="text-muted-foreground">
-                  Whether you're onboarding new subscribers, recovering abandoned carts, or re-engaging dormant
+                  Whether you&apos;re onboarding new subscribers, recovering abandoned carts, or re-engaging dormant
                   customers, our email automation workflows keep your team productive and your customer data accurate,
                   leading to higher engagement and better ROI.
                 </p>
@@ -469,7 +469,7 @@ export default function EmailMarketingAutomationPage() {
                       Browse Abandonment
                     </h3>
                     <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                      Re-engage visitors who viewed specific products but didn't convert, with personalized
+                      Re-engage visitors who viewed specific products but didn&apos;t convert, with personalized
                       recommendations and incentives.
                     </p>
                   </div>
@@ -817,7 +817,7 @@ export default function EmailMarketingAutomationPage() {
                     Customized Workflows
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    We don't offer one-size-fits-all solutions. Our team designs bespoke email automation workflows that
+                    We don&apos;t offer one-size-fits-all solutions. Our team designs bespoke email automation workflows that
                     align perfectly with your customer journey and business objectives.
                   </p>
                 </div>
@@ -938,7 +938,7 @@ export default function EmailMarketingAutomationPage() {
           <div className="max-w-5xl mx-auto text-center space-y-6">
             <h2 className="text-3xl font-bold">Ready to Transform Your Email Marketing?</h2>
             <p className="text-muted-foreground text-lg">
-              Don't let manual tasks limit your potential. Let Awwtomation build a smarter, more effective email
+              Don&apos;t let manual tasks limit your potential. Let Awwtomation build a smarter, more effective email
               marketing automation system that scales with your business.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
@@ -953,7 +953,7 @@ export default function EmailMarketingAutomationPage() {
                     Strategy Review
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    We'll review your current email strategy and propose a tailored automation roadmap for maximum
+                    We&apos;ll review your current email strategy and propose a tailored automation roadmap for maximum
                     impact.
                   </p>
                 </div>
@@ -1012,8 +1012,8 @@ export default function EmailMarketingAutomationPage() {
 
             <div className="pt-8">
               <p className="text-muted-foreground mb-6">
-                Contact us today for a complimentary consultation. We'll review your current email strategy and propose
-                a tailored roadmap to unlock efficiency, boost engagement, and drive significant revenue growth. Let's
+                Contact us today for a complimentary consultation. We&apos;ll review your current email strategy and propose
+                a tailored roadmap to unlock efficiency, boost engagement, and drive significant revenue growth. Let&apos;s
                 make your email marketing truly Awwtomated!
               </p>
               <Button

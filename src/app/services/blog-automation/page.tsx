@@ -16,11 +16,9 @@ import { CalModal } from "@/components/cal-modal"
 import {
   PenTool,
   FileText,
-  Youtube,
   ChevronRight,
   ChevronLeft,
-  Instagram,
-  Linkedin,
+
 Mail,
   Users,
   Zap,
