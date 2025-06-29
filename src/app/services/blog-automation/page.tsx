@@ -28,8 +28,7 @@ Mail,
   Building2,
   X, Menu, Cog, NotebookPen, SquareChartGantt, Code
 } from "lucide-react"
-import { Content } from "next/font/google"
-import { title } from "process"
+
 
 // Sample blog data
 const blogSamples = {
