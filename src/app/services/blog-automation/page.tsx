@@ -5244,6 +5244,7 @@ console.log(payload)
     <SelectContent>
       <SelectItem value="General Blog Agent">General Blog Agent</SelectItem>
       <SelectItem value="Real Estate Blog Agent">Real Estate Blog Agent</SelectItem>
+      <SelectItem value="Real Estate Blog Agent">Finance Blog Agent</SelectItem>
 
       {/* Disabled options with "Soon" tag */}
       <SelectItem value="Healthcare Blog Agent" disabled>
@@ -5255,12 +5256,6 @@ console.log(payload)
       <SelectItem value="Technology Blog Agent" disabled>
         <div className="flex justify-between items-center w-full">
           <span>Technology Blog Agent</span>
-          <span className="text-xs text-muted-foreground ml-2">Coming Soon</span>
-        </div>
-      </SelectItem>
-      <SelectItem value="Finance Blog Agent" disabled>
-        <div className="flex justify-between items-center w-full">
-          <span>Finance Blog Agent</span>
           <span className="text-xs text-muted-foreground ml-2">Coming Soon</span>
         </div>
       </SelectItem>
