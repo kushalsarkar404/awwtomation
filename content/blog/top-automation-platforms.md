@@ -1,5 +1,5 @@
 ---
-title: "🏆 Top 10 Automation Platforms to Boost Your Productivity in 2025"
+title: "Top 10 Automation Platforms to Boost Your Productivity in 2025"
 date: "2025-06-22"
 excerpt: "Navigate the complex world of workflow automation. Discover the best no-code and low-code platforms like Zapier, Make, and n8n to supercharge your business in 2025."
 coverImage: "/automation-platforms.png"

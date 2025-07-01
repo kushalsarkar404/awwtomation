@@ -1,5 +1,5 @@
 ---
-title: "🏅 Top 10 CRM Tools for Business Growth & Sales Success in 2025"
+title: "Top 10 CRM Tools for Business Growth & Sales Success in 2025"
 date: "2025-06-24"
 excerpt: "Choosing the right CRM tool is vital. Explore our expert curated top 10 CRM software solutions, designed to boost sales and streamline operations for your business in 2025."
 coverImage: "/top-crm-tools.png"
