@@ -36,10 +36,9 @@ export default function RootLayout({
       <link rel="canonical" href="https://www.awwtomation.com" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebSite",
   "name": "Awwtomation",
   "url": "https://www.awwtomation.com",
-  "applicationCategory": "BusinessApplication",
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
