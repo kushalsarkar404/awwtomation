@@ -445,3 +445,5 @@ Yes! These offer free plans:
 - Apptivo CRM (1 user)
 
 ---
+## Read More
+* [Go High Level CRM Automation: 7 Workflows to Boost Sales](https://www.awwtomation.com/blog/go-high-level-crm-automation-guide)
