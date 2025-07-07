@@ -1,4 +1,5 @@
---- title: "Drive Sales with Email Marketing Automation: Build Automated Funnels"
+--- 
+title: "Drive Sales with Email Marketing Automation: Build Automated Funnels"
 date: "2025-07-07"
 excerpt: "Move beyond newsletters. Learn how to use email marketing automation platforms to build automated sales funnels that nurture leads, drive real revenue, and maximize customer lifetime value."
 coverImage: "/drive-sales-email-automation.png"
