@@ -38,7 +38,7 @@ export default function LandingPage() {
     <ParallaxProvider>
      
 
-     <div className={`flex min-h-[100dvh] flex-col px-4 md:px-12 transition-all duration-300 ${bannerVisible ? 'pt-0' : ''}`}>
+     <div className={`flex min-h-[100dvh] flex-col px-4 md:px-12 transition-all duration-300`}>
 
 
       <>
