@@ -207,6 +207,8 @@ export default function BlogPage() {
                   <Link href="/services/social-media-automation" className="block font-medium text-gray-700">Social Media Automation</Link>
                   <Link href="/services/seo-automation" className="block font-medium text-gray-700">SEO Automation</Link>
                   <Link href="/services/crm-automation" className="block font-medium text-gray-700">CRM Automation</Link>
+                  <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">Email Marketing Automation</Link>
+                  <Link href="/blog" className="block font-medium text-gray-700">Blog</Link>
                   <Link href="/#pricing" className="block text-gray-700">Pricing</Link>
                   <Link href="/#contact" className="block text-gray-700">Contact</Link>
                   <Button size="lg" className="w-full hover:bg-blue-700" onClick={() => {
