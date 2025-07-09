@@ -15,12 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Awwtomation – Business Automation & CRM Workflows Made Simple",
-  description: "Automate business processes, CRM tasks, and content workflows with Awwtomation. Smart, SEO-friendly automations that save time and scale fast.",
+  title: "Awwtomation – CRM, Email & SEO Automation for Small and Medium Businesses",
+  description: "We automate CRM workflows, email marketing campaigns, SEO reports, and social media tasks using N8N, AI, and custom tools. Perfect for busy small businesses.",
   icons: {
     icon: "/favicon.png"
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -39,12 +40,67 @@ export default function RootLayout({
   "@type": "WebSite",
   "name": "Awwtomation",
   "url": "https://www.awwtomation.com",
+  "description": "CRM, Email & SEO automation services for small and medium businesses.",
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "CRM automation"
+    },
+    {
+      "@type": "Thing",
+      "name": "Email marketing automation"
+    },
+    {
+      "@type": "Thing",
+      "name": "SEO reporting automation"
+    },
+    {
+      "@type": "Thing",
+      "name": "Social media automation"
+    },
+    {
+      "@type": "Thing",
+      "name": "Blog automation"
+    }
+  ],
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Awwtomation",
+    "url": "https://www.awwtomation.com"
+  },
   "operatingSystem": "All",
   "offers": {
     "@type": "Offer",
     "price": "0",  // or your pricing
     "priceCurrency": "USD"
-  }
+  },
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "CRM Automation",
+      "url": "https://www.awwtomation.com/services/crm-automation"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Email Marketing Automation",
+      "url": "https://www.awwtomation.com/services/email-marketing-automation"
+    },
+    {
+      "@type": "WebPage",
+      "name": "SEO Automation",
+      "url": "https://www.awwtomation.com/services/seo-automation"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Social Media Automation",
+      "url": "https://www.awwtomation.com/services/social-media-automation"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Blog Agent",
+      "url": "https://www.awwtomation.com/services/blog-automation"
+    }
+  ]
 }) }} />
 
 
