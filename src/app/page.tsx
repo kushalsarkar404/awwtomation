@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check, ChevronRight, Code, Cog, Mail, NotebookPen, SquareChartGantt, Menu, X } from "lucide-react"
 import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
-import RealEstateBanner from "@/components/real-estate-banner"
+// import RealEstateBanner from "@/components/real-estate-banner"
 import { ParallaxMouse } from "@/components/parallax-mouse"
 import TrustpilotCollector from '@/components/TrustPilotCollector';
 
@@ -38,12 +38,12 @@ export default function LandingPage() {
     <ParallaxProvider>
      
 
-     <div className={`flex min-h-[100dvh] flex-col px-4 md:px-12 transition-all duration-300 ${bannerVisible ? 'pt-14' : ''}`}>
+     <div className={`flex min-h-[100dvh] flex-col px-4 md:px-12 transition-all duration-300 ${bannerVisible ? 'pt-0' : ''}`}>
 
 
       <>
     {/* Real Estate Feature Banner */}
-    <RealEstateBanner position="top" setVisible={setBannerVisible} />
+    {/* <RealEstateBanner position="top" setVisible={setBannerVisible} /> */}
 
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
   <div className="container mx-auto  flex h-16 items-center justify-between">

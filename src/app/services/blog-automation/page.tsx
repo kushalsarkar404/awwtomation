@@ -5097,8 +5097,8 @@ console.log(payload)
         </div>
       </div>
 
-      <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
-      <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
+      <Link href="/#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
+      <Link href="/#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
       <Link href="/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
       <Link href="/about" className="text-sm font-medium hover:text-primary">About</Link>
 
@@ -5135,8 +5135,8 @@ console.log(payload)
           <Link href="/services/crm-automation" className="block font-medium text-gray-700">CRM Automation</Link>
           <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700"> Email Marketing Automation
         </Link>
-          <Link href="#pricing" className="block text-gray-700">Pricing</Link>
-          <Link href="#contact" className="block text-gray-700">Contact</Link>
+          <Link href="/#pricing" className="block text-gray-700">Pricing</Link>
+          <Link href="/#contact" className="block text-gray-700">Contact</Link>
           <Link href="/about" className="block font-medium text-gray-700">
                     About
                   </Link>

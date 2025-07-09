@@ -148,8 +148,8 @@ export default function EmailMarketingAutomationPage() {
         </div>
       </div>
 
-      <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
-      <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
+      <Link href="/#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
+      <Link href="/#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
       <Link href="/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
       <Link href="/about" className="text-sm font-medium hover:text-primary">About</Link>
 
@@ -185,8 +185,8 @@ export default function EmailMarketingAutomationPage() {
           <Link href="/services/seo-automation" className="block font-medium text-gray-700">SEO Automation</Link>
           <Link href="/services/crm-automation" className="block font-medium text-gray-700">CRM Automation</Link>
           <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">Email Marketing Automation</Link>
-          <Link href="#pricing" className="block text-gray-700">Pricing</Link>
-          <Link href="#contact" className="block text-gray-700">Contact</Link>
+          <Link href="/#pricing" className="block text-gray-700">Pricing</Link>
+          <Link href="/#contact" className="block text-gray-700">Contact</Link>
           <Link href="/about" className="block text-gray-700">About</Link>
           <Button size="lg" className="w-full hover:bg-blue-700" onClick={() => {
             setSelectedCalLink("awwtomation/awwtomation-consultation")
