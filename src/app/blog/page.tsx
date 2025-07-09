@@ -22,9 +22,9 @@ export default function BlogPage() {
   
   const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)
-  const [messageModalOpen, setMessageModalOpen] = useState(false)
+//   const [messageModalOpen, setMessageModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
-  const [bannerVisible, setBannerVisible] = useState(true)
+//   const [bannerVisible, setBannerVisible] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Fetch blog posts from API

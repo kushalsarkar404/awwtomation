@@ -17,7 +17,7 @@ export default function LandingPage() {
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [messageModalOpen, setMessageModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
-  const [bannerVisible, setBannerVisible] = useState(true) // <- default true
+  // const [bannerVisible, setBannerVisible] = useState(true) // <- default true
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
