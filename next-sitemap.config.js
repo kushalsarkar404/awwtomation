@@ -14,7 +14,7 @@ module.exports = {
     await config.transform(config, '/services/seo-automation'),
     await config.transform(config, '/services/crm-automation'),
     await config.transform(config, '/services/social-media-automation'),
-    await config.transform(config, '/email-marketing-automation'),
+    await config.transform(config, '/services/email-marketing-automation'),
     await config.transform(config, '/blog'),
   ]
 }
