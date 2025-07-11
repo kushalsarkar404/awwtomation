@@ -6,12 +6,31 @@ import rehypeRaw from "rehype-raw"
 import rehypeHighlight from "rehype-highlight"
 import "highlight.js/styles/github-dark.css"
 import Link from "next/link"
+import type { Metadata } from "next"
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  // Await params in Next.js 15
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug)
-  if (!post) return notFound()
+
+  if (!post) return {}
+
+return {
+  title: post.title,
+  description: post.excerpt || `Read our blog post: ${post.title}`,
+  openGraph: {
+    title: post.title,
+    description: post.excerpt || `Read our blog post: ${post.title}`,
+  },
+}
+}
+
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
+    const post = await getPostBySlug(slug)
+    if (!post) return notFound()
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">

@@ -12,6 +12,7 @@ import { MessageModal } from "@/components/message-modal"
 import { ParallaxMouse } from "@/components/parallax-mouse"
 import TrustpilotCollector from '@/components/TrustPilotCollector';
 
+
 export default function LandingPage() {
   const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)

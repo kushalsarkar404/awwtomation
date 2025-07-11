@@ -16,11 +16,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Awwtomation – CRM, Email & SEO Automation for Small and Medium Businesses",
-  description: "We automate CRM workflows, email marketing campaigns, SEO reports, and social media tasks using N8N, AI, and custom tools. Perfect for busy small businesses.",
-  icons: {
-    icon: "/favicon.png"
-  },
+    description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
+    keywords: "automation platform, crm automation tools, best email automation platform, project management automation tools, SEO automation, social media automation, CRM automation, marketing software",
+    openGraph: {
+      title: "Automation That Grows Your Business 10x Faster",
+      description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
+      url: "https://www.awwtomation.com",
+      siteName: "Awwtomation",
+      type: "website",
+    },
+    robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    alternates: {
+      canonical: "https://www.awwtomation.com"
+    }
 };
+
 
 
 export default function RootLayout({
