@@ -360,7 +360,7 @@ export default function SocialMediaAutomationPage() {
         {/* What is the Social Planner */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">Transform Your Social Media Strategy With Social Media Automation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Transform Your Strategy With Social Media Automation</h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
               Stop posting randomly and start growing strategically. Our Social Automation Workflow automates your entire social
               media workflow so you can focus on what matters most - your business.
