@@ -291,7 +291,7 @@ export default function SocialMediaAutomationPage() {
               Social Media Automation
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-              Plan, Schedule, and Grow with Awwtomation&apos;s Social Planner
+              Best Social Media Automation Setup To Plan, Create, and Grow
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
               Automate your entire social media presence from one powerful tool. Save time, stay consistent, and
@@ -360,9 +360,9 @@ export default function SocialMediaAutomationPage() {
         {/* What is the Social Planner */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">Transform Your Social Media Strategy</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Transform Your Social Media Strategy With Social Media Automation</h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-              Stop posting randomly and start growing strategically. Our Social Planner automates your entire social
+              Stop posting randomly and start growing strategically. Our Social Automation Workflow automates your entire social
               media workflow so you can focus on what matters most - your business.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -421,7 +421,7 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Platform-Specific Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Platform-Specific Social Media Automation</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
                 Each platform has unique requirements. Our automation adapts to maximize performance on every channel
                 where your audience lives.
@@ -835,7 +835,7 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for Social Media Automation?</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
                 We don&apos;t just provide tools - we deliver complete automation solutions that transform how you manage
                 social media and grow your business.

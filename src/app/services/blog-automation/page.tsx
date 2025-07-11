@@ -5218,7 +5218,7 @@ console.log(payload)
               Blog Automation
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-              AI-Powered Blog Content Creation & Automation
+              AI-Powered Content Creation & Blog Automation
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
               Transform your content strategy with intelligent blog automation. Generate high-quality, SEO-optimized
@@ -5573,7 +5573,7 @@ console.log(payload)
       {/* Features */}
       <section className="py-20 px-4 md:px-12 bg-muted/50">
         <div className="max-w-6xl mx-auto space-y-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center">Key Features</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center">Key Features of Blog Automation</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {

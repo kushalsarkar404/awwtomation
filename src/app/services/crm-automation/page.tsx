@@ -551,7 +551,7 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Smart Lead Scoring & Intelligent Qualification</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Smart Lead Scoring & Intelligent Qualification with CRM Automation </h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
                 Stop wasting time on cold leads. Our AI-powered scoring identifies your hottest prospects so your sales
                 team focuses on deals that close.
@@ -769,7 +769,7 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Proven Results & Measurable ROI</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Proven Results & Measurable ROI of CRM Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
                 Our CRM automation delivers immediate impact and long-term growth. Here is what you can expect from your
                 investment.
@@ -1050,7 +1050,7 @@ export default function CRMAutomationPage() {
         {/* Call to Action */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Let&apos;s Automate Your CRM Today</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Let&apos;s build Your CRM Automation Workflow Today</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               Don&apos;t let manual tasks hold your business back. Let&apos;s build a smarter, automated CRM that scales with you
               and delivers measurable results.

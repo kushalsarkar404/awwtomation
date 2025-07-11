@@ -370,7 +370,7 @@ export default function SEOAutomationPage() {
             {/* Keyword Rank Tracking */}
             <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center">
-                Keyword Rank Tracking & Page Performance Monitoring
+                Keyword Rank Tracking & Page Performance Monitoring with SEO Automation
               </h2>
               <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
                 Continuously observe how your keywords perform in search and how individual pages fare in terms of
@@ -440,7 +440,7 @@ export default function SEOAutomationPage() {
 
             {/* AI-Powered Content Creation */}
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center">AI-Powered Content Creation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-center">AI-Powered SEO Optimized Content Creation</h2>
               <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
                 Harness AI to draft content at scale while ensuring alignment with your brand voice and SEO best
                 practices for higher search rankings.
@@ -498,8 +498,7 @@ export default function SEOAutomationPage() {
             <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-center">Content Republishing & Distribution</h2>
               <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
-                Ensure your evergreen content stays fresh and reaches the right audiences across channels,
-                automatically.
+                Ensure your evergreen content stays fresh and reaches the right audiences across channels with SEO automation workflow.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -611,7 +610,7 @@ export default function SEOAutomationPage() {
         {/* Workflow Integrations */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Benefits & ROI</h2>
+            <h2 className="text-3xl font-bold">Benefits & ROI of SEO Automation</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -880,7 +879,7 @@ export default function SEOAutomationPage() {
         {/* Why Awwtomation */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Next Steps</h2>
+            <h2 className="text-3xl font-bold">Setup Your SEO Automation Workflow Today</h2>
             <p className="text-muted-foreground text-lg">
               Ready to elevate your SEO with automation? Contact us for a complimentary consultation:
             </p>

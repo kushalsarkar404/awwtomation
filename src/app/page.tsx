@@ -722,7 +722,7 @@ export default function LandingPage() {
                 <ul className="space-y-2 text-sm">
                   <li>
                     <Link href="/services/blog-automation" className="text-muted-foreground hover:text-foreground">
-                      Blog Agent
+                      Blog Automation
                     </Link>
                   </li>
                   <li>
