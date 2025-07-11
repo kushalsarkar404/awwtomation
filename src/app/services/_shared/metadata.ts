@@ -17,7 +17,7 @@ export const sharedMetadata: Record<string, Metadata> = {
       canonical: "https://www.awwtomation.com"
     }
   },
-  "email-automation": {
+  "email-marketing-automation": {
     title: "Email Marketing Automation That Converts 10x More Leads | Awwtomation",
     description: "Automate email campaigns that convert 45% better than manual sends. Get AI-powered sequences, smart triggers & ROI tracking.",
     keywords: "email marketing automation, automated email campaigns, email automation software, drip campaigns, email sequences, marketing automation tools",
