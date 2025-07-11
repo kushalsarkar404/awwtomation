@@ -15,21 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Awwtomation – CRM, Email & SEO Automation for Small and Medium Businesses",
-    description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
-    keywords: "automation platform, crm automation tools, best email automation platform, project management automation tools, SEO automation, social media automation, CRM automation, marketing software",
-    openGraph: {
-      title: "Automation That Grows Your Business 10x Faster",
-      description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
-      url: "https://www.awwtomation.com",
-      siteName: "Awwtomation",
-      type: "website",
-    },
-    robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-    alternates: {
-      canonical: "https://www.awwtomation.com"
-    }
-};
+  title: "Awwtomation - CRM, SEO, and Email Marketing Automation for Small and Medium Businesses.",
+  description: "Email marketing, SEO, social media, CRM & blog automation.",
+  keywords: "marketing automation, business automation, email automation, SEO automation, social media automation, CRM automation, marketing software",
+  icons: {
+    icon: "/favicon.png"
+  },
+  openGraph: {
+    title: "Automation That Grows Your Business 10x Faster",
+    description: "Email marketing, SEO, social media, CRM & blog automation.",
+    url: "https://www.awwtomation.com",
+    siteName: "Awwtomation",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marketing Automation That Grows Your Business 10x Faster",
+    description: "🚀 All-in-one marketing automation platform. Join 10,000+ businesses. Free trial.",
+    images: ["https://www.awwtomation.com/images/homepage-preview.jpg"]
+  },
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  alternates: {
+    canonical: "https://www.awwtomation.com"
+  }
+}
 
 
 

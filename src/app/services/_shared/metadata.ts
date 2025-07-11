@@ -15,7 +15,10 @@ export const sharedMetadata: Record<string, Metadata> = {
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: "https://www.awwtomation.com"
-    }
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
   },
   "email-marketing-automation": {
     title: "Email Marketing Automation That Converts 10x More Leads | Awwtomation",
@@ -34,7 +37,8 @@ export const sharedMetadata: Record<string, Metadata> = {
           height: 630,
           alt: "Email Marketing Automation - Awwtomation"
         }
-      ]
+      ],
+      
     },
     twitter: {
       card: "summary_large_image",
@@ -45,7 +49,10 @@ export const sharedMetadata: Record<string, Metadata> = {
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: "https://www.awwtomation.com/services/email-marketing-automation"
-    }
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
   },
   "seo-automation": {
     title: "SEO Automation: Rank Top on Google in 90 Days | Awwtomation",
@@ -75,7 +82,10 @@ export const sharedMetadata: Record<string, Metadata> = {
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: "https://www.awwtomation.com/services/seo-automation"
-    }
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
   },
   "social-media-automation": {
     title: "Social Media Automation: 10x Your Followers in 60 Days | Awwtomation",
@@ -105,7 +115,10 @@ export const sharedMetadata: Record<string, Metadata> = {
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: "https://www.awwtomation.com/services/social-media-automation"
-    }
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
   },
   "crm-automation": {
     title: "CRM Automation That Closes 3x More Deals | Awwtomation",
@@ -135,7 +148,10 @@ export const sharedMetadata: Record<string, Metadata> = {
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: "https://www.awwtomation.com/services/crm-automation"
-    }
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
   },
   "blog-automation": {
     title: "Blog Automation: 50+ SEO Articles Monthly on Autopilot | Awwtomation",
@@ -165,6 +181,9 @@ export const sharedMetadata: Record<string, Metadata> = {
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     alternates: {
       canonical: "https://www.awwtomation.com/services/blog-automation"
-    }
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
   },
 }
