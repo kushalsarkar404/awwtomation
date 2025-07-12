@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const sharedMetadata: Record<string, Metadata> = {
   "homepage": {
-    title: "Awwtomation – CRM, Email & SEO Automation for Small and Medium Businesses",
+    title: "Business Automation Services - AI-Powered CRM, SEO & Email Marketing Setup for SMBs | Awwtomation",
     description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
     keywords: "automation platform, crm automation tools, best email automation platform, project management automation tools, SEO automation, social media automation, CRM automation, marketing software",
     openGraph: {

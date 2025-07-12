@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Awwtomation - CRM, SEO, and Email Marketing Automation for Small and Medium Businesses.",
+  title: "Business Automation Services - AI-Powered CRM, SEO & Email Marketing Setup for SMBs | Awwtomation",
   description: "Email marketing, SEO, social media, CRM & blog automation.",
   keywords: "marketing automation, business automation, email automation, SEO automation, social media automation, CRM automation, marketing software",
   icons: {
