@@ -315,8 +315,7 @@ export default function LandingPage() {
                   <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Services</div>
                   <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Automate Your Business Processes with Awwtomation</h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    We help all size businesses automate time-consuming business processes — so you can focus on scaling
-                    instead of juggling tools.
+                  We help businesses of all sizes automate time-consuming processes across CRM, social media, SEO, and email marketing — so you can focus on scaling instead of juggling tools.
                   </p>
                 </div>
               </div>
@@ -401,7 +400,7 @@ export default function LandingPage() {
       <div className="space-y-2">
         <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Pricing</div>
         <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-          Simple pricing designed for long-term growth
+        Business Automation Pricing Plans That Scale With Your Growth
         </h2>
         <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
           We build lasting systems for your business. Start simple, grow with automation.
@@ -570,7 +569,7 @@ export default function LandingPage() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <Parallax speed={5} className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                    Ready to save time and multiply your profits?
+                  Get Free Business Automation Consultation
                   </h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Book an appointment with our automation experts today and discover how we can transform your
