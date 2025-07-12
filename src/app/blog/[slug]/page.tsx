@@ -290,7 +290,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <section className="mt-12">
           <h3 className="text-2xl font-semibold mb-4">Read More</h3>
           <div className="grid gap-8 sm:grid-cols-2">
-            {readMorePosts.map((post: BlogPost) =>
+            {readMorePosts.map((post) =>
               post ? (
                 <BlogCard key={post.slug} post={post} />
               ) : null
