@@ -231,10 +231,10 @@ export default function LandingPage() {
         <Parallax speed={25} className="space-y-2">
         
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
-            We Save You Time. You Make More Money!
+          AI-Powered Business Automation That Scales Your Revenue 10x
           </h1>
           <p className="max-w-xl text-muted-foreground md:text-xl mx-auto lg:mx-0">
-            Streamline your business operations with automation and boost your profits effortlessly. Book a free consultation today to discover how we can save you time and scale your growth.
+          Stop wasting 20+ hours on manual tasks. Our intelligent automation systems streamline operations and boost profits in 30 days or less.
           </p>
         </Parallax>
 
