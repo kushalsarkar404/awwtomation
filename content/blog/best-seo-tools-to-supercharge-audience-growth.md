@@ -406,7 +406,7 @@ We provide transparent, easy-to-understand reports, continuously monitor your ra
 ### Let’s elevate your search engine presence:
 *   [Book a Free SEO Strategy / Automation Consultation →](https://cal.com/awwtomation/awwtomation-consultation)
 
-## **FAQs**
+## FAQs
 
 ---
 

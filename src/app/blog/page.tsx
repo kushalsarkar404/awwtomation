@@ -26,6 +26,7 @@ export default function BlogPage() {
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
 //   const [bannerVisible, setBannerVisible] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  
 
   // Fetch blog posts from API
   useEffect(() => {

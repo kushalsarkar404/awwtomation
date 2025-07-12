@@ -20,6 +20,7 @@ export function getSortedPostsData() {
       date: data.date,
       excerpt: data.excerpt,
       coverImage: data.coverImage,
+      readMore: data.readMore || [],
     }
   })
 }
@@ -37,6 +38,7 @@ export async function getPostBySlug(slug: string) {
       date: data.date,
       excerpt: data.excerpt,
       coverImage: data.coverImage,
+      readMore: data.readMore || [],
     }
   } catch (error) {
     console.log(error)
