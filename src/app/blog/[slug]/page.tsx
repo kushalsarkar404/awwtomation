@@ -194,7 +194,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                       src={src || "/placeholder.svg"}
                       alt={alt}
                       title={title}
-                      className="rounded-lg shadow-lg w-full object-cover max-h-96"
+                      className="rounded-lg shadow-lg w-full object-cover max-h-auto"
                       {...props}
                     />
                     {alt && (
