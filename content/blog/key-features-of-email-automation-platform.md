@@ -5,10 +5,10 @@ excerpt: "Unlock the power of email marketing with our guide to the 7 essential 
 coverImage: "/email-automation-features.png"
 slug: "key-features-of-email-automation-platform"
 readMore:
-  - "best-email-marketing-platform"
+  - "best-email-marketing-platforms"
   - "best-open-source-email-marketing-platforms"
   - "guide-to-master-email-marketing-for-business"
-  - "key-features-of-email-automation-platform"
+  - "drive-sales-with-email-marketing-automation"
 ---
 
 ![Best Email Marketing Platform Overview](https://i.imgur.com/mHh3dx4.png)

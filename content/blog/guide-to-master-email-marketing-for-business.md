@@ -5,7 +5,7 @@ excerpt: "In an ever-evolving digital landscape, email marketing stands as a ste
 coverImage: "/master-email-marketing-guide.png"
 slug: "guide-to-master-email-marketing-for-business"
 readMore:
-  - "best-email-marketing-platform"
+  - "best-email-marketing-platforms"
   - "best-open-source-email-marketing-platforms"
   - "key-features-of-email-automation-platform"
   - "drive-sales-with-email-marketing-automation"

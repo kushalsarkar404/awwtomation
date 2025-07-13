@@ -5,10 +5,10 @@ excerpt: "Explore the top open-source best email marketing platforms offering co
 coverImage: "/open-source-email-marketing.png"
 slug: "best-open-source-email-marketing-platforms"
 readMore:
-    - "best-email-marketing-platform"
-    - "guide-to-master-email-marketing-for-business"
-    - "key-features-of-email-automation-platform"
-    - "drive-sales-with-email-marketing-automation"
+  - "best-email-marketing-platforms"
+  - "guide-to-master-email-marketing-for-business"
+  - "key-features-of-email-automation-platform"
+  - "drive-sales-with-email-marketing-automation"
 ---
 
 ![Open Source Best Email Marketing Platform Overview](https://i.imgur.com/IjEzdr8.webp)
