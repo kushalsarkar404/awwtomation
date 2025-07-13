@@ -5,9 +5,11 @@ excerpt: "Move beyond newsletters. Learn how to use email marketing automation p
 coverImage: "/drive-sales-email-automation.png"
 slug: "drive-sales-with-email-marketing-automation"
 readMore: 
-    - "key-features-of-email-automation-platform"
-    - "best-open-source-email-marketing-platforms"
-    - "best-email-marketing-platforms"
+readMore:
+  - "best-email-marketing-platform"
+  - "best-open-source-email-marketing-platforms"
+  - "guide-to-master-email-marketing-for-business"
+  - "key-features-of-email-automation-platform"
 ---
 
 ![Best Email Automation Platform Overview](https://i.imgur.com/YevzuMA.webp)

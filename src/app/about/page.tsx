@@ -748,7 +748,7 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
             <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-xs text-muted-foreground">© 2025 Awwtomation. All rights reserved.</p>
               <div className="flex gap-4 text-xs text-muted-foreground">
-                <Link href="/terms-and-conditions" className="hover:text-foreground">
+                <Link href="/legal/terms-and-conditions" className="hover:text-foreground">
                   Terms of Service
                 </Link>
                 <Link href="/legal/privacy-policy" className="hover:text-foreground">
