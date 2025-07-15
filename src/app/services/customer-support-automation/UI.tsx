@@ -554,7 +554,7 @@ export default function CustomerSupportAutomationPage() {
               <h2 className="text-3xl md:text-4xl font-bold">Automated Appointment Booking & Scheduling</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
                 Eliminate the back-and-forth of scheduling with a fully automated, self-service booking system that
-                integrates directly with your team's calendars.
+                integrates directly with your team&apos;s calendars.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -584,7 +584,7 @@ export default function CustomerSupportAutomationPage() {
                     Real-Time Availability
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Shows your team's real-time availability, preventing double bookings.
+                    Shows your team&apos;s real-time availability, preventing double bookings.
                     <span className="font-semibold text-blue-600"> Always up-to-date</span> scheduling that works
                     seamlessly.
                   </p>
@@ -752,7 +752,7 @@ export default function CustomerSupportAutomationPage() {
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">Chat With Your Data</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Empower your support team with instant, accurate answers by allowing them to "chat" with your internal
+                Empower your support team with instant, accurate answers by allowing them to &apos;chat&apos; with your internal
                 knowledge base, documentation, and historical data using natural language.
               </p>
             </div>
@@ -827,7 +827,7 @@ export default function CustomerSupportAutomationPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">Benefits & ROI of Customer Support Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Our customer support automation delivers immediate impact and measurable returns. Here's what you can
+                Our customer support automation delivers immediate impact and measurable returns. Here&apos;s what you can
                 expect from your investment.
               </p>
             </div>
@@ -938,7 +938,7 @@ export default function CustomerSupportAutomationPage() {
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for Customer Support Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                We don't just provide tools—we build comprehensive solutions that transform your entire customer support
+                We don&apos;t just provide tools—we build comprehensive solutions that transform your entire customer support
                 experience with intelligent automation that delivers measurable results.
               </p>
             </div>
@@ -1117,7 +1117,7 @@ export default function CustomerSupportAutomationPage() {
                 Schedule Free Consultation <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
-                We'll audit your current support workflows and design a tailored automation roadmap to help you reduce
+                We&apos;ll audit your current support workflows and design a tailored automation roadmap to help you reduce
                 costs, improve efficiency, and elevate your customer experience.
               </p>
             </div>
