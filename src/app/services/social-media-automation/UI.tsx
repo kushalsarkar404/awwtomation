@@ -30,6 +30,7 @@ import {
   MessageSquare,
   TrendingUp,
   Eye,
+  Headphones
 } from "lucide-react"
 
 export default function SocialMediaAutomationPage() {
@@ -56,71 +57,71 @@ export default function SocialMediaAutomationPage() {
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
         {/* Header */}
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-  <div className="container mx-auto  flex h-16 items-center justify-between">
-
-    <div className="flex items-center gap-2">
-      <Link href="/">
-      <Image
-        src="/full-logo.svg"
-        alt="Awwtomation Logo"
-        fill={false}
-        width={0}
-        height={0}
-        sizes="100vw"
-        className="h-auto w-auto"
-        priority
-      />
-      </Link>
-    </div>
-
-    <nav className="hidden md:flex gap-8 relative items-center">
-      <div className="relative group/menu">
-        <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
-          <span className="relative">
-            Services
-            <span className="absolute -top-2 -right-6 bg-red-500 text-white text-[8px] px-1.5 py-0.5 rounded-full">NEW</span>
-          </span>
-        </div>
-
-        <div className="absolute left-0 top-full pt-2 hidden group-hover/menu:flex bg-white border shadow-2xl rounded-xl w-[640px] p-6 z-40">
-          <div className="grid grid-cols-2 gap-6">
-            {/* Blog Agent */}
-            <Link href="/services/blog-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                <NotebookPen className="h-5 w-5 text-blue-600" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2 font-medium text-gray-800">
-                  Blog Agent
-                  <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-md">NEW</span>
+          <div className="container mx-auto flex h-16 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Link href="/">
+                <Image
+                  src="/full-logo.svg"
+                  alt="Awwtomation Logo"
+                  fill={false}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="h-auto w-auto"
+                  priority
+                />
+              </Link>
+            </div>
+            <nav className="hidden md:flex gap-8 relative items-center">
+              <div className="relative group/menu">
+                <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
+                  <span className="relative">
+                    Services
+                    <span className="absolute -top-2 -right-6 bg-red-500 text-white text-[8px] px-1.5 py-0.5 rounded-full">
+                      NEW
+                    </span>
+                  </span>
                 </div>
-                <p className="text-sm text-gray-500">Multi-purpose blog generator with SEO-ready content</p>
-              </div>
-            </Link>
-
-            {/* Social Media Automation */}
-            <Link href="/services/social-media-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100">
-                <SquareChartGantt className="h-5 w-5 text-pink-600" />
-              </div>
-              <div>
-                <div className="font-medium text-gray-800">Social Media Automation</div>
-                <p className="text-sm text-gray-500">Schedule, optimize, and automate social campaigns</p>
-              </div>
-            </Link>
-
-            {/* SEO Automation */}
-            <Link href="/services/seo-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
-                <Code className="h-5 w-5 text-green-600" />
-              </div>
-              <div>
-                <div className="font-medium text-gray-800">SEO Automation</div>
-                <p className="text-sm text-gray-500">AI meta generation, audits, and keyword clustering</p>
-              </div>
-            </Link>
-                        {/* Email Marketing Automation */}
-                        <Link
+                <div className="absolute left-0 top-full pt-2 hidden group-hover/menu:flex bg-white border shadow-2xl rounded-xl w-[640px] p-6 z-40">
+                  <div className="grid grid-cols-2 gap-6">
+                    {/* Blog Agent */}
+                    <Link href="/services/blog-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                        <NotebookPen className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 font-medium text-gray-800">
+                          Blog Agent
+                          <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-md">NEW</span>
+                        </div>
+                        <p className="text-sm text-gray-500">Multi-purpose blog generator with SEO-ready content</p>
+                      </div>
+                    </Link>
+                    {/* Social Media Automation */}
+                    <Link
+                      href="/services/social-media-automation"
+                      className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100">
+                        <SquareChartGantt className="h-5 w-5 text-pink-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">Social Media Automation</div>
+                        <p className="text-sm text-gray-500">Schedule, optimize, and automate social campaigns</p>
+                      </div>
+                    </Link>
+                    {/* SEO Automation */}
+                    <Link href="/services/seo-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
+                        <Code className="h-5 w-5 text-green-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">SEO Automation</div>
+                        <p className="text-sm text-gray-500">AI meta generation, audits, and keyword clustering</p>
+                      </div>
+                    </Link>
+                    {/* Email Marketing Automation */}
+                    <Link
                       href="/services/email-marketing-automation"
                       className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
                     >
@@ -132,77 +133,124 @@ export default function SocialMediaAutomationPage() {
                         <p className="text-sm text-gray-500">Automated campaigns, segmentation & personalization</p>
                       </div>
                     </Link>
+                    {/* CRM Automation */}
+                    <Link href="/services/crm-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
+                        <Cog className="h-5 w-5 text-yellow-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">CRM Automation</div>
+                        <p className="text-sm text-gray-500">Lead flows, auto-reminders & 3rd-party integration</p>
+                      </div>
+                    </Link>
+                    {/* Customer Support Automation */}
+                    <Link
+                      href="/services/customer-support-automation"
+                      className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-100">
+                        <Headphones className="h-5 w-5 text-teal-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">Customer Support Automation</div>
+                        <p className="text-sm text-gray-500">AI chatbots, smart routing & 24/7 support</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <Link href="/#pricing" className="text-sm font-medium hover:text-primary">
+                Pricing
+              </Link>
+              <Link href="/#contact" className="text-sm font-medium hover:text-primary">
+                Contact
+              </Link>
+              <Link href="/blog" className="text-sm font-medium hover:text-primary">
+                Blog
+              </Link>
+              <Link href="/about" className="text-sm font-medium hover:text-primary">
+                About
+              </Link>
+            </nav>
 
-            {/* CRM Automation */}
-            <Link href="/services/crm-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
-                <Cog className="h-5 w-5 text-yellow-600" />
-              </div>
-              <div>
-                <div className="font-medium text-gray-800">CRM Automation</div>
-                <p className="text-sm text-gray-500">Lead flows, auto-reminders & 3rd-party integration</p>
-              </div>
-            </Link>
+            <div className="hidden md:flex items-center gap-4">
+              <Button
+                size="lg"
+                className="hover:bg-blue-700"
+                onClick={() => {
+                  setSelectedCalLink("awwtomation/awwtomation-consultation")
+                  setCalModalOpen(true)
+                }}
+              >
+                Automate Now
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
+            </div>
+
+            <div ref={menuRef} className="md:hidden block" style={{ zIndex: 60 }}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setMobileMenuOpen((prev) => !prev)
+                }}
+                className="p-2 rounded-md border border-gray-300"
+              >
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+
+              {/* Mobile Menu Panel */}
+              {mobileMenuOpen && (
+                <div
+                  ref={menuRef}
+                  className="fixed left-0 right-0 top-16 z-50 bg-white border-t shadow px-4 py-6 space-y-4 md:hidden"
+                >
+                  <Link href="/services/blog-automation" className="block font-medium text-gray-700">
+                    Blog Agent
+                  </Link>
+                  <Link href="/services/social-media-automation" className="block font-medium text-gray-700">
+                    Social Media Automation
+                  </Link>
+                  <Link href="/services/seo-automation" className="block font-medium text-gray-700">
+                    SEO Automation
+                  </Link>
+                  <Link href="/services/crm-automation" className="block font-medium text-gray-700">
+                    CRM Automation
+                  </Link>
+                  <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">
+                    Email Marketing Automation
+                  </Link>
+                  <Link href="/services/customer-support-automation" className="block font-medium text-gray-700">
+                    Customer Support Automation
+                  </Link>
+                  <Link href="/blog" className="block font-medium text-gray-700">
+                    Blog
+                  </Link>
+                  <Link href="/#pricing" className="block text-gray-700">
+                    Pricing
+                  </Link>
+                  <Link href="/#contact" className="block text-gray-700">
+                    Contact
+                  </Link>
+                  <Link href="/about" className="block text-gray-700">
+                    About
+                  </Link>
+                  <Button
+                    size="lg"
+                    className="w-full hover:bg-blue-700"
+                    onClick={() => {
+                      setSelectedCalLink("awwtomation/awwtomation-consultation")
+                      setCalModalOpen(true)
+                    }}
+                  >
+                    Automate Now
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </div>
+        </header>
 
-      <Link href="/#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
-      <Link href="/#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
-      <Link href="/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
-      <Link href="/about" className="text-sm font-medium hover:text-primary">About</Link>
-
-    </nav>
-    
-    <div className="hidden md:flex items-center gap-4">
-      <Button size="lg" className="hover:bg-blue-700" onClick={() => {
-        setSelectedCalLink("awwtomation/awwtomation-consultation");
-        setCalModalOpen(true);
-      }}>
-        Automate Now
-        <ChevronRight className="ml-1 h-4 w-4" />
-      </Button>
-      
-    </div>
-    <div ref={menuRef} className="md:hidden block" style={{ zIndex: 60 }}>
-    <button
-  onClick={(e) => {
-    e.stopPropagation()
-    setMobileMenuOpen(prev => !prev)
-  }}
-  className="p-2 rounded-md border border-gray-300"
->
-  {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-</button>
-
-
-      {/* Mobile Menu Panel */}
-      {mobileMenuOpen && (
-        <div ref={menuRef} className="fixed left-0 right-0 top-16 z-50 bg-white border-t shadow px-4 py-6 space-y-4 md:hidden">
-          <Link href="/services/blog-automation" className="block font-medium text-gray-700">Blog Agent</Link>
-          <Link href="/services/social-media-automation" className="block font-medium text-gray-700">Social Media Automation</Link>
-          <Link href="/services/seo-automation" className="block font-medium text-gray-700">SEO Automation</Link>
-          <Link href="/services/crm-automation" className="block font-medium text-gray-700">CRM Automation</Link>
-          <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">Email Marketing Automation</Link>
-          <Link href="/blog" className="block font-medium text-gray-700">Blog</Link>
-          <Link href="/#pricing" className="block text-gray-700">Pricing</Link>
-          <Link href="/#contact" className="block text-gray-700">Contact</Link>
-          <Link href="/about" className="block font-medium text-gray-700">About</Link>
-          <Button size="lg" className="w-full hover:bg-blue-700" onClick={() => {
-            setSelectedCalLink("awwtomation/awwtomation-consultation")
-            setCalModalOpen(true)
-          }}>
-            Automate Now
-            <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
-        </div>
-      )}
-        </div>
-  </div>
-
-
-  
-</header>
         {/* Hero Section */}
         {/* Hero Section with Floating Social Media Logos */}
         <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
@@ -903,7 +951,8 @@ export default function SocialMediaAutomationPage() {
           </div>
         </section>
         {/* Footer */}
-        <footer className="w-full border-t py-12 md:py-16">
+       {/* Footer */}
+       <footer className="w-full border-t py-12 md:py-16">
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-4">
@@ -969,7 +1018,6 @@ export default function SocialMediaAutomationPage() {
                   </Link>
                 </div>
               </div>
-
               <div className="space-y-4">
                 <h3 className="text-sm font-medium">Services</h3>
                 <ul className="space-y-2 text-sm">
@@ -987,6 +1035,11 @@ export default function SocialMediaAutomationPage() {
                     </Link>
                   </li>
                   <li>
+                    <Link href="/services/crm-automation" className="text-muted-foreground hover:text-foreground">
+                      CRM Automation
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/services/seo-automation" className="text-muted-foreground hover:text-foreground">
                       SEO Automation
                     </Link>
@@ -1000,29 +1053,15 @@ export default function SocialMediaAutomationPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/crm-automation" className="text-muted-foreground hover:text-foreground">
-                      CRM Automation
+                    <Link
+                      href="/services/customer-support-automation"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Customer Support Automation
                     </Link>
                   </li>
                 </ul>
               </div>
-
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium">Company</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>
-                    <Link href="/about" className="text-muted-foreground hover:text-foreground">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                      Blog
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
               <div className="space-y-4">
                 <h3 className="text-sm font-medium">Support</h3>
                 <ul className="space-y-2 text-sm">
@@ -1034,7 +1073,6 @@ export default function SocialMediaAutomationPage() {
                 </ul>
               </div>
             </div>
-
             <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-xs text-muted-foreground">© 2025 Awwtomation. All rights reserved.</p>
               <div className="flex gap-4 text-xs text-muted-foreground">

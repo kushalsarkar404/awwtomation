@@ -27,6 +27,7 @@ import {
   Lightbulb,
   Rocket,
   Shield,
+  Headphones
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -58,7 +59,7 @@ export default function AboutPage() {
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
         {/* Header */}
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container mx-auto  flex h-16 items-center justify-between">
+          <div className="container mx-auto flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
               <Link href="/">
                 <Image
@@ -73,7 +74,6 @@ export default function AboutPage() {
                 />
               </Link>
             </div>
-
             <nav className="hidden md:flex gap-8 relative items-center">
               <div className="relative group/menu">
                 <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
@@ -99,7 +99,6 @@ export default function AboutPage() {
                         <p className="text-sm text-gray-500">Multi-purpose blog generator with SEO-ready content</p>
                       </div>
                     </Link>
-
                     {/* Social Media Automation */}
                     <Link
                       href="/services/social-media-automation"
@@ -113,7 +112,6 @@ export default function AboutPage() {
                         <p className="text-sm text-gray-500">Schedule, optimize, and automate social campaigns</p>
                       </div>
                     </Link>
-
                     {/* SEO Automation */}
                     <Link href="/services/seo-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
@@ -124,7 +122,6 @@ export default function AboutPage() {
                         <p className="text-sm text-gray-500">AI meta generation, audits, and keyword clustering</p>
                       </div>
                     </Link>
-
                     {/* Email Marketing Automation */}
                     <Link
                       href="/services/email-marketing-automation"
@@ -138,7 +135,6 @@ export default function AboutPage() {
                         <p className="text-sm text-gray-500">Automated campaigns, segmentation & personalization</p>
                       </div>
                     </Link>
-
                     {/* CRM Automation */}
                     <Link href="/services/crm-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
@@ -149,10 +145,22 @@ export default function AboutPage() {
                         <p className="text-sm text-gray-500">Lead flows, auto-reminders & 3rd-party integration</p>
                       </div>
                     </Link>
+                    {/* Customer Support Automation */}
+                    <Link
+                      href="/services/customer-support-automation"
+                      className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-100">
+                        <Headphones className="h-5 w-5 text-teal-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">Customer Support Automation</div>
+                        <p className="text-sm text-gray-500">AI chatbots, smart routing & 24/7 support</p>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>
-
               <Link href="/#pricing" className="text-sm font-medium hover:text-primary">
                 Pricing
               </Link>
@@ -162,7 +170,7 @@ export default function AboutPage() {
               <Link href="/blog" className="text-sm font-medium hover:text-primary">
                 Blog
               </Link>
-              <Link href="/about" className="text-sm font-medium text-primary">
+              <Link href="/about" className="text-sm font-medium hover:text-primary">
                 About
               </Link>
             </nav>
@@ -176,7 +184,7 @@ export default function AboutPage() {
                   setCalModalOpen(true)
                 }}
               >
-                Get Started
+                Automate Now
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             </div>
@@ -207,19 +215,25 @@ export default function AboutPage() {
                   <Link href="/services/seo-automation" className="block font-medium text-gray-700">
                     SEO Automation
                   </Link>
-                  <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">
-                    Email Marketing Automation
-                  </Link>
                   <Link href="/services/crm-automation" className="block font-medium text-gray-700">
                     CRM Automation
                   </Link>
-                  <Link href="#pricing" className="block text-gray-700">
+                  <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">
+                    Email Marketing Automation
+                  </Link>
+                  <Link href="/services/customer-support-automation" className="block font-medium text-gray-700">
+                    Customer Support Automation
+                  </Link>
+                  <Link href="/blog" className="block font-medium text-gray-700">
+                    Blog
+                  </Link>
+                  <Link href="/#pricing" className="block text-gray-700">
                     Pricing
                   </Link>
-                  <Link href="#contact" className="block text-gray-700">
+                  <Link href="/#contact" className="block text-gray-700">
                     Contact
                   </Link>
-                  <Link href="/about" className="block text-primary font-medium">
+                  <Link href="/about" className="block text-gray-700">
                     About
                   </Link>
                   <Button
@@ -230,7 +244,7 @@ export default function AboutPage() {
                       setCalModalOpen(true)
                     }}
                   >
-                    Get Started
+                    Automate Now
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </Button>
                 </div>
@@ -238,6 +252,7 @@ export default function AboutPage() {
             </div>
           </div>
         </header>
+
 
         {/* Hero Section */}
         <section className="w-full min-h-[80vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
@@ -679,7 +694,6 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                   </Link>
                 </div>
               </div>
-
               <div className="space-y-4">
                 <h3 className="text-sm font-medium">Services</h3>
                 <ul className="space-y-2 text-sm">
@@ -697,6 +711,11 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                     </Link>
                   </li>
                   <li>
+                    <Link href="/services/crm-automation" className="text-muted-foreground hover:text-foreground">
+                      CRM Automation
+                    </Link>
+                  </li>
+                  <li>
                     <Link href="/services/seo-automation" className="text-muted-foreground hover:text-foreground">
                       SEO Automation
                     </Link>
@@ -710,29 +729,15 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/crm-automation" className="text-muted-foreground hover:text-foreground">
-                      CRM Automation
+                    <Link
+                      href="/services/customer-support-automation"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Customer Support Automation
                     </Link>
                   </li>
                 </ul>
               </div>
-
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium">Company</h3>
-                <ul className="space-y-2 text-sm">
-                  <li>
-                    <Link href="/about" className="text-muted-foreground hover:text-foreground">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                      Blog
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
               <div className="space-y-4">
                 <h3 className="text-sm font-medium">Support</h3>
                 <ul className="space-y-2 text-sm">
@@ -744,7 +749,6 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                 </ul>
               </div>
             </div>
-
             <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-xs text-muted-foreground">© 2025 Awwtomation. All rights reserved.</p>
               <div className="flex gap-4 text-xs text-muted-foreground">

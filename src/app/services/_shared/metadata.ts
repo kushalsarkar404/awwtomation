@@ -186,4 +186,37 @@ export const sharedMetadata: Record<string, Metadata> = {
         icon: "/favicon.png"
       },
   },
+  "customer-support-automation": {
+    title: "Customer Support Automation: 24/7 AI-Powered Support | Awwtomation",
+    description: "Deliver exceptional 24/7 support with AI chatbots, automated scheduling & intelligent routing. Reduce response times by 80% & slash operational costs.",
+    keywords: "customer support automation, AI chatbots, automated customer service, 24/7 support, customer service automation, chatbot automation, voice AI, IVR automation, appointment scheduling automation",
+    openGraph: {
+      title: "Customer Support Automation: 24/7 AI-Powered Support",
+      description: "Deliver exceptional 24/7 support with AI chatbots, automated scheduling & intelligent routing. Reduce response times by 80% & slash operational costs.",
+      url: "https://www.awwtomation.com/services/customer-support-automation",
+      siteName: "Awwtomation",
+      type: "website",
+      images: [
+        {
+          url: "https://www.awwtomation.com/images/customer-support-automation.png",
+          width: 1200,
+          height: 630,
+          alt: "Customer Support Automation - Awwtomation"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Customer Support Automation: 24/7 AI-Powered Support",
+      description: "Deliver exceptional 24/7 support with AI chatbots, automated scheduling & intelligent routing.",
+      images: ["https://www.awwtomation.com/images/customer-support-automation.png"]
+    },
+    robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    alternates: {
+      canonical: "https://www.awwtomation.com/services/customer-support-automation"
+    },
+    icons: {
+        icon: "/favicon.png"
+      },
+  },
 }

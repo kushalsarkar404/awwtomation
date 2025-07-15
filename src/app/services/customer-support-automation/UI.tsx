@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -29,17 +30,25 @@ import {
   DollarSign,
   Globe,
   Settings,
-  FileText,
-  Eye,
   ArrowRight,
-  Smartphone,
   Calendar,
-  PieChart,
-  Headphones
+  Headphones,
+  MessageCircle,
+  Phone,
+  Bot,
+  ClipboardList,
+  Mic,
+  Search,
+  UserCheck,
+  Timer,
+  Star,
+  Lightbulb,
+  PhoneCall,
+  Bell,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function CRMAutomationPage() {
+export default function CustomerSupportAutomationPage() {
   const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
@@ -51,13 +60,16 @@ export default function CRMAutomationPage() {
         setMobileMenuOpen(false)
       }
     }
+
     if (mobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside)
     } else {
       document.removeEventListener("mousedown", handleClickOutside)
     }
+
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [mobileMenuOpen])
+
   return (
     <ParallaxProvider>
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
@@ -258,86 +270,81 @@ export default function CRMAutomationPage() {
         </header>
 
         {/* Hero Section */}
-        <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-orange-50 to-yellow-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+        <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-teal-50 to-cyan-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
           <div className="hidden sm:flex justify-center w-full">
-            {/* Floating CRM Icons */}
+            {/* Floating Customer Support Icons */}
             <div className="absolute inset-0 z-0">
-              {/* Database */}
+              {/* Headphones */}
               <div className="absolute floating-logo floating-logo-1" style={{ top: "15%", left: "10%" }}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Database className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-teal-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Headphones className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
-
-              {/* Users/Contacts */}
+              {/* Chat/Message */}
               <div className="absolute floating-logo floating-logo-2" style={{ top: "25%", right: "15%" }}>
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <Users className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <MessageCircle className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
               </div>
-
-              {/* Email Marketing */}
+              {/* Phone Support */}
               <div className="absolute floating-logo floating-logo-3" style={{ top: "60%", left: "8%" }}>
-                <div className="w-11 h-11 md:w-15 md:h-15 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Mail className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                <div className="w-11 h-11 md:w-15 md:h-15 bg-green-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Phone className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
               </div>
-
-              {/* Analytics */}
+              {/* Bot/AI */}
               <div className="absolute floating-logo floating-logo-4" style={{ top: "40%", right: "8%" }}>
-                <div className="w-13 h-13 md:w-17 md:h-17 bg-orange-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <div className="w-13 h-13 md:w-17 md:h-17 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <Bot className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
-
-              {/* Workflow */}
+              {/* Calendar/Scheduling */}
               <div className="absolute floating-logo floating-logo-5" style={{ top: "70%", right: "20%" }}>
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Workflow className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-orange-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Calendar className="w-5 h-5 md:w-7 md:h-7 text-white" />
                 </div>
               </div>
-
-              {/* Target/Lead Scoring */}
+              {/* Clipboard/Forms */}
               <div className="absolute floating-logo floating-logo-6" style={{ top: "20%", left: "25%" }}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-red-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <Target className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-pink-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <ClipboardList className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
-
-              {/* Automation/Zap */}
+              {/* Voice/Mic */}
               <div className="absolute floating-logo floating-logo-7" style={{ top: "50%", left: "20%" }}>
-                <div className="w-9 h-9 md:w-13 md:h-13 bg-yellow-500 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Zap className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                <div className="w-9 h-9 md:w-13 md:h-13 bg-red-500 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Mic className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
               </div>
-
-              {/* Settings/Configuration */}
+              {/* Search/Knowledge */}
               <div className="absolute floating-logo floating-logo-8" style={{ top: "35%", left: "35%" }}>
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-teal-500 rounded-xl flex items-center justify-center shadow-lg opacity-15 hover:opacity-35 transition-opacity">
-                  <Settings className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-yellow-500 rounded-xl flex items-center justify-center shadow-lg opacity-15 hover:opacity-35 transition-opacity">
+                  <Search className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
               </div>
             </div>
           </div>
+
           {/* Gradient Overlay for Better Text Contrast */}
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/30 via-transparent to-background/20" />
 
           {/* Hero Content */}
           <div className="z-20 text-center max-w-3xl mx-auto space-y-6 relative">
             <Badge variant="secondary" className="bg-white/90 text-slate-700 border-slate-200 shadow-sm">
-              CRM Automation
+              Customer Support Automation
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-              Power Sales & Marketing Growth with Smart CRM Automation
+              Streamline Your Operations with Intelligent Customer Support Automation
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              Unlock faster sales, better lead engagement, and smarter decision-making. Automate your CRM workflows,
-              connect your tools, and streamline your customer lifecycle—from first touch to closed deal.
+              Deliver exceptional, 24/7 support and slash response times with our intelligent customer support
+              automation solutions. Handle repetitive inquiries automatically while freeing your team to focus on
+              building meaningful customer relationships.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
                 size="lg"
-                className=" hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => {
                   setSelectedCalLink("awwtomation/awwtomation-consultation")
                   setCalModalOpen(true)
@@ -355,13 +362,11 @@ export default function CRMAutomationPage() {
             50% { transform: translateY(-10px) translateX(-15px) rotate(-3deg); }
             75% { transform: translateY(-25px) translateX(5px) rotate(2deg); }
           }
-
           @keyframes float2 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             33% { transform: translateY(-15px) translateX(-20px) rotate(-4deg); }
             66% { transform: translateY(-30px) translateX(10px) rotate(6deg); }
           }
-
           @keyframes float3 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             20% { transform: translateY(-18px) translateX(8px) rotate(3deg); }
@@ -369,13 +374,11 @@ export default function CRMAutomationPage() {
             60% { transform: translateY(-22px) translateX(-5px) rotate(4deg); }
             80% { transform: translateY(-8px) translateX(15px) rotate(-1deg); }
           }
-
           @keyframes float4 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             30% { transform: translateY(-25px) translateX(-8px) rotate(-5deg); }
             70% { transform: translateY(-12px) translateX(18px) rotate(3deg); }
           }
-
           .floating-logo-1 { animation: float1 12s ease-in-out infinite; }
           .floating-logo-2 { animation: float2 15s ease-in-out infinite; }
           .floating-logo-3 { animation: float3 18s ease-in-out infinite; }
@@ -384,137 +387,82 @@ export default function CRMAutomationPage() {
           .floating-logo-6 { animation: float2 13s ease-in-out infinite reverse; }
           .floating-logo-7 { animation: float3 17s ease-in-out infinite reverse; }
           .floating-logo-8 { animation: float4 11s ease-in-out infinite reverse; }
-
           .floating-logo {
             filter: blur(0.5px);
           }
-
           .floating-logo:hover {
             filter: blur(0px);
           }
         `}</style>
         </section>
-        {/* Why CRM Automation Matters */}
+
+        {/* Why Customer Support Automation is a Game-Changer */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">Why CRM Automation Transforms Your Business</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Why Customer Support Automation is a Game-Changer</h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-              Manual data entry, slow lead follow-ups, and siloed systems cost you time and money. Our automation
-              eliminates inefficiencies and fuels higher conversions.
+              Modern customers demand instant answers and seamless experiences. Our automation eliminates manual
+              inefficiencies and delivers the fast, personalized support that drives satisfaction and loyalty.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Star className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                    Meets Modern Expectations
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Customers demand instant answers and seamless experiences.
+                    <span className="font-semibold text-blue-600"> Deliver 24/7 support</span> that exceeds
+                    expectations.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors duration-300">
-                    <Clock className="w-8 h-8 text-red-600" />
+                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors duration-300">
+                    <Clock className="w-6 h-6 text-red-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-red-700 transition-colors duration-300">
-                    Stop Losing Leads
+                  <h3 className="font-semibold mb-2 group-hover:text-red-700 transition-colors duration-300">
+                    Eliminates Manual Inefficiencies
                   </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Manual processes mean missed opportunities and delayed responses. Automation ensures every lead gets
-                    instant attention.
-                    <span className="font-semibold text-red-600"> Respond 10x faster</span> to hot prospects.
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Replace slow manual processes and long wait times that frustrate customers.
+                    <span className="font-semibold text-red-600"> Reduce response time by 90%</span> with automation.
                   </p>
                 </div>
               </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                    <TrendingUp className="w-8 h-8 text-green-600" />
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                    <Globe className="w-6 h-6 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
-                    Accelerate Sales Cycles
+                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                    Provides 24/7 Support
                   </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automated nurturing and intelligent lead scoring help your team focus on ready-to-buy prospects.
-                    <span className="font-semibold text-green-600"> Close deals 40% faster</span> with smart automation.
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    AI-powered solutions provide fast, accurate support across all channels.
+                    <span className="font-semibold text-green-600"> Never miss a customer</span> inquiry again.
                   </p>
                 </div>
               </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
-                    <DollarSign className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Maximize Revenue
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Data-driven insights and automated workflows eliminate guesswork and optimize every touchpoint.
-                    <span className="font-semibold text-blue-600"> Increase revenue by 35%</span> with intelligent
-                    automation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Seamless Integration & Bi-Directional Sync */}
-        <section className="py-20 px-4 md:px-12">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Seamless Integration & Real-Time Data Sync</h2>
-              <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Connect every tool in your tech stack for a unified customer view. No more data silos or manual
-                updates—everything syncs automatically.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Globe className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Universal Integration
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Link any app to any CRM. New contacts, orders, and leads flow automatically into your system.
-                    <span className="font-semibold text-blue-600"> Connect 500+ applications</span> without technical
-                    complexity.
-                  </p>
-                  <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-sm font-semibold text-blue-800">
-                    Automation without changing existing platforms.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                    <RefreshCw className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
-                    Real-Time Updates
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Changes sync instantly across all systems. Sales, support tickets, and orders update in seconds.
-                    <span className="font-semibold text-green-600"> Eliminate data delays</span> and keep teams aligned
-                    24/7.
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
-                    <CheckCircle className="w-8 h-8 text-purple-600" />
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                    <TrendingUp className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-purple-700 transition-colors duration-300">
-                    Data Consistency
+                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                    Reduces Costs & Improves Satisfaction
                   </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    24/7 data sync ensures clean, consistent information across all departments.
-                    <span className="font-semibold text-purple-600"> Improve accuracy by 95%</span> and build trust
-                    across teams.
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Increase efficiency while dramatically boosting customer satisfaction.
+                    <span className="font-semibold text-purple-600"> Lower costs by 60%</span> with smart automation.
                   </p>
                 </div>
               </div>
@@ -522,98 +470,30 @@ export default function CRMAutomationPage() {
           </div>
         </section>
 
-        {/* Automated Email & Lead Nurturing */}
-        <section className="py-20 px-4 md:px-12 bg-muted/50">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Automated Email & Lead Nurturing Workflows</h2>
-              <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Turn every lead into a conversation and every conversation into a sale. Our intelligent nurturing keeps
-                prospects engaged at every stage.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors duration-300">
-                    <Mail className="w-8 h-8 text-orange-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-orange-700 transition-colors duration-300">
-                    Behavior-Based Campaigns
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Trigger personalized emails based on form submissions, purchases, or website activity.
-                    <span className="font-semibold text-orange-600"> Increase open rates by 180%</span> with relevant,
-                    timely messaging.
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Smartphone className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Multi-Channel Outreach
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automated follow-ups via email, SMS, and chat—all logged in your CRM for complete visibility.
-                    <span className="font-semibold text-blue-600"> Boost response rates by 250%</span> with
-                    multi-channel engagement.
-                  </p>
-                  <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-sm font-semibold text-blue-800">
-                      Automation that keeps leads warm and engaged at every step.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                    <Calendar className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
-                    Smart Follow-Up Sequences
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automatic reminders after demos, downloads, or support requests ensure no opportunity slips through.
-                    <span className="font-semibold text-green-600"> Convert 60% more leads</span> with timely,
-                    persistent follow-up.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Smart Lead Scoring & Qualification */}
+        {/* Conversational AI & Intelligent Chatbots */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Smart Lead Scoring & Intelligent Qualification with CRM Automation </h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Conversational AI & Intelligent Chatbots</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Stop wasting time on cold leads. Our AI-powered scoring identifies your hottest prospects so your sales
-                team focuses on deals that close.
+                Deploy smart, AI-powered chatbots and virtual assistants to provide instant, 24/7 support on your
+                website, app, or messaging platforms with natural language understanding.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Zap className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Behavioral Scoring
+                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                    Instant Resolutions
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Assign points based on page visits, downloads, and engagement.
-                    <span className="font-semibold text-purple-600"> Identify hot leads instantly</span> with automated
-                    behavior tracking.
+                    Answer FAQs, guide troubleshooting, and provide order updates in real-time.
+                    <span className="font-semibold text-blue-600"> Resolve 80% of inquiries</span> without human
+                    intervention.
                   </p>
                 </div>
               </div>
@@ -621,31 +501,30 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <TrendingUp className="w-6 h-6 text-green-600" />
+                    <MessageCircle className="w-6 h-6 text-green-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Sales Prioritization
+                    Natural Language Understanding
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Your team sees the hottest leads first, increasing conversion rates.
-                    <span className="font-semibold text-green-600"> Close 3x more deals</span> by focusing on
-                    ready-to-buy prospects.
+                    Advanced NLP understands user intent for natural conversations.
+                    <span className="font-semibold text-green-600"> Human-like interactions</span> that feel authentic.
                   </p>
                 </div>
               </div>
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Users className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                    <UserCheck className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Custom Qualification
+                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                    Seamless Agent Handoff
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Combine demographic and engagement data for sophisticated scoring models.
-                    <span className="font-semibold text-blue-600"> Qualify leads 5x faster</span> with intelligent
-                    automation.
+                    Complex queries transfer to live agents with full context preserved.
+                    <span className="font-semibold text-purple-600"> Smooth transitions</span> ensure customer
+                    satisfaction.
                   </p>
                 </div>
               </div>
@@ -653,105 +532,29 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <Zap className="w-6 h-6 text-orange-600" />
+                    <Target className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Automated Routing
+                    Lead Generation & Qualification
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    High-scoring leads automatically route to your best sales reps.
-                    <span className="font-semibold text-orange-600"> Maximize win rates</span> with intelligent lead
-                    distribution.
+                    Capture leads, ask qualifying questions, and book demos automatically.
+                    <span className="font-semibold text-orange-600"> Turn support into sales</span> opportunities.
                   </p>
-                  <div className="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-200">
-                    <p className="text-xs font-semibold text-orange-800">
-                      Automations for sales teams to optimize time and effort.
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Dynamic Reporting Dashboards */}
+        {/* Automated Appointment Booking & Scheduling */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Dynamic Reporting Dashboards</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Automated Appointment Booking & Scheduling</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Make data-driven decisions with real-time insights. Our custom dashboards turn complex data into
-                actionable intelligence.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
-                    <BarChart3 className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Real-Time Analytics
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Custom dashboards pull data from your CRM and external sources like Google Analytics and ad
-                    networks.
-                    <span className="font-semibold text-blue-600"> Get insights 24/7</span> without manual spreadsheet
-                    updates.
-                  </p>
-                  <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-sm font-semibold text-blue-800">
-                      A CRM automation that empowers strategic planning.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                    <PieChart className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
-                    Visual Insights
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Charts and graphs update automatically with live data. Monitor KPIs like lead response time and deal
-                    velocity.
-                    <span className="font-semibold text-green-600"> Spot trends instantly</span> with visual
-                    intelligence.
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Eye className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-purple-700 transition-colors duration-300">
-                    Strategic Decision Making
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Unified dashboards help managers spot trends and adjust strategy on the fly.
-                    <span className="font-semibold text-purple-600"> Make decisions 10x faster</span> with actionable
-                    insights, not raw data.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Smart Workflow Automation */}
-        <section className="py-20 px-4 md:px-12">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Smart Workflow Automation</h2>
-              <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Eliminate repetitive tasks and ensure nothing falls through the cracks. Our intelligent workflows adapt
-                to your business processes.
+                Eliminate the back-and-forth of scheduling with a fully automated, self-service booking system that
+                integrates directly with your team's calendars.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -762,45 +565,255 @@ export default function CRMAutomationPage() {
                     <Calendar className="w-8 h-8 text-teal-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-teal-700 transition-colors duration-300">
-                    Task & Reminder Automation
+                    24/7 Self-Service
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automatically assign follow-up tasks based on pipeline stage, behavior, or missed actions.
-                    <span className="font-semibold text-teal-600"> Never miss a follow-up</span> with intelligent task
-                    management.
+                    Allow clients to book, reschedule, or cancel appointments anytime, from any device.
+                    <span className="font-semibold text-teal-600"> No phone calls required</span> for scheduling
+                    convenience.
                   </p>
                 </div>
               </div>
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition-colors duration-300">
-                    <ArrowRight className="w-8 h-8 text-indigo-600" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
+                    <RefreshCw className="w-8 h-8 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-indigo-700 transition-colors duration-300">
-                    Pipeline Automation
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                    Real-Time Availability
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Auto-advance deals to the next stage based on defined criteria like meetings booked or quotes
-                    signed.
-                    <span className="font-semibold text-indigo-600"> Accelerate deal flow</span> with intelligent stage
-                    progression.
+                    Shows your team's real-time availability, preventing double bookings.
+                    <span className="font-semibold text-blue-600"> Always up-to-date</span> scheduling that works
+                    seamlessly.
                   </p>
                 </div>
               </div>
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors duration-300">
-                    <FileText className="w-8 h-8 text-orange-600" />
+                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                    <Bell className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-orange-700 transition-colors duration-300">
-                    Smart Enrichment
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
+                    Automated Reminders & Follow-ups
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Enrich contact records with additional data and auto-tag leads for better segmentation.
-                    <span className="font-semibold text-orange-600"> Improve targeting by 200%</span> with intelligent
-                    data enrichment.
+                    Reduce no-shows with automated email and SMS reminders.
+                    <span className="font-semibold text-green-600"> Decrease no-shows by 70%</span> with smart
+                    notifications.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Smart Intake Forms & Data Capture */}
+        <section className="py-20 px-4 md:px-12">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold">Smart Intake Forms & Data Capture</h2>
+              <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
+                Replace inefficient paper or PDF forms with dynamic, digital intake forms that streamline data
+                collection and eliminate manual entry with built-in validation and security.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                    <Timer className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                    Reduce Administrative Work
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Automate the entire intake process from data capture to routing.
+                    <span className="font-semibold text-orange-600"> Save 15+ hours weekly</span> on admin tasks.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                    <CheckCircle className="w-6 h-6 text-green-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                    Improved Data Accuracy
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Built-in validation ensures all necessary information is captured correctly.
+                    <span className="font-semibold text-green-600"> 99% accuracy rate</span> with smart validation.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Database className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                    Seamless Integration
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Automatically sync with your EHR, CRM, or other business systems.
+                    <span className="font-semibold text-blue-600"> Single source of truth</span> for customer data.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                    <Shield className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                    Enhanced Security & Compliance
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Built with security in mind, ensuring HIPAA and GDPR compliance.
+                    <span className="font-semibold text-purple-600"> Bank-level security</span> for sensitive data.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Voice AI & Interactive Voice Response (IVR) */}
+        <section className="py-20 px-4 md:px-12 bg-muted/50">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold">Voice AI & Interactive Voice Response (IVR)</h2>
+              <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
+                Modernize your phone support with intelligent Voice AI that understands and responds to spoken commands,
+                providing a more natural and efficient caller experience.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                    <PhoneCall className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
+                    24/7 Phone Support
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
+                    Offer round-the-clock assistance for account balances, bill payments, and common questions.
+                    <span className="font-semibold text-green-600"> Never miss a call</span> with intelligent voice
+                    automation.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Mic className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                    Natural Conversation Flow
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
+                    Advanced Voice AI understands complex queries and sentiment for natural conversations.
+                    <span className="font-semibold text-blue-600"> Human-like interactions</span> that feel authentic.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
+                    <ArrowRight className="w-8 h-8 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                    Intelligent Call Routing
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
+                    Automatically identify call reasons and route to the most appropriate agent or department.
+                    <span className="font-semibold text-purple-600"> Reduce transfers by 80%</span> with smart routing.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Chat With Your Data */}
+        <section className="py-20 px-4 md:px-12">
+          <div className="max-w-6xl mx-auto space-y-16">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold">Chat With Your Data</h2>
+              <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
+                Empower your support team with instant, accurate answers by allowing them to "chat" with your internal
+                knowledge base, documentation, and historical data using natural language.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Search className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                    Instant Access to Information
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Ask questions in natural language and get immediate, precise answers.
+                    <span className="font-semibold text-blue-600"> Find answers 10x faster</span> than manual searching.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                    <Users className="w-6 h-6 text-green-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                    Reduced Training Time
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    New hires become productive faster with instant access to information.
+                    <span className="font-semibold text-green-600"> 70% faster onboarding</span> for new team members.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                    <CheckCircle className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                    Consistent Responses
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Ensure every agent provides the same, up-to-date information to customers.
+                    <span className="font-semibold text-purple-600"> 100% consistency</span> across all interactions.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                    <Lightbulb className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                    Identify Knowledge Gaps
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    System logs unanswered questions to identify documentation needs.
+                    <span className="font-semibold text-orange-600"> Continuous improvement</span> of knowledge base.
                   </p>
                 </div>
               </div>
@@ -812,13 +825,29 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Proven Results & Measurable ROI of CRM Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Benefits & ROI of Customer Support Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Our CRM automation delivers immediate impact and long-term growth. Here is what you can expect from your
-                investment.
+                Our customer support automation delivers immediate impact and measurable returns. Here's what you can
+                expect from your investment.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors duration-300">
+                    <DollarSign className="w-8 h-8 text-red-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-red-700 transition-colors duration-300">
+                    Drastically Reduced Operational Costs
+                  </h3>
+                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
+                    Automate up to 80% of routine inquiries with AI chatbots and Voice AI.
+                    <span className="font-semibold text-red-600"> Lower cost-per-interaction by 60%</span> while scaling
+                    support.
+                  </p>
+                </div>
+              </div>
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -826,97 +855,76 @@ export default function CRMAutomationPage() {
                     <TrendingUp className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
-                    Increased Productivity
+                    Increased Agent Productivity
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Intelligent automation handles routine tasks like data entry and follow-ups automatically.
-                    <span className="font-semibold text-green-600"> Save 15+ hours weekly</span> per sales rep for
-                    strategic activities.
+                    Free human agents to focus on high-value, complex issues that require expertise.
+                    <span className="font-semibold text-green-600"> Boost productivity by 200%</span> with smart
+                    automation.
                   </p>
                 </div>
               </div>
-
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Zap className="w-8 h-8 text-blue-600" />
+                    <Globe className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Faster Sales Cycles
+                    24/7 Availability & Instant Responses
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automated nurturing and lead scoring accelerate your sales pipeline.
-                    <span className="font-semibold text-blue-600"> Reduce sales cycle by 40%</span> with instant lead
-                    routing and timely follow-ups.
+                    Offer immediate support around the clock for dramatically improved customer experience.
+                    <span className="font-semibold text-blue-600"> Increase CSAT scores by 40%</span> with instant
+                    gratification.
                   </p>
                 </div>
               </div>
-
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
-                    <DollarSign className="w-8 h-8 text-purple-600" />
+                    <CheckCircle className="w-8 h-8 text-purple-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-purple-700 transition-colors duration-300">
-                    Higher Revenue
+                    Improved First-Contact Resolution
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Focus on high-quality leads identified through automated scoring and behavioral tracking.
-                    <span className="font-semibold text-purple-600"> Increase revenue by 50%</span> with smarter lead
-                    prioritization.
+                    Intelligent routing ensures customers get the right answer on the first try.
+                    <span className="font-semibold text-purple-600"> Increase FCR by 85%</span> reducing repeat
+                    inquiries.
                   </p>
                 </div>
               </div>
-
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors duration-300">
-                    <CheckCircle className="w-8 h-8 text-orange-600" />
+                    <Target className="w-8 h-8 text-orange-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-orange-700 transition-colors duration-300">
-                    Reduced Errors & Costs
+                    Enhanced Lead Capture & Conversion
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Eliminate duplicate entries and manual mistakes with automated data syncing.
-                    <span className="font-semibold text-orange-600"> Reduce operational costs by 30%</span> while
-                    improving accuracy.
+                    Turn support channels into revenue drivers with automated lead qualification.
+                    <span className="font-semibold text-orange-600"> Increase conversions by 150%</span> from support
+                    interactions.
                   </p>
                 </div>
               </div>
-
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-200 transition-colors duration-300">
-                    <Globe className="w-8 h-8 text-teal-600" />
+                    <BarChart3 className="w-8 h-8 text-teal-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-teal-700 transition-colors duration-300">
-                    Scalable Growth
+                    Data-Driven Insights
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Processes grow without increasing headcount. Handle 10x more leads with the same team.
-                    <span className="font-semibold text-teal-600"> Scale infinitely</span> with future-proof automation
-                    investment.
-                  </p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition-colors duration-300">
-                    <BarChart3 className="w-8 h-8 text-indigo-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-indigo-700 transition-colors duration-300">
-                    Data-Driven Decisions
-                  </h3>
-                  <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Real-time insights and unified dashboards enable strategic decision-making.
-                    <span className="font-semibold text-indigo-600"> Improve decision speed by 300%</span> with
-                    actionable intelligence.
+                    Collect valuable data on customer pain points for continuous improvement.
+                    <span className="font-semibold text-teal-600"> Improve products by 300%</span> with actionable
+                    insights.
                   </p>
                 </div>
               </div>
@@ -924,14 +932,14 @@ export default function CRMAutomationPage() {
           </div>
         </section>
 
-        {/* Why Choose Us */}
+        {/* Why Choose Awwtomation */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for CRM Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for Customer Support Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                We do not just implement tools—we transform your entire customer lifecycle with intelligent automation
-                that delivers measurable results.
+                We don't just provide tools—we build comprehensive solutions that transform your entire customer support
+                experience with intelligent automation that delivers measurable results.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
@@ -939,15 +947,15 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-blue-600" />
+                    <Workflow className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    CRM Automation Expertise
+                    Holistic Automation Strategy
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Specialized in building powerful, end-to-end CRM automation solutions.
-                    <span className="font-semibold text-blue-600"> 500+ successful integrations</span> across all major
-                    CRM platforms.
+                    We analyze your entire customer journey to design cohesive automation.
+                    <span className="font-semibold text-blue-600"> End-to-end solutions</span> that align with business
+                    goals.
                   </p>
                 </div>
               </div>
@@ -955,14 +963,14 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Cog className="w-6 h-6 text-green-600" />
+                    <Bot className="w-6 h-6 text-green-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Tailored Solutions
+                    Expertise in AI & Integration
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Custom CRM automation and workflow automation tailored to your exact business needs.
-                    <span className="font-semibold text-green-600"> 100% customized</span> for your unique processes.
+                    Deep expertise in conversational AI and complex system integration.
+                    <span className="font-semibold text-green-600"> Seamless connections</span> with all your systems.
                   </p>
                 </div>
               </div>
@@ -970,15 +978,14 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Users className="w-6 h-6 text-purple-600" />
+                    <Settings className="w-6 h-6 text-purple-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Dedicated Support
+                    Custom-Trained AI Models
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    From implementation to long-term success, we are your automation partner.
-                    <span className="font-semibold text-purple-600"> 24/7 expert support</span> and ongoing
-                    optimization.
+                    AI models trained on your specific data and brand voice guidelines.
+                    <span className="font-semibold text-purple-600"> Accurate, on-brand</span> automated responses.
                   </p>
                 </div>
               </div>
@@ -989,11 +996,11 @@ export default function CRMAutomationPage() {
                     <Shield className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Security & Compliance
+                    Scalable & Secure Solutions
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Enterprise-grade security with encryption, authentication, and GDPR compliance.
-                    <span className="font-semibold text-orange-600"> Bank-level security</span> for your customer data.
+                    Built to grow with your business and prioritize data security.
+                    <span className="font-semibold text-orange-600"> GDPR & HIPAA compliant</span> for data protection.
                   </p>
                 </div>
               </div>
@@ -1001,14 +1008,14 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <TrendingUp className="w-6 h-6 text-teal-600" />
+                    <Users className="w-6 h-6 text-teal-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Proven Track Record
+                    Ongoing Partnership & Optimization
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Clients report faster lead response, higher conversion rates, and better decision-making.
-                    <span className="font-semibold text-teal-600"> Average 400% ROI</span> within 6 months.
+                    Dedicated automation partner with continuous monitoring and optimization.
+                    <span className="font-semibold text-teal-600"> Maximum ROI</span> with ongoing improvements.
                   </p>
                 </div>
               </div>
@@ -1016,14 +1023,14 @@ export default function CRMAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors duration-300">
-                    <Workflow className="w-6 h-6 text-indigo-600" />
+                    <TrendingUp className="w-6 h-6 text-indigo-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors duration-300">
-                    Future-Proof Technology
+                    Proven Track Record
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Built on scalable platforms that evolve with your business needs and technology changes.
-                    <span className="font-semibold text-indigo-600"> Always up-to-date</span> with latest innovations.
+                    Clients report faster response times and higher satisfaction scores.
+                    <span className="font-semibold text-indigo-600"> Average 500% ROI</span> within 3 months.
                   </p>
                 </div>
               </div>
@@ -1035,8 +1042,8 @@ export default function CRMAutomationPage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/20 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="w-full h-full">
-              <div className="absolute top-1/3 -left-20 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-1/3 -right-20 w-80 h-80 bg-yellow-200/30 rounded-full blur-3xl"></div>
+              <div className="absolute top-1/3 -left-20 w-80 h-80 bg-teal-200/30 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-1/3 -right-20 w-80 h-80 bg-cyan-200/30 rounded-full blur-3xl"></div>
             </div>
           </div>
           <div className="container px-4 md:px-6 relative z-10">
@@ -1045,36 +1052,36 @@ export default function CRMAutomationPage() {
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">FAQ</div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Frequently Asked Questions</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Get answers to common questions about our CRM automation services.
+                  Get answers to common questions about our customer support automation services.
                 </p>
               </div>
             </div>
             <div className="mx-auto grid max-w-3xl gap-6 py-12">
               {[
                 {
-                  question: "What types of applications can you connect to our CRM?",
+                  question: "Will automation replace my human support agents?",
                   answer:
-                    "We can integrate virtually any application that supports API-based CRM automation or webhooks. Common examples include e-commerce platforms, email marketing tools, customer support systems, payment gateways, and lead generation forms. If the app can send or receive data, we can build a CRM integration to automate those processes—giving you a seamless, automated CRM ecosystem.",
+                    "Not at all. The goal of automation is to augment your team by handling repetitive, low-level tasks. This frees your human agents to focus on complex, high-empathy interactions where their skills are most valuable. Our systems are designed for seamless handoff between AI and human agents, ensuring customers always get the right level of support.",
                 },
                 {
-                  question: "How quickly can we see ROI from these automations?",
+                  question: "How quickly can we implement these automation solutions?",
                   answer:
-                    "Many clients see a return almost immediately. By automating tasks like lead assignment, CRM email follow-ups, and data syncing, businesses reduce response times from days to minutes. These quick wins often lead to higher conversions within weeks. We focus on the highest-impact CRM workflows first, so you experience real, measurable benefits early in the process.",
+                    "The implementation timeline varies depending on complexity and number of systems to integrate. However, foundational tools like chatbots for FAQs or automated appointment schedulers can often be deployed in a matter of weeks, delivering rapid return on investment. We prioritize quick wins while building toward comprehensive automation.",
                 },
                 {
-                  question: "Will this work with our existing CRM, or do we need to switch?",
+                  question: "What platforms do you integrate with?",
                   answer:
-                    "No need to change platforms. Our CRM automation services are vendor-agnostic and designed to work with any CRM that supports APIs or webhooks. Whether you're using HubSpot, Salesforce, Pipedrive, or a custom CRM, we focus on building CRM workflow automation that fits into your current stack—so you can maximize your existing investment without disruption.",
+                    "We can integrate with a wide range of platforms, including all major CRMs (Salesforce, HubSpot, Pipedrive), helpdesks (Zendesk, Freshdesk, Crisp), calendar applications, and e-commerce systems. If your platform has an API, we can connect to it. Our team specializes in complex integrations that create seamless workflows.",
                 },
                 {
-                  question: "Can we modify or extend the automations later?",
+                  question: "How do you ensure the chatbot or voice AI understands our specific business?",
                   answer:
-                    "Absolutely. We build flexible, scalable automated CRM workflows that grow with your business. You can easily modify triggers, expand the logic, or integrate additional tools as your needs evolve. Our automations are built to support ongoing changes, whether you're scaling operations or shifting sales and marketing strategies.",
+                    "We train the AI models on your company's data, including your website content, knowledge base articles, historical support tickets, and product documentation. This ensures the responses are accurate, on-brand, and relevant to your customers. We also continuously refine the AI based on real interactions and feedback.",
                 },
                 {
-                  question: "How are data and privacy handled in these automations?",
+                  question: "Is the customer data collected through these systems secure?",
                   answer:
-                    "Data privacy and security are core to our automation strategy. All CRM integrations use encrypted API connections and adhere to data privacy best practices. We follow strict authentication protocols and leverage your CRM's built-in user permissions to control access. If we enrich or transmit data to third parties, it's done securely and in compliance with relevant regulations like GDPR. Your automated CRM setup is safe, compliant, and built with trust in mind.",
+                    "Absolutely. We prioritize data security and privacy in all our solutions. All data is encrypted, and our systems are designed to be compliant with industry standards like GDPR and HIPAA, ensuring your customers' information is always protected. We implement bank-level security measures and regular security audits.",
                 },
               ].map((faq, i) => (
                 <Card key={i} className="text-left">
@@ -1093,10 +1100,10 @@ export default function CRMAutomationPage() {
         {/* Call to Action */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Let&apos;s build Your CRM Automation Workflow Today</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Ready to Automate Your Customer Support?</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Don&apos;t let manual tasks hold your business back. Let&apos;s build a smarter, automated CRM that scales with you
-              and delivers measurable results.
+              Stop letting manual tasks create bottlenecks and start delivering the fast, efficient, and personalized
+              service your customers deserve. Transform your support operations today.
             </p>
             <div className="pt-8">
               <Button
@@ -1110,8 +1117,8 @@ export default function CRMAutomationPage() {
                 Schedule Free Consultation <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
-                See how custom CRM automation can boost your sales performance, reduce operational load, and increase
-                customer satisfaction.
+                We'll audit your current support workflows and design a tailored automation roadmap to help you reduce
+                costs, improve efficiency, and elevate your customer experience.
               </p>
             </div>
           </div>
@@ -1252,6 +1259,7 @@ export default function CRMAutomationPage() {
             </div>
           </div>
         </footer>
+
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
       </div>
     </ParallaxProvider>
