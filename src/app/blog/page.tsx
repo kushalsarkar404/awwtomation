@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useSearchParams, useRouter } from "next/navigation"
 import { ChevronRight, NotebookPen, Menu, X, Code, Mail, Cog, SquareChartGantt } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { CalModal } from "@/components/cal-modal"
@@ -15,18 +16,22 @@ interface Post {
   coverImage?: string
 }
 
+const POSTS_PER_PAGE = 8;
+
 export default function BlogPage() {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [sortOrder, setSortOrder] = useState<"desc" | "asc">("desc");
   
   const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)
-//   const [messageModalOpen, setMessageModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
-//   const [bannerVisible, setBannerVisible] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const page = Number(searchParams.get("page")) || 1;
 
   // Fetch blog posts from API
   useEffect(() => {
@@ -77,6 +82,25 @@ export default function BlogPage() {
       </div>
     )
   }
+
+  // Sort posts by date
+  const sortedPosts = [...posts].sort((a, b) => {
+    if (sortOrder === "desc") {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    } else {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
+  });
+
+  // Pagination logic
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+  const start = (page - 1) * POSTS_PER_PAGE;
+  const end = start + POSTS_PER_PAGE;
+  const paginatedPosts = sortedPosts.slice(start, end);
+
+  const handlePageChange = (newPage: number) => {
+    router.push(`/blog?page=${newPage}`);
+  };
 
   return (
     <div>
@@ -239,10 +263,24 @@ export default function BlogPage() {
       <div className="items-center gap-4 mb-10">
         <h1 className="text-xl font-bold tracking-tight text-muted-foreground py-4">Latest Blogs</h1>
       </div>
-
+      {/* Sort Dropdown */}
+      <div className="flex justify-end mb-4">
+        <label className="mr-2 text-sm text-muted-foreground" htmlFor="sortOrder">
+          Sort by:
+        </label>
+        <select
+          id="sortOrder"
+          value={sortOrder}
+          onChange={e => setSortOrder(e.target.value as "desc" | "asc")}
+          className="border rounded px-2 py-1 text-sm"
+        >
+          <option value="desc">Newest to Oldest</option>
+          <option value="asc">Oldest to Newest</option>
+        </select>
+      </div>
       {/* Blog Cards */}
       <div className="grid gap-8 sm:grid-cols-2">
-        {posts.map((post) => (
+        {paginatedPosts.map((post) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
@@ -270,6 +308,20 @@ export default function BlogPage() {
           </Link>
         ))}
       </div>
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="flex justify-center gap-2 mt-8">
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => handlePageChange(i + 1)}
+              className={`px-3 py-1 rounded ${page === i + 1 ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
      {/* Footer */}
      <div className="flex flex-col px-4 md:px-12">
