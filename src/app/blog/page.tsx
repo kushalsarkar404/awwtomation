@@ -50,10 +50,9 @@ export default async function BlogPage({ searchParams }: { searchParams?: Promis
           <nav className="hidden md:flex gap-8 relative items-center">
             <div className="relative group/menu">
               <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
-                <span className="relative">
-                  Services
-                  <span className="absolute -top-2 -right-6 bg-red-500 text-white text-[8px] px-1.5 py-0.5 rounded-full">NEW</span>
-                </span>
+              <Link href="/services" className="group flex gap-4">
+                    Services
+                    </Link>
               </div>
 
               <div className="absolute left-0 top-full pt-2 hidden group-hover/menu:flex bg-white border shadow-2xl rounded-xl w-[640px] p-6 z-40">

@@ -219,4 +219,30 @@ export const sharedMetadata: Record<string, Metadata> = {
         icon: "/favicon.png"
       },
   },
+  "services": {
+  title: "Automation Services: CRM, Email, Social Media & SEO Automation | Awwtomation",
+  description: "Transform your business with our comprehensive automation platform. CRM automation, email marketing, social media, SEO, blog automation & customer support. Scale 10x faster.",
+  keywords: "automation services, automation platform, CRM automation tools, email marketing automation platforms, best email automation platform, social media automation, SEO automation, blog automation, customer support automation, business automation, automation tools",
+  openGraph: {
+    title: "Automation Services: CRM, Email, Social Media & SEO Automation",
+    description: "Transform your business with our comprehensive automation services. CRM automation, email marketing, social media, SEO, blog automation & customer support. Scale 10x faster.",
+    url: "https://www.awwtomation.com/services",
+    siteName: "Awwtomation",
+    type: "website",
+
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Automation Services: CRM, Email, Social Media & SEO Automation",
+    description: "Transform your business with our comprehensive automation platform. CRM automation, email marketing, social media, SEO, blog automation & customer support.",
+    images: ["https://www.awwtomation.com/images/automation-services.png"]
+  },
+  robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  alternates: {
+    canonical: "https://www.awwtomation.com/services"
+  },
+  icons: {
+    icon: "/favicon.png"
+  },
+}
 }

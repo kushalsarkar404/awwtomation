@@ -107,22 +107,26 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="relative bg-background border rounded-lg shadow-lg w-full max-w-4xl flex flex-col">
-        <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="text-xl font-semibold text-center flex-1 pr-8">
+    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
+      <div className="relative bg-background border rounded-lg shadow-lg w-full max-w-4xl h-[90vh] sm:h-auto flex flex-col">
+        <div className="flex items-center justify-between p-3 sm:p-4 border-b flex-shrink-0">
+          <h2 className="text-lg sm:text-xl font-semibold text-center flex-1 pr-2 sm:pr-8">
             Book a meeting with our automation experts and transform your business processes!
           </h2>
           <button 
             onClick={() => onOpenChange(false)}
-            className="rounded-full p-1 hover:bg-muted"
+            className="rounded-full p-2 hover:bg-muted transition-colors touch-manipulation"
+            aria-label="Close modal"
           >
             <X className="h-5 w-5" />
-            <span className="sr-only">Close</span>
           </button>
         </div>
-        <div className="flex-1">
-          <div id="my-cal-inline" className="w-full" style={{ minHeight: "600px" }}></div>
+        <div className="flex-1 overflow-hidden">
+          <div 
+            id="my-cal-inline" 
+            className="w-full h-full" 
+            style={{ minHeight: "500px", maxHeight: "calc(90vh - 80px)" }}
+          ></div>
         </div>
       </div>
     </div>

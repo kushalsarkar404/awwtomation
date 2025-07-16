@@ -313,14 +313,14 @@ export default function AutomationServicesPage() {
           {/* Hero Content */}
           <div className="z-20 text-center max-w-4xl mx-auto space-y-6 relative">
             <Badge variant="secondary" className="bg-white/90 text-slate-700 border-slate-200 shadow-sm">
-              Automation Services We Offer at Awwtomation
+              Services
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-              Transform Your Business with Comprehensive Automation
+              Automation Services That Transform Your Business&apos;s process.
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
-              Streamline workflows and drive growth with our powerful automation platform. Awwtomation specializes in
-              automation solutions that help businesses optimize their processes and focus on what matters most.
+              Streamline workflows and drive growth with our powerful automation services. Awwtomation specializes in
+              automation workflows that help businesses optimize their processes and focus on what matters most.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
@@ -479,7 +479,7 @@ export default function AutomationServicesPage() {
               </div>
             </div>
             <div className="text-center pt-6">
-              <Button variant="outline" asChild>
+              <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/crm-automation">
                   Learn More About CRM Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -590,7 +590,7 @@ export default function AutomationServicesPage() {
               </div>
             </div>
             <div className="text-center pt-6">
-              <Button variant="outline" asChild>
+              <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/social-media-automation">
                   Learn More About Social Media Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -701,7 +701,7 @@ export default function AutomationServicesPage() {
               </div>
             </div>
             <div className="text-center pt-6">
-              <Button variant="outline" asChild>
+              <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/blog-automation">
                   Learn More About Blog Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -812,7 +812,7 @@ export default function AutomationServicesPage() {
               </div>
             </div>
             <div className="text-center pt-6">
-              <Button variant="outline" asChild>
+              <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/customer-support-automation">
                   Learn More About Customer Support Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -923,7 +923,7 @@ export default function AutomationServicesPage() {
               </div>
             </div>
             <div className="text-center pt-6">
-              <Button variant="outline" asChild>
+              <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/email-marketing-automation">
                   Learn More About Email Marketing Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
@@ -1034,7 +1034,7 @@ export default function AutomationServicesPage() {
               </div>
             </div>
             <div className="text-center pt-6">
-              <Button variant="outline" asChild>
+              <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/seo-automation">
                   Learn More About SEO Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
