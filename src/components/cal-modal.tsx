@@ -121,11 +121,11 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
             <X className="h-5 w-5" />
           </button>
         </div>
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 overflow-auto">
           <div 
             id="my-cal-inline" 
-            className="w-full h-full" 
-            style={{ minHeight: "500px", maxHeight: "calc(90vh - 80px)" }}
+            className="w-full" 
+            style={{ minHeight: "500px" }}
           ></div>
         </div>
       </div>
