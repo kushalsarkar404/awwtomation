@@ -1,3 +1,4 @@
+"use client"
 import { useRef, useState, useEffect } from "react";
 import { getSortedPostsData } from "@/lib/blog";
 import Link from "next/link";
