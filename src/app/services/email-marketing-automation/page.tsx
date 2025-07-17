@@ -1,3 +1,4 @@
+
 import { sharedMetadata } from "../_shared/metadata"
 
 export const metadata = sharedMetadata["email-marketing-automation"]
