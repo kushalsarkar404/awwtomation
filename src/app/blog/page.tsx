@@ -1,8 +1,9 @@
+import { useRef, useState, useEffect } from "react";
 import { getSortedPostsData } from "@/lib/blog";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Menu } from "lucide-react";
+import { ChevronRight, Menu, NotebookPen, SquareChartGantt, Code, Mail, Cog, Headphones, X} from "lucide-react";
 
 const POSTS_PER_PAGE = 8;
 
@@ -11,6 +12,24 @@ export default async function BlogPage({ searchParams }: { searchParams?: Promis
   const params = await searchParams;
   const page = Number(params?.page) || 1;
   const sortOrder = (params?.sort === "asc" ? "asc" : "desc");
+  const menuRef = useRef(null)
+  const [calModalOpen, setCalModalOpen] = useState(false)
+  const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && (menuRef.current as HTMLElement).contains(event.target as Node) === false) {
+        setMobileMenuOpen(false)
+      }
+    }
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [mobileMenuOpen])
 
   // Sort posts by date
   const sortedPosts = [...allPosts].sort((a, b) => {
@@ -30,120 +49,198 @@ export default async function BlogPage({ searchParams }: { searchParams?: Promis
   return (
     <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link href="/">
-              <Image
-                src="/full-logo.svg"
-                alt="Awwtomation Logo"
-                fill={false}
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="h-auto w-auto"
-                priority
-              />
-            </Link>
-          </div>
-
-          <nav className="hidden md:flex gap-8 relative items-center">
-            <div className="relative group/menu">
-              <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
-              <Link href="/services" className="group flex gap-4">
+     {/* Header */}
+     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div className="container mx-auto flex h-16 items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Link href="/">
+                <Image
+                  src="/full-logo.svg"
+                  alt="Awwtomation Logo"
+                  fill={false}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="h-auto w-auto"
+                  priority
+                />
+              </Link>
+            </div>
+            <nav className="hidden md:flex gap-8 relative items-center">
+              <div className="relative group/menu">
+                <div className="flex items-center gap-1 text-sm font-medium cursor-pointer relative z-50">
+                <Link href="/services" className="group flex gap-4">
                     Services
                     </Link>
-              </div>
-
-              <div className="absolute left-0 top-full pt-2 hidden group-hover/menu:flex bg-white border shadow-2xl rounded-xl w-[640px] p-6 z-40">
-                <div className="grid grid-cols-2 gap-6">
-                  <Link href="/services/blog-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
-                      <svg className="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2 font-medium text-gray-800">
-                        Blog Agent
-                        <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-md">NEW</span>
+                </div>
+                <div className="absolute left-0 top-full pt-2 hidden group-hover/menu:flex bg-white border shadow-2xl rounded-xl w-[640px] p-6 z-40">
+                  <div className="grid grid-cols-2 gap-6">
+                    {/* Blog Agent */}
+                    <Link href="/services/blog-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100">
+                        <NotebookPen className="h-5 w-5 text-blue-600" />
                       </div>
-                      <p className="text-sm text-gray-500">Multi-purpose blog generator with SEO-ready content</p>
-                    </div>
-                  </Link>
-
-                  <Link href="/services/social-media-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100">
-                      <svg className="h-5 w-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-800">Social Media Automation</div>
-                      <p className="text-sm text-gray-500">Schedule, optimize, and automate social campaigns</p>
-                    </div>
-                  </Link>
-
-                  <Link href="/services/seo-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
-                      <svg className="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-800">SEO Automation</div>
-                      <p className="text-sm text-gray-500">AI meta generation, audits, and keyword clustering</p>
-                    </div>
-                  </Link>
-
-                  <Link href="/services/email-marketing-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100">
-                      <svg className="h-5 w-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-800">Email Marketing Automation</div>
-                      <p className="text-sm text-gray-500">Automated campaigns, segmentation & personalization</p>
-                    </div>
-                  </Link>
-
-                  <Link href="/services/crm-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
-                      <svg className="h-5 w-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-800">CRM Automation</div>
-                      <p className="text-sm text-gray-500">Lead flows, auto-reminders & 3rd-party integration</p>
-                    </div>
-                  </Link>
+                      <div>
+                        <div className="flex items-center gap-2 font-medium text-gray-800">
+                          Blog Agent
+                          <span className="bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-md">NEW</span>
+                        </div>
+                        <p className="text-sm text-gray-500">Multi-purpose blog generator with SEO-ready content</p>
+                      </div>
+                    </Link>
+                    {/* Social Media Automation */}
+                    <Link
+                      href="/services/social-media-automation"
+                      className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-pink-100">
+                        <SquareChartGantt className="h-5 w-5 text-pink-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">Social Media Automation</div>
+                        <p className="text-sm text-gray-500">Schedule, optimize, and automate social campaigns</p>
+                      </div>
+                    </Link>
+                    {/* SEO Automation */}
+                    <Link href="/services/seo-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
+                        <Code className="h-5 w-5 text-green-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">SEO Automation</div>
+                        <p className="text-sm text-gray-500">AI meta generation, audits, and keyword clustering</p>
+                      </div>
+                    </Link>
+                    {/* Email Marketing Automation */}
+                    <Link
+                      href="/services/email-marketing-automation"
+                      className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-100">
+                        <Mail className="h-5 w-5 text-purple-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">Email Marketing Automation</div>
+                        <p className="text-sm text-gray-500">Automated campaigns, segmentation & personalization</p>
+                      </div>
+                    </Link>
+                    {/* CRM Automation */}
+                    <Link href="/services/crm-automation" className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-yellow-100">
+                        <Cog className="h-5 w-5 text-yellow-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">CRM Automation</div>
+                        <p className="text-sm text-gray-500">Lead flows, auto-reminders & 3rd-party integration</p>
+                      </div>
+                    </Link>
+                    {/* Customer Support Automation */}
+                    <Link
+                      href="/services/customer-support-automation"
+                      className="group flex gap-4 hover:bg-gray-50 p-3 rounded-md"
+                    >
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-100">
+                        <Headphones className="h-5 w-5 text-teal-600" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-800">Customer Support Automation</div>
+                        <p className="text-sm text-gray-500">AI chatbots, smart routing & 24/7 support</p>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
+              <Link href="/#pricing" className="text-sm font-medium hover:text-primary">
+                Pricing
+              </Link>
+              <Link href="/#contact" className="text-sm font-medium hover:text-primary">
+                Contact
+              </Link>
+              <Link href="/blog" className="text-sm font-medium hover:text-primary">
+                Blog
+              </Link>
+              <Link href="/about" className="text-sm font-medium hover:text-primary">
+                About
+              </Link>
+            </nav>
+
+            <div className="hidden md:flex items-center gap-4">
+              <Button
+                size="lg"
+                className="hover:bg-blue-700"
+                onClick={() => {
+                  setSelectedCalLink("awwtomation/awwtomation-consultation")
+                  setCalModalOpen(true)
+                }}
+              >
+                Automate Now
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
             </div>
 
-            <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
-            <Link href="/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
-            <Link href="/about" className="text-sm font-medium hover:text-primary">About</Link>
-          </nav>
+            <div ref={menuRef} className="md:hidden block" style={{ zIndex: 60 }}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setMobileMenuOpen((prev) => !prev)
+                }}
+                className="p-2 rounded-md border border-gray-300"
+              >
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Button size="lg" className="hover:bg-blue-700">
-              Automate Now
-              <ChevronRight className="ml-1 h-4 w-4" />
-            </Button>
+              {/* Mobile Menu Panel */}
+              {mobileMenuOpen && (
+                <div
+                  ref={menuRef}
+                  className="fixed left-0 right-0 top-16 z-50 bg-white border-t shadow px-4 py-6 space-y-4 md:hidden"
+                >
+                  <Link href="/services/blog-automation" className="block font-medium text-gray-700">
+                    Blog Agent
+                  </Link>
+                  <Link href="/services/social-media-automation" className="block font-medium text-gray-700">
+                    Social Media Automation
+                  </Link>
+                  <Link href="/services/seo-automation" className="block font-medium text-gray-700">
+                    SEO Automation
+                  </Link>
+                  <Link href="/services/crm-automation" className="block font-medium text-gray-700">
+                    CRM Automation
+                  </Link>
+                  <Link href="/services/email-marketing-automation" className="block font-medium text-gray-700">
+                    Email Marketing Automation
+                  </Link>
+                  <Link href="/services/customer-support-automation" className="block font-medium text-gray-700">
+                    Customer Support Automation
+                  </Link>
+                  <Link href="/blog" className="block font-medium text-gray-700">
+                    Blog
+                  </Link>
+                  <Link href="/#pricing" className="block text-gray-700">
+                    Pricing
+                  </Link>
+                  <Link href="/#contact" className="block text-gray-700">
+                    Contact
+                  </Link>
+                  <Link href="/about" className="block text-gray-700">
+                    About
+                  </Link>
+                  <Button
+                    size="lg"
+                    className="w-full hover:bg-blue-700"
+                    onClick={() => {
+                      setSelectedCalLink("awwtomation/awwtomation-consultation")
+                      setCalModalOpen(true)
+                    }}
+                  >
+                    Automate Now
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+            </div>
           </div>
-
-          <div className="md:hidden block">
-            <button className="p-2 rounded-md border border-gray-300">
-              <Menu className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </header>
+        </header>
 
       {/* Main Content */}
       <main className="flex-1">
