@@ -244,5 +244,25 @@ export const sharedMetadata: Record<string, Metadata> = {
   icons: {
     icon: "/favicon.png"
   },
-}
+},
+"blog": {
+    title: "Business Automation Blog – CRM, SEO, Email & Workflow Insights | Awwtomation",
+    description: "Explore actionable insights on CRM, SEO, email marketing, social media, and workflow automation. Learn how to grow faster with AI-powered tools and expert strategies.",
+    keywords: "business automation blog, CRM automation tips, email marketing automation, SEO automation strategies, workflow automation, marketing automation blog, AI tools for business, automation case studies, small business automation",
+    openGraph: {
+      title: "Business Automation Blog – CRM, SEO, Email & Workflow Insights",
+      description: "Stay ahead with expert content on CRM, SEO, email, and workflow automation. Discover strategies, tools, and templates to scale your business with ease.",
+      url: "https://www.awwtomation.com/blog",
+      siteName: "Awwtomation",
+      type: "website"
+    },
+    robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+    alternates: {
+      canonical: "https://www.awwtomation.com/blog"
+    },
+    icons: {
+      icon: "/favicon.png"
+    }
+  }
+  
 }
