@@ -1,5 +1,4 @@
 "use client"
-
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -8,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { ParallaxProvider } from "react-scroll-parallax"
 import { CalModal } from "@/components/cal-modal"
 import {
-  Mail,
+    Mail,
   Search,
   BarChart3,
   ChevronRight,
@@ -24,19 +23,12 @@ import {
   FileText,
   Zap,
   Eye,
-  Headphones,
-  Users,
-  MessageSquare,
-  Calendar,
-  Settings,
-  Workflow,
-  Bot,
-  PieChart,
-  Lightbulb,
+  Headphones
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export default function AutomationServicesPage() {
+
+export default function SEOAutomationPage() {
   const menuRef = useRef(null)
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
@@ -48,16 +40,13 @@ export default function AutomationServicesPage() {
         setMobileMenuOpen(false)
       }
     }
-
     if (mobileMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside)
     } else {
       document.removeEventListener("mousedown", handleClickOutside)
     }
-
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [mobileMenuOpen])
-
   return (
     <ParallaxProvider>
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
@@ -175,6 +164,7 @@ export default function AutomationServicesPage() {
                 About
               </Link>
             </nav>
+
             <div className="hidden md:flex items-center gap-4">
               <Button
                 size="lg"
@@ -188,6 +178,7 @@ export default function AutomationServicesPage() {
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             </div>
+
             <div ref={menuRef} className="md:hidden block" style={{ zIndex: 60 }}>
               <button
                 onClick={(e) => {
@@ -198,6 +189,7 @@ export default function AutomationServicesPage() {
               >
                 {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
+
               {/* Mobile Menu Panel */}
               {mobileMenuOpen && (
                 <div
@@ -251,87 +243,95 @@ export default function AutomationServicesPage() {
           </div>
         </header>
 
-        {/* Hero Section with Floating Automation Icons */}
-        <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+        {/* Hero Section */}
+        {/* Hero Section with Floating SEO Icons */}
+        <section className="w-full min-h-[90vh] flex flex-col justify-center py-20 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-slate-50 via-green-50 to-emerald-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
           <div className="hidden sm:flex justify-center w-full">
-            {/* Floating Automation Icons */}
+            {/* Floating SEO Icons */}
             <div className="absolute inset-0 z-0">
-              {/* CRM */}
+              {/* Google */}
               <div className="absolute floating-logo floating-logo-1" style={{ top: "15%", left: "10%" }}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-yellow-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Users className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Search className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
               </div>
-              {/* Social Media */}
-              <div className="absolute floating-logo floating-logo-2" style={{ top: "25%", right: "15%" }}>
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <SquareChartGantt className="w-5 h-5 md:w-7 md:h-7 text-white" />
-                </div>
-              </div>
-              {/* Email Marketing */}
-              <div className="absolute floating-logo floating-logo-3" style={{ top: "60%", left: "8%" }}>
-                <div className="w-11 h-11 md:w-15 md:h-15 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Mail className="w-5 h-5 md:w-7 md:h-7 text-white" />
-                </div>
-              </div>
-              {/* Customer Support */}
-              <div className="absolute floating-logo floating-logo-4" style={{ top: "40%", right: "8%" }}>
-                <div className="w-13 h-13 md:w-17 md:h-17 bg-teal-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <Headphones className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                </div>
-              </div>
-              {/* SEO */}
-              <div className="absolute floating-logo floating-logo-5" style={{ top: "70%", right: "20%" }}>
-                <div className="w-10 h-10 md:w-14 md:h-14 bg-green-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Search className="w-5 h-5 md:w-7 md:h-7 text-white" />
-                </div>
-              </div>
-              {/* Blog Automation */}
-              <div className="absolute floating-logo floating-logo-6" style={{ top: "20%", left: "25%" }}>
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
-                  <NotebookPen className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                </div>
-              </div>
-              {/* Workflow */}
-              <div className="absolute floating-logo floating-logo-7" style={{ top: "50%", left: "20%" }}>
-                <div className="w-9 h-9 md:w-13 md:h-13 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
-                  <Workflow className="w-4 h-4 md:w-6 md:h-6 text-white" />
-                </div>
-              </div>
+
               {/* Analytics */}
+              <div className="absolute floating-logo floating-logo-2" style={{ top: "25%", right: "15%" }}>
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <BarChart3 className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                </div>
+              </div>
+
+              {/* SEO Trends */}
+              <div className="absolute floating-logo floating-logo-3" style={{ top: "60%", left: "8%" }}>
+                <div className="w-11 h-11 md:w-15 md:h-15 bg-green-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <TrendingUp className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                </div>
+              </div>
+
+              {/* Keywords */}
+              <div className="absolute floating-logo floating-logo-4" style={{ top: "40%", right: "8%" }}>
+                <div className="w-13 h-13 md:w-17 md:h-17 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <Target className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                </div>
+              </div>
+
+              {/* Global SEO */}
+              <div className="absolute floating-logo floating-logo-5" style={{ top: "70%", right: "20%" }}>
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Globe className="w-5 h-5 md:w-7 md:h-7 text-white" />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="absolute floating-logo floating-logo-6" style={{ top: "20%", left: "25%" }}>
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-teal-600 rounded-xl flex items-center justify-center shadow-lg opacity-25 hover:opacity-45 transition-opacity">
+                  <FileText className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                </div>
+              </div>
+
+              {/* Speed/Performance */}
+              <div className="absolute floating-logo floating-logo-7" style={{ top: "50%", left: "20%" }}>
+                <div className="w-9 h-9 md:w-13 md:h-13 bg-yellow-500 rounded-xl flex items-center justify-center shadow-lg opacity-20 hover:opacity-40 transition-opacity">
+                  <Zap className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                </div>
+              </div>
+
+              {/* Visibility */}
               <div className="absolute floating-logo floating-logo-8" style={{ top: "35%", left: "35%" }}>
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-indigo-500 rounded-xl flex items-center justify-center shadow-lg opacity-15 hover:opacity-35 transition-opacity">
-                  <BarChart3 className="w-4 h-4 md:w-6 md:h-6 text-white" />
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-pink-500 rounded-xl flex items-center justify-center shadow-lg opacity-15 hover:opacity-35 transition-opacity">
+                  <Eye className="w-4 h-4 md:w-6 md:h-6 text-white" />
                 </div>
               </div>
             </div>
           </div>
-
           {/* Gradient Overlay for Better Text Contrast */}
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/30 via-transparent to-background/20" />
 
           {/* Hero Content */}
-          <div className="z-20 text-center max-w-4xl mx-auto space-y-6 relative">
+          <div className="z-20 text-center max-w-3xl mx-auto space-y-6 relative">
             <Badge variant="secondary" className="bg-white/90 text-slate-700 border-slate-200 shadow-sm">
-              Automation Services We Offer at Awwtomation
+              SEO Automation
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white drop-shadow-sm">
-              Transform Your Business with Comprehensive Automation
+              Data-Driven SEO Automation Made Simple
             </h1>
-            <p className="text-slate-600 dark:text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
-              Streamline workflows and drive growth with our powerful automation platform. Awwtomation specializes in
-              automation solutions that help businesses optimize their processes and focus on what matters most.
+            <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
+              Automatically collect and visualize analytics, track keyword positions, and generate optimized content
+              with AI. Integrate with your CMS for hands off publishing and republishing, empowering you to maintain a
+              competitive edge in search.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
                 size="lg"
-                className="hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className=" hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 onClick={() => {
                   setSelectedCalLink("awwtomation/awwtomation-consultation")
                   setCalModalOpen(true)
                 }}
               >
-                Start Automating <ChevronRight className="ml-1 h-4 w-4" />
+                Start Optimizing <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -343,11 +343,13 @@ export default function AutomationServicesPage() {
             50% { transform: translateY(-10px) translateX(-15px) rotate(-3deg); }
             75% { transform: translateY(-25px) translateX(5px) rotate(2deg); }
           }
+
           @keyframes float2 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             33% { transform: translateY(-15px) translateX(-20px) rotate(-4deg); }
             66% { transform: translateY(-30px) translateX(10px) rotate(6deg); }
           }
+
           @keyframes float3 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             20% { transform: translateY(-18px) translateX(8px) rotate(3deg); }
@@ -355,11 +357,13 @@ export default function AutomationServicesPage() {
             60% { transform: translateY(-22px) translateX(-5px) rotate(4deg); }
             80% { transform: translateY(-8px) translateX(15px) rotate(-1deg); }
           }
+
           @keyframes float4 {
             0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
             30% { transform: translateY(-25px) translateX(-8px) rotate(-5deg); }
             70% { transform: translateY(-12px) translateX(18px) rotate(3deg); }
           }
+
           .floating-logo-1 { animation: float1 12s ease-in-out infinite; }
           .floating-logo-2 { animation: float2 15s ease-in-out infinite; }
           .floating-logo-3 { animation: float3 18s ease-in-out infinite; }
@@ -368,685 +372,291 @@ export default function AutomationServicesPage() {
           .floating-logo-6 { animation: float2 13s ease-in-out infinite reverse; }
           .floating-logo-7 { animation: float3 17s ease-in-out infinite reverse; }
           .floating-logo-8 { animation: float4 11s ease-in-out infinite reverse; }
+
           .floating-logo {
             filter: blur(0.5px);
           }
+
           .floating-logo:hover {
             filter: blur(0px);
           }
         `}</style>
         </section>
-
-        {/* CRM Automation Section */}
+        {/* What is SEO Automation */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">CRM Automation</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                <Badge variant="secondary">Sales teams</Badge>
-                <Badge variant="secondary">Customer service departments</Badge>
-                <Badge variant="secondary">Growing businesses</Badge>
+          <div className="max-w-5xl mx-auto text-center space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">SEO Reporting Automation</h2>
+            <p className="text-muted-foreground md:text-xl">
+              Automatically gather, consolidate, and visualize data from platforms like Google Analytics 4 (GA4) and
+              Google Search Console (GSC) for effective SEO performance tracking.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 text-left">
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">Custom Dashboards & Scheduled Reports</h3>
+                <p className="text-muted-foreground">
+                  Configure SEO dashboards tailored to your KPIs (organic traffic growth, bounce rate improvements,
+                  conversion rate optimization) and set scheduled email or Slack reports (daily/weekly/monthly) so
+                  stakeholders stay informed without manual exports.
+                </p>
               </div>
-              <p className="text-muted-foreground max-w-4xl mx-auto">
-                Our CRM automation tools revolutionize how you manage customer relationships with automated lead capture
-                and nurture systems that drive revenue and improve customer satisfaction.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-yellow-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-yellow-700 transition-colors duration-300">
-                    Automated Lead Capture
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Instantly capture and organize leads from multiple sources into your CRM
-                  </p>
-                </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">Visualization & Insights</h3>
+                <p className="text-muted-foreground">
+                  Generate charts showing SEO trends over time, compare periods for seasonal SEO performance, identify
+                  top-performing pages, and highlight issues needing attention (crawl errors, indexation drops).
+                </p>
               </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Workflow className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Lead Nurturing Workflows
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically engage prospects with personalized sequences based on behavior
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Settings className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Pipeline Management
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Streamline deal progression with automated stage transitions and notifications
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Globe className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Customer Data Synchronization
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Ensure consistent, up-to-date information across all touchpoints
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <Calendar className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Automated Follow-ups
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Never miss opportunities with intelligent reminder systems and scheduled outreach
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <BarChart3 className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Sales Reporting and Analytics
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Generate real-time insights on performance metrics and conversion rates
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center pt-6">
-              <Button variant="outline" asChild>
-                <Link href="/services/crm-automation">
-                  Learn More About CRM Automation <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
             </div>
           </div>
         </section>
 
-        {/* Social Media Automation Section */}
+        {/* SEO Tool-Specific Automation */}
         <section className="py-20 px-4 md:px-12">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Social Media Automation</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                <Badge variant="secondary">Marketing teams</Badge>
-                <Badge variant="secondary">Content creators</Badge>
-                <Badge variant="secondary">Multi-platform businesses</Badge>
-              </div>
-              <p className="text-muted-foreground max-w-4xl mx-auto">
-                Maximize your social media presence with automated content generation and analytics dashboard that
-                maintains authentic engagement while saving hours of manual work.
+          <div className="max-w-6xl mx-auto space-y-16">
+            {/* Keyword Rank Tracking */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">
+                Keyword Rank Tracking & Page Performance Monitoring with SEO Automation
+              </h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Continuously observe how your keywords perform in search and how individual pages fare in terms of
+                clicks, impressions, and position for better keyword optimization.
               </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-200 transition-colors duration-300">
-                    <Bot className="w-6 h-6 text-pink-600" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                      <Search className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                      Automated Rank Checks
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Schedule daily or weekly rank tracking for your target keyword sets across regions and devices.
+                      Detect ranking fluctuations early.
+                    </p>
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-pink-700 transition-colors duration-300">
-                    Automated Content Generation
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Create engaging posts automatically based on your brand voice and audience preferences
-                  </p>
                 </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Calendar className="w-6 h-6 text-blue-600" />
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                      <BarChart3 className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                      Automated Page Insights
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Track top performing pages & their metrics (click-through rate, average position) to prioritize
+                      optimization.
+                    </p>
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Social Media Planning and Scheduling
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Plan and deploy posts across multiple platforms with optimal timing
-                  </p>
                 </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <PieChart className="w-6 h-6 text-green-600" />
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                      <Target className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                      Competitive Benchmarking
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Include competitor keywords to see relative positions and spot new SEO opportunities.
+                    </p>
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Analytics Dashboard
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Track engagement metrics, follower growth, and content performance in one centralized location
-                  </p>
                 </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <MessageSquare className="w-6 h-6 text-purple-600" />
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                      <TrendingUp className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                      Historical Data & Trends
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Keep archives of past performance to analyze seasonality and its impact on organic traffic.
+                    </p>
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Audience Engagement
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically respond to comments and messages with personalized replies
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <Search className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Hashtag Optimization
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Generate relevant, trending hashtags to increase post visibility and reach
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <Globe className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Cross-platform Posting
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Simultaneously publish content to Facebook, Instagram, Twitter, and LinkedIn
-                  </p>
                 </div>
               </div>
             </div>
-            <div className="text-center pt-6">
-              <Button variant="outline" asChild>
-                <Link href="/services/social-media-automation">
-                  Learn More About Social Media Automation <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
+
+            {/* AI-Powered Content Creation */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">AI-Powered SEO Optimized Content Creation</h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Harness AI to draft content at scale while ensuring alignment with your brand voice and SEO best
+                practices for higher search rankings.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                      <Target className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                      Topic & Keyword Research
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Generate a prioritized list of content ideas and longtail keyword opportunities based on your
+                      niche and competitor analysis.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                      <FileText className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                      Draft Generation
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Produce SEO-friendly blog posts, articles, meta titles/descriptions, product pages, or FAQs
+                      tailored to target keywords.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                      <Zap className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                      On-Page Optimization
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Automatically analyze drafts for keyword usage, readability, structure, internal linking
+                      opportunities, and image alt-text recommendations.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Republishing */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">Content Republishing & Distribution</h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Ensure your evergreen content stays fresh and reaches the right audiences across channels with SEO automation workflow.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
+                      <FileText className="w-6 h-6 text-teal-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
+                      Content Audit & Republish
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Identify top-performing older posts, check for outdated statistics, and automatically publish
+                      refreshed versions with updated timestamps.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-200 transition-colors duration-300">
+                      <Globe className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors duration-300">
+                      Syndication & Social Sharing
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Automatically share new or refreshed content to social platforms or email newsletters via API
+                      integrations with UTM-tagged links.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                      <BarChart3 className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                      Tracking & Attribution
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Tag redistributed content with UTM parameters and feed results back into the reporting dashboard
+                      to measure engagement and conversions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CMS Integration */}
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-center">CMS Integration</h2>
+              <p className="text-muted-foreground text-lg text-center max-w-4xl mx-auto">
+                Seamlessly plug into your content management system (WordPress, Drupal, headless CMS, custom platforms)
+                for end-to-end SEO automation workflows.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                      <Zap className="w-6 h-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                      Automatic Publishing
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Push AI-generated or refreshed content directly into drafts or live posts, with options for
+                      scheduling, categorization, and metadata population.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                      <Code className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                      Template & Schema Injection
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Automate insertion of schema markup (FAQ, HowTo, Product) based on content type; ensure consistent
+                      meta tags across pages.
+                    </p>
+                  </div>
+                </div>
+                <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                      <Eye className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                      User Permissions & Review Flows
+                    </h3>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                      Configure roles so that automated steps occur in staging or drafts first, with human approvals
+                      before going live.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Blog Automation Section */}
-        <section className="py-20 px-4 md:px-12 bg-muted/50">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Blog Automation</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                <Badge variant="secondary">Content marketers</Badge>
-                <Badge variant="secondary">SEO professionals</Badge>
-                <Badge variant="secondary">Thought leadership businesses</Badge>
-              </div>
-              <p className="text-muted-foreground max-w-4xl mx-auto">
-                Streamline your content creation process with our Blog Agent that creates automated SEO-optimized and
-                humanized blogs to engage your audience effectively.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Search className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    SEO-Optimized Blog Creation
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Generate high-quality, search-engine-friendly content automatically
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Users className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Humanized Content
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Create authentic, engaging blog posts that resonate with your audience
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Lightbulb className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Content Ideation and Planning
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Generate topic suggestions based on trending keywords and industry insights
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <Calendar className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Automated Publishing Workflows
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Schedule posts and manage editorial calendars seamlessly
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <Globe className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Content Distribution
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically share new posts across social media and email channels
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
-                    <BarChart3 className="w-6 h-6 text-yellow-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-yellow-700 transition-colors duration-300">
-                    Performance Tracking
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Monitor traffic, engagement metrics, and SEO rankings for content optimization
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center pt-6">
-              <Button variant="outline" asChild>
-                <Link href="/services/blog-automation">
-                  Learn More About Blog Automation <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Customer Support Automation Section */}
-        <section className="py-20 px-4 md:px-12">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Customer Support Automation</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                <Badge variant="secondary">Customer service teams</Badge>
-                <Badge variant="secondary">E-commerce businesses</Badge>
-                <Badge variant="secondary">SaaS companies</Badge>
-              </div>
-              <p className="text-muted-foreground max-w-4xl mx-auto">
-                Deliver exceptional customer experiences with intelligent automation that resolves issues faster while
-                reducing support costs.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <Settings className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Ticket Routing and Prioritization
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically assign requests to the right agents
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Bot className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Chatbot Integration
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Deploy AI-powered chatbots for instant responses to common inquiries
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <FileText className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Knowledge Base Management
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically update support documentation
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <TrendingUp className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Escalation Workflows
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Transfer complex issues to specialized agents with complete context
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <MessageSquare className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Response Templates
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Generate personalized responses using customer data
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
-                    <BarChart3 className="w-6 h-6 text-yellow-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-yellow-700 transition-colors duration-300">
-                    Support Analytics
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Track resolution times and customer satisfaction scores
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center pt-6">
-              <Button variant="outline" asChild>
-                <Link href="/services/customer-support-automation">
-                  Learn More About Customer Support Automation <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Email Marketing Automation Section */}
-        <section className="py-20 px-4 md:px-12 bg-muted/50">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Email Marketing Automation</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                <Badge variant="secondary">E-commerce businesses</Badge>
-                <Badge variant="secondary">B2B companies</Badge>
-                <Badge variant="secondary">Marketing agencies</Badge>
-              </div>
-              <p className="text-muted-foreground max-w-4xl mx-auto">
-                Create sophisticated email campaigns with our best email automation platform featuring automated
-                campaigns, segmentation, and personalization that nurtures leads and drives conversions.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Mail className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Automated Campaigns
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Design intelligent email sequences that guide prospects through your sales funnel
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Advanced Segmentation
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically categorize subscribers based on behavior, preferences, and demographics
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Users className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Personalization
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Dynamically customize email content based on subscriber data and engagement history
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <Zap className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Behavioral Triggers
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Send targeted emails based on customer actions and engagement patterns
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <BarChart3 className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    A/B Testing
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Optimize subject lines, content, and send times through automated testing protocols
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
-                    <TrendingUp className="w-6 h-6 text-yellow-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-yellow-700 transition-colors duration-300">
-                    Email Automation Platforms
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Access comprehensive features for maximum campaign effectiveness and ROI
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center pt-6">
-              <Button variant="outline" asChild>
-                <Link href="/services/email-marketing-automation">
-                  Learn More About Email Marketing Automation <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* SEO Automation Section */}
-        <section className="py-20 px-4 md:px-12">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">SEO Automation</h2>
-              <div className="flex flex-wrap justify-center gap-2 mb-4">
-                <Badge variant="secondary">Digital marketing agencies</Badge>
-                <Badge variant="secondary">Content teams</Badge>
-                <Badge variant="secondary">Organic growth businesses</Badge>
-              </div>
-              <p className="text-muted-foreground max-w-4xl mx-auto">
-                Boost your search engine rankings with automated comprehensive SEO reporting that optimizes your
-                website, tracks performance, and identifies growth opportunities.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <BarChart3 className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Automated Comprehensive SEO Reporting
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Generate detailed reports on rankings, traffic, and performance metrics
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Search className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Keyword Research and Tracking
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically discover high-value keywords and monitor ranking positions
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Code className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Technical SEO Audits
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Scan websites for issues affecting search performance with actionable recommendations
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-200 transition-colors duration-300">
-                    <FileText className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-teal-700 transition-colors duration-300">
-                    Content Optimization
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Analyze and improve existing content for better search engine visibility
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Competitor Analysis
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Monitor competitor strategies and identify gaps in your SEO approach
-                  </p>
-                </div>
-              </div>
-              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-yellow-200 transition-colors duration-300">
-                    <Eye className="w-6 h-6 text-yellow-600" />
-                  </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-yellow-700 transition-colors duration-300">
-                    Performance Monitoring
-                  </h3>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Track SEO progress with automated alerts and insights for continuous improvement
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="text-center pt-6">
-              <Button variant="outline" asChild>
-                <Link href="/services/seo-automation">
-                  Learn More About SEO Automation <ChevronRight className="ml-1 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits & ROI Section */}
+        {/* Workflow Integrations */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Benefits & ROI of Business Automation</h2>
+            <h2 className="text-3xl font-bold">Benefits & ROI of SEO Automation</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -1065,11 +675,12 @@ export default function AutomationServicesPage() {
                     Time Savings
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Free up your team from repetitive tasks, allowing them to focus on strategic initiatives and
-                    creative work.
+                    Free up SEO specialists and content teams from repetitive data gathering, manual reporting, and
+                    basic content drafting.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -1087,10 +698,12 @@ export default function AutomationServicesPage() {
                     Data-Driven Decisions
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Real-time insights and automated reporting enable faster, more informed business decisions.
+                    Real-time insights and alerts facilitate prompt actions, capitalizing on opportunities or mitigating
+                    negative trends quickly.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -1108,10 +721,12 @@ export default function AutomationServicesPage() {
                     Scalability
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Scale your operations without proportionally increasing headcount or operational complexity.
+                    Publish and update content at scale without proportionally increasing headcount, enabled by
+                    AI-driven content automation.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -1129,10 +744,12 @@ export default function AutomationServicesPage() {
                     Consistency & Quality
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automated processes ensure consistent quality and reduce human error across all operations.
+                    Automated checks ensure SEO best practices are applied uniformly; AI-assisted drafting maintains
+                    brand voice.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -1150,10 +767,12 @@ export default function AutomationServicesPage() {
                     Better Resource Allocation
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Teams can focus on high-level strategy and creative problem-solving rather than manual tasks.
+                    Teams can focus on high-level strategy, creative ideation, and complex problem-solving rather than
+                    manual chores.
                   </p>
                 </div>
               </div>
+
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -1171,8 +790,7 @@ export default function AutomationServicesPage() {
                     Improved ROI
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Better resource allocation and automated processes lead to improved ROI from all business
-                    investments.
+                    Better resource allocation and automated processes lead to improved ROI from SEO investments.
                   </p>
                 </div>
               </div>
@@ -1180,6 +798,76 @@ export default function AutomationServicesPage() {
           </div>
         </section>
 
+        {/* Local SEO */}
+        <section className="py-20 px-4 md:px-12">
+          <div className="max-w-4xl mx-auto space-y-6 text-center">
+            <h2 className="text-3xl font-bold">Why Choose Our SEO Automation Service</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                    <Cog className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
+                    Tailored Implementation
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    We adapt to your existing tech stack and business objectives—no one-size-fits-all templates. We
+                    deliver a custom SEO automation solution for your needs.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                    <Target className="w-6 h-6 text-green-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
+                    Expertise in SEO & Automation
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Deep experience combining SEO best practices with robust automation frameworks and AI tools. Benefit
+                    from our SEO process automation know-how.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                    <Globe className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                    Transparent Communication
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    Regular check-ins, clear documentation, and training for your team to understand and trust the
+                    automated workflows.
+                  </p>
+                </div>
+              </div>
+              <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
+                    <TrendingUp className="w-6 h-6 text-orange-600" />
+                  </div>
+                  <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
+                    Ongoing Support & Evolution
+                  </h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                    As search engines and AI capabilities evolve, we keep your automation pipelines updated and
+                    effective, offering continuous SEO optimization.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Is This For */}
         {/* FAQ Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/20 relative overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -1194,36 +882,31 @@ export default function AutomationServicesPage() {
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">FAQ</div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Frequently Asked Questions</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Get answers to common questions about our automation services.
+                  Get answers to common questions about our SEO automation services.
                 </p>
               </div>
             </div>
             <div className="mx-auto grid max-w-3xl gap-6 py-12">
               {[
                 {
-                  question: "How quickly can automation be implemented?",
+                  question: "How soon can I see results?",
                   answer:
-                    "Implementation timelines vary by service complexity. Simple automations like email sequences can be live within days, while comprehensive CRM or multi-platform integrations typically take 2-4 weeks. We start with quick wins to demonstrate value immediately.",
+                    "While initial automated reporting dashboards and alerts are live within days, SEO improvements depend on factors like website history, industry competition, and content volume. Many clients observe clearer insights and quicker responses to issues within the first month, with cumulative ranking gains over 3–6 months using our SEO automation best practices.",
                 },
                 {
-                  question: "What level of customization is available?",
+                  question: "What level of human involvement remains?",
                   answer:
-                    "All our automation solutions are fully customizable to your business needs. We don't use one-size-fits-all templates. Every workflow, integration, and process is tailored to match your existing systems, brand voice, and operational requirements.",
+                    "Automation handles data collection, preliminary analysis, draft generation, and routine checks. You still review AI-generated drafts, approve updates, and make strategic decisions. We design workflows so human expertise is focused where it matters most in human-in-the-loop SEO automation.",
                 },
                 {
-                  question: "Which platforms and tools do you integrate with?",
+                  question: "Which CMS platforms do you support?",
                   answer:
-                    "We integrate with 200+ platforms including popular CRMs (Salesforce, HubSpot), email platforms (Mailchimp, Klaviyo), social media tools, CMSs (WordPress, Shopify), and custom APIs. If you use it, we can likely automate it.",
+                    "Common platforms (WordPress, Drupal, Joomla, headless CMSs) and custom solutions via API/webhooks. If yours is less common, we assess and develop the necessary connectors for SEO CMS integration. We've successfully integrated with 50+ different platforms.",
                 },
                 {
-                  question: "How do you ensure data security and privacy?",
+                  question: "How is data privacy handled?",
                   answer:
-                    "We follow enterprise-grade security practices including encrypted data transmission, secure credential storage, least-privilege access controls, and compliance with GDPR, CCPA, and industry-specific regulations. Your data security is our top priority.",
-                },
-                {
-                  question: "What ongoing support is provided?",
-                  answer:
-                    "We provide comprehensive ongoing support including monitoring, optimization, troubleshooting, and updates as platforms evolve. Our team proactively maintains your automations and provides regular performance reports and improvement recommendations.",
+                    "We follow best practices: secure credential storage, least-privilege API access, compliance with GDPR/CCPA where applicable, and clear data retention policies in our secure SEO automation processes. Your data security is our top priority.",
                 },
               ].map((faq, i) => (
                 <Card key={i} className="text-left">
@@ -1239,12 +922,12 @@ export default function AutomationServicesPage() {
           </div>
         </section>
 
-        {/* Get Started Section */}
+        {/* Why Awwtomation */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Ready to Transform Your Business with Automation?</h2>
+            <h2 className="text-3xl font-bold">Setup Your SEO Automation Workflow Today</h2>
             <p className="text-muted-foreground text-lg">
-              Start your automation journey today with a complimentary consultation:
+              Ready to elevate your SEO with automation? Contact us for a complimentary consultation:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -1255,10 +938,10 @@ export default function AutomationServicesPage() {
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">1</div>
                   <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Discovery & Assessment
+                    Audit & Roadmap
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    We&apos;ll analyze your current processes and identify the best automation opportunities.
+                    We&apos;ll review your current setup and propose a tailored SEO automation roadmap.
                   </p>
                 </div>
               </div>
@@ -1266,14 +949,15 @@ export default function AutomationServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Lightbulb className="w-6 h-6 text-green-600" />
+                    <Zap className="w-6 h-6 text-green-600" />
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">2</div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Custom Strategy
+                    Pilot Project
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Develop a tailored automation roadmap aligned with your business goals and priorities.
+                    Start with a focused pilot (automated SEO reporting + keyword rank tracking) to demonstrate value
+                    quickly.
                   </p>
                 </div>
               </div>
@@ -1281,14 +965,14 @@ export default function AutomationServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Zap className="w-6 h-6 text-purple-600" />
+                    <TrendingUp className="w-6 h-6 text-purple-600" />
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">3</div>
                   <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Implementation
+                    Full Deployment
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Deploy automation solutions with thorough testing and team training for smooth adoption.
+                    Expand automation across reporting, AI content pipelines, republishing, and CMS integration.
                   </p>
                 </div>
               </div>
@@ -1296,21 +980,22 @@ export default function AutomationServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors duration-300">
-                    <TrendingUp className="w-6 h-6 text-orange-600" />
+                    <Globe className="w-6 h-6 text-orange-600" />
                   </div>
                   <div className="text-2xl font-bold text-primary mb-2">4</div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Optimization & Growth
+                    Ongoing Partnership
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Continuous monitoring, optimization, and scaling as your business evolves.
+                    Continuous monitoring, optimization, and scaling as your objectives evolve.
                   </p>
                 </div>
               </div>
             </div>
             <div className="pt-8">
               <p className="text-muted-foreground mb-6">
-                Let&apos;s automate your success—making your business more efficient, scalable, and profitable.
+                Let&apos;s transform how you approach SEO—making it more efficient, data-driven, and scalable with our SEO
+                automation expertise.
               </p>
               <Button
                 size="lg"
@@ -1325,9 +1010,8 @@ export default function AutomationServicesPage() {
             </div>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="w-full border-t py-12 md:py-16">
+       {/* Footer */}
+       <footer className="w-full border-t py-12 md:py-16">
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-4">
@@ -1461,7 +1145,6 @@ export default function AutomationServicesPage() {
             </div>
           </div>
         </footer>
-
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
       </div>
     </ParallaxProvider>
