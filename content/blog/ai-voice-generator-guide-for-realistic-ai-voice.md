@@ -145,13 +145,14 @@ Our evaluation process focused on several key criteria to ensure a fair and comp
 **Ideal For:** Podcasters, YouTubers, video editors, content marketers, and anyone who frequently records and edits audio/video content and wants to leverage AI for efficiency.
 
 **Pricing:**
+
+![Descript AI Voice Editor Pricing](https://i.imgur.com/9Q7S4YD.webp)
+
 *   **Free:** 1 transcription hour/month, limited features, no credit card required. API access not explicitly mentioned for free tier.
 *   **Hobbyist:** $16/month (billed annually) for 10 transcription hours/month, 1080p exports, basic AI actions. API access not explicitly mentioned.
 *   **Creator:** $24/month (billed annually) for 30 transcription hours/month, 4k exports, unlimited basic and advanced AI actions, 2 hours/month AI speech. API access not explicitly mentioned.
 *   **Business:** $50/month (billed annually) for 40 transcription hours/month, free basic seats for collaboration, full professional AI actions, 5 hours/month AI speech. API access not explicitly mentioned.
 *   **Enterprise:** Custom pricing for tailored solutions, enterprise-grade security, SSO, custom invoicing, dedicated account representative, live onboarding and training, priority support. API access not explicitly mentioned.
-
-![Descript AI Voice Editor Pricing](https://i.imgur.com/9Q7S4YD.webp)
 
 **Integrations:** Integrates with popular video editors (Adobe Premiere, DaVinci Resolve), Zoom, Zapier, and more.
 
@@ -178,12 +179,13 @@ Our evaluation process focused on several key criteria to ensure a fair and comp
 **Ideal For:** Bloggers, publishers, podcasters, e-learning platforms, and content creators who need to convert extensive text into high-quality, natural audio.
 
 **Pricing:**
+
+![Play.ht AI Voice Generator Pricing](https://i.imgur.com/frFCK3s.webp)
+
 *   **Free:** Limited characters, 1 project. API access available.
 *   **Creator:** $29/month (billed annually) for 3 million characters/year, premium voices, commercial rights. API access available.
 *   **Unlimited:** $99/month (billed annually) for unlimited voice generation, all features, multi-voice. API access available.
 *   **Enterprise:** Custom pricing. API access available.
-
-![Play.ht AI Voice Generator Pricing](https://i.imgur.com/frFCK3s.webp)
 
 **Integrations:** WordPress plugin, API for developers, integrations with various content management systems.
 
@@ -240,12 +242,13 @@ Our evaluation process focused on several key criteria to ensure a fair and comp
 **Ideal For:** Brands, marketing agencies, enterprises, and content production teams that require consistent, high-quality, and scalable AI voice generation for commercial applications.
 
 **Pricing:**
+
+![WellSaid Labs AI Voice Generator Pricing](https://i.imgur.com/nQSVaSK.webp)
+
 *   **Trial:** Free, 7-day trial, no downloads. API access not explicitly mentioned.
 *   **Creative:** $50/month/user (billed annually) for 720 downloads/year, 1 user seat, all English voices. API access not explicitly mentioned.
 *   **Business:** $160/month/user (billed annually) for 1,300 downloads/year, up to 5 user seats, all English voices. API access not explicitly mentioned.
 *   **Enterprise:** Custom pricing for 4,300 downloads/year, no seat limit, all languages, custom workspaces, priority support, enterprise security, custom terms, SSO. API access available.
-
-![WellSaid Labs AI Voice Generator Pricing](https://i.imgur.com/nQSVaSK.webp)
 
 **Integrations:** API access, integrations with various content creation and management platforms for enterprise clients.
 
