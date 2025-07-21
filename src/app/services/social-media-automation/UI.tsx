@@ -1,4 +1,5 @@
 "use client"
+import Head from "next/head";
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
@@ -53,6 +54,13 @@ export default function SocialMediaAutomationPage() {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [mobileMenuOpen])
   return (
+    <>
+     <Head>
+        <link
+          rel="canonical"
+          href="https://www.awwtomation.com/services/social-media-automation"
+        />
+      </Head>
     <ParallaxProvider>
       <div className="flex min-h-[100dvh] flex-col px-4 md:px-12">
         {/* Header */}
@@ -1086,5 +1094,6 @@ export default function SocialMediaAutomationPage() {
         <CalModal open={calModalOpen} onOpenChange={setCalModalOpen} calLink={selectedCalLink} />
       </div>
     </ParallaxProvider>
+    </>
   )
 }
