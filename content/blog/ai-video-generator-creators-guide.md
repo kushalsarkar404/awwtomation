@@ -2,7 +2,7 @@
 title: "A Creator’s Guide to the Best AI Video Generator Tools"
 date: "2025-07-18"
 excerpt: "Discover the leading AI video generator and AI video maker tools of 2025. Create high-quality, AI generated video effortlessly for marketing, education, and more."
-coverImage: "ai-video-generator-tools-2025.png"
+coverImage: "/ai-video-generator-tools-2025.png"
 slug: "ai-video-generator-creators-guide"
 ---
 
