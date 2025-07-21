@@ -6,6 +6,7 @@ coverImage: "/automation-buzzword-cover.png"
 slug: "age-of-automation-how-ai-became-essential"
 readMore:
   - "what-is-rpa-robotic-process-automation-guide"
+  - "what-is-agentic-ai-complete-guide"
 ---
 
 ![Automation Overview](https://i.imgur.com/HIqd7WN.webp)

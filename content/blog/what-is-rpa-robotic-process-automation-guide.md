@@ -6,6 +6,7 @@ coverImage: "/what-is-rpa-robotic-process-automation.png"
 slug: "what-is-rpa-robotic-process-automation-guide"
 readMore:
   - "age-of-automation-how-ai-became-essential"
+  - "what-is-agentic-ai-complete-guide"
 ---
 
 ![RPA Robotic Process Automation Overview](https://i.imgur.com//jOWE50X.webp)
