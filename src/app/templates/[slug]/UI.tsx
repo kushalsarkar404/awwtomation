@@ -315,7 +315,7 @@ export default function TemplateDetailPage({ slug }: TemplateDetailPageProps) {
               </ul>
               <h3 className="text-2xl font-bold tracking-tighter">Beyond the Demo: Unleash Full Potential</h3>
               <p className="text-muted-foreground text-lg">
-                This template is a powerful starting point for automated SEO reports. It's highly extensible, allowing
+                This template is a powerful starting point for automated SEO reports. It&apos;s highly extensible, allowing
                 for custom reporting, automated alerts, advanced data visualization, and even automated action
                 triggers. This solution evolves with your SEO strategy, offering a fully customized reporting
                 automation experience.
