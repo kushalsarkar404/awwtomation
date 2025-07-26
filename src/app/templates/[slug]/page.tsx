@@ -4,8 +4,9 @@ import TemplateDetailPage from "./UI"
 import { getTemplateBySlug } from "@/lib/template-utils"
 import type { Metadata } from "next"
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const template = getTemplateBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const template = getTemplateBySlug(slug)
 
   if (!template) {
     return {
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  return <TemplateDetailPage slug={params.slug} />
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  return <TemplateDetailPage slug={slug} />
 }
