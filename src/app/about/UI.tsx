@@ -166,6 +166,9 @@ export default function AboutPage() {
               <Link href="/#contact" className="text-sm font-medium hover:text-primary">
                 Contact
               </Link>
+              <Link href="/templates" className="text-sm font-medium hover:text-primary">
+                Free Automation Templates
+              </Link>
               <Link href="/blog" className="text-sm font-medium hover:text-primary">
                 Blog
               </Link>
@@ -205,6 +208,9 @@ export default function AboutPage() {
                   ref={menuRef}
                   className="fixed left-0 right-0 top-16 z-50 bg-white border-t shadow px-4 py-6 space-y-4 md:hidden"
                 >
+                                <Link href="/templates" className="text-sm font-medium hover:text-primary">
+                Free Automation Templates
+              </Link>
                   <Link href="/services/blog-automation" className="block font-medium text-gray-700">
                     Blog Agent
                   </Link>

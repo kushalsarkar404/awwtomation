@@ -167,6 +167,9 @@ export default async function BlogPage({ searchParams }: { searchParams?: Promis
 
             <Link href="#pricing" className="text-sm font-medium hover:text-primary">Pricing</Link>
             <Link href="#contact" className="text-sm font-medium hover:text-primary">Contact</Link>
+            <Link href="/templates" className="text-sm font-medium hover:text-primary">
+                Free Automation Templates
+              </Link>
             <Link href="/blog" className="text-sm font-medium hover:text-primary">Blog</Link>
             <Link href="/about" className="text-sm font-medium hover:text-primary">About</Link>
           </nav>

@@ -170,6 +170,9 @@ export default function SocialMediaAutomationPage() {
               <Link href="/#contact" className="text-sm font-medium hover:text-primary">
                 Contact
               </Link>
+                            <Link href="/templates" className="text-sm font-medium hover:text-primary">
+                Free Automation Templates
+              </Link>
               <Link href="/blog" className="text-sm font-medium hover:text-primary">
                 Blog
               </Link>
@@ -236,6 +239,9 @@ export default function SocialMediaAutomationPage() {
                   <Link href="/#contact" className="block text-gray-700">
                     Contact
                   </Link>
+                  <Link href="/templates" className="text-sm font-medium hover:text-primary">
+                Free Automation Templates
+              </Link>
                   <Link href="/about" className="block text-gray-700">
                     About
                   </Link>
