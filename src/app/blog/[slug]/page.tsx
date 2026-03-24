@@ -9,32 +9,106 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { TableOfContents } from "@/components/table-of-contents"
 import { BlogCard } from "@/components/BlogCard"
+import { BlogEmailMarketingSolutionForm } from "@/components/blog-email-marketing-solution-form"
+
+const siteUrl = "https://www.awwtomation.com"
+const emailMarketingLeadSlugs = new Set([
+  "best-open-source-email-marketing-platforms",
+  "key-features-of-email-automation-platform",
+  "drive-sales-with-email-marketing-automation",
+  "best-email-marketing-platforms",
+  "guide-to-master-email-marketing-for-business",
+])
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug)
-  
 
   if (!post) return {}
 
+  const canonicalUrl = `${siteUrl}/blog/${slug}`
+  const description = post.excerpt || `Read our blog post: ${post.title}`
+  const title = `${post.title} | Awwtomation`
+  const imageUrl = post.coverImage ? new URL(post.coverImage, siteUrl).toString() : undefined
+
   return {
-    title: post.title,
-    description: post.excerpt || `Read our blog post: ${post.title}`,
+    title,
+    description,
+    keywords: post.keywords,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
-      title: post.title,
-      description: post.excerpt || `Read our blog post: ${post.title}`,
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: "Awwtomation",
+      type: "article",
+      publishedTime: post.date,
+      images: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: imageUrl ? [imageUrl] : undefined,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-snippet": -1,
+        "max-image-preview": "large",
+        "max-video-preview": -1,
+      },
     },
   }
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const post = await getPostBySlug(slug);
-  if (!post) return notFound();
+  const post = await getPostBySlug(slug)
+  if (!post) return notFound()
 
   const readMorePosts = post.readMore
     ? await Promise.all(post.readMore.map((slug: string) => getPostBySlug(slug)))
-    : [];
+    : []
+  const shouldShowEmailMarketingLead = emailMarketingLeadSlugs.has(slug)
+  const canonicalUrl = `${siteUrl}/blog/${slug}`
+  const imageUrl = post.coverImage ? new URL(post.coverImage, siteUrl).toString() : undefined
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: canonicalUrl,
+    image: imageUrl ? [imageUrl] : undefined,
+    author: {
+      "@type": "Organization",
+      name: "Awwtomation",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Awwtomation",
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/full-logo.svg`,
+      },
+    },
+  }
 
   // Function to generate heading IDs - improved version
   const generateHeadingId = (text: string) => {
@@ -49,6 +123,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Sticky Back to Blogs link, just text */}
       <div className="sticky top-0 z-30 mb-6 w-full bg-white py-2 border-b border-gray-200 dark:border-gray-800">
         <Link href="/blog" className="text-sm text-muted-foreground hover:underline bg-transparent border-none shadow-none px-0 py-0">
@@ -57,10 +132,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       </div>
 
       {/* Two-column layout on xl: TOC left, content right */}
-      <div className="w-full grid grid-cols-1 xl:grid-cols-[20rem_1fr] gap-12">
+      <div className="w-full grid grid-cols-1 xl:grid-cols-[20rem_minmax(0,1fr)] gap-12">
         {/* Table of Contents - sticky in its column */}
-        <aside className="hidden xl:block">
-          <TableOfContents content={post.content} />
+        <aside className="hidden xl:flex xl:sticky xl:top-12 xl:self-start xl:flex-col xl:gap-6">
+          <TableOfContents content={post.content} className="static top-auto max-h-[calc(100vh-18rem)]" />
+          {shouldShowEmailMarketingLead && (
+            <BlogEmailMarketingSolutionForm className="w-80 max-w-full" pageSlug={slug} postTitle={post.title} />
+          )}
         </aside>
 
         {/* Main Content */}
@@ -69,6 +147,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <h1 className="text-4xl font-bold">{post.title}</h1>
             <p className="text-sm text-muted-foreground">{post.date}</p>
           </div>
+
+          {shouldShowEmailMarketingLead && (
+            <BlogEmailMarketingSolutionForm className="mb-8 xl:hidden" pageSlug={slug} postTitle={post.title} />
+          )}
 
           <article className="prose prose-gray dark:prose-invert max-w-none">
             <ReactMarkdown
@@ -288,7 +370,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       </div>
       {readMorePosts.length > 0 && (
         <section className="mt-12">
-          <h3 className="text-2xl font-semibold mb-4">Read More</h3>
+          <h3 className="text-2xl font-semibold mb-4">
+            {shouldShowEmailMarketingLead ? "Related Email Marketing Guides" : "Read More"}
+          </h3>
           <div className="grid gap-8 sm:grid-cols-2">
             {readMorePosts.map((post) =>
               post ? (
