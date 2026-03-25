@@ -3,11 +3,13 @@
 import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
 import { SampleOutputModal } from "@/components/sample-output-modal"
+import { LinkCardSection } from "@/components/seo/link-card-section"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { TemplateDetailHero } from "@/components/template-detail-hero"
 import { TemplateInfoPanel } from "@/components/template-info-panel"
 import { Button } from "@/components/ui/button"
+import { serviceDefinitions } from "@/lib/seo"
 import { getTemplateBySlug } from "@/lib/template-utils"
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
@@ -50,6 +52,32 @@ export default function TemplateDetailPage({ slug }: TemplateDetailPageProps) {
       </div>
     )
   }
+
+  const templateContext = [template.title, template.category, ...template.tags].join(" ").toLowerCase()
+  const relatedLinks = [
+    /seo|analytics|report/.test(templateContext)
+      ? {
+          title: serviceDefinitions["seo-automation"].shortName,
+          href: serviceDefinitions["seo-automation"].href,
+          description: serviceDefinitions["seo-automation"].description,
+          label: "Related service",
+        }
+      : null,
+    /social|reddit|engagement/.test(templateContext)
+      ? {
+          title: serviceDefinitions["social-media-automation"].shortName,
+          href: serviceDefinitions["social-media-automation"].href,
+          description: serviceDefinitions["social-media-automation"].description,
+          label: "Related service",
+        }
+      : null,
+    {
+      title: "Automation Services",
+      href: "/services",
+      description: "Move from a starter template to a fully implemented workflow across your stack.",
+      label: "Core page",
+    },
+  ].filter((item): item is NonNullable<typeof item> => Boolean(item))
 
   return (
     <div className="flex min-h-[100dvh] flex-col transition-all duration-300">
@@ -162,6 +190,14 @@ export default function TemplateDetailPage({ slug }: TemplateDetailPageProps) {
                 ))}
               </div>
             </div>
+
+            <LinkCardSection
+              eyebrow="Next Step"
+              title="Turn This Template Into a Production Workflow"
+              description="Use the template as a starting point, then connect it to the service page that matches the workflow you want to operationalize."
+              links={relatedLinks}
+              className="rounded-3xl"
+            />
           </div>
         </section>
       </main>

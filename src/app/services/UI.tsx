@@ -148,7 +148,8 @@ export default function AutomationServicesPage() {
               {servicesHubSeo.heroTitle}
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
-              {servicesHubSeo.heroDescription}
+              {servicesHubSeo.heroDescription} We focus on the workflows that create pipeline pressure, revenue drag,
+              and repetitive admin across marketing, sales, and support.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
@@ -208,7 +209,7 @@ export default function AutomationServicesPage() {
         <LinkCardSection
           eyebrow="Service Paths"
           title="Choose the Automation Service That Matches Your Core Bottleneck"
-          description="Each service page targets a distinct commercial cluster from the Semrush workbook, so start with the workflow that currently creates the most manual drag or lost revenue."
+          description="Each service page targets a distinct commercial cluster from the Semrush workbook, so start with the workflow that currently creates the most manual drag or lost revenue. The pages below are linked to related guides and adjacent services so authority flows across the site."
           links={serviceCards}
         />
 
@@ -223,9 +224,20 @@ export default function AutomationServicesPage() {
                 <Badge variant="secondary">Growing businesses</Badge>
               </div>
               <p className="text-muted-foreground max-w-4xl mx-auto">
-                Our CRM automation tools revolutionize how you manage customer relationships with automated lead capture
-                and nurture systems that drive revenue and improve customer satisfaction.
+                Our CRM automation tools are built around lead capture, routing, scoring, follow-up, and pipeline
+                visibility so sales teams respond faster and keep deals moving.
               </p>
+            </div>
+            <div className="mx-auto max-w-4xl rounded-2xl border bg-background p-5 text-sm text-muted-foreground">
+              CRM is the connective layer for the rest of the site. Pair it with{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/email-marketing-automation">
+                email marketing automation
+              </Link>{" "}
+              for lifecycle follow-up and{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/social-media-automation">
+                social media automation
+              </Link>{" "}
+              for lead capture from social channels.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -316,7 +328,7 @@ export default function AutomationServicesPage() {
             <div className="text-center pt-6">
               <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/crm-automation">
-                  Learn More About CRM Automation <ChevronRight className="ml-1 h-4 w-4" />
+                  Explore CRM Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -334,9 +346,23 @@ export default function AutomationServicesPage() {
                 <Badge variant="secondary">Multi-platform businesses</Badge>
               </div>
               <p className="text-muted-foreground max-w-4xl mx-auto">
-                Maximize your social media presence with automated content generation and analytics dashboard that
-                maintains authentic engagement while saving hours of manual work.
+                Maximize your social media presence with automated planning, publishing, inbox handling, and
+                reporting while keeping engagement human where it matters.
               </p>
+            </div>
+            <div className="mx-auto max-w-4xl rounded-2xl border bg-background p-5 text-sm text-muted-foreground">
+              Social automation works best when it feeds the rest of the funnel. Connect this page to{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/crm-automation">
+                CRM automation
+              </Link>{" "}
+              for follow-up and{" "}
+              <Link
+                className="font-medium text-primary underline-offset-4 hover:underline"
+                href="/services/social-media-automation"
+              >
+                the social media automation service page
+              </Link>{" "}
+              for the full workflow.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -427,7 +453,7 @@ export default function AutomationServicesPage() {
             <div className="text-center pt-6">
               <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/social-media-automation">
-                  Learn More About Social Media Automation <ChevronRight className="ml-1 h-4 w-4" />
+                  Explore Social Media Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -557,8 +583,19 @@ export default function AutomationServicesPage() {
               </div>
               <p className="text-muted-foreground max-w-4xl mx-auto">
                 Deliver exceptional customer experiences with intelligent automation that resolves issues faster while
-                reducing support costs.
+                reducing support costs and keeping context intact across every handoff.
               </p>
+            </div>
+            <div className="mx-auto max-w-4xl rounded-2xl border bg-background p-5 text-sm text-muted-foreground">
+              Support automation becomes more useful when it shares context with{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/crm-automation">
+                CRM automation
+              </Link>{" "}
+              and{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/email-marketing-automation">
+                email marketing automation
+              </Link>
+              .
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -649,7 +686,7 @@ export default function AutomationServicesPage() {
             <div className="text-center pt-6">
               <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/customer-support-automation">
-                  Learn More About Customer Support Automation <ChevronRight className="ml-1 h-4 w-4" />
+                  Explore Customer Support Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -667,9 +704,20 @@ export default function AutomationServicesPage() {
                 <Badge variant="secondary">Marketing agencies</Badge>
               </div>
               <p className="text-muted-foreground max-w-4xl mx-auto">
-                Create sophisticated email campaigns with our best email automation platform featuring automated
-                campaigns, segmentation, and personalization that nurtures leads and drives conversions.
+                Create sophisticated email campaigns with triggers, segmentation, nurture flows, and reporting that
+                increase engagement and drive conversions through personalized customer journeys.
               </p>
+            </div>
+            <div className="mx-auto max-w-4xl rounded-2xl border bg-background p-5 text-sm text-muted-foreground">
+              Email automation should also support CRM handoff. Pair this page with{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/crm-automation">
+                CRM automation
+              </Link>{" "}
+              and the{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/blog/best-email-marketing-platforms">
+                best email marketing platforms guide
+              </Link>
+              .
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -760,7 +808,7 @@ export default function AutomationServicesPage() {
             <div className="text-center pt-6">
               <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/email-marketing-automation">
-                  Learn More About Email Marketing Automation <ChevronRight className="ml-1 h-4 w-4" />
+                  Explore Email Marketing Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -778,9 +826,20 @@ export default function AutomationServicesPage() {
                 <Badge variant="secondary">Organic growth businesses</Badge>
               </div>
               <p className="text-muted-foreground max-w-4xl mx-auto">
-                Boost your search engine rankings with automated comprehensive SEO reporting that optimizes your
-                website, tracks performance, and identifies growth opportunities.
+                Boost search visibility with automated reporting, keyword tracking, technical audits, and content
+                workflows that keep SEO execution moving forward.
               </p>
+            </div>
+            <div className="mx-auto max-w-4xl rounded-2xl border bg-background p-5 text-sm text-muted-foreground">
+              SEO automation works best when it supports a broader content system. Connect this page to{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/blog-automation">
+                blog automation
+              </Link>{" "}
+              for publishing and{" "}
+              <Link className="font-medium text-primary underline-offset-4 hover:underline" href="/services/email-marketing-automation">
+                email marketing automation
+              </Link>{" "}
+              for lifecycle distribution.
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -871,9 +930,95 @@ export default function AutomationServicesPage() {
             <div className="text-center pt-6">
               <Button className="bg-blue-600 text-white" asChild>
                 <Link href="/services/seo-automation">
-                  Learn More About SEO Automation <ChevronRight className="ml-1 h-4 w-4" />
+                  Explore SEO Automation <ChevronRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 px-4 md:px-12 bg-muted/30">
+          <div className="max-w-6xl mx-auto grid gap-6 lg:grid-cols-2">
+            <div className="rounded-3xl border bg-background p-8 shadow-sm">
+              <Badge variant="secondary">Our process</Badge>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight">How we scope and implement automation</h2>
+              <div className="mt-6 space-y-5">
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Eye className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">1. Audit the current workflow</h3>
+                    <p className="text-sm text-muted-foreground">
+                      We map the manual steps, tools, and handoffs so the automation scope matches the actual problem.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <FileText className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">2. Design the workflow and proof points</h3>
+                    <p className="text-sm text-muted-foreground">
+                      We define triggers, routing logic, QA steps, reporting, and the metrics that prove value.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Code className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">3. Build, test, and connect</h3>
+                    <p className="text-sm text-muted-foreground">
+                      We implement the workflow and connect the systems that need to exchange data reliably.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <TrendingUp className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">4. Measure and expand</h3>
+                    <p className="text-sm text-muted-foreground">
+                      We review the results, tighten the handoffs, and extend the automation into adjacent workflows.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded-3xl border bg-slate-950 p-8 text-white shadow-sm">
+              <Badge className="bg-white/10 text-white hover:bg-white/20">Proof and trust</Badge>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight">EEAT signals that support buyer confidence</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl bg-white/10 p-5">
+                  <h3 className="font-semibold">Case study structure</h3>
+                  <p className="mt-2 text-sm text-white/70">
+                    Each service page can be paired with outcomes, before/after process notes, and implementation
+                    detail.
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-5">
+                  <h3 className="font-semibold">Client examples</h3>
+                  <p className="mt-2 text-sm text-white/70">
+                    Copy is written to sound like an experienced operator, not a generic product page.
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-5">
+                  <h3 className="font-semibold">Support content</h3>
+                  <p className="mt-2 text-sm text-white/70">
+                    Blog articles reinforce the service pages instead of competing with them for intent.
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-5">
+                  <h3 className="font-semibold">Schema readiness</h3>
+                  <p className="mt-2 text-sm text-white/70">
+                    The hub already emits service, breadcrumb, FAQ, and item-list data that search engines can parse.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

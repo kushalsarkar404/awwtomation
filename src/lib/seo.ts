@@ -57,9 +57,9 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "We build blog automation workflows that connect keyword research, AI-assisted drafting, human review, CMS publishing, and reporting so your content engine grows traffic without creating editorial chaos.",
     faqs: [
       {
-        question: "What does a blog automation service actually automate?",
+        question: "How do you automate blog posts without losing quality?",
         answer:
-          "A blog automation service can automate topic discovery, keyword clustering, content briefs, AI-assisted drafts, internal linking suggestions, CMS uploads, publishing schedules, and post-launch performance reporting.",
+          "The safest approach automates topic discovery, keyword clustering, briefs, AI-assisted drafts, internal linking suggestions, CMS uploads, and reporting while keeping human review in place for facts, brand voice, and final editorial judgment.",
       },
       {
         question: "Will blog automation replace human editors?",
@@ -117,9 +117,9 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "We build social media automation workflows that turn strategy into consistent publishing, faster community management, and cleaner reporting across your highest-value channels.",
     faqs: [
       {
-        question: "What can a social media automation service automate?",
+        question: "What are the risks of automating social media publishing?",
         answer:
-          "It can automate content calendars, approvals, multi-platform scheduling, asset routing, reporting, and first-response workflows while keeping your team in control of final strategy and brand tone.",
+          "The main risks are low-context posting, delayed responses, and off-brand messaging. A strong social media automation setup uses approval steps, channel-specific rules, and escalation paths so automation improves consistency without damaging engagement.",
       },
       {
         question: "Does social media automation hurt engagement?",
@@ -139,10 +139,10 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
     ],
     relatedResources: [
       {
-        title: "Best Social Media Tool to Boost Online Presence",
-        href: "/blog/best-social-media-tool-to-boost-online-presence",
-        description: "Benchmark the tooling and features that support automated publishing workflows.",
-        label: "Related blog",
+        title: "Automation Services",
+        href: "/services",
+        description: "See how social workflows connect to CRM, email, SEO, and support automation services.",
+        label: "Related service",
       },
       {
         title: "CRM Automation Service",
@@ -173,9 +173,9 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "We build SEO automation systems for dashboards, keyword tracking, technical alerts, content operations, and reporting so your team can act faster on the work that moves rankings.",
     faqs: [
       {
-        question: "What parts of SEO can be automated safely?",
+        question: "Can SEO be automated?",
         answer:
-          "Reporting, keyword monitoring, technical alerts, content briefs, metadata drafting, internal linking suggestions, and publishing workflows can all be automated safely when strategy and QA stay human-led.",
+          "Yes, parts of SEO can be automated safely. Reporting, keyword monitoring, technical alerts, content briefs, metadata drafting, internal linking suggestions, and publishing workflows all benefit from automation when strategy and QA stay human-led.",
       },
       {
         question: "Can SEO automation help agencies and in-house teams?",
@@ -233,9 +233,9 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "We implement email marketing automation that improves onboarding, nurture sequences, abandoned cart recovery, segmentation, and reporting so revenue workflows run without constant manual work.",
     faqs: [
       {
-        question: "What workflows do you set up in an email marketing automation service?",
+        question: "What is email marketing automation?",
         answer:
-          "We commonly implement welcome flows, lead nurture sequences, onboarding emails, abandoned cart recovery, re-engagement campaigns, sales handoff notifications, and reporting dashboards.",
+          "Email marketing automation is the use of triggers, segmentation, and behavior-based workflows to send the right message at the right time. We commonly implement welcome flows, lead nurture sequences, onboarding emails, abandoned cart recovery, re-engagement campaigns, and reporting dashboards.",
       },
       {
         question: "Can you work with our current email platform?",
@@ -289,9 +289,9 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "We build CRM automation systems that route leads faster, trigger follow-ups automatically, sync data across your tools, and give your team a cleaner pipeline to work from.",
     faqs: [
       {
-        question: "What does a CRM automation service improve first?",
+        question: "What is CRM automation?",
         answer:
-          "The fastest wins usually come from lead capture, assignment, follow-up triggers, deduplication, handoffs, and data syncing between sales, marketing, and support systems.",
+          "CRM automation is the use of workflows and triggers to automate lead capture, routing, follow-ups, deduplication, handoffs, and data syncing between sales, marketing, and support systems.",
       },
       {
         question: "Can CRM automation work with the tools we already use?",
@@ -349,9 +349,9 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "We build customer support automation workflows that handle common questions, route conversations correctly, shorten response times, and connect support data to the rest of your business.",
     faqs: [
       {
-        question: "What support workflows can be automated?",
+        question: "How do you automate customer support without hurting the customer experience?",
         answer:
-          "Common automations include chatbot triage, FAQ handling, ticket routing, appointment scheduling, status updates, escalation triggers, satisfaction surveys, and reporting.",
+          "You automate the repetitive parts first: chatbot triage, FAQ handling, ticket routing, scheduling, status updates, escalation triggers, satisfaction surveys, and reporting. A good support automation design also includes fallback escalation so customers can reach a human quickly when the issue is complex.",
       },
       {
         question: "Will support automation replace our team?",
@@ -402,7 +402,15 @@ export const serviceCards: LinkCardItem[] = Object.values(serviceDefinitions).ma
 export const homePageSeo = {
   title: "Business Automation Services for CRM, SEO, Email, and Social Media | Awwtomation",
   description:
-    "A business automation agency for CRM, SEO, email marketing, blog operations, and customer support workflows that help service businesses grow with cleaner systems.",
+    "Business automation services for CRM, SEO, email marketing, blog operations, and customer support workflows that help service businesses scale with cleaner systems and less manual work.",
+  keywords: [
+    "business automation services",
+    "business process automation services",
+    "automation agency",
+    "business automation agency",
+    "marketing automation agency",
+    "workflow automation services",
+  ],
   heroTitle: "Business Automation Services for Revenue, Marketing, and Operations Growth",
   heroDescription:
     "Awwtomation is a business automation agency that designs CRM, SEO, email marketing, social media, blog, and support workflows so service businesses can scale without adding manual overhead.",
@@ -413,19 +421,19 @@ export const homePageSeo = {
         "A business automation agency maps the manual work slowing down your company, then designs systems for lead handling, reporting, content, communication, and operations so teams can move faster with fewer errors.",
     },
     {
-      question: "Which teams benefit most from business automation services?",
+      question: "How do you automate service business operations without replacing every tool?",
       answer:
-        "Sales, marketing, customer support, and operations teams benefit the most because they typically manage the most repetitive routing, reporting, follow-up, and data-sync work.",
+        "Most service businesses start by automating lead routing, follow-ups, reporting, publishing, and support workflows inside the systems they already use. The goal is usually cleaner execution, not a full software replacement.",
     },
     {
-      question: "How quickly can business automation services start showing value?",
+      question: "Are professional services automation and business process automation the same?",
       answer:
-        "Operational improvements can show up quickly because automation reduces manual work almost immediately. Revenue impact usually follows as lead response, nurture speed, reporting, and customer experience improve.",
+        "They overlap, but they are not identical. Professional services automation usually focuses on delivery, utilization, and coordination inside service firms, while business process automation is broader and can include marketing, sales, finance, support, and operations workflows.",
     },
     {
-      question: "Do we need to replace our current tools to automate processes?",
+      question: "How can business process automation improve customer service?",
       answer:
-        "Usually no. The best automation projects improve the systems you already use by connecting them more effectively and removing process gaps before recommending larger platform changes.",
+        "It improves customer service by reducing response delays, routing requests faster, syncing context between systems, and giving teams clearer workflows for follow-ups, escalations, and reporting.",
     },
   ],
   relatedResources: [
@@ -436,15 +444,15 @@ export const homePageSeo = {
       label: "Core page",
     },
     {
-      title: "What is RPA? A Comprehensive Guide to Robotic Process Automation",
-      href: "/blog/what-is-rpa-robotic-process-automation-guide",
-      description: "A foundational article for teams comparing task automation and broader workflow changes.",
+      title: "Small Business Workflow Automation: n8n vs Make Guide",
+      href: "/blog/small-business-workflow-automation-n8n-make-guide",
+      description: "A practical guide to the orchestration layer behind modern workflow automation services.",
       label: "Related blog",
     },
     {
-      title: "Low-Code vs No-Code Automation Business Guide",
-      href: "/blog/low-code-vs-no-code-automation-business-guide",
-      description: "Helpful when deciding how much flexibility and ownership your stack needs.",
+      title: "What is RPA? A Comprehensive Guide to Robotic Process Automation",
+      href: "/blog/what-is-rpa-robotic-process-automation-guide",
+      description: "A foundational article for teams comparing task automation, workflow automation, and broader process change.",
       label: "Related blog",
     },
   ],
@@ -454,6 +462,13 @@ export const servicesHubSeo = {
   title: "Automation Services for Marketing, Sales, Support, and Operations | Awwtomation",
   description:
     "Explore automation services for CRM, SEO, email marketing, social media, blog publishing, and customer support workflows built for growing service businesses.",
+  keywords: [
+    "automation services",
+    "workflow automation services",
+    "marketing automation services",
+    "professional services automation",
+    "robotic process automation services",
+  ],
   heroTitle: "Automation Services for Marketing, Sales, Support, and Operations",
   heroDescription:
     "Our automation services cover the highest-friction parts of growth: lead routing, nurture flows, reporting, content production, social publishing, and support operations.",
@@ -474,9 +489,9 @@ export const servicesHubSeo = {
         "Yes. Most companies start with one core workflow such as CRM follow-up, email nurture, support triage, or reporting, then expand once the early process wins are visible.",
     },
     {
-      question: "How do I choose the right automation service for my business?",
+      question: "What is included in workflow automation services?",
       answer:
-        "Start with the process that creates the most operational drag or lost revenue. That is often lead handling, customer follow-up, content execution, or support volume.",
+        "Workflow automation services usually cover discovery, system mapping, automation design, implementation, QA, reporting, and ongoing optimization across the processes creating the most drag or lost revenue.",
     },
   ],
   relatedResources: [
@@ -497,9 +512,63 @@ export const servicesHubSeo = {
 }
 
 export const blogIndexSeo = {
+  title: "Business Automation Blog: CRM, SEO, Email & Workflow Guides | Awwtomation",
+  description:
+    "Business automation blog with guides on CRM automation, email marketing workflows, SEO systems, support automation, and process design for growing teams.",
+  keywords: [
+    "business automation blog",
+    "workflow automation guides",
+    "CRM automation tips",
+    "email marketing automation",
+    "SEO automation guide",
+    "customer support automation",
+  ],
   heroTitle: "Business Automation Blog for CRM, SEO, Email, and Workflow Systems",
   heroDescription:
     "Guides, comparisons, and implementation ideas for teams building better CRM, SEO, email marketing, customer support, and workflow automation systems.",
+}
+
+export const templateLibrarySeo = {
+  title: "Free Automation Templates for SEO, Reporting, and Growth Workflows | Awwtomation",
+  description:
+    "Download free automation templates for n8n and growth workflows, including SEO reporting, social engagement, and reusable process automations built for marketing teams.",
+  keywords: [
+    "free automation templates",
+    "n8n templates",
+    "workflow automation templates",
+    "SEO reporting template",
+    "marketing automation templates",
+  ],
+  heroTitle: "Free Automation Templates for Growth and Reporting Workflows",
+  heroDescription:
+    "Start with reusable automation templates for SEO reporting, growth workflows, and channel execution, then customize them around your stack.",
+}
+
+export const aboutPageSeo = {
+  title: "About Awwtomation | Business Automation Agency for Growth Teams",
+  description:
+    "Learn about Awwtomation, the business automation agency behind CRM, SEO, email marketing, social media, and workflow automation systems for growing teams.",
+  keywords: [
+    "about awwtomation",
+    "business automation agency",
+    "marketing automation agency",
+    "workflow automation experts",
+    "CRM automation specialists",
+  ],
+}
+
+export const privacyPageSeo = {
+  title: "Privacy Policy | Awwtomation",
+  description:
+    "Review how Awwtomation collects, uses, stores, and protects personal data when you use our website, forms, and automation services.",
+  keywords: ["privacy policy", "data protection", "website privacy", "Awwtomation privacy policy"],
+}
+
+export const termsPageSeo = {
+  title: "Terms and Conditions | Awwtomation",
+  description:
+    "Read the Awwtomation terms and conditions covering website use, service engagement, intellectual property, payments, and client responsibilities.",
+  keywords: ["terms and conditions", "service terms", "website terms", "Awwtomation terms"],
 }
 
 export function absoluteUrl(path: string) {

@@ -1,9 +1,27 @@
+import { SeoJsonLd } from "@/components/seo/json-ld"
+import { aboutPageSeo, buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/seo"
 import { sharedMetadata } from "../services/_shared/metadata"
+import AboutPage from "./UI"
 
 export const metadata = sharedMetadata["about"]
 
-import AboutPage from "./UI"
-
 export default function Page() {
-  return <AboutPage />
+  return (
+    <>
+      <SeoJsonLd
+        data={[
+          buildWebPageSchema({
+            title: aboutPageSeo.title,
+            description: aboutPageSeo.description,
+            path: "/about",
+          }),
+          buildBreadcrumbSchema([
+            { name: "Home", href: "/" },
+            { name: "About", href: "/about" },
+          ]),
+        ]}
+      />
+      <AboutPage />
+    </>
+  )
 }

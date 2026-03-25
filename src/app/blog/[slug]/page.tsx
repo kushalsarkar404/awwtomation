@@ -6,7 +6,7 @@ import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { TableOfContents } from "@/components/table-of-contents"
-import { estimateReadingTime,extractFaqsFromMarkdown,getPostBySlug } from "@/lib/blog"
+import { estimateReadingTime,extractFaqsFromMarkdown,getPostBySlug,getRelatedPosts } from "@/lib/blog"
 import { buildBreadcrumbSchema,buildFaqSchema,getBlogBreadcrumbs,getPrimaryServiceForPost,getSupplementaryServicesForPost } from "@/lib/seo"
 import "highlight.js/styles/github-dark.css"
 import type { Metadata } from "next"
@@ -76,6 +76,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     keywords: post.keywords,
+    robots: post.noindex
+      ? {
+          index: false,
+          follow: false,
+          googleBot: {
+            index: false,
+            follow: false,
+          },
+        }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-snippet": -1,
+            "max-image-preview": "large",
+            "max-video-preview": -1,
+          },
+        },
     alternates: {
       canonical: canonicalUrl,
     },
@@ -103,17 +123,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       images: imageUrl ? [imageUrl] : undefined,
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-snippet": -1,
-        "max-image-preview": "large",
-        "max-video-preview": -1,
-      },
-    },
   }
 }
 
@@ -122,9 +131,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const post = await getPostBySlug(slug)
   if (!post) return notFound()
 
-  const readMorePosts = post.readMore
-    ? await Promise.all(post.readMore.map((slug: string) => getPostBySlug(slug)))
-    : []
+  const relatedPosts = getRelatedPosts(post, 4)
   const shouldShowEmailMarketingLead = emailMarketingLeadSlugs.has(slug)
   const canonicalUrl = `${siteUrl}/blog/${slug}`
   const imageUrl = post.coverImage ? new URL(post.coverImage, siteUrl).toString() : undefined
@@ -464,13 +471,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               links={supplementaryServices}
             />
           </section>
-          {readMorePosts.length > 0 && (
+          {relatedPosts.length > 0 && (
             <section className="mt-12">
               <h3 className="mb-4 text-2xl font-semibold">
-                {shouldShowEmailMarketingLead ? "Related Email Marketing Guides" : "Read More"}
+                {shouldShowEmailMarketingLead ? "Related Email Marketing Guides" : "Related Guides"}
               </h3>
               <div className="grid gap-8 sm:grid-cols-2">
-                {readMorePosts.map((post) =>
+                {relatedPosts.map((post) =>
                   post ? (
                     <BlogCard key={post.slug} post={post} />
                   ) : null

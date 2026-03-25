@@ -8,6 +8,7 @@ import { SiteHeader } from "@/components/site-header"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { getServiceBreadcrumbs,serviceDefinitions } from "@/lib/seo"
+import Link from "next/link"
 import {
 BarChart3,
 Calendar,
@@ -36,6 +37,21 @@ export default function SocialMediaAutomationPage() {
   const [calModalOpen, setCalModalOpen] = useState(false)
   const [selectedCalLink, setSelectedCalLink] = useState("awwtomation/awwtomation-consultation")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const relatedResources = [
+    ...serviceSeo.relatedResources,
+    {
+      title: "Blog Automation Service",
+      href: "/services/blog-automation",
+      description: "Connect social publishing to a repeatable content pipeline for repurposing and distribution.",
+      label: "Related service",
+    },
+    {
+      title: "SEO Automation Service",
+      href: "/services/seo-automation",
+      description: "Tie social reporting and content refreshes to a broader search visibility workflow.",
+      label: "Related service",
+    },
+  ]
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -157,7 +173,9 @@ export default function SocialMediaAutomationPage() {
               {serviceSeo.heroTitle}
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              {serviceSeo.heroDescription}
+              We build social media automation around the parts of the workflow that create drag: planning, approvals,
+              scheduling, inbox triage, lead capture, and reporting. Strategy stays human-led while repeatable
+              execution becomes reliable.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
@@ -222,10 +240,11 @@ export default function SocialMediaAutomationPage() {
         {/* What is the Social Planner */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">Transform Your Strategy With Social Media Automation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">What Social Media Automation Should Actually Handle</h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-              Stop posting randomly and start growing strategically. Our Social Automation Workflow automates your entire social
-              media workflow so you can focus on what matters most - your business.
+              If you are trying to automate social media posts, the goal is not to replace your team. It is to remove
+              repetitive publishing, routing, and reporting work so strategy, creative, and community management move
+              faster. We map the workflow, set approval rules, and connect the output to CRM and analytics.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
@@ -238,8 +257,8 @@ export default function SocialMediaAutomationPage() {
                     Smart Scheduling
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Schedule weeks of content in minutes. Our AI finds the perfect posting times for maximum engagement.
-                    <span className="font-semibold text-blue-600"> Save 10+ hours weekly</span> on content planning.
+                    Queue posts by channel, campaign, and time zone. Keep your calendar full without manual publishing
+                    every day, and leave room for real-time edits when campaigns change.
                   </p>
                 </div>
               </div>
@@ -253,9 +272,8 @@ export default function SocialMediaAutomationPage() {
                     Multi-Platform Management
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Manage all your social accounts from one dashboard. Post to 7+ platforms simultaneously.
-                    <span className="font-semibold text-green-600"> Increase reach by 400%</span> with cross-platform
-                    automation.
+                    Manage Facebook, Instagram, X, LinkedIn, Pinterest, TikTok, and YouTube from one workflow.
+                    Standardize what can be automated and where human review should stay in place.
                   </p>
                 </div>
               </div>
@@ -269,9 +287,8 @@ export default function SocialMediaAutomationPage() {
                     Performance Analytics
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Track what works and optimize automatically. Get insights that drive real business results.
-                    <span className="font-semibold text-purple-600"> Boost engagement by 250%</span> with data-driven
-                    posting.
+                    Track posts, clicks, comments, and handoffs in one reporting layer. Use the data to decide which
+                    content drives pipeline, not just vanity engagement.
                   </p>
                 </div>
               </div>
@@ -283,10 +300,11 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Platform-Specific Social Media Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Channel-Specific Rules, Not One-Size-Fits-All Automation</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Each platform has unique requirements. Our automation adapts to maximize performance on every channel
-                where your audience lives.
+                Every network needs a different setup. We tailor post timing, format checks, approval steps, inbox
+                routing, and lead handoff rules so automation stays useful on the channels that matter most to your
+                audience.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -296,84 +314,84 @@ export default function SocialMediaAutomationPage() {
                   name: "Facebook",
                   color: "blue",
                   features: [
-                    "Auto-schedule to Pages and Groups",
-                    "Smart comment management",
-                    "Lead ad CRM integration",
-                    "Peak engagement timing",
+                    "Page and group scheduling",
+                    "Comment routing and inbox triage",
+                    "Lead form handoff to CRM",
+                    "Campaign-level timing windows",
                   ],
-                  benefit: "Increase page engagement by 180%",
+                  benefit: "Built for community and lead capture",
                 },
                 {
                   icon: Instagram,
                   name: "Instagram",
                   color: "pink",
                   features: [
-                    "Stories, Reels & carousel automation",
-                    "Hashtag optimization",
-                    "Location-based posting",
-                    "DM auto-responses",
+                    "Feed, Reels, and story scheduling",
+                    "Caption and hashtag support",
+                    "Approval before publish",
+                    "DM routing for fast responses",
                   ],
-                  benefit: "Grow followers 3x faster",
+                  benefit: "Best for visual brands and creators",
                 },
                 {
                   icon: Twitter,
                   name: "Twitter (X)",
                   color: "gray",
                   features: [
-                    "Thread scheduling & optimization",
-                    "Auto-retweet top content",
-                    "Trend monitoring",
-                    "Engagement tracking",
+                    "Thread scheduling",
+                    "Trend-aware posting",
+                    "Keyword monitoring",
+                    "Engagement triage",
                   ],
-                  benefit: "Boost tweet impressions by 300%",
+                  benefit: "Useful for fast-moving content teams",
                 },
                 {
                   icon: Linkedin,
                   name: "LinkedIn",
                   color: "blue",
                   features: [
-                    "Professional content scheduling",
-                    "Lead generation automation",
-                    "Company page management",
-                    "Network growth tracking",
+                    "Company page scheduling",
+                    "Founder and team profile support",
+                    "B2B lead capture",
+                    "Editorial approvals",
                   ],
-                  benefit: "Generate 5x more B2B leads",
+                  benefit: "Strong for B2B demand generation",
                 },
                 {
                   icon: Globe,
                   name: "Pinterest",
                   color: "red",
                   features: [
-                    "Pin scheduling & optimization",
-                    "Board management automation",
-                    "SEO-optimized descriptions",
-                    "Traffic analytics",
+                    "Board scheduling",
+                    "SEO-friendly descriptions",
+                    "Cross-post planning",
+                    "Traffic tracking",
                   ],
-                  benefit: "Drive 400% more website traffic",
+                  benefit: "Good for evergreen discovery",
                 },
                 {
                   icon: Zap,
                   name: "TikTok",
                   color: "black",
                   features: [
-                    "Video upload automation",
-                    "Trending hashtag integration",
-                    "Caption generation",
-                    "Performance tracking",
+                    "Video queue management",
+                    "Caption support",
+                    "Publishing checklist",
+                    "Performance review",
                   ],
-                  benefit: "Increase video views by 500%",
+                  benefit: "Helpful for high-volume video teams",
                 },
                 {
                   icon: Youtube,
                   name: "YouTube",
                   color: "red",
                   features: [
-                    "Video & Shorts scheduling",
-                    "Auto-generated descriptions",
-                    "Playlist management",
-                    "Community post automation",
+                    "Shorts and video scheduling",
+                    "Metadata prep",
+                    "Community post planning",
+                    "Publishing QA",
                   ],
-                  benefit: "Grow subscriber base by 250%",
+                  benefit: "Useful for long-form and short-form video ops",
                 },
               ].map((platform, index) => (
                 <div
@@ -470,10 +488,10 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Seamless Workflow Integrations</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">How Social Publishing Connects to the Rest of the Stack</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Connect your entire business ecosystem. Our automation works with 300+ platforms to create a unified
-                workflow that saves time and eliminates manual work.
+                A good automation setup does not stop at scheduling. We connect forms, CRM records, email follow-up,
+                and collaboration tools so a high-intent interaction can trigger the next step automatically.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -487,9 +505,8 @@ export default function SocialMediaAutomationPage() {
                     CRM Integration
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Sync leads from social media directly to your CRM. Automate follow-ups and nurture campaigns.
-                    <span className="font-semibold text-green-600"> Convert 40% more leads</span> with automated
-                    workflows.
+                    Sync leads from social forms, DMs, and landing pages into HubSpot, Salesforce, Zoho, or the CRM you
+                    already use. Route ownership and follow-up based on campaign source, location, or audience segment.
                   </p>
                 </div>
               </div>
@@ -503,9 +520,8 @@ export default function SocialMediaAutomationPage() {
                     Team Collaboration
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Connect with Slack, Discord, and project management tools. Keep your team aligned and productive.
-                    <span className="font-semibold text-blue-600"> Improve team efficiency by 60%</span> with unified
-                    communication.
+                    Keep approvals, comments, and handoffs inside Slack, Discord, Trello, or Notion so work moves
+                    without scattered feedback and status chasing.
                   </p>
                 </div>
               </div>
@@ -519,12 +535,38 @@ export default function SocialMediaAutomationPage() {
                     Content Management
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Pull content from Google Sheets, Airtable, or Notion. Automate content creation and distribution.
-                    <span className="font-semibold text-purple-600"> Publish 5x more content</span> with zero extra
-                    effort.
+                    Pull assets from Google Sheets, Airtable, or Notion, then queue, review, and publish from a single
+                    workflow with clearer QA before posting.
                   </p>
                 </div>
               </div>
+            </div>
+            <div className="max-w-4xl mx-auto rounded-2xl border bg-background px-6 py-5 text-left shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                Connected workflows
+              </p>
+              <p className="mt-3 text-base leading-7 text-muted-foreground">
+                When social publishing needs lead follow-up or repurposed content, connect it to{" "}
+                <Link href="/services/crm-automation" className="font-semibold text-blue-700 underline-offset-4 hover:underline">
+                  CRM automation
+                </Link>
+                ,{" "}
+                <Link
+                  href="/services/email-marketing-automation"
+                  className="font-semibold text-blue-700 underline-offset-4 hover:underline"
+                >
+                  email marketing automation
+                </Link>
+                ,{" "}
+                <Link href="/services/blog-automation" className="font-semibold text-blue-700 underline-offset-4 hover:underline">
+                  blog automation
+                </Link>
+                ,{" "}
+                <Link href="/services/seo-automation" className="font-semibold text-blue-700 underline-offset-4 hover:underline">
+                  SEO automation
+                </Link>
+                .
+              </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-sm text-muted-foreground mt-12">
               {[
@@ -561,26 +603,25 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto space-y-8 text-center">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Global Reach, Local Impact</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">How We Implement It</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Expand your reach while maintaining local relevance. Our geo-targeting features ensure your content
-                resonates with audiences worldwide.
+                We start with your posting process, approval requirements, and channel mix, then build the automation
+                around the handoffs your team already uses.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               <div className="group relative overflow-hidden border p-6 rounded-xl bg-background shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                    <Clock className="w-6 h-6 text-blue-600" />
+                    <Calendar className="w-6 h-6 text-blue-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                    Smart Time Zones
+                    Discovery
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically post at optimal times for each region.
-                    <span className="font-semibold text-blue-600"> Reach global audiences</span> when they&apos;re most
-                    active.
+                    Map current posting, moderation, and reporting steps to find where manual work, delays, or missed
+                    follow-up happen.
                   </p>
                 </div>
               </div>
@@ -588,14 +629,14 @@ export default function SocialMediaAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                    <Globe className="w-6 h-6 text-green-600" />
+                    <Cog className="w-6 h-6 text-green-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors duration-300">
-                    Multi-Language Support
+                    Build
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Create campaigns in multiple languages with automated translation and localization.
-                    <span className="font-semibold text-green-600"> Expand to new markets</span> effortlessly.
+                    Configure workflows, rules, and triggers in the tools you already use, then add approvals,
+                    fallbacks, and notifications before launch.
                   </p>
                 </div>
               </div>
@@ -603,14 +644,14 @@ export default function SocialMediaAutomationPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                    <Target className="w-6 h-6 text-purple-600" />
+                    <Clock className="w-6 h-6 text-purple-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors duration-300">
-                    Local Hashtags
+                    Launch
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Automatically include region-specific hashtags and trending topics.
-                    <span className="font-semibold text-purple-600"> Boost local discovery</span> by 200%.
+                    Test posting, handoff, and reporting with a controlled rollout so the first live cycle is stable
+                    and visible.
                   </p>
                 </div>
               </div>
@@ -621,11 +662,11 @@ export default function SocialMediaAutomationPage() {
                     <TrendingUp className="w-6 h-6 text-orange-600" />
                   </div>
                   <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors duration-300">
-                    Cultural Adaptation
+                    Optimize
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Adapt content for local holidays, events, and cultural preferences.
-                    <span className="font-semibold text-orange-600"> Increase engagement</span> with relevant content.
+                    Review performance, exceptions, and team feedback, then tune timing, templates, and routing over
+                    time.
                   </p>
                 </div>
               </div>
@@ -637,36 +678,36 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold">Perfect for Growing Businesses</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Built for Teams That Need Consistent Output</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Whether you&apos;re a solo entrepreneur or managing multiple brands, our automation scales with your needs
-                and delivers measurable results.
+                Whether you manage one brand or many, our automation is designed to keep publishing consistent,
+                approvals clear, and follow-up visible without adding more manual overhead.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 {
                   title: "Local Businesses",
-                  description: "Stay consistent without full-time social media staff",
-                  benefit: "Save $3,000+ monthly on hiring",
+                  description: "Stay consistent without hiring a full-time social manager",
+                  benefit: "Recover hours each week",
                   icon: Users,
                 },
                 {
-                  title: "Digital Agencies",
-                  description: "Manage multiple clients efficiently from one dashboard",
-                  benefit: "Handle 5x more clients",
+                  title: "Marketing Agencies",
+                  description: "Manage client approvals, publishing, and reporting from one system",
+                  benefit: "Support more accounts without chaos",
                   icon: Target,
                 },
                 {
                   title: "eCommerce Brands",
-                  description: "Run cross-platform campaigns that drive sales",
-                  benefit: "Increase online sales by 150%",
+                  description: "Run product launches, promotions, and UGC campaigns on repeat",
+                  benefit: "Keep campaigns on schedule",
                   icon: TrendingUp,
                 },
                 {
                   title: "Content Creators",
-                  description: "Scale your output and grow your audience faster",
-                  benefit: "Grow following 3x faster",
+                  description: "Turn one idea into a multi-channel workflow without losing your voice",
+                  benefit: "Publish faster across platforms",
                   icon: Eye,
                 },
               ].map((item, i) => (
@@ -697,48 +738,48 @@ export default function SocialMediaAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for Social Media Automation?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Why Teams Choose Awwtomation for Social Media Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                We don&apos;t just provide tools - we deliver complete automation solutions that transform how you manage
-                social media and grow your business.
+                We do not stop at the scheduler. We document the workflow, build the automation, test the edge cases,
+                and hand your team a system that can be trusted in production.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
               {[
                 {
                   title: "Custom Automation Workflows",
-                  description: "Tailored solutions that fit your unique business needs and goals",
-                  benefit: "ROI of 500%+ within 3 months",
+                  description: "Tailored to your channels, approval rules, and reporting needs",
+                  benefit: "Built around your actual process",
                   icon: Cog,
                 },
                 {
-                  title: "Powered by Advanced Technology",
-                  description: "Built on n8n for maximum flexibility and control over your automations",
-                  benefit: "99.9% uptime guarantee",
+                  title: "Works With Your Current Stack",
+                  description: "Implemented with n8n and the tools you already use, not around a forced platform swap",
+                  benefit: "Lower setup friction",
                   icon: Zap,
                 },
                 {
-                  title: "Transparent Pricing",
-                  description: "No hidden fees, no surprises - just clear, honest pricing that scales with you",
-                  benefit: "Save 70% vs hiring staff",
+                  title: "Transparent Scope and QA",
+                  description: "We define triggers, exceptions, and fallback paths so the system is easier to maintain",
+                  benefit: "Clearer ownership",
                   icon: Target,
                 },
                 {
                   title: "Expert Support & Training",
-                  description: "Ongoing consultations and support to maximize your automation success",
-                  benefit: "24/7 expert assistance",
+                  description: "Your team gets implementation guidance and handoff docs",
+                  benefit: "Faster adoption",
                   icon: Users,
                 },
                 {
                   title: "Scalable for Any Business",
-                  description: "From startups to enterprises - our solutions grow with your business",
-                  benefit: "Handle unlimited growth",
+                  description: "Start with one workflow and expand into CRM, email, SEO, or blog automation",
+                  benefit: "Easier to expand",
                   icon: TrendingUp,
                 },
                 {
-                  title: "Global Reach, Local Impact",
-                  description: "Geo-targeted scheduling and localization for worldwide audience engagement",
-                  benefit: "Expand to new markets 10x faster",
+                  title: "Practical Production Systems",
+                  description: "Built for day-to-day use, not demo-only automation",
+                  benefit: "Designed for real operations",
                   icon: Globe,
                 },
               ].map((item, i) => (
@@ -767,23 +808,23 @@ export default function SocialMediaAutomationPage() {
 
         <LinkCardSection
           eyebrow="Related Resources"
-          title="Support Your Social Media Automation with Better Reporting and Lifecycle Workflows"
-          description="These related pages strengthen the channel, CRM, and lifecycle topics that support this service page."
-          links={serviceSeo.relatedResources}
+          title="Support Your Social Workflow With Connected Systems"
+          description="These related pages show how social publishing connects to CRM, email, SEO, and content automation."
+          links={relatedResources}
         />
 
         <FaqCardSection
-          title="Frequently Asked Questions"
-          description="Get answers to common questions about our social media automation services."
+          title="Social Media Automation FAQs"
+          description="Get answers to the questions teams usually ask before automating publishing, routing, and reporting."
           faqs={serviceSeo.faqs}
         />
 
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Ready to Automate Your Social Media Workflows?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Ready to Automate Your Social Workflow?</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Replace manual scheduling, fragmented reporting, and slow handoffs with a social media automation service
-              that connects content operations to measurable growth.
+              Replace manual scheduling, fragmented reporting, and slow handoffs with a social media automation
+              service that connects publishing to CRM, email, and content operations.
             </p>
             <Button
               size="lg"
@@ -793,7 +834,7 @@ export default function SocialMediaAutomationPage() {
                 setCalModalOpen(true)
               }}
             >
-              Book Social Automation Consultation <ChevronRight className="ml-1 h-4 w-4" />
+              Book an Implementation Call <ChevronRight className="ml-1 h-4 w-4" />
             </Button>
           </div>
         </section>

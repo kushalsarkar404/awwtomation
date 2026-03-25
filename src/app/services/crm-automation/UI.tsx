@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card,CardContent,CardHeader,CardTitle } from "@/components/ui/card"
 import { getServiceBreadcrumbs,serviceDefinitions } from "@/lib/seo"
+import Link from "next/link"
 import {
 ArrowRight,
 BarChart3,
@@ -145,7 +146,28 @@ export default function CRMAutomationPage() {
               {serviceSeo.heroTitle}
             </h1>
             <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">
-              {serviceSeo.heroDescription}
+              We build CRM automation service systems that route leads faster, trigger follow-up sequences, sync data
+              across your stack, and give sales teams a cleaner pipeline to work from.
+            </p>
+            <p className="text-slate-600 dark:text-slate-300 text-sm max-w-2xl mx-auto leading-relaxed">
+              If you are comparing CRM automation vs. marketing automation, we map the handoff between pipeline
+              routing, lifecycle email, and support so each trigger has a clear owner. Related work often includes{" "}
+              <Link href="/services/email-marketing-automation" className="font-semibold underline underline-offset-4">
+                email marketing automation
+              </Link>
+              ,{" "}
+              <Link href="/services/customer-support-automation" className="font-semibold underline underline-offset-4">
+                customer support automation
+              </Link>
+              , and{" "}
+              <Link href="/services/seo-automation" className="font-semibold underline underline-offset-4">
+                SEO automation
+              </Link>
+              .
+            </p>
+            <p className="text-slate-500 dark:text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
+              We usually start with a workflow audit, then define triggers, owners, exception paths, and reporting
+              checkpoints before we connect anything to production.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
               <Button
@@ -210,10 +232,11 @@ export default function CRMAutomationPage() {
         {/* Why CRM Automation Matters */}
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-5xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">Why CRM Automation Transforms Your Business</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Why CRM Automation Matters for Lead Routing and Follow-Up</h2>
             <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-              Manual data entry, slow lead follow-ups, and siloed systems cost you time and money. Our automation
-              eliminates inefficiencies and fuels higher conversions.
+              Manual data entry, slow lead follow-ups, and siloed systems create stale records and inconsistent
+              handoffs. We design CRM workflow automation around your existing stack so routing, scoring, reminders,
+              and reporting run on rules your team can actually maintain.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="group relative overflow-hidden border p-8 rounded-xl bg-background shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
@@ -223,12 +246,12 @@ export default function CRMAutomationPage() {
                     <Clock className="w-8 h-8 text-red-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-red-700 transition-colors duration-300">
-                    Stop Losing Leads
+                    Route Every Lead Immediately
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Manual processes mean missed opportunities and delayed responses. Automation ensures every lead gets
-                    instant attention.
-                    <span className="font-semibold text-red-600"> Respond 10x faster</span> to hot prospects.
+                    We map capture sources, dedupe records, and assign ownership the moment a form, chat, or referral
+                    lands in the CRM.
+                    <span className="font-semibold text-red-600"> Respond faster</span> and reduce lost handoffs.
                   </p>
                 </div>
               </div>
@@ -239,11 +262,12 @@ export default function CRMAutomationPage() {
                     <TrendingUp className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-green-700 transition-colors duration-300">
-                    Accelerate Sales Cycles
+                    Standardize Follow-Up
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automated nurturing and intelligent lead scoring help your team focus on ready-to-buy prospects.
-                    <span className="font-semibold text-green-600"> Close deals 40% faster</span> with smart automation.
+                    We build stage-based triggers, task SLAs, and sequence logic so every rep follows the same process
+                    from first response to proposal.
+                    <span className="font-semibold text-green-600"> Keep deals moving</span> with a repeatable system.
                   </p>
                 </div>
               </div>
@@ -254,12 +278,12 @@ export default function CRMAutomationPage() {
                     <DollarSign className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Maximize Revenue
+                    See What Moves Revenue
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Data-driven insights and automated workflows eliminate guesswork and optimize every touchpoint.
-                    <span className="font-semibold text-blue-600"> Increase revenue by 35%</span> with intelligent
-                    automation.
+                    We connect pipeline data, campaign signals, and handoff events into one reporting layer so you can
+                    measure response time, conversion rate, and stage velocity against the current baseline.
+                    <span className="font-semibold text-blue-600"> Make the next move based on evidence.</span>
                   </p>
                 </div>
               </div>
@@ -271,10 +295,11 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Seamless Integration & Real-Time Data Sync</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">How We Connect CRM Automation Across Your Stack</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Connect every tool in your tech stack for a unified customer view. No more data silos or manual
-                updates—everything syncs automatically.
+                We map fields, events, and handoff rules across your CRM, email platform, support desk, and analytics
+                tools. That means no rip-and-replace, no duplicate entry, and no blind spots between sales and
+                marketing.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -285,16 +310,16 @@ export default function CRMAutomationPage() {
                     <Globe className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                    Universal Integration
+                    Stack-Wide Integration
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Link any app to any CRM. New contacts, orders, and leads flow automatically into your system.
-                    <span className="font-semibold text-blue-600"> Connect 500+ applications</span> without technical
-                    complexity.
+                    We connect HubSpot, Salesforce, Pipedrive, forms, chat, spreadsheets, and internal tools through API,
+                    webhook, or native sync paths.
+                    <span className="font-semibold text-blue-600"> Keep one source of truth</span> across the stack.
                   </p>
                   <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                     <p className="text-sm font-semibold text-blue-800">
-                    Automation without changing existing platforms.
+                      Automation without changing your existing platforms.
                     </p>
                   </div>
                 </div>
@@ -309,9 +334,9 @@ export default function CRMAutomationPage() {
                     Real-Time Updates
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Changes sync instantly across all systems. Sales, support tickets, and orders update in seconds.
-                    <span className="font-semibold text-green-600"> Eliminate data delays</span> and keep teams aligned
-                    24/7.
+                    Each event updates owner, stage, and status immediately so teams work from current records instead
+                    of exported snapshots.
+                    <span className="font-semibold text-green-600"> Remove lag from the handoff.</span>
                   </p>
                 </div>
               </div>
@@ -325,9 +350,9 @@ export default function CRMAutomationPage() {
                     Data Consistency
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    24/7 data sync ensures clean, consistent information across all departments.
-                    <span className="font-semibold text-purple-600"> Improve accuracy by 95%</span> and build trust
-                    across teams.
+                    We set validation rules, deduping, and field normalization to keep the CRM clean enough for
+                    reporting and automation.
+                    <span className="font-semibold text-purple-600"> Improve confidence in the data.</span>
                   </p>
                 </div>
               </div>
@@ -339,10 +364,15 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Automated Email & Lead Nurturing Workflows</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">CRM and Lifecycle Email Workflows</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Turn every lead into a conversation and every conversation into a sale. Our intelligent nurturing keeps
-                prospects engaged at every stage.
+                This is where CRM automation hands off to nurture. We trigger behavior-based sequences after form
+                fills, demo requests, quote sends, renewals, or inactivity windows, then route prospects into the
+                right path with{" "}
+                <Link href="/services/email-marketing-automation" className="font-semibold underline underline-offset-4">
+                  email marketing automation
+                </Link>
+                .
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -356,9 +386,9 @@ export default function CRMAutomationPage() {
                     Behavior-Based Campaigns
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Trigger personalized emails based on form submissions, purchases, or website activity.
-                    <span className="font-semibold text-orange-600"> Increase open rates by 180%</span> with relevant,
-                    timely messaging.
+                    Trigger personalized emails from form submissions, purchases, or website activity so the follow-up
+                    matches the buyer&apos;s intent.
+                    <span className="font-semibold text-orange-600"> Send the right message at the right moment.</span>
                   </p>
                 </div>
               </div>
@@ -372,13 +402,13 @@ export default function CRMAutomationPage() {
                     Multi-Channel Outreach
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automated follow-ups via email, SMS, and chat—all logged in your CRM for complete visibility.
-                    <span className="font-semibold text-blue-600"> Boost response rates by 250%</span> with
-                    multi-channel engagement.
+                    Use email, SMS, and chat when the buying cycle needs more than one reminder. We log every touch back
+                    to the record for auditability.
+                    <span className="font-semibold text-blue-600"> Keep follow-up visible.</span>
                   </p>
                   <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                     <p className="text-sm font-semibold text-blue-800">
-                      Automation that keeps leads warm and engaged at every step.
+                      Automation that keeps leads warm without losing context.
                     </p>
                   </div>
                 </div>
@@ -393,9 +423,9 @@ export default function CRMAutomationPage() {
                     Smart Follow-Up Sequences
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Automatic reminders after demos, downloads, or support requests ensure no opportunity slips through.
-                    <span className="font-semibold text-green-600"> Convert 60% more leads</span> with timely,
-                    persistent follow-up.
+                    Automatic reminders after demos, downloads, or support requests keep the handoff moving and reduce
+                    the chance of a cold lead.
+                    <span className="font-semibold text-green-600"> Build follow-up that survives busy weeks.</span>
                   </p>
                 </div>
               </div>
@@ -407,10 +437,10 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Smart Lead Scoring & Intelligent Qualification with CRM Automation </h2>
+              <h2 className="text-3xl md:text-4xl font-bold">CRM Workflow Automation for Scoring and Qualification</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Stop wasting time on cold leads. Our AI-powered scoring identifies your hottest prospects so your sales
-                team focuses on deals that close.
+                We define scoring around the behaviors your team trusts: role, company size, page visits, replies,
+                demo requests, and buying signals. That makes the model explainable instead of arbitrary.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -424,9 +454,8 @@ export default function CRMAutomationPage() {
                     Behavioral Scoring
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Assign points based on page visits, downloads, and engagement.
-                    <span className="font-semibold text-purple-600"> Identify hot leads instantly</span> with automated
-                    behavior tracking.
+                    Assign points based on page visits, downloads, replies, and other engagement signals.
+                    <span className="font-semibold text-purple-600"> Make scoring easy to explain.</span>
                   </p>
                 </div>
               </div>
@@ -440,9 +469,8 @@ export default function CRMAutomationPage() {
                     Sales Prioritization
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Your team sees the hottest leads first, increasing conversion rates.
-                    <span className="font-semibold text-green-600"> Close 3x more deals</span> by focusing on
-                    ready-to-buy prospects.
+                    Your team sees the hottest leads first, so reps spend more time on ready-to-buy prospects.
+                    <span className="font-semibold text-green-600"> Prioritize the accounts most likely to convert.</span>
                   </p>
                 </div>
               </div>
@@ -456,9 +484,9 @@ export default function CRMAutomationPage() {
                     Custom Qualification
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Combine demographic and engagement data for sophisticated scoring models.
-                    <span className="font-semibold text-blue-600"> Qualify leads 5x faster</span> with intelligent
-                    automation.
+                    Combine demographic and engagement data for qualification rules that match how your team actually
+                    sells.
+                    <span className="font-semibold text-blue-600"> Qualify leads with less manual review.</span>
                   </p>
                 </div>
               </div>
@@ -472,13 +500,12 @@ export default function CRMAutomationPage() {
                     Automated Routing
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    High-scoring leads automatically route to your best sales reps.
-                    <span className="font-semibold text-orange-600"> Maximize win rates</span> with intelligent lead
-                    distribution.
+                    High-scoring leads route to the right rep, territory, or queue with ownership and SLA checks.
+                    <span className="font-semibold text-orange-600"> Remove routing ambiguity.</span>
                   </p>
                   <div className="mt-4 p-3 bg-orange-50 rounded-lg border border-orange-200">
                     <p className="text-xs font-semibold text-orange-800">
-                      Automations for sales teams to optimize time and effort.
+                      Built to keep the sales process clear, auditable, and fast.
                     </p>
                   </div>
                 </div>
@@ -491,10 +518,11 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Dynamic Reporting Dashboards</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">CRM Reporting That Shows What Actually Changed</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Make data-driven decisions with real-time insights. Our custom dashboards turn complex data into
-                actionable intelligence.
+                We tie dashboards to operational metrics that matter: response time, pipeline conversion, stage aging,
+                and revenue influenced by automation. This is the evidence layer that helps you validate the
+                implementation.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -508,14 +536,12 @@ export default function CRMAutomationPage() {
                     Real-Time Analytics
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Custom dashboards pull data from your CRM and external sources like Google Analytics and ad
-                    networks.
-                    <span className="font-semibold text-blue-600"> Get insights 24/7</span> without manual spreadsheet
-                    updates.
+                    Custom dashboards pull data from your CRM and external sources like analytics and ad platforms.
+                    <span className="font-semibold text-blue-600"> Replace spreadsheet exports with live views.</span>
                   </p>
                   <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                     <p className="text-sm font-semibold text-blue-800">
-                      A CRM automation that empowers strategic planning.
+                      Reporting designed for weekly reviews and channel-level decisions.
                     </p>
                   </div>
                 </div>
@@ -530,10 +556,9 @@ export default function CRMAutomationPage() {
                     Visual Insights
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Charts and graphs update automatically with live data. Monitor KPIs like lead response time and deal
-                    velocity.
-                    <span className="font-semibold text-green-600"> Spot trends instantly</span> with visual
-                    intelligence.
+                    Charts and graphs update automatically with live data. Monitor KPIs like lead response time, deal
+                    velocity, and stage drop-off.
+                    <span className="font-semibold text-green-600"> Spot the bottleneck quickly.</span>
                   </p>
                 </div>
               </div>
@@ -547,9 +572,9 @@ export default function CRMAutomationPage() {
                     Strategic Decision Making
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Unified dashboards help managers spot trends and adjust strategy on the fly.
-                    <span className="font-semibold text-purple-600"> Make decisions 10x faster</span> with actionable
-                    insights, not raw data.
+                    Unified dashboards help managers spot trends and adjust strategy without pulling exports or waiting
+                    on manual reports.
+                    <span className="font-semibold text-purple-600"> Decide from current data.</span>
                   </p>
                 </div>
               </div>
@@ -561,10 +586,10 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto space-y-16">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Smart Workflow Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Implementation-Led Workflow Automation</h2>
               <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-                Eliminate repetitive tasks and ensure nothing falls through the cracks. Our intelligent workflows adapt
-                to your business processes.
+                We document every trigger, branch, exception, and owner before launch, then test the workflow against
+                live scenarios so it is usable by sales ops, marketing ops, and support.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -575,12 +600,11 @@ export default function CRMAutomationPage() {
                     <Calendar className="w-8 h-8 text-teal-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 group-hover:text-teal-700 transition-colors duration-300">
-                    Task & Reminder Automation
+                    Task, SLA, and Reminder Automation
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
                     Automatically assign follow-up tasks based on pipeline stage, behavior, or missed actions.
-                    <span className="font-semibold text-teal-600"> Never miss a follow-up</span> with intelligent task
-                    management.
+                    <span className="font-semibold text-teal-600"> Keep the process moving</span> with clear ownership.
                   </p>
                 </div>
               </div>
@@ -594,10 +618,8 @@ export default function CRMAutomationPage() {
                     Pipeline Automation
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Auto-advance deals to the next stage based on defined criteria like meetings booked or quotes
-                    signed.
-                    <span className="font-semibold text-indigo-600"> Accelerate deal flow</span> with intelligent stage
-                    progression.
+                    Auto-advance deals only when the required fields, meetings, or approvals are present.
+                    <span className="font-semibold text-indigo-600"> Avoid accidental stage jumps.</span>
                   </p>
                 </div>
               </div>
@@ -611,9 +633,8 @@ export default function CRMAutomationPage() {
                     Smart Enrichment
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Enrich contact records with additional data and auto-tag leads for better segmentation.
-                    <span className="font-semibold text-orange-600"> Improve targeting by 200%</span> with intelligent
-                    data enrichment.
+                    Enrich contact records with additional data, then normalize the fields your team actually uses.
+                    <span className="font-semibold text-orange-600"> Improve segmentation quality.</span>
                   </p>
                 </div>
               </div>
@@ -625,10 +646,10 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12 bg-muted/50">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Proven Results & Measurable ROI of CRM Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Measured Outcomes and ROI of CRM Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                Our CRM automation delivers immediate impact and long-term growth. Here is what you can expect from your
-                investment.
+                We benchmark baseline performance, implement the automation, and review the delta after launch so
+                progress is visible in operational numbers and revenue reporting.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -643,8 +664,8 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
                     Intelligent automation handles routine tasks like data entry and follow-ups automatically.
-                    <span className="font-semibold text-green-600"> Save 15+ hours weekly</span> per sales rep for
-                    strategic activities.
+                    <span className="font-semibold text-green-600"> Reclaim hours every week</span> for higher-value
+                    work.
                   </p>
                 </div>
               </div>
@@ -660,8 +681,7 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
                     Automated nurturing and lead scoring accelerate your sales pipeline.
-                    <span className="font-semibold text-blue-600"> Reduce sales cycle by 40%</span> with instant lead
-                    routing and timely follow-ups.
+                    <span className="font-semibold text-blue-600"> Reach inbound leads while they are still warm.</span>
                   </p>
                 </div>
               </div>
@@ -677,8 +697,7 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
                     Focus on high-quality leads identified through automated scoring and behavioral tracking.
-                    <span className="font-semibold text-purple-600"> Increase revenue by 50%</span> with smarter lead
-                    prioritization.
+                    <span className="font-semibold text-purple-600"> Prioritize the accounts most likely to convert.</span>
                   </p>
                 </div>
               </div>
@@ -694,8 +713,7 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
                     Eliminate duplicate entries and manual mistakes with automated data syncing.
-                    <span className="font-semibold text-orange-600"> Reduce operational costs by 30%</span> while
-                    improving accuracy.
+                    <span className="font-semibold text-orange-600"> Reduce rework and reporting noise.</span>
                   </p>
                 </div>
               </div>
@@ -710,9 +728,9 @@ export default function CRMAutomationPage() {
                     Scalable Growth
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Processes grow without increasing headcount. Handle 10x more leads with the same team.
-                    <span className="font-semibold text-teal-600"> Scale infinitely</span> with future-proof automation
-                    investment.
+                    Processes grow without increasing headcount. Handle more leads with the same team and a clearer
+                    operating model.
+                    <span className="font-semibold text-teal-600"> Grow without adding manual load.</span>
                   </p>
                 </div>
               </div>
@@ -727,9 +745,8 @@ export default function CRMAutomationPage() {
                     Data-Driven Decisions
                   </h3>
                   <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300 leading-relaxed">
-                    Real-time insights and unified dashboards enable strategic decision-making.
-                    <span className="font-semibold text-indigo-600"> Improve decision speed by 300%</span> with
-                    actionable intelligence.
+                    Real-time insights and unified dashboards make strategic decision-making easier to defend.
+                    <span className="font-semibold text-indigo-600"> Base decisions on measurable movement.</span>
                   </p>
                 </div>
               </div>
@@ -741,10 +758,10 @@ export default function CRMAutomationPage() {
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold">Why Choose Awwtomation for CRM Automation</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Why Teams Choose Awwtomation for CRM Automation</h2>
               <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-                We do not just implement tools—we transform your entire customer lifecycle with intelligent automation
-                that delivers measurable results.
+                We are implementation-led: discovery, workflow mapping, QA, launch, and post-launch tuning are built
+                into the project so you get a system your team can maintain.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
@@ -759,8 +776,8 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
                     Specialized in building powerful, end-to-end CRM automation solutions.
-                    <span className="font-semibold text-blue-600"> 500+ successful integrations</span> across all major
-                    CRM platforms.
+                    <span className="font-semibold text-blue-600"> 500+ successful integrations</span> across major CRM
+                    platforms.
                   </p>
                 </div>
               </div>
@@ -775,7 +792,7 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
                     Custom CRM automation and workflow automation tailored to your exact business needs.
-                    <span className="font-semibold text-green-600"> 100% customized</span> for your unique processes.
+                    <span className="font-semibold text-green-600"> Built around your process, not ours.</span>
                   </p>
                 </div>
               </div>
@@ -789,9 +806,8 @@ export default function CRMAutomationPage() {
                     Dedicated Support
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    From implementation to long-term success, we are your automation partner.
-                    <span className="font-semibold text-purple-600"> 24/7 expert support</span> and ongoing
-                    optimization.
+                    From implementation to long-term success, we stay involved as your automation partner.
+                    <span className="font-semibold text-purple-600"> Post-launch optimization included.</span>
                   </p>
                 </div>
               </div>
@@ -805,8 +821,8 @@ export default function CRMAutomationPage() {
                     Security & Compliance
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Enterprise-grade security with encryption, authentication, and GDPR compliance.
-                    <span className="font-semibold text-orange-600"> Bank-level security</span> for your customer data.
+                    Enterprise-grade security with encryption, authentication, and compliance-aware implementation.
+                    <span className="font-semibold text-orange-600"> Plan permissions before launch.</span>
                   </p>
                 </div>
               </div>
@@ -820,8 +836,8 @@ export default function CRMAutomationPage() {
                     Proven Track Record
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-                    Clients report faster lead response, higher conversion rates, and better decision-making.
-                    <span className="font-semibold text-teal-600"> Average 400% ROI</span> within 6 months.
+                    Clients report faster lead response, cleaner handoffs, and better decision-making after launch.
+                    <span className="font-semibold text-teal-600"> Results are measured against baseline metrics.</span>
                   </p>
                 </div>
               </div>
@@ -836,7 +852,7 @@ export default function CRMAutomationPage() {
                   </h3>
                   <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
                     Built on scalable platforms that evolve with your business needs and technology changes.
-                    <span className="font-semibold text-indigo-600"> Always up-to-date</span> with latest innovations.
+                    <span className="font-semibold text-indigo-600"> Easier to extend as the stack changes.</span>
                   </p>
                 </div>
               </div>
@@ -847,7 +863,7 @@ export default function CRMAutomationPage() {
         <LinkCardSection
           eyebrow="Related Resources"
           title="Build a Better CRM Automation Stack"
-          description="These pages reinforce the CRM, lead handling, and lifecycle automation topics that support this commercial page."
+          description="These pages reinforce CRM, lifecycle email, support, and SEO automation topics that support this commercial page."
           links={serviceSeo.relatedResources}
         />
 
@@ -865,7 +881,8 @@ export default function CRMAutomationPage() {
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">FAQ</div>
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Frequently Asked Questions</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Get answers to common questions about our CRM automation services.
+                  Get answers to the common CRM automation questions teams ask before implementation, including what
+                  CRM automation is, how it differs from marketing automation, and how it works in your current stack.
                 </p>
               </div>
             </div>
@@ -887,10 +904,10 @@ export default function CRMAutomationPage() {
         {/* Call to Action */}
         <section className="py-20 px-4 md:px-12">
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold">Let&apos;s build Your CRM Automation Workflow Today</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Let&apos;s build your CRM automation workflow</h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Don&apos;t let manual tasks hold your business back. Let&apos;s build a smarter, automated CRM that scales with you
-              and delivers measurable results.
+              We&apos;ll map your lead routing, follow-up, and reporting gaps, then recommend the smallest automation set
+              that will move the numbers.
             </p>
             <div className="pt-8">
               <Button
@@ -904,8 +921,8 @@ export default function CRMAutomationPage() {
                 Schedule Free Consultation <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
               <p className="text-sm text-muted-foreground mt-4">
-                See how custom CRM automation can boost your sales performance, reduce operational load, and increase
-                customer satisfaction.
+                See how custom CRM automation can improve response time, reduce operational load, and create a cleaner
+                handoff between sales, marketing, and support.
               </p>
             </div>
           </div>

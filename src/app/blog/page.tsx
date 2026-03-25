@@ -3,28 +3,19 @@ import { LinkCardSection } from "@/components/seo/link-card-section";
 import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { getSortedPostsData } from "@/lib/blog";
+import { getIndexablePostsData } from "@/lib/blog";
 import { blogIndexSeo,buildBreadcrumbSchema,buildItemListSchema,buildWebPageSchema,serviceCards } from "@/lib/seo";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Business Automation Blog: CRM, SEO, Email & Workflow Guides | Awwtomation",
-  description: "Business automation blog with guides on CRM automation, email marketing workflows, SEO systems, support automation, and process design for growing teams.",
-  keywords: [
-    "business automation blog",
-    "CRM automation tips",
-    "email marketing strategies",
-    "SEO automation guide",
-    "social media automation",
-    "business process optimization",
-    "automation insights",
-    "digital transformation"
-  ],
+  title: blogIndexSeo.title,
+  description: blogIndexSeo.description,
+  keywords: blogIndexSeo.keywords,
   openGraph: {
-    title: "Business Automation Blog: CRM, SEO, Email & Workflow Guides | Awwtomation",
-    description: "Business automation blog with guides on CRM automation, email marketing workflows, SEO systems, support automation, and process design for growing teams.",
+    title: blogIndexSeo.title,
+    description: blogIndexSeo.description,
     url: "https://www.awwtomation.com/blog",
     siteName: "Awwtomation",
     type: "website",
@@ -39,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Automation Blog: CRM, SEO, Email & Workflow Guides | Awwtomation",
-    description: "Business automation blog with guides on CRM automation, email marketing workflows, SEO systems, support automation, and process design for growing teams.",
+    title: blogIndexSeo.title,
+    description: blogIndexSeo.description,
     images: ["https://www.awwtomation.com/images/blog-automation.png"]
   },
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -52,7 +43,7 @@ export const metadata: Metadata = {
 const POSTS_PER_PAGE = 8;
 
 export default async function BlogPage({ searchParams }: { searchParams?: Promise<{ page?: string, sort?: string }> }) {
-  const allPosts = getSortedPostsData();
+  const allPosts = getIndexablePostsData();
   const params = await searchParams;
   const page = Number(params?.page) || 1;
   const sortOrder = (params?.sort === "asc" ? "asc" : "desc");
