@@ -1,0 +1,274 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Awwtomation home" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Awwtomation Logo" [ref=e7]
+        - button "Open navigation menu" [ref=e9]:
+          - img [ref=e10]
+    - main [ref=e11]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - navigation "Breadcrumb" [ref=e21]:
+            - list [ref=e22]:
+              - listitem [ref=e23]:
+                - generic [ref=e24]: Home
+          - heading "Business Automation Services for Revenue, Marketing, and Operations Growth" [level=1] [ref=e25]
+          - paragraph [ref=e26]: Awwtomation is a business automation agency that designs CRM, SEO, email marketing, social media, blog, and support workflows so service businesses can scale without adding manual overhead.
+        - generic [ref=e27]:
+          - button "Automate Your Process Now" [ref=e28]:
+            - text: Automate Your Process Now
+            - img
+          - button "Not Now? Message Us" [ref=e29]
+      - generic [ref=e31]:
+        - link "Trustpilot" [ref=e34] [cursor=pointer]:
+          - /url: https://www.trustpilot.com/review/awwtomation.com
+        - generic [ref=e35]:
+          - paragraph [ref=e36]: TRUSTED BY BUSINESSES USING
+          - generic [ref=e37]:
+            - img "HubSpot logo" [ref=e40]
+            - img "Zoho logo" [ref=e43]
+            - img "Pipedrive logo" [ref=e46]
+            - img "Calendly logo" [ref=e49]
+            - img "Google logo" [ref=e52]
+            - img "Notion logo" [ref=e55]
+            - img "Airtable logo" [ref=e58]
+            - img "HighLevel logo" [ref=e61]
+      - generic [ref=e63]:
+        - generic [ref=e65]:
+          - generic [ref=e66]: Services
+          - heading "Business Automation Services Built Around Your Highest-Value Workflows" [level=2] [ref=e67]
+          - paragraph [ref=e68]: We help growing businesses automate CRM, SEO, social media, blog publishing, email marketing, and customer support workflows so teams can spend less time on coordination and more time on growth.
+        - generic [ref=e69]:
+          - img "Automation Services" [ref=e71]
+          - list [ref=e73]:
+            - listitem [ref=e74]:
+              - img [ref=e76]
+              - generic [ref=e87]:
+                - heading "CRM Automation" [level=3] [ref=e88]
+                - paragraph [ref=e89]: Automated Lead Capture / Nurture.
+            - listitem [ref=e90]:
+              - img [ref=e92]
+              - generic [ref=e94]:
+                - heading "Social Media Automation" [level=3] [ref=e95]
+                - paragraph [ref=e96]: Automated Content Generation & Analytics Dashboard.
+            - listitem [ref=e97]:
+              - img [ref=e99]
+              - generic [ref=e102]:
+                - heading "SEO Automation" [level=3] [ref=e103]
+                - paragraph [ref=e104]: Automated Comprehensive SEO Reporting.
+            - listitem [ref=e105]:
+              - img [ref=e107]
+              - generic [ref=e110]:
+                - heading "Blog Agent" [level=3] [ref=e111]
+                - paragraph [ref=e112]: Automated SEO Optimized / Humanized Blogs.
+            - listitem [ref=e113]:
+              - img [ref=e115]
+              - generic [ref=e118]:
+                - heading "Email Marketing Automation" [level=3] [ref=e119]
+                - paragraph [ref=e120]: Automated Campaigns, Segmentation, and Personalization.
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]: Resources
+          - heading "Research the Systems Behind Stronger Automation" [level=2] [ref=e125]
+          - paragraph [ref=e126]: These supporting pages strengthen the core business automation topics we want the homepage to rank for and give visitors clearer next steps.
+        - generic [ref=e127]:
+          - link "Core page Automation Services Hub Review the full service stack across CRM, SEO, email, support, and social workflows. Explore resource" [ref=e128] [cursor=pointer]:
+            - /url: /services
+            - generic [ref=e129]:
+              - generic [ref=e130]: Core page
+              - heading "Automation Services Hub" [level=3] [ref=e131]
+              - paragraph [ref=e132]: Review the full service stack across CRM, SEO, email, support, and social workflows.
+              - generic [ref=e133]: Explore resource
+          - link "Related blog What is RPA? A Comprehensive Guide to Robotic Process Automation A foundational article for teams comparing task automation and broader workflow changes. Explore resource" [ref=e134] [cursor=pointer]:
+            - /url: /blog/what-is-rpa-robotic-process-automation-guide
+            - generic [ref=e135]:
+              - generic [ref=e136]: Related blog
+              - heading "What is RPA? A Comprehensive Guide to Robotic Process Automation" [level=3] [ref=e137]
+              - paragraph [ref=e138]: A foundational article for teams comparing task automation and broader workflow changes.
+              - generic [ref=e139]: Explore resource
+          - link "Related blog Low-Code vs No-Code Automation Business Guide Helpful when deciding how much flexibility and ownership your stack needs. Explore resource" [ref=e140] [cursor=pointer]:
+            - /url: /blog/low-code-vs-no-code-automation-business-guide
+            - generic [ref=e141]:
+              - generic [ref=e142]: Related blog
+              - heading "Low-Code vs No-Code Automation Business Guide" [level=3] [ref=e143]
+              - paragraph [ref=e144]: Helpful when deciding how much flexibility and ownership your stack needs.
+              - generic [ref=e145]: Explore resource
+      - generic [ref=e147]:
+        - generic [ref=e149]:
+          - generic [ref=e150]: Pricing
+          - heading "Business Automation Pricing Plans That Scale With Your Growth" [level=2] [ref=e151]
+          - paragraph [ref=e152]: We build lasting systems for your business. Start simple, grow with automation.
+        - generic [ref=e153]:
+          - generic [ref=e155]:
+            - generic [ref=e156]:
+              - generic [ref=e157]: Creator Plan
+              - generic [ref=e158]: Designed for Influencers, Content Creators, Bloggers, and Writers
+            - list [ref=e160]:
+              - listitem [ref=e161]:
+                - img [ref=e162]
+                - generic [ref=e164]: Automated content generation
+              - listitem [ref=e165]:
+                - img [ref=e166]
+                - generic [ref=e168]: Social media planning and scheduling
+              - listitem [ref=e169]:
+                - img [ref=e170]
+                - generic [ref=e172]: SEO-optimized blog creation
+            - generic [ref=e173]:
+              - paragraph [ref=e174]: Looking to scale your content with ease?
+              - button "Get a Quote" [ref=e175]
+          - generic [ref=e177]:
+            - generic [ref=e178]: Most Popular
+            - generic [ref=e179]:
+              - generic [ref=e180]: Small and Medium-sized Business
+              - generic [ref=e181]: Designed for E-commerce Stores, Marketing/SEO Agencies, Local Businesses
+            - list [ref=e183]:
+              - listitem [ref=e184]:
+                - img [ref=e185]
+                - generic [ref=e187]: Email marketing automation
+              - listitem [ref=e188]:
+                - img [ref=e189]
+                - generic [ref=e191]: Marketing and SEO process automation
+              - listitem [ref=e192]:
+                - img [ref=e193]
+                - generic [ref=e195]: Client engagement workflows
+            - generic [ref=e196]:
+              - paragraph [ref=e197]: Ready to streamline and grow your business?
+              - button "Get a Quote" [ref=e198]
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - generic [ref=e202]: Enterprise Plan
+              - generic [ref=e203]: Designed for Large Organizations and Teams with Complex Workflow Needs
+            - list [ref=e205]:
+              - listitem [ref=e206]:
+                - img [ref=e207]
+                - generic [ref=e209]: Fully tailored workflow automation
+              - listitem [ref=e210]:
+                - img [ref=e211]
+                - generic [ref=e213]: Advanced integration and analytics
+              - listitem [ref=e214]:
+                - img [ref=e215]
+                - generic [ref=e217]: High-priority support and dedicated onboarding
+            - generic [ref=e218]:
+              - paragraph [ref=e219]: Looking for enterprise-grade automation at scale?
+              - button "Get a Quote" [ref=e220]
+      - generic [ref=e228]:
+        - generic [ref=e230]:
+          - generic [ref=e231]: Testimonials
+          - link "Trustpilot" [ref=e234] [cursor=pointer]:
+            - /url: https://www.trustpilot.com/review/awwtomation.com
+          - heading "What Our Clients Say" [level=2] [ref=e235]
+          - paragraph [ref=e236]: Hear from businesses that have transformed their operations with our automation solutions.
+        - generic [ref=e237]:
+          - generic [ref=e240]:
+            - paragraph [ref=e241]: Awwtomation saved us $3,000/mo and 15+ hrs/week by automating our whole hotel booking and order system. Our other staffs can focus on other priorities.
+            - generic [ref=e242]:
+              - paragraph [ref=e243]: Yam Bhd. Khatri
+              - paragraph [ref=e244]: Owner, Kathmandu Kitchen- JAPAN
+          - generic [ref=e247]:
+            - paragraph [ref=e248]: The custom dashboard they built pulls data from multiple platforms. I finally have a single source of truth for all our metrics.
+            - generic [ref=e249]:
+              - paragraph [ref=e250]: Prajwal Adhikari
+              - paragraph [ref=e251]: Founder, RoomieNow
+          - generic [ref=e254]:
+            - paragraph [ref=e255]: Their appointment workflow automation eliminated double-bookings and reduced no-shows by 35%. Worth every penny.
+            - generic [ref=e256]:
+              - paragraph [ref=e257]: Jessica Williams
+              - paragraph [ref=e258]: Founder, ConsultCo
+      - generic [ref=e265]:
+        - generic [ref=e266]:
+          - heading "Get Free Business Automation Consultation" [level=2] [ref=e267]
+          - paragraph [ref=e268]: Book an appointment with our automation experts today and discover how we can transform your business processes.
+        - button "Book an Appointment" [ref=e270]:
+          - text: Book an Appointment
+          - img
+        - paragraph [ref=e271]: Free consultation. No obligation.
+      - generic [ref=e276]:
+        - generic [ref=e278]:
+          - generic [ref=e279]: FAQ
+          - heading "Frequently Asked Questions" [level=2] [ref=e280]
+          - paragraph [ref=e281]: Get answers to common questions about our automation services.
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - generic [ref=e285]: What does a business automation agency do?
+            - paragraph [ref=e287]: A business automation agency maps the manual work slowing down your company, then designs systems for lead handling, reporting, content, communication, and operations so teams can move faster with fewer errors.
+          - generic [ref=e288]:
+            - generic [ref=e290]: Which teams benefit most from business automation services?
+            - paragraph [ref=e292]: Sales, marketing, customer support, and operations teams benefit the most because they typically manage the most repetitive routing, reporting, follow-up, and data-sync work.
+          - generic [ref=e293]:
+            - generic [ref=e295]: How quickly can business automation services start showing value?
+            - paragraph [ref=e297]: Operational improvements can show up quickly because automation reduces manual work almost immediately. Revenue impact usually follows as lead response, nurture speed, reporting, and customer experience improve.
+          - generic [ref=e298]:
+            - generic [ref=e300]: Do we need to replace our current tools to automate processes?
+            - paragraph [ref=e302]: Usually no. The best automation projects improve the systems you already use by connecting them more effectively and removing process gaps before recommending larger platform changes.
+    - contentinfo [ref=e303]:
+      - generic [ref=e304]:
+        - generic [ref=e305]:
+          - generic [ref=e306]:
+            - link "Awwtomation home" [ref=e308] [cursor=pointer]:
+              - /url: /
+              - img "Awwtomation Logo" [ref=e309]
+            - paragraph [ref=e310]: Automate. Accelerate. Assert.
+            - generic [ref=e311]:
+              - link "Instagram" [ref=e312] [cursor=pointer]:
+                - /url: https://www.instagram.com/awwtomation/
+                - img [ref=e313]
+                - generic [ref=e315]: Instagram
+              - link "LinkedIn" [ref=e316] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/awwtomation/
+                - img [ref=e317]
+                - generic [ref=e319]: LinkedIn
+              - link "YouTube" [ref=e320] [cursor=pointer]:
+                - /url: https://youtube.com/@Awwtomation
+                - img [ref=e321]
+                - generic [ref=e323]: YouTube
+              - link "X" [ref=e324] [cursor=pointer]:
+                - /url: https://x.com/awwtomation
+                - img [ref=e325]
+                - generic [ref=e327]: X
+          - generic [ref=e328]:
+            - heading "Services" [level=3] [ref=e329]
+            - list [ref=e330]:
+              - listitem [ref=e331]:
+                - link "Blog Agent" [ref=e332] [cursor=pointer]:
+                  - /url: /services/blog-automation
+              - listitem [ref=e333]:
+                - link "Social Media Automation" [ref=e334] [cursor=pointer]:
+                  - /url: /services/social-media-automation
+              - listitem [ref=e335]:
+                - link "CRM Automation" [ref=e336] [cursor=pointer]:
+                  - /url: /services/crm-automation
+              - listitem [ref=e337]:
+                - link "SEO Automation" [ref=e338] [cursor=pointer]:
+                  - /url: /services/seo-automation
+              - listitem [ref=e339]:
+                - link "Email Marketing Automation" [ref=e340] [cursor=pointer]:
+                  - /url: /services/email-marketing-automation
+              - listitem [ref=e341]:
+                - link "Customer Support Automation" [ref=e342] [cursor=pointer]:
+                  - /url: /services/customer-support-automation
+          - generic [ref=e343]:
+            - heading "Resources" [level=3] [ref=e344]
+            - list [ref=e345]:
+              - listitem [ref=e346]:
+                - link "Free Automation Templates" [ref=e347] [cursor=pointer]:
+                  - /url: /templates
+              - listitem [ref=e348]:
+                - link "Blog" [ref=e349] [cursor=pointer]:
+                  - /url: /blog
+          - generic [ref=e350]:
+            - heading "Support" [level=3] [ref=e351]
+            - list [ref=e352]:
+              - listitem [ref=e353]:
+                - link "Contact" [ref=e354] [cursor=pointer]:
+                  - /url: mailto:contact@awwtomation.com
+        - generic [ref=e355]:
+          - paragraph [ref=e356]: © 2025 Awwtomation. All rights reserved.
+          - generic [ref=e357]:
+            - link "Terms of Service" [ref=e358] [cursor=pointer]:
+              - /url: /legal/terms-and-conditions
+            - link "Privacy Policy" [ref=e359] [cursor=pointer]:
+              - /url: /legal/privacy-policy
+  - button "Open Next.js Dev Tools" [ref=e365] [cursor=pointer]:
+    - img [ref=e366]

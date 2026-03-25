@@ -1,0 +1,460 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Awwtomation home" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Awwtomation Logo" [ref=e7]
+        - navigation [ref=e8]:
+          - link "Services" [ref=e11] [cursor=pointer]:
+            - /url: /services
+          - link "Pricing" [ref=e12] [cursor=pointer]:
+            - /url: /#pricing
+          - link "Contact" [ref=e13] [cursor=pointer]:
+            - /url: /#contact
+          - link "Blog" [ref=e14] [cursor=pointer]:
+            - /url: /blog
+          - link "About" [ref=e15] [cursor=pointer]:
+            - /url: /about
+        - button "Automate Now" [ref=e17]:
+          - text: Automate Now
+          - img
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - img [ref=e22]
+        - img [ref=e29]
+        - img [ref=e33]
+        - img [ref=e38]
+        - img [ref=e42]
+        - img [ref=e47]
+        - img [ref=e52]
+        - img [ref=e58]
+      - generic [ref=e61]:
+        - navigation "Breadcrumb" [ref=e62]:
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - link "Home" [ref=e65] [cursor=pointer]:
+                - /url: /
+              - generic [ref=e66]: /
+            - listitem [ref=e67]:
+              - generic [ref=e68]: Services
+        - generic [ref=e69]: Services
+        - heading "Automation Services for Marketing, Sales, Support, and Operations" [level=1] [ref=e70]
+        - paragraph [ref=e71]: "Our automation services cover the highest-friction parts of growth: lead routing, nurture flows, reporting, content production, social publishing, and support operations."
+        - button "Start Automating" [ref=e73]:
+          - text: Start Automating
+          - img
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]: Service Paths
+        - heading "Choose the Automation Service That Matches Your Core Bottleneck" [level=2] [ref=e78]
+        - paragraph [ref=e79]: Each service page targets a distinct commercial cluster from the Semrush workbook, so start with the workflow that currently creates the most manual drag or lost revenue.
+      - generic [ref=e80]:
+        - link "Service Blog Automation Launch a blog automation service that handles keyword research, AI-assisted drafting, editorial workflows, publishing, and reporting so your team can scale organic traffic faster. Explore resource" [ref=e81] [cursor=pointer]:
+          - /url: /services/blog-automation
+          - generic [ref=e82]:
+            - generic [ref=e83]: Service
+            - heading "Blog Automation" [level=3] [ref=e84]
+            - paragraph [ref=e85]: Launch a blog automation service that handles keyword research, AI-assisted drafting, editorial workflows, publishing, and reporting so your team can scale organic traffic faster.
+            - generic [ref=e86]: Explore resource
+        - link "Service Social Media Automation Build a social media automation service that handles content planning, approvals, scheduling, inbox workflows, and reporting across the channels that matter to your brand. Explore resource" [ref=e87] [cursor=pointer]:
+          - /url: /services/social-media-automation
+          - generic [ref=e88]:
+            - generic [ref=e89]: Service
+            - heading "Social Media Automation" [level=3] [ref=e90]
+            - paragraph [ref=e91]: Build a social media automation service that handles content planning, approvals, scheduling, inbox workflows, and reporting across the channels that matter to your brand.
+            - generic [ref=e92]: Explore resource
+        - link "Service SEO Automation Deploy an SEO automation service that streamlines reporting, keyword monitoring, content workflows, technical checks, and stakeholder updates without losing strategic control. Explore resource" [ref=e93] [cursor=pointer]:
+          - /url: /services/seo-automation
+          - generic [ref=e94]:
+            - generic [ref=e95]: Service
+            - heading "SEO Automation" [level=3] [ref=e96]
+            - paragraph [ref=e97]: Deploy an SEO automation service that streamlines reporting, keyword monitoring, content workflows, technical checks, and stakeholder updates without losing strategic control.
+            - generic [ref=e98]: Explore resource
+        - link "Service Email Marketing Automation Build email marketing automation workflows for welcome series, lead nurturing, abandoned cart recovery, segmentation, and reporting across your CRM and email stack. Explore resource" [ref=e99] [cursor=pointer]:
+          - /url: /services/email-marketing-automation
+          - generic [ref=e100]:
+            - generic [ref=e101]: Service
+            - heading "Email Marketing Automation" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Build email marketing automation workflows for welcome series, lead nurturing, abandoned cart recovery, segmentation, and reporting across your CRM and email stack.
+            - generic [ref=e104]: Explore resource
+        - link "Service CRM Automation Launch a CRM automation service that automates lead capture, scoring, handoffs, follow-up sequences, data syncing, and pipeline visibility across your sales process. Explore resource" [ref=e105] [cursor=pointer]:
+          - /url: /services/crm-automation
+          - generic [ref=e106]:
+            - generic [ref=e107]: Service
+            - heading "CRM Automation" [level=3] [ref=e108]
+            - paragraph [ref=e109]: Launch a CRM automation service that automates lead capture, scoring, handoffs, follow-up sequences, data syncing, and pipeline visibility across your sales process.
+            - generic [ref=e110]: Explore resource
+        - link "Service Customer Support Automation Implement a customer support automation service with AI chatbots, ticket routing, self-service workflows, and reporting that shortens response times without sacrificing customer experience. Explore resource" [ref=e111] [cursor=pointer]:
+          - /url: /services/customer-support-automation
+          - generic [ref=e112]:
+            - generic [ref=e113]: Service
+            - heading "Customer Support Automation" [level=3] [ref=e114]
+            - paragraph [ref=e115]: Implement a customer support automation service with AI chatbots, ticket routing, self-service workflows, and reporting that shortens response times without sacrificing customer experience.
+            - generic [ref=e116]: Explore resource
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - heading "CRM Automation" [level=2] [ref=e120]
+        - generic [ref=e121]:
+          - generic [ref=e122]: Sales teams
+          - generic [ref=e123]: Customer service departments
+          - generic [ref=e124]: Growing businesses
+        - paragraph [ref=e125]: Our CRM automation tools revolutionize how you manage customer relationships with automated lead capture and nurture systems that drive revenue and improve customer satisfaction.
+      - generic [ref=e126]:
+        - generic [ref=e129]:
+          - img [ref=e131]
+          - heading "Automated Lead Capture" [level=3] [ref=e135]
+          - paragraph [ref=e136]: Instantly capture and organize leads from multiple sources into your CRM
+        - generic [ref=e139]:
+          - img [ref=e141]
+          - heading "Lead Nurturing Workflows" [level=3] [ref=e145]
+          - paragraph [ref=e146]: Automatically engage prospects with personalized sequences based on behavior
+        - generic [ref=e149]:
+          - img [ref=e151]
+          - heading "Pipeline Management" [level=3] [ref=e154]
+          - paragraph [ref=e155]: Streamline deal progression with automated stage transitions and notifications
+        - generic [ref=e158]:
+          - img [ref=e160]
+          - heading "Customer Data Synchronization" [level=3] [ref=e163]
+          - paragraph [ref=e164]: Ensure consistent, up-to-date information across all touchpoints
+        - generic [ref=e167]:
+          - img [ref=e169]
+          - heading "Automated Follow-ups" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Never miss opportunities with intelligent reminder systems and scheduled outreach
+        - generic [ref=e175]:
+          - img [ref=e177]
+          - heading "Sales Reporting and Analytics" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Generate real-time insights on performance metrics and conversion rates
+      - link "Learn More About CRM Automation" [ref=e182] [cursor=pointer]:
+        - /url: /services/crm-automation
+        - text: Learn More About CRM Automation
+        - img
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - heading "Social Media Automation" [level=2] [ref=e186]
+        - generic [ref=e187]:
+          - generic [ref=e188]: Marketing teams
+          - generic [ref=e189]: Content creators
+          - generic [ref=e190]: Multi-platform businesses
+        - paragraph [ref=e191]: Maximize your social media presence with automated content generation and analytics dashboard that maintains authentic engagement while saving hours of manual work.
+      - generic [ref=e192]:
+        - generic [ref=e195]:
+          - img [ref=e197]
+          - heading "Automated Content Generation" [level=3] [ref=e200]
+          - paragraph [ref=e201]: Create engaging posts automatically based on your brand voice and audience preferences
+        - generic [ref=e204]:
+          - img [ref=e206]
+          - heading "Social Media Planning and Scheduling" [level=3] [ref=e208]
+          - paragraph [ref=e209]: Plan and deploy posts across multiple platforms with optimal timing
+        - generic [ref=e212]:
+          - img [ref=e214]
+          - heading "Analytics Dashboard" [level=3] [ref=e217]
+          - paragraph [ref=e218]: Track engagement metrics, follower growth, and content performance in one centralized location
+        - generic [ref=e221]:
+          - img [ref=e223]
+          - heading "Audience Engagement" [level=3] [ref=e225]
+          - paragraph [ref=e226]: Automatically respond to comments and messages with personalized replies
+        - generic [ref=e229]:
+          - img [ref=e231]
+          - heading "Hashtag Optimization" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Generate relevant, trending hashtags to increase post visibility and reach
+        - generic [ref=e238]:
+          - img [ref=e240]
+          - heading "Cross-platform Posting" [level=3] [ref=e243]
+          - paragraph [ref=e244]: Simultaneously publish content to Facebook, Instagram, Twitter, and LinkedIn
+      - link "Learn More About Social Media Automation" [ref=e246] [cursor=pointer]:
+        - /url: /services/social-media-automation
+        - text: Learn More About Social Media Automation
+        - img
+    - generic [ref=e248]:
+      - generic [ref=e249]:
+        - heading "Blog Automation" [level=2] [ref=e250]
+        - generic [ref=e251]:
+          - generic [ref=e252]: Content marketers
+          - generic [ref=e253]: SEO professionals
+          - generic [ref=e254]: Thought leadership businesses
+        - paragraph [ref=e255]: Streamline your content creation process with our Blog Agent that creates automated SEO-optimized and humanized blogs to engage your audience effectively.
+      - generic [ref=e256]:
+        - generic [ref=e259]:
+          - img [ref=e261]
+          - heading "SEO-Optimized Blog Creation" [level=3] [ref=e264]
+          - paragraph [ref=e265]: Generate high-quality, search-engine-friendly content automatically
+        - generic [ref=e268]:
+          - img [ref=e270]
+          - heading "Humanized Content" [level=3] [ref=e275]
+          - paragraph [ref=e276]: Create authentic, engaging blog posts that resonate with your audience
+        - generic [ref=e279]:
+          - img [ref=e281]
+          - heading "Content Ideation and Planning" [level=3] [ref=e283]
+          - paragraph [ref=e284]: Generate topic suggestions based on trending keywords and industry insights
+        - generic [ref=e287]:
+          - img [ref=e289]
+          - heading "Automated Publishing Workflows" [level=3] [ref=e291]
+          - paragraph [ref=e292]: Schedule posts and manage editorial calendars seamlessly
+        - generic [ref=e295]:
+          - img [ref=e297]
+          - heading "Content Distribution" [level=3] [ref=e300]
+          - paragraph [ref=e301]: Automatically share new posts across social media and email channels
+        - generic [ref=e304]:
+          - img [ref=e306]
+          - heading "Performance Tracking" [level=3] [ref=e308]
+          - paragraph [ref=e309]: Monitor traffic, engagement metrics, and SEO rankings for content optimization
+      - link "Learn More About Blog Automation" [ref=e311] [cursor=pointer]:
+        - /url: /services/blog-automation
+        - text: Learn More About Blog Automation
+        - img
+    - generic [ref=e313]:
+      - generic [ref=e314]:
+        - heading "Customer Support Automation" [level=2] [ref=e315]
+        - generic [ref=e316]:
+          - generic [ref=e317]: Customer service teams
+          - generic [ref=e318]: E-commerce businesses
+          - generic [ref=e319]: SaaS companies
+        - paragraph [ref=e320]: Deliver exceptional customer experiences with intelligent automation that resolves issues faster while reducing support costs.
+      - generic [ref=e321]:
+        - generic [ref=e324]:
+          - img [ref=e326]
+          - heading "Ticket Routing and Prioritization" [level=3] [ref=e329]
+          - paragraph [ref=e330]: Automatically assign requests to the right agents
+        - generic [ref=e333]:
+          - img [ref=e335]
+          - heading "Chatbot Integration" [level=3] [ref=e338]
+          - paragraph [ref=e339]: Deploy AI-powered chatbots for instant responses to common inquiries
+        - generic [ref=e342]:
+          - img [ref=e344]
+          - heading "Knowledge Base Management" [level=3] [ref=e347]
+          - paragraph [ref=e348]: Automatically update support documentation
+        - generic [ref=e351]:
+          - img [ref=e353]
+          - heading "Escalation Workflows" [level=3] [ref=e356]
+          - paragraph [ref=e357]: Transfer complex issues to specialized agents with complete context
+        - generic [ref=e360]:
+          - img [ref=e362]
+          - heading "Response Templates" [level=3] [ref=e364]
+          - paragraph [ref=e365]: Generate personalized responses using customer data
+        - generic [ref=e368]:
+          - img [ref=e370]
+          - heading "Support Analytics" [level=3] [ref=e372]
+          - paragraph [ref=e373]: Track resolution times and customer satisfaction scores
+      - link "Learn More About Customer Support Automation" [ref=e375] [cursor=pointer]:
+        - /url: /services/customer-support-automation
+        - text: Learn More About Customer Support Automation
+        - img
+    - generic [ref=e377]:
+      - generic [ref=e378]:
+        - heading "Email Marketing Automation" [level=2] [ref=e379]
+        - generic [ref=e380]:
+          - generic [ref=e381]: E-commerce businesses
+          - generic [ref=e382]: B2B companies
+          - generic [ref=e383]: Marketing agencies
+        - paragraph [ref=e384]: Create sophisticated email campaigns with our best email automation platform featuring automated campaigns, segmentation, and personalization that nurtures leads and drives conversions.
+      - generic [ref=e385]:
+        - generic [ref=e388]:
+          - img [ref=e390]
+          - heading "Automated Campaigns" [level=3] [ref=e393]
+          - paragraph [ref=e394]: Design intelligent email sequences that guide prospects through your sales funnel
+        - generic [ref=e397]:
+          - img [ref=e399]
+          - heading "Advanced Segmentation" [level=3] [ref=e403]
+          - paragraph [ref=e404]: Automatically categorize subscribers based on behavior, preferences, and demographics
+        - generic [ref=e407]:
+          - img [ref=e409]
+          - heading "Personalization" [level=3] [ref=e414]
+          - paragraph [ref=e415]: Dynamically customize email content based on subscriber data and engagement history
+        - generic [ref=e418]:
+          - img [ref=e420]
+          - heading "Behavioral Triggers" [level=3] [ref=e422]
+          - paragraph [ref=e423]: Send targeted emails based on customer actions and engagement patterns
+        - generic [ref=e426]:
+          - img [ref=e428]
+          - heading "A/B Testing" [level=3] [ref=e430]
+          - paragraph [ref=e431]: Optimize subject lines, content, and send times through automated testing protocols
+        - generic [ref=e434]:
+          - img [ref=e436]
+          - heading "Email Automation Platforms" [level=3] [ref=e439]
+          - paragraph [ref=e440]: Access comprehensive features for maximum campaign effectiveness and ROI
+      - link "Learn More About Email Marketing Automation" [ref=e442] [cursor=pointer]:
+        - /url: /services/email-marketing-automation
+        - text: Learn More About Email Marketing Automation
+        - img
+    - generic [ref=e444]:
+      - generic [ref=e445]:
+        - heading "SEO Automation" [level=2] [ref=e446]
+        - generic [ref=e447]:
+          - generic [ref=e448]: Digital marketing agencies
+          - generic [ref=e449]: Content teams
+          - generic [ref=e450]: Organic growth businesses
+        - paragraph [ref=e451]: Boost your search engine rankings with automated comprehensive SEO reporting that optimizes your website, tracks performance, and identifies growth opportunities.
+      - generic [ref=e452]:
+        - generic [ref=e455]:
+          - img [ref=e457]
+          - heading "Automated Comprehensive SEO Reporting" [level=3] [ref=e459]
+          - paragraph [ref=e460]: Generate detailed reports on rankings, traffic, and performance metrics
+        - generic [ref=e463]:
+          - img [ref=e465]
+          - heading "Keyword Research and Tracking" [level=3] [ref=e468]
+          - paragraph [ref=e469]: Automatically discover high-value keywords and monitor ranking positions
+        - generic [ref=e472]:
+          - img [ref=e474]
+          - heading "Technical SEO Audits" [level=3] [ref=e477]
+          - paragraph [ref=e478]: Scan websites for issues affecting search performance with actionable recommendations
+        - generic [ref=e481]:
+          - img [ref=e483]
+          - heading "Content Optimization" [level=3] [ref=e486]
+          - paragraph [ref=e487]: Analyze and improve existing content for better search engine visibility
+        - generic [ref=e490]:
+          - img [ref=e492]
+          - heading "Competitor Analysis" [level=3] [ref=e496]
+          - paragraph [ref=e497]: Monitor competitor strategies and identify gaps in your SEO approach
+        - generic [ref=e500]:
+          - img [ref=e502]
+          - heading "Performance Monitoring" [level=3] [ref=e505]
+          - paragraph [ref=e506]: Track SEO progress with automated alerts and insights for continuous improvement
+      - link "Learn More About SEO Automation" [ref=e508] [cursor=pointer]:
+        - /url: /services/seo-automation
+        - text: Learn More About SEO Automation
+        - img
+    - generic [ref=e510]:
+      - heading "Benefits & ROI of Business Automation" [level=2] [ref=e511]
+      - generic [ref=e512]:
+        - generic [ref=e515]:
+          - img [ref=e517]
+          - heading "Time Savings" [level=3] [ref=e519]
+          - paragraph [ref=e520]: Free up your team from repetitive tasks, allowing them to focus on strategic initiatives and creative work.
+        - generic [ref=e523]:
+          - img [ref=e525]
+          - heading "Data-Driven Decisions" [level=3] [ref=e527]
+          - paragraph [ref=e528]: Real-time insights and automated reporting enable faster, more informed business decisions.
+        - generic [ref=e531]:
+          - img [ref=e533]
+          - heading "Scalability" [level=3] [ref=e535]
+          - paragraph [ref=e536]: Scale your operations without proportionally increasing headcount or operational complexity.
+        - generic [ref=e539]:
+          - img [ref=e541]
+          - heading "Consistency & Quality" [level=3] [ref=e543]
+          - paragraph [ref=e544]: Automated processes ensure consistent quality and reduce human error across all operations.
+        - generic [ref=e547]:
+          - img [ref=e549]
+          - heading "Better Resource Allocation" [level=3] [ref=e551]
+          - paragraph [ref=e552]: Teams can focus on high-level strategy and creative problem-solving rather than manual tasks.
+        - generic [ref=e555]:
+          - img [ref=e557]
+          - heading "Improved ROI" [level=3] [ref=e559]
+          - paragraph [ref=e560]: Better resource allocation and automated processes lead to improved ROI from all business investments.
+    - generic [ref=e566]:
+      - generic [ref=e568]:
+        - generic [ref=e569]: FAQ
+        - heading "Frequently Asked Questions" [level=2] [ref=e570]
+        - paragraph [ref=e571]: Get answers to common questions about our automation services.
+      - generic [ref=e572]:
+        - generic [ref=e573]:
+          - generic [ref=e575]: What is professional services automation?
+          - paragraph [ref=e577]: Professional services automation is the use of systems and workflows to reduce repetitive delivery, reporting, coordination, and customer-management tasks across service businesses.
+        - generic [ref=e578]:
+          - generic [ref=e580]: How do automation services help customer service and operations?
+          - paragraph [ref=e582]: They shorten response times, reduce manual routing, improve visibility, and make it easier for teams to work from the same source of truth across departments.
+        - generic [ref=e583]:
+          - generic [ref=e585]: Can automation services be rolled out in phases?
+          - paragraph [ref=e587]: Yes. Most companies start with one core workflow such as CRM follow-up, email nurture, support triage, or reporting, then expand once the early process wins are visible.
+        - generic [ref=e588]:
+          - generic [ref=e590]: How do I choose the right automation service for my business?
+          - paragraph [ref=e592]: Start with the process that creates the most operational drag or lost revenue. That is often lead handling, customer follow-up, content execution, or support volume.
+    - generic [ref=e594]:
+      - heading "Ready to Transform Your Business with Automation?" [level=2] [ref=e595]
+      - paragraph [ref=e596]: "Start your automation journey today with a complimentary consultation:"
+      - generic [ref=e597]:
+        - generic [ref=e600]:
+          - img [ref=e602]
+          - generic [ref=e605]: "1"
+          - heading "Discovery & Assessment" [level=3] [ref=e606]
+          - paragraph [ref=e607]: We'll analyze your current processes and identify the best automation opportunities.
+        - generic [ref=e610]:
+          - img [ref=e612]
+          - generic [ref=e614]: "2"
+          - heading "Custom Strategy" [level=3] [ref=e615]
+          - paragraph [ref=e616]: Develop a tailored automation roadmap aligned with your business goals and priorities.
+        - generic [ref=e619]:
+          - img [ref=e621]
+          - generic [ref=e623]: "3"
+          - heading "Implementation" [level=3] [ref=e624]
+          - paragraph [ref=e625]: Deploy automation solutions with thorough testing and team training for smooth adoption.
+        - generic [ref=e628]:
+          - img [ref=e630]
+          - generic [ref=e633]: "4"
+          - heading "Optimization & Growth" [level=3] [ref=e634]
+          - paragraph [ref=e635]: Continuous monitoring, optimization, and scaling as your business evolves.
+      - generic [ref=e636]:
+        - paragraph [ref=e637]: Let's automate your success—making your business more efficient, scalable, and profitable.
+        - button "Get Started Today" [ref=e638]:
+          - text: Get Started Today
+          - img
+    - contentinfo [ref=e639]:
+      - generic [ref=e640]:
+        - generic [ref=e641]:
+          - generic [ref=e642]:
+            - link "Awwtomation home" [ref=e644] [cursor=pointer]:
+              - /url: /
+              - img "Awwtomation Logo" [ref=e645]
+            - paragraph [ref=e646]: Automate. Accelerate. Assert.
+            - generic [ref=e647]:
+              - link "Instagram" [ref=e648] [cursor=pointer]:
+                - /url: https://www.instagram.com/awwtomation/
+                - img [ref=e649]
+                - generic [ref=e651]: Instagram
+              - link "LinkedIn" [ref=e652] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/awwtomation/
+                - img [ref=e653]
+                - generic [ref=e655]: LinkedIn
+              - link "YouTube" [ref=e656] [cursor=pointer]:
+                - /url: https://youtube.com/@Awwtomation
+                - img [ref=e657]
+                - generic [ref=e659]: YouTube
+              - link "X" [ref=e660] [cursor=pointer]:
+                - /url: https://x.com/awwtomation
+                - img [ref=e661]
+                - generic [ref=e663]: X
+          - generic [ref=e664]:
+            - heading "Services" [level=3] [ref=e665]
+            - list [ref=e666]:
+              - listitem [ref=e667]:
+                - link "Blog Agent" [ref=e668] [cursor=pointer]:
+                  - /url: /services/blog-automation
+              - listitem [ref=e669]:
+                - link "Social Media Automation" [ref=e670] [cursor=pointer]:
+                  - /url: /services/social-media-automation
+              - listitem [ref=e671]:
+                - link "CRM Automation" [ref=e672] [cursor=pointer]:
+                  - /url: /services/crm-automation
+              - listitem [ref=e673]:
+                - link "SEO Automation" [ref=e674] [cursor=pointer]:
+                  - /url: /services/seo-automation
+              - listitem [ref=e675]:
+                - link "Email Marketing Automation" [ref=e676] [cursor=pointer]:
+                  - /url: /services/email-marketing-automation
+              - listitem [ref=e677]:
+                - link "Customer Support Automation" [ref=e678] [cursor=pointer]:
+                  - /url: /services/customer-support-automation
+          - generic [ref=e679]:
+            - heading "Resources" [level=3] [ref=e680]
+            - list [ref=e681]:
+              - listitem [ref=e682]:
+                - link "Free Automation Templates" [ref=e683] [cursor=pointer]:
+                  - /url: /templates
+              - listitem [ref=e684]:
+                - link "Blog" [ref=e685] [cursor=pointer]:
+                  - /url: /blog
+          - generic [ref=e686]:
+            - heading "Support" [level=3] [ref=e687]
+            - list [ref=e688]:
+              - listitem [ref=e689]:
+                - link "Contact" [ref=e690] [cursor=pointer]:
+                  - /url: mailto:contact@awwtomation.com
+        - generic [ref=e691]:
+          - paragraph [ref=e692]: © 2025 Awwtomation. All rights reserved.
+          - generic [ref=e693]:
+            - link "Terms of Service" [ref=e694] [cursor=pointer]:
+              - /url: /legal/terms-and-conditions
+            - link "Privacy Policy" [ref=e695] [cursor=pointer]:
+              - /url: /legal/privacy-policy
+  - button "Open Next.js Dev Tools" [ref=e701] [cursor=pointer]:
+    - img [ref=e702]

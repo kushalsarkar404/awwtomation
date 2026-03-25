@@ -1,0 +1,136 @@
+[     781ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <figure> p 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="best-email..." loading={null}>
+        <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/blog/best..." tree={[...]} params={{slug:"best..."}} ...>
+                <SegmentViewNode type="page" pagePath="blog/[slug...">
+                  <SegmentTrieNode>
+                  <BlogPost>
+                    <div className="flex min-h...">
+                      <script>
+                      <script>
+                      <SiteHeader>
+                      <main className="flex-1">
+                        <div className="mx-auto w-...">
+                          <div>
+                          <div className="grid w-ful...">
+                            <aside>
+                            <div className="min-w-0">
+                              <div>
+                              <div>
+                              <article className="prose pros...">
+                                <p>
+                                <p>
+                                <p>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <div>
+                                <h2>
+                                <h3>
+                                <p>
+                                <Markdown>
+                                  <p>
+>                                   <p
+>                                     className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:te..."
+>                                   >
+                                      <img>
+>                                       <figure className="my-8">
+                                ...
+                          ...
+                      ...
+                ...
+              ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[     781ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <figure> @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[     798ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <figcaption> p 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="best-email..." loading={null}>
+        <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/blog/best..." tree={[...]} params={{slug:"best..."}} ...>
+                <SegmentViewNode type="page" pagePath="blog/[slug...">
+                  <SegmentTrieNode>
+                  <BlogPost>
+                    <div className="flex min-h...">
+                      <script>
+                      <script>
+                      <SiteHeader>
+                      <main className="flex-1">
+                        <div className="mx-auto w-...">
+                          <div>
+                          <div className="grid w-ful...">
+                            <aside>
+                            <div className="min-w-0">
+                              <div>
+                              <div>
+                              <article className="prose pros...">
+                                <p>
+                                <p>
+                                <p>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <div>
+                                <h2>
+                                <h3>
+                                <p>
+                                <Markdown>
+                                  <p>
+>                                   <p
+>                                     className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:te..."
+>                                   >
+                                      <img>
+                                        <figure className="my-8">
+                                          <img>
+>                                         <figcaption
+>                                           className="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic"
+>                                         >
+                                ...
+                          ...
+                      ...
+                ...
+              ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[     798ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <figcaption> @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[     860ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+    at throwOnHydrationMismatch (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:3348:56)
+    at beginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6775:918)
+    at runWithFiberInDEV (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:965:74)
+    at performUnitOfWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9562:97)
+    at workLoopConcurrentByScheduler (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9558:58)
+    at renderRootConcurrent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9541:71)
+    at performWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9068:150)
+    at performWorkOnRootViaSchedulerTask (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js:2647:64)

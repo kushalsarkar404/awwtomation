@@ -1,15 +1,22 @@
-import { getPostBySlug } from "@/lib/blog"
-import { notFound } from "next/navigation"
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-import rehypeRaw from "rehype-raw"
-import rehypeHighlight from "rehype-highlight"
-import "highlight.js/styles/github-dark.css"
-import Link from "next/link"
-import type { Metadata } from "next"
-import { TableOfContents } from "@/components/table-of-contents"
 import { BlogCard } from "@/components/BlogCard"
 import { BlogEmailMarketingSolutionForm } from "@/components/blog-email-marketing-solution-form"
+import { SeoJsonLd } from "@/components/seo/json-ld"
+import { LinkCardSection } from "@/components/seo/link-card-section"
+import { PageBreadcrumbs } from "@/components/seo/page-breadcrumbs"
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
+import { TableOfContents } from "@/components/table-of-contents"
+import { estimateReadingTime,extractFaqsFromMarkdown,getPostBySlug } from "@/lib/blog"
+import { buildBreadcrumbSchema,buildFaqSchema,getBlogBreadcrumbs,getPrimaryServiceForPost,getSupplementaryServicesForPost } from "@/lib/seo"
+import "highlight.js/styles/github-dark.css"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { Children,isValidElement } from "react"
+import ReactMarkdown from "react-markdown"
+import rehypeHighlight from "rehype-highlight"
+import rehypeRaw from "rehype-raw"
+import remarkGfm from "remark-gfm"
 
 const siteUrl = "https://www.awwtomation.com"
 const emailMarketingLeadSlugs = new Set([
@@ -19,6 +26,40 @@ const emailMarketingLeadSlugs = new Set([
   "best-email-marketing-platforms",
   "guide-to-master-email-marketing-for-business",
 ])
+
+type MarkdownNode = {
+  children?: MarkdownNode[]
+  type?: string
+}
+
+function unwrapImageParagraphs() {
+  return (tree: MarkdownNode) => {
+    const visitNode = (node: MarkdownNode, parent?: MarkdownNode, index?: number) => {
+      if (
+        parent &&
+        Array.isArray(parent.children) &&
+        typeof index === "number" &&
+        node?.type === "paragraph" &&
+        Array.isArray(node.children) &&
+        node.children.length === 1 &&
+        node.children[0]?.type === "image"
+      ) {
+        parent.children[index] = node.children[0]
+        return
+      }
+
+      if (!Array.isArray(node?.children)) {
+        return
+      }
+
+      node.children.forEach((child, childIndex) => {
+        visitNode(child, node, childIndex)
+      })
+    }
+
+    visitNode(tree)
+  }
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -87,15 +128,25 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const shouldShowEmailMarketingLead = emailMarketingLeadSlugs.has(slug)
   const canonicalUrl = `${siteUrl}/blog/${slug}`
   const imageUrl = post.coverImage ? new URL(post.coverImage, siteUrl).toString() : undefined
+  const readingTime = estimateReadingTime(post.content)
+  const faqItems = extractFaqsFromMarkdown(post.content)
+  const breadcrumbs = getBlogBreadcrumbs(slug, post.title)
+  const primaryService = getPrimaryServiceForPost(post)
+  const supplementaryServices = getSupplementaryServicesForPost(post)
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
     dateModified: post.date,
     mainEntityOfPage: canonicalUrl,
     image: imageUrl ? [imageUrl] : undefined,
+    keywords: post.keywords,
+    articleSection: primaryService?.shortName ?? "Business Automation",
+    wordCount: post.content.trim().split(/\s+/).filter(Boolean).length,
+    timeRequired: `PT${readingTime}M`,
+    inLanguage: "en",
     author: {
       "@type": "Organization",
       name: "Awwtomation",
@@ -122,41 +173,59 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      {/* Sticky Back to Blogs link, just text */}
-      <div className="sticky top-0 z-30 mb-6 w-full bg-white py-2 border-b border-gray-200 dark:border-gray-800">
-        <Link href="/blog" className="text-sm text-muted-foreground hover:underline bg-transparent border-none shadow-none px-0 py-0">
-          ← Back to Blogs
-        </Link>
-      </div>
+    <div className="flex min-h-[100dvh] flex-col">
+      <SeoJsonLd
+        data={[
+          articleSchema,
+          buildBreadcrumbSchema(breadcrumbs),
+          ...(faqItems.length ? [buildFaqSchema(faqItems)] : []),
+        ]}
+      />
+      <SiteHeader primaryCtaHref="https://cal.com/awwtomation/awwtomation-consultation" />
 
-      {/* Two-column layout on xl: TOC left, content right */}
-      <div className="w-full grid grid-cols-1 xl:grid-cols-[20rem_minmax(0,1fr)] gap-12">
-        {/* Table of Contents - sticky in its column */}
-        <aside className="hidden xl:flex xl:sticky xl:top-12 xl:self-start xl:flex-col xl:gap-6">
-          <TableOfContents content={post.content} className="static top-auto max-h-[calc(100vh-18rem)]" />
-          {shouldShowEmailMarketingLead && (
-            <BlogEmailMarketingSolutionForm className="w-80 max-w-full" pageSlug={slug} postTitle={post.title} />
-          )}
-        </aside>
-
-        {/* Main Content */}
-        <div className="min-w-0">
-          <div className="mb-10 space-y-2">
-            <h1 className="text-4xl font-bold">{post.title}</h1>
-            <p className="text-sm text-muted-foreground">{post.date}</p>
+      <main className="flex-1">
+        <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 xl:py-14">
+          <div className="mb-6">
+            <PageBreadcrumbs items={breadcrumbs} />
           </div>
 
-          {shouldShowEmailMarketingLead && (
-            <BlogEmailMarketingSolutionForm className="mb-8 xl:hidden" pageSlug={slug} postTitle={post.title} />
-          )}
+          <div className="grid w-full grid-cols-1 gap-8 xl:grid-cols-[20rem_minmax(0,1fr)] xl:gap-12">
+            <aside className="hidden xl:flex xl:sticky xl:top-24 xl:self-start xl:flex-col xl:gap-6">
+              <TableOfContents content={post.content} className="static top-auto max-h-[calc(100vh-10rem)]" />
+              {shouldShowEmailMarketingLead && (
+                <BlogEmailMarketingSolutionForm className="w-80 max-w-full" pageSlug={slug} postTitle={post.title} />
+              )}
+            </aside>
 
-          <article className="prose prose-gray dark:prose-invert max-w-none">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw, rehypeHighlight]}
-              components={{
+            <div className="min-w-0">
+              <div className="mb-10 space-y-3">
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">{post.title}</h1>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                  <span>{post.date}</span>
+                  <span>{readingTime} min read</span>
+                </div>
+                {primaryService ? (
+                  <p className="text-sm text-muted-foreground">
+                    Related service:{" "}
+                    <Link className="text-primary hover:underline" href={primaryService.href}>
+                      {primaryService.shortName}
+                    </Link>
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="mb-8 space-y-6 xl:hidden">
+                <TableOfContents content={post.content} className="static top-auto max-h-none" />
+                {shouldShowEmailMarketingLead && (
+                  <BlogEmailMarketingSolutionForm pageSlug={slug} postTitle={post.title} />
+                )}
+              </div>
+
+              <article className="prose prose-gray max-w-none dark:prose-invert">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm, unwrapImageParagraphs]}
+                  rehypePlugins={[rehypeRaw, rehypeHighlight]}
+                  components={{
                 // Headings with proper hierarchy, spacing, and IDs for navigation
                 h1: ({ children }) => {
                   const text = children?.toString() || ""
@@ -225,9 +294,25 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   )
                 },
                 // Text elements
-                p: ({ children }) => (
-                  <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300 text-lg">{children}</p>
-                ),
+                p: ({ children }) => {
+                  const childNodes = Children.toArray(children)
+                  const hasBlockChild = childNodes.some(
+                    (child) =>
+                      isValidElement(child) &&
+                      typeof child.type === "string" &&
+                      ["div","figure","img","pre","table"].includes(child.type),
+                  )
+
+                  if (hasBlockChild) {
+                    return <>{children}</>
+                  }
+
+                  return (
+                    <p className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:text-lg">
+                      {children}
+                    </p>
+                  )
+                },
                 strong: ({ children }) => (
                   <strong className="font-semibold text-gray-900 dark:text-white">{children}</strong>
                 ),
@@ -276,7 +361,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                       src={src || "/placeholder.svg"}
                       alt={alt}
                       title={title}
-                      className="rounded-lg shadow-lg w-full object-cover max-h-auto"
+                      className="h-auto w-full rounded-lg shadow-lg"
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
                       {...props}
                     />
                     {alt && (
@@ -288,8 +375,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 ),
                 // Tables with Notion-style design
                 table: ({ children }) => (
-                  <div className="my-8 overflow-x-auto">
-                    <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden shadow-sm">
+                  <div className="my-8 overflow-x-auto rounded-xl border border-gray-300 shadow-sm dark:border-gray-600">
+                    <table className="min-w-full border-collapse">
                       {children}
                     </table>
                   </div>
@@ -304,12 +391,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   <tr className="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">{children}</tr>
                 ),
                 th: ({ children }) => (
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider border-r border-gray-300 dark:border-gray-600 last:border-r-0">
+                  <th className="border-r border-gray-300 px-4 py-3 text-left align-top text-xs font-medium uppercase tracking-wider text-gray-500 last:border-r-0 dark:border-gray-600 dark:text-gray-300 sm:text-sm">
                     {children}
                   </th>
                 ),
                 td: ({ children }) => (
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
+                  <td className="border-r border-gray-200 px-4 py-3 align-top text-sm text-gray-900 last:border-r-0 dark:border-gray-700 dark:text-gray-100 whitespace-normal break-words">
                     {children}
                   </td>
                 ),
@@ -361,27 +448,40 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     {children}
                   </abbr>
                 ),
-              }}
-            >
-              {post.content}
-            </ReactMarkdown>
-          </article>
-        </div>
-      </div>
-      {readMorePosts.length > 0 && (
-        <section className="mt-12">
-          <h3 className="text-2xl font-semibold mb-4">
-            {shouldShowEmailMarketingLead ? "Related Email Marketing Guides" : "Read More"}
-          </h3>
-          <div className="grid gap-8 sm:grid-cols-2">
-            {readMorePosts.map((post) =>
-              post ? (
-                <BlogCard key={post.slug} post={post} />
-              ) : null
-            )}
+                  }}
+                >
+                  {post.content}
+                </ReactMarkdown>
+              </article>
+            </div>
           </div>
-        </section>
-      )}
+
+          <section className="mt-12">
+            <LinkCardSection
+              eyebrow="Next Step"
+              title="Turn This Research Into an Automation Workflow"
+              description="If you are past the research phase, these service pages are the best next step for implementation."
+              links={supplementaryServices}
+            />
+          </section>
+          {readMorePosts.length > 0 && (
+            <section className="mt-12">
+              <h3 className="mb-4 text-2xl font-semibold">
+                {shouldShowEmailMarketingLead ? "Related Email Marketing Guides" : "Read More"}
+              </h3>
+              <div className="grid gap-8 sm:grid-cols-2">
+                {readMorePosts.map((post) =>
+                  post ? (
+                    <BlogCard key={post.slug} post={post} />
+                  ) : null
+                )}
+              </div>
+            </section>
+          )}
+        </div>
+      </main>
+
+      <SiteFooter />
     </div>
   )
 }

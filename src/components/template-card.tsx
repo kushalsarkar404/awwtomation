@@ -1,12 +1,12 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Download, Star } from "lucide-react"
+import { Card,CardContent,CardDescription,CardFooter,CardHeader,CardTitle } from "@/components/ui/card"
+import type { Template } from "@/data/automation-templates"; // Corrected import
 import { getDifficultyStars } from "@/lib/template-utils"
-import type { Template } from "@/data/automation-templates" // Corrected import
 import { cn } from "@/lib/utils"
+import { Download,Star } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 interface TemplateCardProps {
   template: Template
@@ -16,8 +16,8 @@ export default function TemplateCard({ template }: TemplateCardProps) {
   const difficultyStars = getDifficultyStars(template.difficulty)
 
   return (
-    <Link href={`/templates/${template.slug}`} className="block h-full">
-      <Card className="h-full flex flex-col justify-between overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+    <Card className="h-full flex flex-col justify-between overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+      <Link href={`/templates/${template.slug}`} className="block h-full">
         <CardHeader className="p-0">
           <div className="relative w-full h-48 bg-muted flex items-center justify-center">
             <Image
@@ -82,18 +82,18 @@ export default function TemplateCard({ template }: TemplateCardProps) {
             <span>Available on {template.availability.platform}</span>
           </div>
         </CardContent>
-        <CardFooter className="p-4 pt-0 flex flex-wrap gap-2">
-          {template.tags.map((tag) => (
-            <Link
-              key={tag}
-              href={`/templates?tag=${encodeURIComponent(tag)}`}
-              className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors hover:bg-muted-foreground/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-            >
-              {tag}
-            </Link>
-          ))}
-        </CardFooter>
-      </Card>
-    </Link>
+      </Link>
+      <CardFooter className="p-4 pt-0 flex flex-wrap gap-2">
+        {template.tags.map((tag) => (
+          <Link
+            key={tag}
+            href={`/templates?tag=${encodeURIComponent(tag)}`}
+            className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors hover:bg-muted-foreground/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          >
+            {tag}
+          </Link>
+        ))}
+      </CardFooter>
+    </Card>
   )
 }

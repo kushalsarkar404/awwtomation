@@ -15,6 +15,11 @@ export interface BlogPost {
   keywords: string[]
 }
 
+export interface BlogFaq {
+  question: string
+  answer: string
+}
+
 function parsePost(fileName: string): BlogPost {
   const slug = fileName.replace(/\.md$/, "")
   const fullPath = path.join(postsDirectory, fileName)
@@ -46,4 +51,30 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     console.log(error)
     return null
   }
+}
+
+export function estimateReadingTime(content: string) {
+  const words = content.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.ceil(words / 220))
+}
+
+function cleanMarkdownText(value: string) {
+  return value
+    .replace(/!\[[^\]]*]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`>#-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+export function extractFaqsFromMarkdown(content: string): BlogFaq[] {
+  const faqPattern =
+    /#{2,6}\s*Q:\s*(.+?)\n+\s*(?:\*\*A\*\*:|\*\*A:\*\*|\*\*A\*\*|A:)\s*([\s\S]+?)(?=\n#{2,6}\s*Q:|\n##\s|\n---|\n$)/gm
+
+  const faqs = Array.from(content.matchAll(faqPattern)).map((match) => ({
+    question: cleanMarkdownText(match[1] ?? ""),
+    answer: cleanMarkdownText(match[2] ?? ""),
+  }))
+
+  return faqs.filter((faq) => faq.question && faq.answer)
 }

@@ -1,0 +1,191 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Awwtomation home" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Awwtomation Logo" [ref=e7]
+        - navigation [ref=e8]:
+          - link "Services" [ref=e11] [cursor=pointer]:
+            - /url: /services
+          - link "Pricing" [ref=e12] [cursor=pointer]:
+            - /url: /#pricing
+          - link "Contact" [ref=e13] [cursor=pointer]:
+            - /url: /#contact
+          - link "Blog" [ref=e14] [cursor=pointer]:
+            - /url: /blog
+          - link "About" [ref=e15] [cursor=pointer]:
+            - /url: /about
+        - button "Automate Now" [ref=e17]:
+          - text: Automate Now
+          - img
+    - main [ref=e18]:
+      - generic [ref=e24]:
+        - heading "Free Automation Templates" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Discover a library of pre-built automation workflows to streamline your business operations, save time, and boost efficiency.
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - textbox "Search templates..." [ref=e30]
+          - combobox [ref=e31]:
+            - img
+          - combobox [ref=e32]
+          - combobox [ref=e33]:
+            - img
+          - combobox [ref=e34]
+          - combobox [ref=e35]:
+            - img
+          - combobox [ref=e36]
+        - generic [ref=e37]:
+          - button "SEO" [ref=e38]
+          - button "Reporting" [ref=e39]
+          - button "Analytics" [ref=e40]
+          - button "Social Media" [ref=e41]
+          - button "Reddit" [ref=e42]
+          - button "Engagement" [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - 'link "Automated SEO Reports Template: GA4 & GSC Automated SEO Reports Template: GA4 & GSC Automate SEO reporting with our workflow template. Get automated SEO reports from GA4 & GSC data, including keywords, pages, and visitor insights. Save time, boost ROI. $49.99 $0.00 Intermediate Awwtomation Team Awwtomation Team 1,247 downloads 4.8 ★ (23 reviews) n8n logo Available on n8n" [ref=e46] [cursor=pointer]':
+              - /url: /templates/automated-seo-reports-ga4-gsc
+              - 'img "Automated SEO Reports Template: GA4 & GSC" [ref=e49]'
+              - generic [ref=e50]:
+                - generic [ref=e51]: "Automated SEO Reports Template: GA4 & GSC"
+                - generic [ref=e52]: Automate SEO reporting with our workflow template. Get automated SEO reports from GA4 & GSC data, including keywords, pages, and visitor insights. Save time, boost ROI.
+                - generic [ref=e53]:
+                  - generic [ref=e54]:
+                    - generic [ref=e55]: $49.99
+                    - generic [ref=e56]: $0.00
+                  - generic [ref=e57]:
+                    - img [ref=e58]
+                    - img [ref=e60]
+                    - img [ref=e62]
+                    - img [ref=e64]
+                    - img [ref=e66]
+                    - generic [ref=e68]: Intermediate
+                - generic [ref=e69]:
+                  - img "Awwtomation Team" [ref=e70]
+                  - generic [ref=e71]: Awwtomation Team
+                - generic [ref=e72]:
+                  - generic [ref=e73]:
+                    - img [ref=e74]
+                    - generic [ref=e77]: 1,247 downloads
+                  - generic [ref=e78]:
+                    - img [ref=e79]
+                    - generic [ref=e81]: 4.8 ★ (23 reviews)
+                - generic [ref=e82]:
+                  - img "n8n logo" [ref=e83]
+                  - generic [ref=e84]: Available on n8n
+            - generic [ref=e85]:
+              - link "SEO" [ref=e86] [cursor=pointer]:
+                - /url: /templates?tag=SEO
+              - link "Reporting" [ref=e87] [cursor=pointer]:
+                - /url: /templates?tag=Reporting
+              - link "Analytics" [ref=e88] [cursor=pointer]:
+                - /url: /templates?tag=Analytics
+          - generic [ref=e89]:
+            - link "Reddit Comment Automation Template Reddit Comment Automation Template Automate Reddit commenting with our template. Boost brand awareness, drive traffic, and build community engagement without lifting a finger. $19.99 $0.00 Beginner Awwtomation Team Awwtomation Team 323 downloads 5.0 ★ (50 reviews) n8n logo Available on n8n" [ref=e90] [cursor=pointer]:
+              - /url: /templates/automated-reddit-commenting
+              - img "Reddit Comment Automation Template" [ref=e93]
+              - generic [ref=e94]:
+                - generic [ref=e95]: Reddit Comment Automation Template
+                - generic [ref=e96]: Automate Reddit commenting with our template. Boost brand awareness, drive traffic, and build community engagement without lifting a finger.
+                - generic [ref=e97]:
+                  - generic [ref=e98]:
+                    - generic [ref=e99]: $19.99
+                    - generic [ref=e100]: $0.00
+                  - generic [ref=e101]:
+                    - img [ref=e102]
+                    - img [ref=e104]
+                    - img [ref=e106]
+                    - img [ref=e108]
+                    - img [ref=e110]
+                    - generic [ref=e112]: Beginner
+                - generic [ref=e113]:
+                  - img "Awwtomation Team" [ref=e114]
+                  - generic [ref=e115]: Awwtomation Team
+                - generic [ref=e116]:
+                  - generic [ref=e117]:
+                    - img [ref=e118]
+                    - generic [ref=e121]: 323 downloads
+                  - generic [ref=e122]:
+                    - img [ref=e123]
+                    - generic [ref=e125]: 5.0 ★ (50 reviews)
+                - generic [ref=e126]:
+                  - img "n8n logo" [ref=e127]
+                  - generic [ref=e128]: Available on n8n
+            - generic [ref=e129]:
+              - link "Social Media" [ref=e130] [cursor=pointer]:
+                - /url: /templates?tag=Social%20Media
+              - link "Reddit" [ref=e131] [cursor=pointer]:
+                - /url: /templates?tag=Reddit
+              - link "Engagement" [ref=e132] [cursor=pointer]:
+                - /url: /templates?tag=Engagement
+    - contentinfo [ref=e133]:
+      - generic [ref=e134]:
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - link "Awwtomation home" [ref=e138] [cursor=pointer]:
+              - /url: /
+              - img "Awwtomation Logo" [ref=e139]
+            - paragraph [ref=e140]: Automate. Accelerate. Assert.
+            - generic [ref=e141]:
+              - link "Instagram" [ref=e142] [cursor=pointer]:
+                - /url: https://www.instagram.com/awwtomation/
+                - img [ref=e143]
+                - generic [ref=e145]: Instagram
+              - link "LinkedIn" [ref=e146] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/awwtomation/
+                - img [ref=e147]
+                - generic [ref=e149]: LinkedIn
+              - link "YouTube" [ref=e150] [cursor=pointer]:
+                - /url: https://youtube.com/@Awwtomation
+                - img [ref=e151]
+                - generic [ref=e153]: YouTube
+              - link "X" [ref=e154] [cursor=pointer]:
+                - /url: https://x.com/awwtomation
+                - img [ref=e155]
+                - generic [ref=e157]: X
+          - generic [ref=e158]:
+            - heading "Services" [level=3] [ref=e159]
+            - list [ref=e160]:
+              - listitem [ref=e161]:
+                - link "Blog Agent" [ref=e162] [cursor=pointer]:
+                  - /url: /services/blog-automation
+              - listitem [ref=e163]:
+                - link "Social Media Automation" [ref=e164] [cursor=pointer]:
+                  - /url: /services/social-media-automation
+              - listitem [ref=e165]:
+                - link "CRM Automation" [ref=e166] [cursor=pointer]:
+                  - /url: /services/crm-automation
+              - listitem [ref=e167]:
+                - link "SEO Automation" [ref=e168] [cursor=pointer]:
+                  - /url: /services/seo-automation
+              - listitem [ref=e169]:
+                - link "Email Marketing Automation" [ref=e170] [cursor=pointer]:
+                  - /url: /services/email-marketing-automation
+              - listitem [ref=e171]:
+                - link "Customer Support Automation" [ref=e172] [cursor=pointer]:
+                  - /url: /services/customer-support-automation
+          - generic [ref=e173]:
+            - heading "Resources" [level=3] [ref=e174]
+            - list [ref=e175]:
+              - listitem [ref=e176]:
+                - link "Free Automation Templates" [ref=e177] [cursor=pointer]:
+                  - /url: /templates
+              - listitem [ref=e178]:
+                - link "Blog" [ref=e179] [cursor=pointer]:
+                  - /url: /blog
+          - generic [ref=e180]:
+            - heading "Support" [level=3] [ref=e181]
+            - list [ref=e182]:
+              - listitem [ref=e183]:
+                - link "Contact" [ref=e184] [cursor=pointer]:
+                  - /url: mailto:contact@awwtomation.com
+        - generic [ref=e185]:
+          - paragraph [ref=e186]: © 2025 Awwtomation. All rights reserved.
+          - generic [ref=e187]:
+            - link "Terms of Service" [ref=e188] [cursor=pointer]:
+              - /url: /legal/terms-and-conditions
+            - link "Privacy Policy" [ref=e189] [cursor=pointer]:
+              - /url: /legal/privacy-policy
+  - button "Open Next.js Dev Tools" [ref=e195] [cursor=pointer]:
+    - img [ref=e196]

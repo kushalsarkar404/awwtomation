@@ -1,0 +1,159 @@
+[    1770ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <figure> p 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="best-email..." loading={null}>
+        <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/blog/best..." tree={[...]} params={{slug:"best..."}} ...>
+                <SegmentViewNode type="page" pagePath="blog/[slug...">
+                  <SegmentTrieNode>
+                  <BlogPost>
+                    <div className="flex min-h...">
+                      <script>
+                      <script>
+                      <SiteHeader>
+                      <main className="flex-1">
+                        <div className="mx-auto w-...">
+                          <div>
+                          <div className="grid w-ful...">
+                            <aside>
+                            <div className="min-w-0">
+                              <div>
+                              <div>
+                              <article className="prose pros...">
+                                <p>
+                                <p>
+                                <p>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <div>
+                                <h2>
+                                <h3>
+                                <p>
+                                <Markdown>
+                                  <p>
+>                                   <p
+>                                     className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:te..."
+>                                   >
+                                      <img>
+>                                       <figure className="my-8">
+                                ...
+                          ...
+                      ...
+                ...
+              ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[    1771ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <figure> @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[    1791ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <figcaption> p 
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="best-email..." loading={null}>
+        <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/blog/best..." tree={[...]} params={{slug:"best..."}} ...>
+                <SegmentViewNode type="page" pagePath="blog/[slug...">
+                  <SegmentTrieNode>
+                  <BlogPost>
+                    <div className="flex min-h...">
+                      <script>
+                      <script>
+                      <SiteHeader>
+                      <main className="flex-1">
+                        <div className="mx-auto w-...">
+                          <div>
+                          <div className="grid w-ful...">
+                            <aside>
+                            <div className="min-w-0">
+                              <div>
+                              <div>
+                              <article className="prose pros...">
+                                <p>
+                                <p>
+                                <p>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <ul>
+                                <h2>
+                                <p>
+                                <div>
+                                <h2>
+                                <h3>
+                                <p>
+                                <Markdown>
+                                  <p>
+>                                   <p
+>                                     className="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:te..."
+>                                   >
+                                      <img>
+                                        <figure className="my-8">
+                                          <img>
+>                                         <figcaption
+>                                           className="text-center text-sm text-gray-600 dark:text-gray-400 mt-2 italic"
+>                                         >
+                                ...
+                          ...
+                      ...
+                ...
+              ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[    1791ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <figcaption> @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[    1851ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+    at throwOnHydrationMismatch (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:3348:56)
+    at beginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6775:918)
+    at runWithFiberInDEV (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:965:74)
+    at performUnitOfWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9562:97)
+    at workLoopConcurrentByScheduler (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9558:58)
+    at renderRootConcurrent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9541:71)
+    at performWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9068:150)
+    at performWorkOnRootViaSchedulerTask (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js:2647:64)
+[    2257ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/8sOz8Mr.webp:0
+[    2257ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/pPmT2Pw.webp:0
+[    2342ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/dxwmC8v.png:0
+[    2343ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/AOeejQM.png:0
+[    2343ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/b0vvc8l.png:0
+[    2343ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/LJl7OaE.png:0
+[    2348ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/z013Cc2.png:0
+[    2349ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/pyPqD7z.png:0
+[    2699ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/PESGNdt.png:0
+[    2699ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/2LtXxLN.png:0
+[    2703ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/MEOY8NB.png:0
+[    2704ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/T1RlF54.png:0
+[    2704ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/nDX5Wa0.png:0
+[    2709ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/5SSYVOH.png:0
+[    2709ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/32ORAS9.png:0
+[    2710ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/uvj5HKI.png:0
+[    2710ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/agVUJS0.png:0
+[    2710ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/CxmepCk.png:0
+[    2710ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/zz7HdGF.png:0
+[    2710ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/LWixo7F.png:0
+[    2710ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/hpaA0uN.png:0
+[    2711ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/Lk8skso.png:0
+[    2711ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://i.imgur.com/wF8NsE8.png:0

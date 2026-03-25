@@ -1,0 +1,97 @@
+[    1042ms] [ERROR] In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <a> a 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/templates" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="templates/...">
+          <SegmentTrieNode>
+          <ClientPageRoot Component={function TemplatesPage} serverProvidedParams={{...}}>
+            <TemplatesPage params={Promise} searchParams={Promise}>
+              <div className="flex min-h...">
+                <SiteHeader>
+                <main className="flex-1">
+                  <section>
+                  <section className="w-full pt-...">
+                    <div className="container ...">
+                      <div>
+                      <div>
+                      <div className="grid grid-...">
+                        <TemplateCard template={{slug:"auto...", ...}}>
+                          <LinkComponent href="/templates..." className="block h-full">
+>                           <a
+>                             className="block h-full"
+>                             ref={function}
+>                             onClick={function onClick}
+>                             onMouseEnter={function onMouseEnter}
+>                             onTouchStart={function onTouchStart}
+>                             href="/templates/automated-seo-reports-ga4-gsc"
+>                           >
+                              ...
+                                <div data-slot="card-footer" className="items-cent...">
+                                  <LinkComponent href="/templates..." className="inline-fle...">
+>                                   <a
+>                                     className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs fo..."
+>                                     ref={function}
+>                                     onClick={function onClick}
+>                                     onMouseEnter={function onMouseEnter}
+>                                     onTouchStart={function onTouchStart}
+>                                     href="/templates?tag=SEO"
+>                                   >
+                                  ...
+                        ...
+                ...
+        ...
+      ...
+ @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[    1042ms] [ERROR] <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. a <a> @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[    1112ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="templates/...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function TemplatesPage} serverProvidedParams={{...}}>
+        <TemplatesPage params={Promise} searchParams={Promise}>
+          <div className="flex min-h...">
+            <SiteHeader>
+            <main className="flex-1">
+              <section>
+              <section className="w-full pt-...">
+                <div className="container ...">
+                  <div>
+                  <div>
+                  <div className="grid grid-...">
+                    <TemplateCard template={{slug:"auto...", ...}}>
+                      <LinkComponent href="/templates..." className="block h-full">
+                        <a className="block h-full" ref={function} onClick={function onClick} ...>
+                          <Card className="h-full fle...">
++                           <div
++                             data-slot="card"
++                             className="bg-card text-card-foreground gap-6 rounded-xl border py-6 shadow-sm h-full fl..."
++                           >
+                    ...
+            ...
+    ...
+
+    at throwOnHydrationMismatch (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:3348:56)
+    at beginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6775:918)
+    at runWithFiberInDEV (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:965:74)
+    at performUnitOfWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9562:97)
+    at workLoopConcurrentByScheduler (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9558:58)
+    at renderRootConcurrent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9541:71)
+    at performWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9068:150)
+    at performWorkOnRootViaSchedulerTask (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js:2647:64)
+[    1694ms] [WARNING] Image with src "/automated-seo-report-template.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297

@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 
 export const sharedMetadata: Record<string, Metadata> = {
   "homepage": {
-    title: "Business Automation Services - AI-Powered CRM, SEO & Email Marketing Setup for SMBs | Awwtomation",
-    description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
-    keywords: "automation platform, crm automation tools, best email automation platform, project management automation tools, SEO automation, social media automation, CRM automation, marketing software, best automation agency",
+    title: "Business Automation Services for CRM, SEO, Email, and Social Media | Awwtomation",
+    description: "Business automation services for CRM, SEO, email marketing, social media, blog operations, and customer support workflows built for growing service businesses.",
+    keywords: "business automation services, automation agency, business automation agency, marketing automation agency, workflow automation services, crm automation, seo automation, email marketing automation, social media automation",
     openGraph: {
-      title: "Automation That Grows Your Business 10x Faster",
-      description: "Email, SEO, social media, CRM & blog automation that helps your business grow.",
+      title: "Business Automation Services for CRM, SEO, Email, and Social Media",
+      description: "Business automation services for CRM, SEO, email marketing, social media, blog operations, and customer support workflows built for growing service businesses.",
       url: "https://www.awwtomation.com",
       siteName: "Awwtomation",
       type: "website",
@@ -21,12 +21,12 @@ export const sharedMetadata: Record<string, Metadata> = {
       },
   },
   "email-marketing-automation": {
-    title: "Email Marketing Automation That Converts 10x More Leads | Awwtomation",
-    description: "Automate email campaigns that convert 45% better than manual sends. Get AI-powered sequences, smart triggers & ROI tracking.",
-    keywords: "email marketing automation, automated email campaigns, email automation software, drip campaigns, email sequences, marketing automation tools, best email automation platform",
+    title: "Email Marketing Automation Service for Lifecycle Campaigns and Revenue Workflows | Awwtomation",
+    description: "Email marketing automation service for welcome flows, nurture campaigns, abandoned cart recovery, segmentation, CRM syncing, and revenue reporting.",
+    keywords: "email marketing automation service, email marketing automation, email automation agency, automated email campaigns, lifecycle email automation, lead nurture workflows",
     openGraph: {
-      title: "Email Marketing Automation That Converts 10x More Leads",
-      description: "Automate email campaigns that convert 45% better than manual sends. Get AI-powered sequences, smart triggers & ROI tracking.",
+      title: "Email Marketing Automation Service for Lifecycle Campaigns",
+      description: "Email marketing automation service for welcome flows, nurture campaigns, abandoned cart recovery, segmentation, CRM syncing, and revenue reporting.",
       url: "https://www.awwtomation.com/services/email-marketing-automation",
       siteName: "Awwtomation",
       type: "website",
@@ -42,8 +42,8 @@ export const sharedMetadata: Record<string, Metadata> = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Email Marketing Automation That Converts 10x More Leads",
-      description: "Automate email campaigns that convert 45% better than manual sends.",
+      title: "Email Marketing Automation Service for Lifecycle Campaigns",
+      description: "Automate welcome flows, nurture sequences, cart recovery, and reporting.",
       images: ["https://www.awwtomation.com/images/email-marketing-automation.png"]
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -55,12 +55,12 @@ export const sharedMetadata: Record<string, Metadata> = {
       },
   },
   "seo-automation": {
-    title: "SEO Automation: Rank Top on Google in 90 Days | Awwtomation",
-    description: "AI-powered SEO automation that generates 50+ blog posts monthly, tracks 1000+ keywords & builds backlinks automatically. See results in 30 days.",
-    keywords: "SEO automation, automated SEO, AI SEO tools, keyword tracking, automated content creation, SEO software, search engine optimization, best SEO automation tool",
+    title: "SEO Automation Service for Reporting, Content, and Technical Workflows | Awwtomation",
+    description: "SEO automation service for dashboards, keyword tracking, technical alerts, metadata workflows, content operations, and recurring stakeholder reporting.",
+    keywords: "seo automation service, seo automation, ai seo service, seo reporting automation, technical seo automation, keyword tracking dashboards",
     openGraph: {
-      title: "SEO Automation Tool: Rank Top on Google in 90 Days",
-      description: "AI-powered SEO automation that generates 50+ blog posts monthly, tracks 1000+ keywords & builds backlinks automatically. See results in 30 days.",
+      title: "SEO Automation Service for Reporting and Technical Workflows",
+      description: "SEO automation service for dashboards, keyword tracking, technical alerts, metadata workflows, content operations, and recurring stakeholder reporting.",
       url: "https://www.awwtomation.com/services/seo-automation",
       siteName: "Awwtomation",
       type: "website",
@@ -75,8 +75,8 @@ export const sharedMetadata: Record<string, Metadata> = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "SEO Automation Tool: Rank Top on Google in 90 Days",
-      description: "AI-powered SEO automation that generates 50+ blog posts monthly. See results in 30 days.",
+      title: "SEO Automation Service for Reporting and Technical Workflows",
+      description: "Automate dashboards, alerts, content operations, and SEO reporting.",
       images: ["https://www.awwtomation.com/images/seo-automation.png"]
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -88,12 +88,12 @@ export const sharedMetadata: Record<string, Metadata> = {
       },
   },
   "social-media-automation": {
-    title: "Social Media Automation: 10x Your Followers in 60 Days | Awwtomation",
-    description: "Schedule 100+ posts, auto-reply to comments, and grow followers 24/7. Works with Instagram, TikTok, Twitter & LinkedIn.",
-    keywords: "social media automation, automated social media posting, social media scheduler, Instagram automation, TikTok automation, social media management, best social media automation tool",
+    title: "Social Media Automation Service for Scheduling, Content, and Reporting | Awwtomation",
+    description: "Social media automation service for content planning, approvals, scheduling, inbox workflows, lead routing, and reporting across major channels.",
+    keywords: "social media automation service, social media automation, automated social media posting service, social media scheduling automation, social reporting automation",
     openGraph: {
-      title: "Social Media Automation: 10x Your Followers in 60 Days",
-      description: "Schedule 100+ posts, auto-reply to comments, and grow followers 24/7. Works with Instagram, TikTok, Twitter & LinkedIn.",
+      title: "Social Media Automation Service for Scheduling and Reporting",
+      description: "Social media automation service for content planning, approvals, scheduling, inbox workflows, lead routing, and reporting across major channels.",
       url: "https://www.awwtomation.com/services/social-media-automation",
       siteName: "Awwtomation",
       type: "website",
@@ -108,8 +108,8 @@ export const sharedMetadata: Record<string, Metadata> = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Social Media Automation: 10x Your Followers in 60 Days",
-      description: "Schedule 100+ posts, auto-reply to comments, and grow followers 24/7.",
+      title: "Social Media Automation Service for Scheduling and Reporting",
+      description: "Automate planning, publishing, inbox workflows, and performance reporting.",
       images: ["https://www.awwtomation.com/images/social-media-automation.png"]
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -121,12 +121,12 @@ export const sharedMetadata: Record<string, Metadata> = {
       },
   },
   "crm-automation": {
-    title: "CRM Automation That Closes 3x More Deals | Awwtomation",
-    description: "Automate lead scoring, follow-ups & pipeline management. Never lose a hot lead again. Integrates with Salesforce, HubSpot & 100+ CRMs.",
-    keywords: "crm automation tools, crm tooling, crm tools, best crm tools, CRM automation, automated lead management, sales automation, CRM integration, lead scoring, pipeline automation, sales funnel automation, best crm automation tool",
+    title: "CRM Automation Service for Lead Routing, Follow-Ups, and Pipeline Workflows | Awwtomation",
+    description: "CRM automation service for lead capture, routing, follow-up triggers, pipeline visibility, data syncing, and sales workflow automation.",
+    keywords: "crm automation service, crm automation, crm automation agency, lead routing automation, crm workflow automation, sales process automation",
     openGraph: {
-      title: "CRM Automation That Closes 3x More Deals",
-      description: "Automate lead scoring, follow-ups & pipeline management. Never lose a hot lead again. Integrates with Salesforce, HubSpot & 100+ CRMs.",
+      title: "CRM Automation Service for Lead Routing and Pipeline Workflows",
+      description: "CRM automation service for lead capture, routing, follow-up triggers, pipeline visibility, data syncing, and sales workflow automation.",
       url: "https://www.awwtomation.com/services/crm-automation",
       siteName: "Awwtomation",
       type: "website",
@@ -141,8 +141,8 @@ export const sharedMetadata: Record<string, Metadata> = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "CRM Automation That Closes 3x More Deals",
-      description: "Automate lead scoring, follow-ups & pipeline management. Never lose a hot lead again.",
+      title: "CRM Automation Service for Lead Routing and Pipeline Workflows",
+      description: "Automate routing, follow-ups, syncing, and pipeline management.",
       images: ["https://www.awwtomation.com/images/crm-automation.png"]
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -154,12 +154,12 @@ export const sharedMetadata: Record<string, Metadata> = {
       },
   },
   "blog-automation": {
-    title: "Blog Automation: 50+ SEO Articles Monthly on Autopilot | Awwtomation",
-    description: "AI writes, optimizes & publishes 50+ blog posts monthly. Includes keyword research, images & auto-publishing. 10x your organic traffic.",
-    keywords: "blog automation, AI content creation, automated blogging, AI blog writer, content automation, SEO blog posts, automated content marketing, best blog automation tool",
+    title: "Blog Automation Service for SEO Content Production | Awwtomation",
+    description: "Blog automation service for keyword research, AI-assisted drafting, editorial review, CMS publishing, internal linking, and reporting.",
+    keywords: "blog automation service, blog automation, ai blog writing service, seo blog automation, content workflow automation, ai content operations",
     openGraph: {
-      title: "Blog Automation: 50+ SEO Articles Monthly on Autopilot",
-      description: "AI writes, optimizes & publishes 50+ SEO blog posts monthly. Includes keyword research, images & auto-publishing. 10x your organic traffic.",
+      title: "Blog Automation Service for SEO Content Production",
+      description: "Blog automation service for keyword research, AI-assisted drafting, editorial review, CMS publishing, internal linking, and reporting.",
       url: "https://www.awwtomation.com/services/blog-automation",
       siteName: "Awwtomation",
       type: "website",
@@ -174,8 +174,8 @@ export const sharedMetadata: Record<string, Metadata> = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Blog Automation: 50+ SEO Articles Monthly on Autopilot",
-      description: "AI writes, optimizes & publishes 50+ SEO blog posts monthly. 10x your organic traffic.",
+      title: "Blog Automation Service for SEO Content Production",
+      description: "Automate keyword research, drafting, review, publishing, and reporting.",
       images: ["https://www.awwtomation.com/images/blog-automation.png"]
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -187,12 +187,12 @@ export const sharedMetadata: Record<string, Metadata> = {
       },
   },
   "customer-support-automation": {
-    title: "Customer Support Automation: 24/7 AI-Powered Support | Awwtomation",
-    description: "Deliver exceptional 24/7 support with AI chatbots, automated scheduling & intelligent routing. Reduce response times by 80% & slash operational costs.",
-    keywords: "customer support automation, AI chatbots, automated customer service, 24/7 support, customer service automation, chatbot automation, voice AI, IVR automation, appointment scheduling automation, best customer support automation tool",
+    title: "Customer Support Automation Service for AI Chatbots, Routing, and Self-Service | Awwtomation",
+    description: "Customer support automation service for AI chatbots, ticket routing, self-service workflows, scheduling, and faster support operations.",
+    keywords: "customer support automation service, customer support automation, customer service automation, chatbot automation service, support workflow automation",
     openGraph: {
-      title: "Customer Support Automation: 24/7 AI-Powered Support",
-      description: "Deliver exceptional 24/7 support with AI chatbots, automated scheduling & intelligent routing. Reduce response times by 80% & slash operational costs.",
+      title: "Customer Support Automation Service for AI Chatbots and Routing",
+      description: "Customer support automation service for AI chatbots, ticket routing, self-service workflows, scheduling, and faster support operations.",
       url: "https://www.awwtomation.com/services/customer-support-automation",
       siteName: "Awwtomation",
       type: "website",
@@ -207,8 +207,8 @@ export const sharedMetadata: Record<string, Metadata> = {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Customer Support Automation: 24/7 AI-Powered Support",
-      description: "Deliver exceptional 24/7 support with AI chatbots, automated scheduling & intelligent routing.",
+      title: "Customer Support Automation Service for AI Chatbots and Routing",
+      description: "Automate FAQs, routing, scheduling, and support operations.",
       images: ["https://www.awwtomation.com/images/customer-support-automation.png"]
     },
     robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
@@ -219,13 +219,13 @@ export const sharedMetadata: Record<string, Metadata> = {
         icon: "/favicon.png"
       },
   },
-  "services": {
-  title: "Automation Services: CRM, Email, Social Media & SEO Automation | Awwtomation",
-  description: "Transform your business with our comprehensive automation platform. CRM automation, email marketing, social media, SEO, blog automation & customer support. Scale 10x faster.",
-  keywords: "automation services, automation platform, CRM automation tools, email marketing automation platforms, best email automation platform, social media automation, SEO automation, blog automation, customer support automation, business automation, automation tools, best automation agency, best automation platform",
+"services": {
+  title: "Automation Services for Marketing, Sales, Support, and Operations | Awwtomation",
+  description: "Automation services for CRM, email marketing, social media, SEO, blog publishing, and customer support workflows built for growing service businesses.",
+  keywords: "automation services, workflow automation services, marketing automation services, business automation services, crm automation, seo automation, email marketing automation, customer support automation",
   openGraph: {
-    title: "Automation Services: CRM, Email, Social Media & SEO Automation",
-    description: "Transform your business with our comprehensive automation services. CRM automation, email marketing, social media, SEO, blog automation & customer support. Scale 10x faster.",
+    title: "Automation Services for Marketing, Sales, Support, and Operations",
+    description: "Automation services for CRM, email marketing, social media, SEO, blog publishing, and customer support workflows built for growing service businesses.",
     url: "https://www.awwtomation.com/services",
     siteName: "Awwtomation",
     type: "website",
@@ -233,8 +233,8 @@ export const sharedMetadata: Record<string, Metadata> = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Automation Services: CRM, Email, Social Media & SEO Automation",
-    description: "Transform your business with our comprehensive automation platform. CRM automation, email marketing, social media, SEO, blog automation & customer support.",
+    title: "Automation Services for Marketing, Sales, Support, and Operations",
+    description: "Explore automation services for CRM, email marketing, social media, SEO, blog publishing, and customer support.",
     images: ["https://www.awwtomation.com/images/automation-services.png"]
   },
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
