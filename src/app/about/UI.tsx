@@ -350,9 +350,17 @@ Our approach is rooted in practical problem-solving. We focus on identifying are
                       <p className="text-sm text-muted-foreground">📍 KATHMANDU 🇳🇵</p>
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Prakhyat leads automation strategy, technical architecture, and innovation across the automation
-                      spectrum. With a background in engineering and a strong foundation in artificial intelligence, he
-                      brings deep technical insight and a visionary mindset to help grow businesses of all scales.
+                      Prakhyat leads automation strategy, technical architecture, and innovation as one of the{" "}
+                      <Link
+                        href="https://www.prakhyat-shrestha.com.np/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 transition-colors duration-300"
+                      >
+                        Top AI Automation Expert Nepal
+                      </Link>
+                      . With a background in engineering and a strong foundation in artificial intelligence, he brings
+                      deep technical insight and a visionary mindset to help grow businesses of all scales.
                     </p>
                     <Link
                       href="https://www.linkedin.com/in/prakhyat-shrestha/"
