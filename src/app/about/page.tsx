@@ -1,5 +1,5 @@
 import { SeoJsonLd } from "@/components/seo/json-ld"
-import { aboutPageSeo, buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/seo"
+import { aboutPageSeo, buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema } from "@/lib/seo"
 import { sharedMetadata } from "../services/_shared/metadata"
 import AboutPage from "./UI"
 
@@ -19,6 +19,7 @@ export default function Page() {
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
           ]),
+          buildFaqSchema(aboutPageSeo.faqs),
         ]}
       />
       <AboutPage />

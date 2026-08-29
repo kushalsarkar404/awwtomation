@@ -49,12 +49,12 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
     href: "/services/blog-automation",
     primaryKeyword: "blog automation service",
     secondaryKeywords: ["blog automation", "ai blog writing service", "seo blog automation"],
-    title: "Blog Automation Service for SEO Content Production | Awwtomation",
+    title: "Blog Automation Service for SEO Growth | Awwtomation",
     description:
-      "Launch a blog automation service that handles keyword research, AI-assisted drafting, editorial workflows, publishing, and reporting so your team can scale organic traffic faster.",
-    heroTitle: "Blog Automation Service for SEO Content at Scale",
+      "Scale SEO content with automated research, drafting, review, publishing, internal linking, and reporting workflows built around your editorial standards.",
+    heroTitle: "A Cleaner Blog Production System",
     heroDescription:
-      "We build blog automation workflows that connect keyword research, AI-assisted drafting, human review, CMS publishing, and reporting so your content engine grows traffic without creating editorial chaos.",
+      "Connect keyword research, AI-assisted drafting, human review, CMS publishing, internal linking, and reporting in one blog automation workflow.",
     faqs: [
       {
         question: "How do you automate blog posts without losing quality?",
@@ -109,12 +109,12 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "automated social media posting service",
       "social media workflow automation",
     ],
-    title: "Social Media Automation Service for Scheduling, Content, and Reporting | Awwtomation",
+    title: "Social Media Automation Service | Awwtomation",
     description:
-      "Build a social media automation service that handles content planning, approvals, scheduling, inbox workflows, and reporting across the channels that matter to your brand.",
-    heroTitle: "Social Media Automation Service for Scheduling, Content, and Reporting",
+      "Automate social content planning, approvals, scheduling, lead routing, community workflows, and reporting across your highest-value channels.",
+    heroTitle: "Plan, Approve, and Publish From One Workflow",
     heroDescription:
-      "We build social media automation workflows that turn strategy into consistent publishing, faster community management, and cleaner reporting across your highest-value channels.",
+      "Coordinate social content, approvals, scheduling, lead routing, and channel reporting without passing work between disconnected tools.",
     faqs: [
       {
         question: "What are the risks of automating social media publishing?",
@@ -165,12 +165,12 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
     href: "/services/seo-automation",
     primaryKeyword: "seo automation service",
     secondaryKeywords: ["seo automation", "ai seo service", "seo reporting automation"],
-    title: "SEO Automation Service for Reporting, Content, and Technical Workflows | Awwtomation",
+    title: "SEO Automation Service for Growth | Awwtomation",
     description:
-      "Deploy an SEO automation service that streamlines reporting, keyword monitoring, content workflows, technical checks, and stakeholder updates without losing strategic control.",
-    heroTitle: "SEO Automation Service for Reporting, Content, and Technical Workflows",
+      "Automate SEO reporting, rank tracking, technical alerts, content briefs, internal linking, and stakeholder updates without losing strategic control.",
+    heroTitle: "SEO Reporting Without Spreadsheet Drift",
     heroDescription:
-      "We build SEO automation systems for dashboards, keyword tracking, technical alerts, content operations, and reporting so your team can act faster on the work that moves rankings.",
+      "Automate keyword tracking, technical alerts, content briefs, dashboards, and stakeholder reports while keeping strategy and QA with your team.",
     faqs: [
       {
         question: "Can SEO be automated?",
@@ -225,12 +225,12 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "email automation agency",
       "automated email campaigns",
     ],
-    title: "Email Marketing Automation Service for Lifecycle Campaigns and Revenue Workflows | Awwtomation",
+    title: "Email Marketing Automation Service | Awwtomation",
     description:
-      "Build email marketing automation workflows for welcome series, lead nurturing, abandoned cart recovery, segmentation, and reporting across your CRM and email stack.",
-    heroTitle: "Email Marketing Automation Service for Lifecycle Campaigns and Revenue Workflows",
+      "Build automated welcome, nurture, onboarding, recovery, segmentation, and reporting workflows across your CRM and email platform.",
+    heroTitle: "Lifecycle Email That Responds to Customer Behavior",
     heroDescription:
-      "We implement email marketing automation that improves onboarding, nurture sequences, abandoned cart recovery, segmentation, and reporting so revenue workflows run without constant manual work.",
+      "Build welcome, nurture, onboarding, recovery, segmentation, and reporting workflows around real customer events in your CRM and email platform.",
     faqs: [
       {
         question: "What is email marketing automation?",
@@ -281,12 +281,12 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
     href: "/services/crm-automation",
     primaryKeyword: "crm automation service",
     secondaryKeywords: ["crm automation", "crm automation agency", "crm workflow automation"],
-    title: "CRM Automation Service for Lead Routing, Follow-Ups, and Pipeline Workflows | Awwtomation",
+    title: "CRM Automation Service for Growth | Awwtomation",
     description:
-      "Launch a CRM automation service that automates lead capture, scoring, handoffs, follow-up sequences, data syncing, and pipeline visibility across your sales process.",
-    heroTitle: "CRM Automation Service for Lead Routing, Follow-Ups, and Pipeline Workflows",
+      "Automate lead capture, scoring, routing, follow-ups, pipeline updates, reporting, and customer handoffs across your sales stack.",
+    heroTitle: "Route Leads Faster and Keep the Pipeline Current",
     heroDescription:
-      "We build CRM automation systems that route leads faster, trigger follow-ups automatically, sync data across your tools, and give your team a cleaner pipeline to work from.",
+      "Automate lead capture, scoring, routing, follow-up, record updates, and customer handoffs across the tools your sales team already uses.",
     faqs: [
       {
         question: "What is CRM automation?",
@@ -341,12 +341,12 @@ export const serviceDefinitions: Record<ServiceKey, ServiceDefinition> = {
       "customer service automation",
       "chatbot automation service",
     ],
-    title: "Customer Support Automation Service for AI Chatbots, Routing, and Self-Service | Awwtomation",
+    title: "Customer Support Automation Service | Awwtomation",
     description:
-      "Implement a customer support automation service with AI chatbots, ticket routing, self-service workflows, and reporting that shortens response times without sacrificing customer experience.",
-    heroTitle: "Customer Support Automation Service for AI Chatbots, Routing, and Self-Service",
+      "Automate support triage, AI-assisted answers, ticket routing, CRM updates, escalation workflows, self-service, and reporting.",
+    heroTitle: "Resolve Routine Requests Faster",
     heroDescription:
-      "We build customer support automation workflows that handle common questions, route conversations correctly, shorten response times, and connect support data to the rest of your business.",
+      "Triage tickets, surface approved answers, update customer records, and escalate complex conversations to the right person.",
     faqs: [
       {
         question: "How do you automate customer support without hurting the customer experience?",
@@ -400,9 +400,9 @@ export const serviceCards: LinkCardItem[] = Object.values(serviceDefinitions).ma
 }))
 
 export const homePageSeo = {
-  title: "Business Automation Services for CRM, SEO, Email, and Social Media | Awwtomation",
+  title: "AI Automation Agency | Awwtomation",
   description:
-    "Business automation services for CRM, SEO, email marketing, blog operations, and customer support workflows that help service businesses scale with cleaner systems and less manual work.",
+    "Awwtomation designs and implements AI automation for CRM, marketing, content, support, reporting, and internal operations.",
   keywords: [
     "business automation services",
     "business process automation services",
@@ -411,9 +411,9 @@ export const homePageSeo = {
     "marketing automation agency",
     "workflow automation services",
   ],
-  heroTitle: "Business Automation Services for Revenue, Marketing, and Operations Growth",
+  heroTitle: "AI Automation for the Work Slowing You Down",
   heroDescription:
-    "Awwtomation is a business automation agency that designs CRM, SEO, email marketing, social media, blog, and support workflows so service businesses can scale without adding manual overhead.",
+    "We connect your CRM, marketing, content, and support tools so leads get answered, reports stay current, and repetitive work stops eating the week.",
   faqs: [
     {
       question: "What does a business automation agency do?",
@@ -459,9 +459,9 @@ export const homePageSeo = {
 }
 
 export const servicesHubSeo = {
-  title: "Automation Services for Marketing, Sales, Support, and Operations | Awwtomation",
+  title: "AI Automation Services | Awwtomation",
   description:
-    "Explore automation services for CRM, SEO, email marketing, social media, blog publishing, and customer support workflows built for growing service businesses.",
+    "AI automation services for CRM, SEO, email, social media, content, customer support, reporting, and internal operations.",
   keywords: [
     "automation services",
     "workflow automation services",
@@ -469,9 +469,9 @@ export const servicesHubSeo = {
     "professional services automation",
     "robotic process automation services",
   ],
-  heroTitle: "Automation Services for Marketing, Sales, Support, and Operations",
+  heroTitle: "Automation for the Work Between Your Tools",
   heroDescription:
-    "Our automation services cover the highest-friction parts of growth: lead routing, nurture flows, reporting, content production, social publishing, and support operations.",
+    "We build and maintain workflows for lead routing, lifecycle email, reporting, content production, social publishing, and support operations.",
   faqs: [
     {
       question: "What is professional services automation?",
@@ -512,9 +512,9 @@ export const servicesHubSeo = {
 }
 
 export const blogIndexSeo = {
-  title: "Business Automation Blog: CRM, SEO, Email & Workflow Guides | Awwtomation",
+  title: "AI & Workflow Automation Guides | Awwtomation",
   description:
-    "Business automation blog with guides on CRM automation, email marketing workflows, SEO systems, support automation, and process design for growing teams.",
+    "Practical guides on AI automation, CRM, email marketing, SEO, customer support, content systems, and workflow design for growing teams.",
   keywords: [
     "business automation blog",
     "workflow automation guides",
@@ -523,15 +523,32 @@ export const blogIndexSeo = {
     "SEO automation guide",
     "customer support automation",
   ],
-  heroTitle: "Business Automation Blog for CRM, SEO, Email, and Workflow Systems",
+  heroTitle: "Automation Guides for Growing Teams",
   heroDescription:
-    "Guides, comparisons, and implementation ideas for teams building better CRM, SEO, email marketing, customer support, and workflow automation systems.",
+    "Clear comparisons and implementation guides for CRM, SEO, email, support, content, and workflow automation.",
+  faqs: [
+    {
+      question: "What topics does the Awwtomation blog cover?",
+      answer:
+        "The blog covers AI automation, workflow design, CRM, email marketing, SEO, content operations, customer support, automation platforms, and practical implementation decisions for growing businesses.",
+    },
+    {
+      question: "Who is the Awwtomation blog for?",
+      answer:
+        "It is written for founders, operators, marketers, revenue teams, support leaders, and technical teams evaluating how automation can improve a real business process.",
+    },
+    {
+      question: "How should I use these automation guides?",
+      answer:
+        "Use the guides to understand a workflow, compare approaches, identify risks, and prepare requirements. Validate platform capabilities, policies, permissions, and pricing before implementing advice in production.",
+    },
+  ],
 }
 
 export const templateLibrarySeo = {
-  title: "Free Automation Templates for SEO, Reporting, and Growth Workflows | Awwtomation",
+  title: "Free AI Automation Templates | Awwtomation",
   description:
-    "Download free automation templates for n8n and growth workflows, including SEO reporting, social engagement, and reusable process automations built for marketing teams.",
+    "Download practical automation templates for n8n, SEO reporting, social engagement, and repeatable marketing and operations workflows.",
   keywords: [
     "free automation templates",
     "n8n templates",
@@ -542,18 +559,65 @@ export const templateLibrarySeo = {
   heroTitle: "Free Automation Templates for Growth and Reporting Workflows",
   heroDescription:
     "Start with reusable automation templates for SEO reporting, growth workflows, and channel execution, then customize them around your stack.",
+  faqs: [
+    {
+      question: "What is an automation template?",
+      answer:
+        "An automation template is a reusable workflow that defines triggers, actions, connections, and logic for a repeatable process. It provides a starting point that can be adapted to your accounts, data, and approval rules.",
+    },
+    {
+      question: "Which platform do Awwtomation templates use?",
+      answer:
+        "The currently available templates are built for n8n. Each template page lists its platform, difficulty, required connections, workflow behavior, and a sample output where available.",
+    },
+    {
+      question: "Are the automation templates production ready?",
+      answer:
+        "Templates are starting points. Before production use, review credentials, permissions, field mappings, rate limits, error handling, approval steps, and the policies of every connected platform.",
+    },
+    {
+      question: "Can Awwtomation customize a template for my business?",
+      answer:
+        "Yes. A template can be adapted to your software stack, business rules, reporting format, data model, and governance requirements as part of a custom automation engagement.",
+    },
+  ],
 }
 
 export const aboutPageSeo = {
-  title: "About Awwtomation | Business Automation Agency for Growth Teams",
+  title: "About Awwtomation | AI Automation Agency",
   description:
-    "Learn about Awwtomation, the business automation agency behind CRM, SEO, email marketing, social media, and workflow automation systems for growing teams.",
+    "Meet the team behind Awwtomation and our approach to building reliable AI automation systems for marketing, sales, support, and operations.",
   keywords: [
     "about awwtomation",
     "business automation agency",
     "marketing automation agency",
     "workflow automation experts",
     "CRM automation specialists",
+  ],
+  heroTitle: "We Build the Systems Between Your Systems",
+  heroDescription:
+    "Awwtomation is a small automation team that maps the process, connects the tools, tests the edge cases, and stays accountable through launch.",
+  faqs: [
+    {
+      question: "What does Awwtomation specialize in?",
+      answer:
+        "Awwtomation specializes in AI and workflow automation for CRM, email marketing, SEO, content, social media, customer support, reporting, and connected business operations.",
+    },
+    {
+      question: "Where is Awwtomation based?",
+      answer:
+        "Awwtomation is led by founders based in Kathmandu, Nepal and Atlanta, United States, and works with businesses remotely across markets and time zones.",
+    },
+    {
+      question: "How does Awwtomation approach AI automation projects?",
+      answer:
+        "Projects begin with process and outcome mapping, followed by workflow design, implementation, quality assurance, launch, documentation, and measurement. Human review stays in the workflow wherever judgment or risk requires it.",
+    },
+    {
+      question: "Does Awwtomation work with existing business software?",
+      answer:
+        "Yes. The usual goal is to connect and improve the systems a team already uses rather than force a complete platform replacement.",
+    },
   ],
 }
 
@@ -575,18 +639,58 @@ export function absoluteUrl(path: string) {
   return path.startsWith("http") ? path : `${SITE_URL}${path}`
 }
 
+function truncateAtWord(value: string, maxLength: number) {
+  const normalized = value.replace(/\s+/g, " ").trim()
+  if (normalized.length <= maxLength) return normalized
+
+  const shortened = normalized.slice(0, maxLength - 1)
+  const lastSpace = shortened.lastIndexOf(" ")
+  return `${shortened.slice(0, lastSpace > maxLength * 0.7 ? lastSpace : maxLength - 1).trimEnd()}…`
+}
+
+export function toMetaTitle(value: string) {
+  return truncateAtWord(value, 60)
+}
+
+export function toMetaDescription(value: string) {
+  return truncateAtWord(value, 155)
+}
+
 export function buildOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
     logo: absoluteUrl("/full-logo.svg"),
+    description: homePageSeo.description,
+    email: "contact@awwtomation.com",
+    knowsAbout: [
+      "Artificial intelligence automation",
+      "Business process automation",
+      "CRM automation",
+      "Marketing automation",
+      "SEO automation",
+      "Customer support automation",
+    ],
     sameAs: [
       "https://www.instagram.com/awwtomation/",
       "https://www.linkedin.com/company/awwtomation/",
       "https://youtube.com/@Awwtomation",
       "https://x.com/awwtomation",
+    ],
+    founder: [
+      {
+        "@type": "Person",
+        name: "Prakhyat Shrestha",
+        sameAs: "https://www.linkedin.com/in/prakhyat-shrestha/",
+      },
+      {
+        "@type": "Person",
+        name: "Kushal Sarkar",
+        sameAs: "https://www.linkedin.com/in/ksarkar011/",
+      },
     ],
   }
 }
@@ -595,9 +699,13 @@ export function buildWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
     url: SITE_URL,
     description: homePageSeo.description,
+    publisher: {
+      "@id": `${SITE_URL}/#organization`,
+    },
   }
 }
 
@@ -641,13 +749,15 @@ export function buildWebPageSchema({
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": `${absoluteUrl(path)}#webpage`,
     name: title,
     description,
     url: absoluteUrl(path),
     isPartOf: {
-      "@type": "WebSite",
-      name: SITE_NAME,
-      url: SITE_URL,
+      "@id": `${SITE_URL}/#website`,
+    },
+    publisher: {
+      "@id": `${SITE_URL}/#organization`,
     },
   }
 }
@@ -656,23 +766,17 @@ export function buildServiceSchema(service: ServiceDefinition) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${absoluteUrl(service.href)}#service`,
     name: service.name,
     serviceType: service.primaryKeyword,
     url: absoluteUrl(service.href),
     description: service.description,
     provider: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: SITE_URL,
+      "@id": `${SITE_URL}/#organization`,
     },
     areaServed: {
       "@type": "Place",
       name: "Worldwide",
-    },
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      url: absoluteUrl(service.href),
     },
   }
 }
@@ -697,7 +801,11 @@ export function buildItemListSchema({
         "@type": "ListItem",
         position: index + 1,
         name: item.name,
-        url: absoluteUrl(item.href),
+        item: {
+          "@type": "WebPage",
+          "@id": absoluteUrl(item.href),
+          name: item.name,
+        },
       })),
     },
   }

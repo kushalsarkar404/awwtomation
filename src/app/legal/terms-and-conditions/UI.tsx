@@ -4,7 +4,6 @@ import { CalModal } from "@/components/cal-modal"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { Alert,AlertDescription } from "@/components/ui/alert"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card,CardContent,CardHeader,CardTitle } from "@/components/ui/card"
 import {
@@ -40,7 +39,7 @@ export default function TermsPage() {
   }, [mobileMenuOpen])
 
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="content-page flex min-h-[100dvh] flex-col bg-[#050505] text-white">
       {/* Header */}
       <SiteHeader
           menuRef={menuRef}
@@ -54,20 +53,21 @@ export default function TermsPage() {
 
 
       {/* Hero Section */}
-      <section className="w-full py-16 px-4 md:px-12 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <section className="w-full border-b border-white/10 bg-[radial-gradient(circle_at_top,rgba(124,58,237,.2),transparent_55%)] px-4 pb-20 pt-32 md:px-12 md:pt-40">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <Badge variant="secondary" className="bg-white/90 text-slate-700 border-slate-200 shadow-sm">
+          <p className="mx-auto flex w-fit items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-violet-200">
+            <span className="h-px w-8 bg-violet-300/70" aria-hidden="true" />
             Agreement Information
-          </Badge>
+          </p>
 
           <div className="flex items-center justify-center gap-3">
-            <FileText className="w-8 h-8 text-blue-600" />
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <FileText className="w-8 h-8 text-violet-300" />
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
               Terms and Conditions
             </h1>
           </div>
 
-          <p className="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
             Please read these terms and conditions carefully before using our services. By accessing or using our
             services, you agree to be bound by these terms.
           </p>

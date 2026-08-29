@@ -46,7 +46,7 @@ export function TemplateDetailHero({ template }: TemplateDetailHeroProps) {
       </div>
 
       {/* Full Screen Modal */}
-      {isFullScreen && (
+      {isFullScreen ? (
         <div 
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={handleCloseFullScreen}
@@ -67,18 +67,18 @@ export function TemplateDetailHero({ template }: TemplateDetailHeroProps) {
             />
           </div>
         </div>
-      )}
+      ) : null}
 
       {/* Subtitle and Author Section */}
-      <div className="relative bg-white/95 backdrop-blur-sm py-8 px-4 md:px-6">
+      <div className="relative border-y border-white/10 bg-[#09090a] px-4 py-10 backdrop-blur-sm md:px-6">
         <div className="container max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-gray-900">
+          <h1 className="mb-4 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl md:text-5xl">
             {template.title}
-          </h2>
-          <p className="max-w-3xl text-lg md:text-xl text-gray-700 mb-6 mx-auto">
+          </h1>
+          <p className="mx-auto mb-6 max-w-3xl text-lg text-zinc-400 md:text-xl">
             {template.excerpt}
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm md:text-base text-gray-600">
+          <div className="flex items-center justify-center gap-2 text-sm text-zinc-500 md:text-base">
             <Image
               src={template.creator.avatar || "/placeholder.svg"}
               alt={template.creator.name}

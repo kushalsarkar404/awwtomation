@@ -3,10 +3,13 @@
 import { CalModal } from "@/components/cal-modal"
 import { MessageModal } from "@/components/message-modal"
 import { LinkCardSection } from "@/components/seo/link-card-section"
+import { FaqCardSection } from "@/components/seo/faq-card-section"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import TemplateCard from "@/components/template-card"
 import { Input } from "@/components/ui/input"
+import { Reveal } from "@/components/ui/reveal"
+import { SectionHeading } from "@/components/ui/section-heading"
 import { Select,SelectContent,SelectItem,SelectTrigger,SelectValue } from "@/components/ui/select"
 import {
 allTemplateCategories,
@@ -17,6 +20,25 @@ type TemplateDifficulty,
 import { serviceCards,templateLibrarySeo } from "@/lib/seo"
 import { cn } from "@/lib/utils"
 import { useEffect,useMemo,useRef,useState } from "react"
+import { CheckCircle2, Plug, ShieldCheck, Workflow } from "lucide-react"
+
+const templateGuidance = [
+  {
+    icon: Workflow,
+    title: "Understand the workflow",
+    description: "Review the trigger, actions, data flow, output, and the business process the template is designed to support.",
+  },
+  {
+    icon: Plug,
+    title: "Connect your systems",
+    description: "Add your own credentials and map the fields, accounts, schedules, and destinations used by your team.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Test before production",
+    description: "Validate permissions, error handling, rate limits, approvals, duplicate prevention, and recovery behavior.",
+  },
+]
 
 export default function TemplatesPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
@@ -122,17 +144,18 @@ export default function TemplatesPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full pt-24 pb-4 md:pt-28 md:pb-4 lg:pt-32 lg:pb-6 xl:pt-40 xl:pb-8 relative overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-background z-10"></div>
-            <div className="w-full h-full bg-background"></div>
-          </div>
-          <div className="container px-4 md:px-6 relative z-20 text-center">
-            <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
+        <section className="relative w-full overflow-hidden pt-28 pb-6 md:pt-32 md:pb-8 lg:pt-40 lg:pb-10">
+          <div className="aurora-bg" aria-hidden="true" />
+          <div className="container relative z-10 px-4 md:px-6">
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+              <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-violet-200">
+                <span className="h-px w-8 bg-violet-300/70" aria-hidden="true" />
+                Template library
+              </p>
+              <h1 className="font-display text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-5xl md:text-6xl">
                 {templateLibrarySeo.heroTitle}
               </h1>
-              <p className="max-w-xl text-muted-foreground md:text-xl mx-auto">
+              <p className="max-w-xl text-pretty text-lg leading-8 text-zinc-400">
                 {templateLibrarySeo.heroDescription}
               </p>
             </div>
@@ -191,16 +214,16 @@ export default function TemplatesPage() {
               </Select>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="mb-8 flex flex-wrap gap-x-6 gap-y-2 border-y border-white/10 py-4">
               {allTemplateTags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => handleTagClick(tag)}
                   className={cn(
-                    "inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold transition-colors",
+                    "border-b py-1 text-sm font-medium transition-colors",
                     selectedTags.includes(tag)
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80",
+                      ? "border-violet-300 text-white"
+                      : "border-transparent text-muted-foreground hover:text-white",
                   )}
                 >
                   {tag}
@@ -218,6 +241,47 @@ export default function TemplatesPage() {
               )}
             </div>
 
+            <section className="mt-24 border-y border-white/10 py-20">
+              <SectionHeading
+                eyebrow="Using the library"
+                title="From reusable template to dependable workflow"
+                intro="Each download is a practical starting point. Production use still requires your credentials, business rules, quality checks, and ownership model."
+              />
+              <div className="mt-14 grid gap-px overflow-hidden rounded-[2rem] border border-white/10 bg-white/10 md:grid-cols-3">
+                {templateGuidance.map((item, index) => (
+                  <Reveal key={item.title} delay={index * 90} className="bg-[#0b0b0d] p-8">
+                    <item.icon className="h-5 w-5 text-violet-300" />
+                    <h2 className="mt-9 text-xl font-semibold text-white">{item.title}</h2>
+                    <p className="mt-3 text-sm leading-6 text-zinc-400">{item.description}</p>
+                  </Reveal>
+                ))}
+              </div>
+            </section>
+
+            <section className="grid gap-12 border-b border-white/10 py-20 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+              <SectionHeading
+                align="left"
+                eyebrow="Before you install"
+                title="What to evaluate in an automation template"
+                intro="A good template is transparent about what it connects, what it changes, and where a person needs to review the result."
+              />
+              <ul className="grid gap-4 sm:grid-cols-2">
+                {[
+                  "Required apps, accounts, and permissions",
+                  "Input fields and data destinations",
+                  "Trigger frequency and platform rate limits",
+                  "Duplicate prevention and retry behavior",
+                  "Human approval and escalation steps",
+                  "Expected output and success measurement",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 border-b border-white/10 pb-4 text-sm leading-6 text-zinc-300">
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-violet-300" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
             <div className="mt-16">
               <LinkCardSection
                 eyebrow="Implementation"
@@ -227,6 +291,13 @@ export default function TemplatesPage() {
                 className="rounded-3xl"
               />
             </div>
+
+            <FaqCardSection
+              title="Automation template FAQs"
+              description="What the templates include, how to evaluate them, and what to check before production use."
+              faqs={templateLibrarySeo.faqs}
+              className="mt-20 rounded-3xl"
+            />
           </div>
         </section>
       </main>

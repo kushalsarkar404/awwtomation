@@ -83,16 +83,8 @@ export default function TemplateCard({ template }: TemplateCardProps) {
           </div>
         </CardContent>
       </Link>
-      <CardFooter className="p-4 pt-0 flex flex-wrap gap-2">
-        {template.tags.map((tag) => (
-          <Link
-            key={tag}
-            href={`/templates?tag=${encodeURIComponent(tag)}`}
-            className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors hover:bg-muted-foreground/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-          >
-            {tag}
-          </Link>
-        ))}
+      <CardFooter className="border-t border-white/10 p-4 text-xs text-muted-foreground">
+        {template.tags.slice(0, 3).join(" · ")}
       </CardFooter>
     </Card>
   )

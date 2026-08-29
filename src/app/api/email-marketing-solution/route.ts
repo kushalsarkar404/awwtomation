@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
 
-import { appendEmailMarketingLead } from "@/lib/google-sheets"
-
 export const runtime = "nodejs"
+
+const MAKE_WEBHOOK_URL = "https://hook.us2.make.com/b52b23davcox19mpf2guwsujobu3kvey"
 
 interface EmailMarketingLeadRequest {
   email?: string
@@ -27,7 +27,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: "Missing page context for this submission." }, { status: 400 })
     }
 
-    await appendEmailMarketingLead({ email, pageSlug, postTitle })
+    const webhookResponse = await fetch(MAKE_WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, pageSlug, postTitle }),
+      cache: "no-store",
+    })
+
+    if (!webhookResponse.ok) {
+      throw new Error(`Make webhook rejected the submission with status ${webhookResponse.status}.`)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

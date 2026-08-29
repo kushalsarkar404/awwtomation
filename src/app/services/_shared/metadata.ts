@@ -29,7 +29,7 @@ const defaultRobots: NonNullable<Metadata["robots"]> = {
 const serviceImages: Record<ServiceKey, string> = {
   "blog-automation": "/images/blog-automation.png",
   "crm-automation": "/images/crm-automation.png",
-  "customer-support-automation": "/hero-image.png",
+  "customer-support-automation": "/awwtomation-og.webp",
   "email-marketing-automation": "/images/email-marketing-automation.png",
   "seo-automation": "/images/seo-automation.png",
   "social-media-automation": "/images/social-media-automation.png",
@@ -40,7 +40,7 @@ function buildMetadata({
   description,
   keywords,
   path,
-  imagePath = "/hero-image.png",
+  imagePath = "/awwtomation-og.webp",
   type = "website",
 }: {
   title: string
@@ -52,6 +52,7 @@ function buildMetadata({
 }): Metadata {
   const canonical = absoluteUrl(path)
   const imageUrl = absoluteUrl(imagePath)
+  const markdownUrl = absoluteUrl(path === "/" ? "/index.md" : `${path}.md`)
 
   return {
     title,
@@ -81,6 +82,9 @@ function buildMetadata({
     robots: defaultRobots,
     alternates: {
       canonical,
+      types: {
+        "text/markdown": markdownUrl,
+      },
     },
     icons: {
       icon: "/favicon.png",
@@ -120,7 +124,7 @@ export const sharedMetadata: Record<string, Metadata> = {
     description: servicesHubSeo.description,
     keywords: servicesHubSeo.keywords,
     path: "/services",
-    imagePath: "/happy-people.png",
+    imagePath: "/awwtomation-team.webp",
   }),
   ...serviceMetadata,
   about: buildMetadata({
@@ -128,7 +132,7 @@ export const sharedMetadata: Record<string, Metadata> = {
     description: aboutPageSeo.description,
     keywords: aboutPageSeo.keywords,
     path: "/about",
-    imagePath: "/happy-people.png",
+    imagePath: "/awwtomation-team.webp",
   }),
   templates: buildMetadata({
     title: templateLibrarySeo.title,

@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { TableOfContents } from "@/components/table-of-contents"
 import { estimateReadingTime,extractFaqsFromMarkdown,getPostBySlug,getRelatedPosts } from "@/lib/blog"
-import { buildBreadcrumbSchema,buildFaqSchema,getBlogBreadcrumbs,getPrimaryServiceForPost,getSupplementaryServicesForPost } from "@/lib/seo"
+import { buildBreadcrumbSchema,buildFaqSchema,getBlogBreadcrumbs,getPrimaryServiceForPost,getSupplementaryServicesForPost,toMetaDescription,toMetaTitle } from "@/lib/seo"
 import "highlight.js/styles/github-dark.css"
 import type { Metadata } from "next"
 import Link from "next/link"
@@ -68,8 +68,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return {}
 
   const canonicalUrl = `${siteUrl}/blog/${slug}`
-  const description = post.excerpt || `Read our blog post: ${post.title}`
-  const title = `${post.title} | Awwtomation`
+  const description = toMetaDescription(post.excerpt || `Read our blog post: ${post.title}`)
+  const title = toMetaTitle(`${post.title} | Awwtomation`)
   const imageUrl = post.coverImage ? new URL(post.coverImage, siteUrl).toString() : undefined
 
   return {
@@ -98,6 +98,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
     alternates: {
       canonical: canonicalUrl,
+      types: {
+        "text/markdown": `${canonicalUrl}.md`,
+      },
     },
     openGraph: {
       title,
@@ -155,12 +158,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     timeRequired: `PT${readingTime}M`,
     inLanguage: "en",
     author: {
-      "@type": "Organization",
-      name: "Awwtomation",
+      "@id": `${siteUrl}/#organization`,
     },
     publisher: {
-      "@type": "Organization",
-      name: "Awwtomation",
+      "@id": `${siteUrl}/#organization`,
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/full-logo.svg`,
@@ -180,7 +181,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="content-page flex min-h-[100dvh] flex-col bg-[#050505] text-white">
       <SeoJsonLd
         data={[
           articleSchema,
@@ -191,7 +192,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <SiteHeader primaryCtaHref="https://cal.com/awwtomation/awwtomation-consultation" />
 
       <main className="flex-1">
-        <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8 xl:py-14">
+        <div className="mx-auto w-full max-w-7xl px-4 pb-24 pt-32 sm:px-6 lg:px-8 xl:pb-32 xl:pt-40">
           <div className="mb-6">
             <PageBreadcrumbs items={breadcrumbs} />
           </div>
@@ -205,8 +206,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </aside>
 
             <div className="min-w-0">
-              <div className="mb-10 space-y-3">
-                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">{post.title}</h1>
+              <div className="mb-12 max-w-4xl space-y-4 border-b border-white/10 pb-10">
+                <h1 className="text-balance text-4xl font-semibold tracking-[-0.045em] sm:text-5xl lg:text-6xl">{post.title}</h1>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
                   <span>{post.date}</span>
                   <span>{readingTime} min read</span>
@@ -228,7 +229,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 )}
               </div>
 
-              <article className="prose prose-gray max-w-none dark:prose-invert">
+              <article className="prose prose-lg prose-zinc max-w-4xl dark:prose-invert prose-headings:tracking-[-0.025em] prose-a:text-violet-300">
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm, unwrapImageParagraphs]}
                   rehypePlugins={[rehypeRaw, rehypeHighlight]}

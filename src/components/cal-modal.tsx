@@ -111,7 +111,7 @@ export function CalModal({ open, onOpenChange, calLink }: CalModalProps) {
       <div className="relative bg-background border rounded-lg shadow-lg w-full max-w-4xl h-[90vh] sm:h-auto flex flex-col">
         <div className="flex items-center justify-between p-3 sm:p-4 border-b flex-shrink-0">
           <h2 className="text-lg sm:text-xl font-semibold text-center flex-1 pr-2 sm:pr-8">
-            Book a meeting with our automation experts and transform your business processes!
+            Book a 30-minute automation strategy call
           </h2>
           <button 
             onClick={() => onOpenChange(false)}

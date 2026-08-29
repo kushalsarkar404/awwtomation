@@ -1,9 +1,9 @@
 "use client"
 
-import { ChevronRight,Code,Cog,Headphones,Mail,Menu,NotebookPen,SquareChartGantt,X } from "lucide-react"
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect,useRef,useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 
@@ -13,79 +13,19 @@ interface SiteHeaderProps {
   mobileMenuOpen?: boolean
   onMobileMenuOpenChange?: (open: boolean) => void
   onPrimaryCta?: () => void
-  pricingHref?: string
   primaryCtaHref?: string
 }
 
-interface ServiceNavItem {
-  description: string
-  href: string
-  Icon: React.ComponentType<{ className?: string }>
-  iconBgClassName: string
-  iconClassName: string
-  label: string
-  badge?: string
-}
-
-const serviceNavItems: ServiceNavItem[] = [
-  {
-    label: "Blog Agent",
-    description: "Multi-purpose blog generator with SEO-ready content",
-    href: "/services/blog-automation",
-    Icon: NotebookPen,
-    iconBgClassName: "bg-blue-100",
-    iconClassName: "text-blue-600",
-    badge: "NEW",
-  },
-  {
-    label: "Social Media Automation",
-    description: "Schedule, optimize, and automate social campaigns",
-    href: "/services/social-media-automation",
-    Icon: SquareChartGantt,
-    iconBgClassName: "bg-pink-100",
-    iconClassName: "text-pink-600",
-  },
-  {
-    label: "SEO Automation",
-    description: "AI meta generation, audits, and keyword clustering",
-    href: "/services/seo-automation",
-    Icon: Code,
-    iconBgClassName: "bg-green-100",
-    iconClassName: "text-green-600",
-  },
-  {
-    label: "Email Marketing Automation",
-    description: "Automated campaigns, segmentation & personalization",
-    href: "/services/email-marketing-automation",
-    Icon: Mail,
-    iconBgClassName: "bg-purple-100",
-    iconClassName: "text-purple-600",
-  },
-  {
-    label: "CRM Automation",
-    description: "Lead flows, auto-reminders & 3rd-party integration",
-    href: "/services/crm-automation",
-    Icon: Cog,
-    iconBgClassName: "bg-yellow-100",
-    iconClassName: "text-yellow-600",
-  },
-  {
-    label: "Customer Support Automation",
-    description: "AI chatbots, smart routing & 24/7 support",
-    href: "/services/customer-support-automation",
-    Icon: Headphones,
-    iconBgClassName: "bg-teal-100",
-    iconClassName: "text-teal-600",
-  },
-]
-
-const topLevelLinks = [
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
+const serviceNavItems = [
+  { label: "CRM Automation", href: "/services/crm-automation" },
+  { label: "Email Marketing Automation", href: "/services/email-marketing-automation" },
+  { label: "SEO Automation", href: "/services/seo-automation" },
+  { label: "Social Media Automation", href: "/services/social-media-automation" },
+  { label: "Blog Automation", href: "/services/blog-automation" },
+  { label: "Customer Support Automation", href: "/services/customer-support-automation" },
 ]
 
 export function SiteHeader({
-  pricingHref = "/#pricing",
   contactHref = "/#contact",
   menuRef,
   mobileMenuOpen,
@@ -95,171 +35,147 @@ export function SiteHeader({
 }: SiteHeaderProps) {
   const internalRef = useRef<HTMLDivElement>(null)
   const [uncontrolledOpen, setUncontrolledOpen] = useState(false)
-
   const activeMenuRef = menuRef ?? internalRef
   const isControlled = typeof mobileMenuOpen === "boolean" && typeof onMobileMenuOpenChange === "function"
   const isMenuOpen = isControlled ? mobileMenuOpen : uncontrolledOpen
   const setMenuOpen = isControlled ? onMobileMenuOpenChange : setUncontrolledOpen
 
   useEffect(() => {
-    if (!isMenuOpen) {
+    if (!isMenuOpen) return
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false)
+    }
+    document.addEventListener("keydown", closeOnEscape)
+    return () => document.removeEventListener("keydown", closeOnEscape)
+  }, [isMenuOpen, setMenuOpen])
+
+  const primaryAction = () => {
+    if (onPrimaryCta) {
+      onPrimaryCta()
       return
     }
 
-    function handleClickOutside(event: MouseEvent) {
-      if (activeMenuRef.current?.contains(event.target as Node)) {
-        return
-      }
-
-      setMenuOpen(false)
-    }
-
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [activeMenuRef, isMenuOpen, setMenuOpen])
-
-  const renderPrimaryCta = (className: string) => {
-    if (onPrimaryCta) {
-      return (
-        <Button size="lg" className={className} onClick={onPrimaryCta}>
-          Automate Now
-          <ChevronRight className="ml-1 h-4 w-4" />
-        </Button>
-      )
-    }
-
-    const href = primaryCtaHref ?? "https://cal.com/awwtomation/awwtomation-consultation"
-    const isExternal = href.startsWith("http")
-
-    if (isExternal) {
-      return (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <Button size="lg" className={className}>
-            Automate Now
-            <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
-        </a>
-      )
-    }
-
-    return (
-      <Link href={href}>
-        <Button size="lg" className={className}>
-          Automate Now
-          <ChevronRight className="ml-1 h-4 w-4" />
-        </Button>
-      </Link>
-    )
+    window.open(primaryCtaHref ?? "https://cal.com/awwtomation/awwtomation-consultation", "_blank", "noopener,noreferrer")
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-2">
-          <Link href="/" aria-label="Awwtomation home">
-            <Image
-              src="/full-logo.svg"
-              alt="Awwtomation Logo"
-              width={164}
-              height={40}
-              className="h-8 w-auto sm:h-9"
-              priority
-            />
-          </Link>
-        </div>
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
+      <div className="pointer-events-auto mx-auto flex h-16 max-w-6xl items-center justify-between rounded-2xl border border-black/10 bg-white/95 px-4 shadow-[0_16px_50px_rgba(0,0,0,.22)] backdrop-blur-xl sm:px-5">
+        <Link href="/" aria-label="Awwtomation home" className="shrink-0">
+          <Image
+            src="/full-logo.svg"
+            alt="Awwtomation"
+            width={159}
+            height={23}
+            className="h-6 w-auto"
+            priority
+          />
+        </Link>
 
-        <nav className="relative hidden items-center gap-8 md:flex">
-          <div className="relative group/menu">
-            <div className="relative z-50 flex items-center gap-1 text-sm font-medium cursor-pointer">
-              <Link href="/services" className="group flex gap-4">
-                Services
-              </Link>
-            </div>
-            <div className="absolute left-0 top-full z-40 hidden pt-2 group-hover/menu:flex">
-              <div className="w-[min(640px,calc(100vw-2rem))] rounded-xl border bg-white p-6 shadow-2xl">
-                <div className="grid grid-cols-2 gap-6">
-                  {serviceNavItems.map(({ label, description, href, Icon, iconBgClassName, iconClassName, badge }) => (
-                    <Link key={href} href={href} className="group flex gap-4 rounded-md p-3 hover:bg-gray-50">
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconBgClassName}`}>
-                        <Icon className={`h-5 w-5 ${iconClassName}`} />
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2 font-medium text-gray-800">
-                          {label}
-                          {badge ? (
-                            <span className="rounded-md bg-red-100 px-2 py-0.5 text-xs text-red-600">{badge}</span>
-                          ) : null}
-                        </div>
-                        <p className="text-sm text-gray-500">{description}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          <Link href={pricingHref} className="text-sm font-medium hover:text-primary">
-            Pricing
-          </Link>
-          <Link href={contactHref} className="text-sm font-medium hover:text-primary">
-            Contact
-          </Link>
-          {topLevelLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium hover:text-primary">
-              {link.label}
+        <nav aria-label="Primary navigation" className="hidden items-center gap-7 lg:flex">
+          <div className="group relative">
+            <Link href="/services" className="flex items-center gap-1.5 py-5 text-sm text-zinc-700 transition hover:text-black">
+              Automation Services
+              <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
             </Link>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-4 md:flex">{renderPrimaryCta("hover:bg-blue-700")}</div>
-
-        <div ref={activeMenuRef} className="block md:hidden">
-          <button
-            onClick={() => setMenuOpen(!isMenuOpen)}
-            className="rounded-md border border-gray-300 p-2"
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-
-          {isMenuOpen ? (
-            <div className="fixed inset-x-0 top-16 z-50 max-h-[calc(100vh-4rem)] overflow-y-auto border-t bg-white px-4 py-6 shadow">
-              <div className="mx-auto max-w-lg space-y-4">
+            <div className="invisible absolute left-1/2 top-full w-[34rem] -translate-x-1/2 translate-y-2 opacity-0 transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/10 bg-zinc-200 p-px shadow-2xl">
                 {serviceNavItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block font-medium text-gray-700"
-                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-between gap-4 bg-white px-5 py-4 text-sm text-zinc-700 transition hover:bg-zinc-50 hover:text-black"
                   >
                     {item.label}
+                    <ArrowUpRight className="h-3.5 w-3.5 text-zinc-600" />
                   </Link>
                 ))}
-                <div className="border-t pt-4">
-                  <Link href="/services" className="block py-1 text-gray-700" onClick={() => setMenuOpen(false)}>
-                    Services
-                  </Link>
-                  <Link href="/blog" className="block py-1 text-gray-700" onClick={() => setMenuOpen(false)}>
-                    Blog
-                  </Link>
-                  <Link href={pricingHref} className="block py-1 text-gray-700" onClick={() => setMenuOpen(false)}>
-                    Pricing
-                  </Link>
-                  <Link href={contactHref} className="block py-1 text-gray-700" onClick={() => setMenuOpen(false)}>
-                    Contact
-                  </Link>
-                  <Link href="/about" className="block py-1 text-gray-700" onClick={() => setMenuOpen(false)}>
-                    About
-                  </Link>
-                </div>
-                <div className="pt-2">
-                  {renderPrimaryCta("w-full hover:bg-blue-700")}
-                </div>
               </div>
             </div>
-          ) : null}
+          </div>
+          <Link href="/blog" className="text-sm text-zinc-700 transition hover:text-black">
+            Blog
+          </Link>
+          <Link href="/about" className="text-sm text-zinc-700 transition hover:text-black">
+            About
+          </Link>
+          <Link href={contactHref} className="text-sm text-zinc-700 transition hover:text-black">
+            Contact
+          </Link>
+        </nav>
+
+        <div className="hidden lg:block">
+          <Button
+            onClick={primaryAction}
+            className="h-10 rounded-full bg-black px-5 text-sm font-semibold text-white hover:bg-zinc-800"
+          >
+            Book a call
+            <ArrowUpRight className="ml-1.5 h-4 w-4" />
+          </Button>
+        </div>
+
+        <div ref={activeMenuRef} className="lg:hidden">
+          <button
+            type="button"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-black"
+            onClick={() => setMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+
+      {isMenuOpen ? (
+        <div
+          id="mobile-navigation"
+          className="pointer-events-auto mx-auto mt-2 max-w-6xl overflow-y-auto rounded-2xl border border-black/10 bg-white/98 p-5 shadow-2xl backdrop-blur-xl lg:hidden"
+        >
+          <nav aria-label="Mobile navigation" className="grid gap-1">
+            <Link href="/services" className="py-3 text-lg font-medium text-black" onClick={() => setMenuOpen(false)}>
+              Automation Services
+            </Link>
+            <div className="grid gap-1 border-b border-black/10 pb-4 sm:grid-cols-2">
+              {serviceNavItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="py-2 text-sm text-zinc-600"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            {[
+              ["/blog", "Blog"],
+              ["/about", "About"],
+              [contactHref, "Contact"],
+            ].map(([href, label]) => (
+              <Link
+                key={label}
+                href={href}
+                className="border-b border-black/10 py-3 text-base text-zinc-700"
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+            <Button
+              onClick={() => {
+                setMenuOpen(false)
+                primaryAction()
+              }}
+              className="mt-4 h-12 rounded-full bg-black font-semibold text-white hover:bg-zinc-800"
+            >
+              Book a strategy call
+            </Button>
+          </nav>
+        </div>
+      ) : null}
     </header>
   )
 }

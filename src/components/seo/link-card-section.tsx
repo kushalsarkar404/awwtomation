@@ -21,33 +21,29 @@ export function LinkCardSection({
   }
 
   return (
-    <section className={`py-20 px-4 md:px-12 bg-muted/30 ${className}`}>
-      <div className="max-w-6xl mx-auto space-y-8">
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
+    <section className={`border-y border-white/10 bg-[#09090a] px-4 py-24 md:px-12 ${className}`}>
+      <div className="mx-auto max-w-6xl space-y-12">
+        <div className="mx-auto max-w-3xl space-y-5 text-center">
           {eyebrow ? (
-            <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm text-muted-foreground">
+            <p className="mx-auto flex w-fit items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-violet-200">
+              <span className="h-px w-8 bg-violet-300/70" aria-hidden="true" />
               {eyebrow}
-            </div>
+            </p>
           ) : null}
-          <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
-          {description ? <p className="text-muted-foreground md:text-lg">{description}</p> : null}
+          <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">{title}</h2>
+          {description ? <p className="leading-7 text-muted-foreground md:text-lg">{description}</p> : null}
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 xl:grid-cols-3">
           {links.map((link) => (
             <Link
               key={`${link.href}-${link.title}`}
               href={link.href}
-              className="group rounded-2xl border bg-background p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+              className="group bg-[#0c0c0e] p-7 transition-colors hover:bg-[#141418]"
             >
-              <div className="space-y-3">
-                {link.label ? (
-                  <span className="inline-flex rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-                    {link.label}
-                  </span>
-                ) : null}
-                <h3 className="text-xl font-semibold group-hover:text-primary">{link.title}</h3>
-                <p className="text-sm leading-6 text-muted-foreground">{link.description}</p>
-                <span className="inline-flex items-center text-sm font-medium text-primary">
+              <div className="flex min-h-56 flex-col">
+                <h3 className="text-xl font-semibold group-hover:text-violet-200">{link.title}</h3>
+                <p className="mt-4 text-sm leading-6 text-muted-foreground">{link.description}</p>
+                <span className="mt-auto inline-flex items-center pt-8 text-sm font-medium text-violet-300">
                   Explore resource
                 </span>
               </div>

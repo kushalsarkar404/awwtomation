@@ -175,20 +175,8 @@ export default function TemplateDetailPage({ slug }: TemplateDetailPageProps) {
               <SampleOutputModal sampleOutputUrl={template.sampleOutputUrl} />
             </div>
 
-            {/* Tags Section */}
-            <div className="space-y-4 mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter">Relevant Tags</h2>
-              <div className="flex flex-wrap gap-2">
-                {template.tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    href={`/templates?tag=${encodeURIComponent(tag)}`}
-                    className="inline-flex items-center rounded-full border px-3 py-1 text-sm font-semibold transition-colors hover:bg-muted-foreground/10 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                  >
-                    {tag}
-                  </Link>
-                ))}
-              </div>
+            <div className="mb-12 border-y border-white/10 py-5 text-sm text-muted-foreground">
+              Related topics: {template.tags.join(" · ")}
             </div>
 
             <LinkCardSection

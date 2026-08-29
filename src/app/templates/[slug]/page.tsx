@@ -2,8 +2,14 @@
 import TemplateDetailPage from "./UI"
 import { SeoJsonLd } from "@/components/seo/json-ld"
 import { getTemplateBySlug } from "@/lib/template-utils"
-import { absoluteUrl, buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/seo"
+import { absoluteUrl, buildBreadcrumbSchema, buildWebPageSchema, toMetaDescription, toMetaTitle } from "@/lib/seo"
 import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { automationTemplates } from "@/data/automation-templates"
+
+export function generateStaticParams() {
+  return automationTemplates.map((template) => ({ slug: template.slug }))
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -18,6 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const path = `/templates/${slug}`
   const canonicalUrl = absoluteUrl(path)
+  const title = toMetaTitle(`${template.title} | Awwtomation`)
+  const description = toMetaDescription(template.metaDescription)
   const keywords = Array.from(
     new Set([
       template.title.toLowerCase(),
@@ -29,15 +37,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   )
 
   return {
-    title: `${template.title} - Free Automation Template`,
-    description: template.metaDescription,
+    title,
+    description,
     keywords,
     alternates: {
       canonical: canonicalUrl,
+      types: {
+        "text/markdown": `${canonicalUrl}.md`,
+      },
     },
     openGraph: {
-      title: `${template.title} - Free Automation Template`,
-      description: template.metaDescription,
+      title,
+      description,
       url: canonicalUrl,
       images: [
         {
@@ -48,8 +59,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: "summary_large_image",
-      title: `${template.title} - Free Automation Template`,
-      description: template.metaDescription,
+      title,
+      description,
       images: [absoluteUrl(template.thumbnail)],
     },
     robots: {
@@ -63,8 +74,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params
   const template = getTemplateBySlug(slug)
 
-  const templateSchema = template
-    ? {
+  if (!template) {
+    notFound()
+  }
+
+  const templateSchema = {
         "@context": "https://schema.org",
         "@type": "Product",
         name: template.title,
@@ -72,8 +86,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         image: absoluteUrl(template.thumbnail),
         category: template.category,
         brand: {
-          "@type": "Organization",
-          name: "Awwtomation",
+          "@id": "https://www.awwtomation.com/#organization",
         },
         offers: {
           "@type": "Offer",
@@ -83,7 +96,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           url: absoluteUrl(`/templates/${slug}`),
         },
       }
-    : null
 
   return (
     <>
@@ -100,7 +112,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             { name: "Templates", href: "/templates" },
             { name: template?.title ?? "Template Not Found", href: `/templates/${slug}` },
           ]),
-          ...(templateSchema ? [templateSchema] : []),
+          templateSchema,
         ]}
       />
       <TemplateDetailPage slug={slug} />

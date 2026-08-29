@@ -1,6 +1,6 @@
 import { SeoJsonLd } from "@/components/seo/json-ld"
 import { automationTemplates } from "@/data/automation-templates"
-import { buildBreadcrumbSchema, buildItemListSchema, buildWebPageSchema, templateLibrarySeo } from "@/lib/seo"
+import { buildBreadcrumbSchema, buildFaqSchema, buildItemListSchema, buildWebPageSchema, templateLibrarySeo } from "@/lib/seo"
 import { sharedMetadata } from "../services/_shared/metadata"
 import TemplatesPage from "./UI"
 
@@ -28,6 +28,7 @@ export default function Page() {
               href: `/templates/${template.slug}`,
             })),
           }),
+          buildFaqSchema(templateLibrarySeo.faqs),
         ]}
       />
       <TemplatesPage />

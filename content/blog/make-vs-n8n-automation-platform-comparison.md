@@ -120,7 +120,7 @@ If your main goal is not to compare software but to improve operations, the bett
 
 Choosing between Make and n8n is only part of the work. The harder part is designing the workflow, connecting the systems, and making sure the automation actually supports the business.
 
-That is where [Awwtomation](https://awwtomation.com/) comes in.
+That is where [Awwtomation](https://www.awwtomation.com/) comes in.
 
 We help businesses plan and implement automation systems that support growth, reduce manual work, and fit the rest of the stack. If you want the implementation view first, start with our [automation services](/services) page and then move into the service that matches the bottleneck.
 

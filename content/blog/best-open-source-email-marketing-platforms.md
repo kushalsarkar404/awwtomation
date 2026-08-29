@@ -298,7 +298,7 @@ Many businesses get stuck because they struggle with:
 - **Integrating email systems with CRMs, payment processors, and e-commerce platforms**
 - **Maintaining deliverability and compliance while scaling personalized outreach**
 
-**That’s where [Awwtomation](https://awwtomation.com ) comes in.**
+**That’s where [Awwtomation](https://www.awwtomation.com) comes in.**
 
 ![Awwtomation Email Marketing Automation Overview](https://i.imgur.com/F9kqbx0.webp )
 

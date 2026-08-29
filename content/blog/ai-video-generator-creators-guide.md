@@ -270,12 +270,12 @@ Remember, it’s not about picking the most popular platform, but selecting the 
 
 AI video generators are reshaping how businesses produce video content  offering unprecedented speed, affordability, and scalability. But just using an AI video maker isn’t enough. Without strategic workflows and seamless integration, even the best AI video platforms can deliver inconsistent quality or get disconnected from your brand’s goals.
 
-That’s where [**Awwtomation**](https://awwtomation.com) comes in.
+That’s where [**Awwtomation**](https://www.awwtomation.com) comes in.
 ![AI Voice Generator Awwtomation Overview](https://i.imgur.com/og3OhUx.webp)
 
 
 
-At [Awwtomation](https://awwtomation.com), we help businesses fully automate and integrate AI video creation. Whether you’re using an AI video maker for marketing, training, social media, or product explainers, we set up powerful systems that turn AI-generated video into a core part of your content engine.
+At [Awwtomation](https://www.awwtomation.com), we help businesses fully automate and integrate AI video creation. Whether you’re using an AI video maker for marketing, training, social media, or product explainers, we set up powerful systems that turn AI-generated video into a core part of your content engine.
 
 We don’t just help you create video with AI we build workflows that scale it.
 
@@ -300,7 +300,7 @@ Your AI video tools should work *with* your business—not against it. Awwtomati
 
 **Ready to scale your video production with automation? Let’s build your AI video creation engine.**
 
-- [Explore Our AI Automation Services →](https://awwtomation.com/services)  
+- [Explore Our AI Automation Services →](https://www.awwtomation.com/services)
 - [**Book a Free Consultation for AI Automation →**](https://cal.com/awwtomation/awwtomation-consultation)
 
 ---
@@ -349,4 +349,3 @@ Awwtomation helps you go beyond just using an AI video generator—we build cust
 Whether you're producing 10 or 10,000 videos, Awwtomation ensures it's effortless, brand-consistent, and aligned with your business goals.
 
 ---
-
