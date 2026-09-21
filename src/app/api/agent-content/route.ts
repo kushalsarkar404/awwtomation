@@ -15,9 +15,23 @@ function normalizePath(value: string | null) {
   }
 }
 
+/**
+ * The page a Markdown request is for. Direct calls pass `?path=`. Requests
+ * rewritten by proxy.ts arrive with the *original* URL (e.g. /pricing.md),
+ * because a rewrite does not change request.url for the route handler, so
+ * the path is read back off the .md URL.
+ */
+function resolvePath(url: URL) {
+  const fromQuery = url.searchParams.get("path")
+  if (fromQuery) return normalizePath(fromQuery)
+  if (url.pathname === "/index.md") return "/"
+  if (url.pathname.endsWith(".md")) return normalizePath(url.pathname.slice(0, -3))
+  return null
+}
+
 export async function GET(request: Request) {
   const requestUrl = new URL(request.url)
-  const pathname = normalizePath(requestUrl.searchParams.get("path"))
+  const pathname = resolvePath(requestUrl)
 
   if (!pathname || !isAgentContentPath(pathname)) {
     return new Response("# Not found\n", {

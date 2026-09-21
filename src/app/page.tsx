@@ -1,26 +1,8 @@
-import type { Metadata } from "next"
-import HomePageClient from "./home-page-client"
-import { SeoJsonLd } from "@/components/seo/json-ld"
-import { sharedMetadata } from "./services/_shared/metadata"
-import { buildBreadcrumbSchema, buildFaqSchema, buildWebPageSchema, homePageSeo } from "@/lib/seo"
+import { MarketingPageView, marketingMetadata } from "@/components/templates/marketing-page"
+import { homePage } from "@/content/marketing"
 
-export const metadata: Metadata = sharedMetadata["homepage"]
+export const metadata = marketingMetadata(homePage)
 
 export default function Page() {
-  return (
-    <>
-      <SeoJsonLd
-        data={[
-          buildWebPageSchema({
-            title: homePageSeo.title,
-            description: homePageSeo.description,
-            path: "/",
-          }),
-          buildBreadcrumbSchema([{ name: "Home", href: "/" }]),
-          buildFaqSchema(homePageSeo.faqs),
-        ]}
-      />
-      <HomePageClient />
-    </>
-  )
+  return <MarketingPageView page={homePage} />
 }

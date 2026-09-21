@@ -1,0 +1,382 @@
+AWWTOMATION IMAGE PROMPTS
+=========================
+
+Two rules:
+  1. Photos in public/site-assets are page photography. Photos in public/mockups
+     go inside the phone mock-ups. Never crop one into the other. That is the
+     mistake on the site today: the avatars are cut out of the hero photos.
+  2. Every prompt ends with the house style line below. Paste it in full.
+
+HOUSE STYLE (append to every prompt):
+  Natural available light, soft warm colour grade, shallow depth of field,
+  candid documentary feel, real skin texture, no retouching gloss, shot on a
+  35mm lens. No text, no logos, no watermarks, no visible phone or app screen.
+
+THE CAST (paste the matching description into any prompt that names a person):
+  SITA RAI, 27, Nepali woman, clothing shop owner. Shoulder-length wavy dark
+  brown hair, gold hoop earrings, mustard and rust knitwear, open smile.
+  ANISHA GURUNG, 24, Nepali woman, customer. Straight black bob to the jaw,
+  tiny gold nose stud, pastel shirts and a denim jacket, round face.
+  AARAV SHRESTHA, 30, Nepali man, customer. Short trimmed beard, thick dark
+  hair, olive utility jacket over a plain white tee.
+  ROHAN KC, 26, Nepali man, creator. Loose curly hair, light stubble,
+  oversized washed tees, a canvas camera bag on one shoulder.
+  KIRAN THAPA, 25, Nepali woman, creator. Long dark hair in a loose top bun,
+  thin wire-frame glasses, layered earrings, oversized linen shirts.
+  BIKRAM TAMANG, 36, Nepali man, cafe owner. Close-cropped salt-and-pepper
+  hair, checked shirt with rolled sleeves, dark canvas apron, laugh lines.
+
+
+PAGE PHOTOGRAPHY  ->  public/site-assets/
+=========================================
+
+1. home-hero.jpg
+   Home page hero, behind "Every comment, answered."
+   A young Nepali man in his late twenties leaning back in a desk chair with
+   his hands behind his head, eyes closed, completely relaxed, in a warm home
+   workspace in Kathmandu. An open laptop, a mug and a notebook on the desk in
+   front of him. A big window on the right with soft daylight and a distant
+   mountain ridge outside. The left third of the frame is a plain lit wall,
+   the right third is quiet and uncluttered. 3:2 aspect ratio, 2400x1600.
+
+2. home-together.jpg
+   Home page, the section where the giant word "Together" slides across.
+   ANISHA GURUNG standing on a Kathmandu rooftop looking down at her phone and
+   grinning at what she has just read. Bright open blue sky fills the left half
+   of the frame, city rooftops and a water tank behind her. Mid-morning light.
+   3:2 aspect ratio, 2400x1600.
+
+3. instagram-hero.jpg
+   /product/instagram, behind the "Automatically" checklist.
+   ROHAN KC walking through a Patan side street in the late afternoon,
+   laughing, strings of prayer flags overhead, a pagoda roofline blurred behind
+   him, mid-stride with his hands in his pockets. The left third of the frame
+   is a shaded shopfront wall with nothing in it. 3:2 aspect ratio, 2400x1600.
+
+4. instagram-beyond.jpg
+   /product/instagram, the giant word "Beyond" section.
+   ROHAN KC on a rooftop at golden hour holding his phone out to take a selfie
+   with friends just out of frame, the Kathmandu valley and the Himalaya behind
+   him. Warm low sun, long shadows. 3:2 aspect ratio, 2400x1600.
+
+5. messenger-hero.jpg
+   /product/messenger, behind the "Automatically" checklist.
+   SITA RAI at the desk of her small clothing studio, a rail of jackets behind
+   her, a steamer and a tape measure on the table, smiling at someone off
+   camera. Big window light from the right. 3:2 aspect ratio, 2400x1600.
+
+6. messenger-connect.jpg
+   /product/messenger, the giant word "Connect" section.
+   BIKRAM TAMANG sitting by the window of his Jhamsikhel cafe with a flat white
+   in front of him, laughing at his laptop. Plants, a wooden counter and a
+   chalkboard blurred behind him. Morning light. 3:2 aspect ratio, 2400x1600.
+
+7. creators-hero.jpg
+   /for/creators, hero and the "Automatically" section.
+   KIRAN THAPA filming a reel in her flat: a phone clamped to a small tripod, a
+   ring light just out of frame, mid-sentence talking to camera with her hands
+   up. A clothes rail and plants behind her. The left of the frame is an empty
+   painted wall. 3:2 aspect ratio, 2400x1600.
+
+8. creators-create.jpg
+   /for/creators, the giant word "Create" section.
+   KIRAN THAPA laughing with two friends on the steps of a Kathmandu courtyard,
+   one of them holding a camera. Late afternoon sun across their faces, a plain
+   pale wall filling the left half. 3:2 aspect ratio, 2400x1600.
+
+9. ecommerce-hero.jpg
+   /for/ecommerce, hero and the "Automatically" section.
+   SITA RAI packing online orders at a table: folded knitwear, poly mailers, a
+   tape gun, a small parcel scale and a stack of handwritten address slips. She
+   is smiling as she seals a parcel. Warm indoor light, the left of the frame
+   is a plain shelf wall. 3:2 aspect ratio, 2400x1600.
+
+10. ecommerce-sell.jpg
+    /for/ecommerce, the giant word "Sell" section.
+    ANISHA GURUNG sitting cross-legged on a rug opening a parcel on her lap,
+    tissue paper half unfolded, delighted. Soft window light from the left,
+    plain wall behind her. 3:2 aspect ratio, 2400x1600.
+
+11. agencies-hero.jpg
+    /for/agencies, hero and the "Automatically" section.
+    Four young Nepali colleagues around one end of a long table in a small
+    Kathmandu studio office, sticky notes on the glass behind them, one
+    standing and pointing at a printed plan, everyone engaged. Daylight from a
+    big window on the right, the left of the frame is an empty brick wall.
+    3:2 aspect ratio, 2400x1600.
+
+12. agencies-grow.jpg
+    /for/agencies, the giant word "Grow" section.
+    Two agency founders in their thirties on a Kathmandu rooftop at dusk,
+    mid high-five, a laptop still open on a low table beside them. City lights
+    starting behind them, clear sky filling the left of the frame.
+    3:2 aspect ratio, 2400x1600.
+
+13. brands-hero.jpg
+    /for/brands, hero and the "Automatically" section.
+    A small campaign shoot in progress: a Nepali model in a mustard jacket
+    against a seamless paper backdrop, a photographer crouching with a camera,
+    an assistant holding a reflector, studio strobes, cables on the floor. The
+    left of the frame is bare studio wall. 3:2 aspect ratio, 2400x1600.
+
+14. brands-engage.jpg
+    /for/brands, the giant word "Engage" section.
+    A crowd of young people at an outdoor brand pop-up in Kathmandu, talking
+    and laughing around a simple wooden stall with bunting. Warm evening light,
+    open sky on the left. 3:2 aspect ratio, 2400x1600.
+
+15. usecase-emails-hero.jpg
+    /use-case/collect-emails, hero.
+    ANISHA GURUNG walking through Thamel in the early evening with her phone in
+    one hand, glancing down at it, shopfront lights warm behind her. Half the
+    frame is the quiet street. 3:2 aspect ratio, 2400x1600.
+
+16. usecase-follow-hero.jpg
+    /use-case/request-to-follow, hero.
+    ROHAN KC filming a short video on a Kathmandu rooftop, phone on a small
+    tripod, talking and gesturing to camera. Clear sky, the mountains a pale
+    line on the horizon. 3:2 aspect ratio, 2400x1600.
+
+17. usecase-comments-hero.jpg
+    /use-case/respond-to-comments, hero.
+    SITA RAI photographing a folded jacket on a wooden table with her phone,
+    new stock still on the rail behind her, about to post it. Soft window
+    light. 3:2 aspect ratio, 2400x1600.
+
+18. usecase-followdm-hero.jpg
+    /use-case/follow-to-dm, hero.
+    Three Nepali friends in their twenties shopping together in a small
+    Kathmandu boutique, holding up a jacket and laughing, a clothes rail behind
+    them. Warm shop lighting. 3:2 aspect ratio, 2400x1600.
+
+19. manychat-alt-hero.jpg
+    /manychat-alternative, hero.
+    SITA RAI at a cafe table with her laptop open and a notebook beside it,
+    concentrating, mid-task, a coffee going cold. Big window light from the
+    right, empty wall on the left. 3:2 aspect ratio, 2400x1600.
+
+20. nepal-hero.jpg
+    /instagram-automation-nepal, hero.
+    A Nepali woman in her early thirties behind the counter of her small
+    Kathmandu shop with her phone in her hand, smiling at a customer off
+    camera. Shelves of stock behind her, daylight from the shopfront on the
+    right. 3:2 aspect ratio, 2400x1600.
+
+
+20a. ai-hero.jpg
+    /product/ai, hero and the "Automatically" section.
+    SITA RAI at a desk writing in a notebook with a laptop open beside her,
+    working out the answers to the questions she gets asked every day. Late
+    morning light from a window on the right, the left third of the frame is a
+    plain wall. Do not show the laptop screen. 3:2 aspect ratio, 2400x1600.
+
+20b. ai-answer.jpg
+    /product/ai, the giant word "Answer" section.
+    SITA RAI laughing at her phone in her studio, a rail of clothes soft behind
+    her, clearly pleased at something she has just read. Open wall filling the
+    left of the frame. 3:2 aspect ratio, 2400x1600.
+
+
+CARD PHOTOGRAPHY  ->  public/site-assets/
+=========================================
+Small cards on the use-case and comparison pages. One clear subject, no fine
+detail. These are reused across pages on purpose.
+
+21. card-phone-smile.jpg
+    "Save hours" card and a row on /use-case/collect-emails.
+    KIRAN THAPA on an escalator in a Kathmandu mall, looking down at her phone
+    and smiling to herself, motion blur on the handrail. 16:9 aspect ratio,
+    1400x790.
+
+22. card-selfie-friends.jpg
+    "Convert more" and "Grow from every reel" cards.
+    Four friends squeezing into a phone selfie on a Kathmandu street corner,
+    arms around each other, laughing. Evening light. 16:9 aspect ratio,
+    1400x790.
+
+23. card-meeting-fans.jpg
+    "Build real relationships" and "Keep your fans" cards.
+    KIRAN THAPA stopped on a street by two people who recognise her, all three
+    mid-conversation and smiling. Warm late light. 16:9 aspect ratio, 1400x790.
+
+24. card-editing-laptop.jpg
+    "Stay in control" row and the "Move in an afternoon" card.
+    ROHAN KC editing video on a laptop at a kitchen table, headphones round his
+    neck, a mug and a hard drive beside him. Evening lamp light. 16:9 aspect
+    ratio, 1400x790.
+
+25. card-laughing-friends.jpg
+    "Grow faster" row, "Drop what doesn't" and "Grow loyalty" cards.
+    Three young Nepali friends at an outdoor cafe table laughing at something
+    one of them has said, tea glasses on the table. 16:9 aspect ratio,
+    1400x790.
+
+26. card-checking-comments.jpg
+    "Grow smarter" card and a row on /use-case/respond-to-comments.
+    SITA RAI at her studio table with a phone in one hand and a pen in the
+    other, scanning something, a small pile of parcels beside her. 16:9 aspect
+    ratio, 1400x790.
+
+27. card-packing-orders.jpg
+    "Save hours" card and a row on /instagram-automation-nepal.
+    Close three-quarter view of hands folding a knitted jumper into a poly
+    mailer on a packing table, tape gun and marker in shot, the shop owner's
+    face soft in the background. 16:9 aspect ratio, 1400x790.
+
+28. card-shopping-phone.jpg
+    "Sell more" card and a row on /use-case/respond-to-comments.
+    ANISHA GURUNG on a sofa with her feet up, phone held in both hands,
+    absorbed and half smiling. Soft afternoon window light. 16:9 aspect ratio,
+    1400x790.
+
+29. card-shopfront-chat.jpg
+    "Look good in public" and "Work less" cards.
+    Two customers standing outside a small Kathmandu clothing shop chatting
+    with the owner in the doorway, bags in hand. Late afternoon. 16:9 aspect
+    ratio, 1400x790.
+
+30. card-opening-gift.jpg
+    "Delight fans" card and a row on /use-case/follow-to-dm.
+    Hands lifting a small wrapped gift out of a box with tissue paper, the
+    recipient's delighted face soft behind. 16:9 aspect ratio, 1400x790.
+
+31. card-live-session.jpg
+    A row on /use-case/follow-to-dm.
+    KIRAN THAPA sitting in front of a ring light talking animatedly to a phone
+    on a tripod, a rail of clothes behind her. 16:9 aspect ratio, 1400x790.
+
+32. card-discount-code.jpg
+    "Sell to fans" and "Priced for Nepal" cards.
+    A customer handing rupee notes across a shop counter to a smiling
+    shopkeeper, a folded garment between them. Warm shop light, no readable
+    text on the notes. 16:9 aspect ratio, 1400x790.
+
+33. card-reviewing-numbers.jpg
+    "Keep what works" card and a row on /manychat-alternative.
+    SITA RAI at a desk with a notebook of handwritten figures and a calculator,
+    pen in hand, working something out. Morning light. 16:9 aspect ratio,
+    1400x790.
+
+34. card-team-setup.jpg
+    A row on /manychat-alternative.
+    Two colleagues sharing one laptop at a desk, one pointing at the screen
+    from the side, both concentrating. Small office, daylight. 16:9 aspect
+    ratio, 1400x790.
+
+35. card-typing-nepali.jpg
+    A row on /instagram-automation-nepal.
+    Close-up of a young man's hands typing on a phone held low, his face out of
+    focus above, sitting on a step outside a shop. 16:9 aspect ratio, 1400x790.
+
+36. card-counter-rest.jpg
+    "Sell more" card on /instagram-automation-nepal.
+    A shop owner leaning on her counter with a cup of tea, the shop quiet
+    around her, relaxed and pleased. End of the day light. 16:9 aspect ratio,
+    1400x790.
+
+
+INSIDE THE PHONE  ->  public/mockups/
+=====================================
+These show up as the small round avatars and the post images inside the phone
+mock-ups. They must look phone-shot, not like campaign photography. Replace the
+existing files at these exact names and nothing in the code needs changing.
+
+37. face-sita.jpg
+    Avatar for the shop owner in every chat scene.
+    SITA RAI, head and shoulders, warm smile straight to camera, mustard
+    jumper, plain cream wall behind her, face filling about 70 percent of the
+    frame. 1:1 square aspect ratio, 512x512.
+
+38. face-anisha.jpg
+    Avatar for the customer who comments "PP".
+    ANISHA GURUNG, head and shoulders, slight grin straight to camera, pale
+    blue shirt, soft grey background, face filling about 70 percent of the
+    frame. 1:1 square aspect ratio, 512x512.
+
+39. face-aarav.jpg
+    Avatar for the customer asking about sizes.
+    AARAV SHRESTHA, head and shoulders, relaxed half smile, olive jacket,
+    blurred street behind him, face filling about 70 percent of the frame.
+    1:1 square aspect ratio, 512x512.
+
+40. face-rohan.jpg
+    Avatar for the follower in the follow-to-unlock scene.
+    ROHAN KC, head and shoulders, laughing, washed grey tee, blurred green
+    foliage behind him, face filling about 70 percent of the frame. 1:1 square
+    aspect ratio, 512x512.
+
+41. face-kiran.jpg
+    Avatar for the story-reply and giveaway scenes.
+    KIRAN THAPA, head and shoulders, wire glasses, hair in a bun, linen shirt,
+    plain warm wall behind her, face filling about 70 percent of the frame.
+    1:1 square aspect ratio, 512x512.
+
+42. face-bikram.jpg
+    Avatar for the buyer asking about cash on delivery.
+    BIKRAM TAMANG, head and shoulders, apron, arms folded, blurred cafe counter
+    behind him, face filling about 70 percent of the frame. 1:1 square aspect
+    ratio, 512x512.
+
+43. post-sita.jpg
+    The Instagram post behind "Comment PP for the price". A comment sheet
+    covers the bottom half, so keep the subject in the top half of the frame.
+    A canvas tote bag in mustard and black laid flat on a pale linen backdrop
+    with a sprig of dried flowers, shot from directly above, phone photograph,
+    slightly imperfect framing, subject sitting in the upper half.
+    4:5 portrait aspect ratio, 1080x1350.
+
+44. story-rohan.jpg
+    The Instagram post behind "Comment SIZE for the size chart". Keep the
+    subject in the top half of the frame.
+    Three rain jackets in olive, black and navy hanging on a wooden rail
+    against a white studio wall, shot straight on, phone photograph, jackets
+    in the upper half of the frame. 4:5 portrait aspect ratio, 1080x1350.
+
+45. post-kiran.jpg
+    The Instagram post behind "Comment WIN for the Dashain hamper". Keep the
+    subject in the top half of the frame.
+    A gift hamper on a table: a folded shawl, a candle, a small box tied with
+    jute string, marigold petals scattered around, shot from above at a slight
+    angle, phone photograph, warm lamp light, subject in the upper half.
+    4:5 portrait aspect ratio, 1080x1350.
+
+46. photo-bikram.jpg
+    The Facebook Page post in the Messenger scene. Shown cropped to a wide
+    strip, so keep the interest in the middle band.
+    A cafe counter with a coffee machine, a tray of pastries under a glass dome
+    and a small chalkboard, shot from a customer's eye level, phone photograph,
+    warm light, no readable text on the chalkboard. 4:5 portrait aspect ratio,
+    1080x1350.
+
+47. story-aarav.jpg
+    The story someone replied to in the story-reply scene. Shown as a small
+    thumbnail about 150px wide, so keep it simple and high contrast.
+    Vertical phone photo of a mustard canvas tote held up at arm's length
+    against a plain white wall, one hand in shot. 9:16 vertical aspect ratio,
+    1080x1920.
+
+48. post-anisha.jpg
+    A spare in-phone post, currently unused. Wire it in when a scene needs a
+    second one so the same image never repeats in a rotation.
+    Vertical phone photo looking down at a packing table: three sealed parcels
+    in a row, a tape gun and a marker. 9:16 vertical aspect ratio, 1080x1920.
+
+
+DELETE
+======
+These are unused duplicates, 12.5 MB in total:
+  public/site-assets/home-hero.png
+  public/site-assets/home-together.png
+  public/site-assets/instagram-beyond.png
+  public/site-assets/instagram-hero.png
+  public/site-assets/messenger-connect.png
+  public/site-assets/messenger-hero.png
+
+
+ORDER OF WORK
+=============
+  Items 37 to 48 first. They appear in every phone on the site and are the
+  images that currently give the game away.
+  Then 7 to 14, because four whole business-type pages are showing grey
+  placeholders right now.
+  Then 15 to 36.

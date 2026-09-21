@@ -1,82 +1,86 @@
-import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import CrispChat from "@/components/crisp-chat"
-import { DailyEmailPopup } from "@/components/daily-email-popup"
+import type { Metadata } from "next"
+import { Archivo, Figtree, Geist_Mono } from "next/font/google"
+
+import "./globals.css"
+
 import GoogleAnalytics from "@/components/google-analytics"
+import { BrandGradients } from "@/components/mc/icons"
+import { SiteFooter } from "@/components/mc/site-footer"
+import { FooterSwitch } from "@/components/nav/footer-switch"
+import { SiteHeader } from "@/components/nav/site-header"
 import { SeoJsonLd } from "@/components/seo/json-ld"
-import { SITE_URL, buildOrganizationSchema, buildWebsiteSchema } from "@/lib/seo"
+import { brand } from "@/lib/brand"
+import {
+  SITE_NAME,
+  SITE_URL,
+  buildOrganizationSchema,
+  buildSoftwareSchema,
+  buildWebsiteSchema,
+} from "@/lib/seo"
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Open-licence stand-ins for ManyChat's faces: display, body, mono labels.
+const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], weight: ["800", "900"], display: "swap" })
+const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"], display: "swap" })
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" })
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-});
+const defaultTitle = "Awwtomation · Instagram DM Automation & Comment Auto-Reply"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Awwtomation | AI Automation Agency",
-  description: "AI automation systems for CRM, marketing, content, support, and business growth.",
-  applicationName: "Awwtomation",
+  title: {
+    default: defaultTitle,
+    template: `%s · ${SITE_NAME}`,
+  },
+  description: brand.description,
+  applicationName: SITE_NAME,
+  alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Awwtomation | AI Automation Agency",
-    description: "AI automation systems for CRM, marketing, content, support, and business growth.",
+    title: defaultTitle,
+    description: brand.description,
     url: SITE_URL,
-    siteName: "Awwtomation",
+    siteName: SITE_NAME,
     type: "website",
-    images: [{ url: "/awwtomation-og.webp", width: 1200, height: 630, alt: "Awwtomation AI automation agency" }],
+    locale: "en_NP",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Awwtomation | AI Automation Agency",
-    description: "AI automation systems for CRM, marketing, content, support, and business growth.",
-    images: ["/awwtomation-og.webp"],
+    title: defaultTitle,
+    description: brand.description,
   },
-  icons: {
-    icon: "/favicon.png"
-  },
+  icons: { icon: "/favicon.png" },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
+      index: false,
+      follow: false,
+      "max-snippet": 0,
+      "max-image-preview": "none",
+      "max-video-preview": 0,
     },
   },
 }
 
-
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased`}
-      >
-        <SeoJsonLd data={[buildOrganizationSchema(), buildWebsiteSchema()]} />
+    // The font variables must live on <html>: the theme tokens that reference them resolve at :root.
+    <html lang="en" suppressHydrationWarning className={`${archivo.variable} ${figtree.variable} ${geistMono.variable}`}>
+      <body suppressHydrationWarning>
+        <BrandGradients />
+        <SeoJsonLd data={[buildOrganizationSchema(), buildWebsiteSchema(), buildSoftwareSchema()]} />
         <GoogleAnalytics />
-        <CrispChat />
-        {children}
-        <DailyEmailPopup />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-magenta focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main">{children}</main>
+        <FooterSwitch>
+          <SiteFooter />
+        </FooterSwitch>
       </body>
     </html>
-  );
+  )
 }

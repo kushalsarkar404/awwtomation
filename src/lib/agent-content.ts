@@ -1,460 +1,178 @@
-import { automationTemplates } from "@/data/automation-templates"
-import { getIndexablePostsData, getPostBySlug } from "@/lib/blog"
-import {
-  aboutPageSeo,
-  blogIndexSeo,
-  homePageSeo,
-  serviceDefinitions,
-  servicesHubSeo,
-  SITE_NAME,
-  SITE_URL,
-  templateLibrarySeo,
-  type FaqItem,
-  type ServiceKey,
-} from "@/lib/seo"
-import { getTemplateBySlug } from "@/lib/template-utils"
+import { bespokePages, type BespokePage } from "@/content/bespoke"
+import { marketingPages } from "@/content/marketing"
+import type { MarketingPage, UseCasePage } from "@/content/mc-types"
+import { manychatAlternativePage, nepalLandingPage } from "@/content/seo-landing-pages"
+import { useCasePages } from "@/content/use-case-pages"
+import { getArticle, getArticles, type Collection } from "@/lib/articles"
+import { brand, SIGNUP_URL } from "@/lib/brand"
+import { SITE_URL, type FaqItem } from "@/lib/seo"
 
-export interface AgentContentEntry {
-  path: string
-  markdownPath: string
-  title: string
-  description: string
-  section: "Core pages" | "Services" | "Templates" | "Guides"
-}
+/*
+ * Markdown versions of every live page for AI crawlers (see proxy.ts), plus
+ * /llms.txt and /llms-full.txt. Rendered from the same content objects as the
+ * HTML pages.
+ */
 
-const serviceCapabilities: Record<ServiceKey, string[]> = {
-  "blog-automation": [
-    "Keyword and topic research workflows",
-    "Structured content briefs",
-    "AI-assisted drafting with human review",
-    "CMS publishing and internal linking",
-    "Content refresh and performance reporting",
-  ],
-  "social-media-automation": [
-    "Content planning and approval routing",
-    "Channel-aware scheduling and publishing",
-    "Comment, inbox, and lead triage",
-    "CRM handoff and performance reporting",
-  ],
-  "seo-automation": [
-    "GA4 and Google Search Console reporting",
-    "Keyword rank monitoring",
-    "Technical SEO alerts",
-    "Content briefs and on-page quality checks",
-    "Internal-link and refresh suggestions",
-  ],
-  "email-marketing-automation": [
-    "Lifecycle segmentation and triggers",
-    "Lead nurture and onboarding sequences",
-    "CRM and commerce data synchronization",
-    "Deliverability, conversion, and revenue reporting",
-  ],
-  "crm-automation": [
-    "Lead capture, enrichment, scoring, and routing",
-    "Pipeline updates and ownership rules",
-    "Follow-up reminders and lifecycle handoffs",
-    "Data quality checks and revenue reporting",
-  ],
-  "customer-support-automation": [
-    "Support intake and ticket triage",
-    "Knowledge-grounded answers",
-    "Voice, chat, email, and scheduling workflows",
-    "Human escalation and support analytics",
-  ],
-}
+const landingPages: UseCasePage[] = [...useCasePages, manychatAlternativePage, nepalLandingPage]
+const marketingByPath = new Map(marketingPages.map((page) => [page.path, page]))
+const landingByPath = new Map(landingPages.map((page) => [page.path, page]))
 
-function markdownPath(path: string) {
-  return path === "/" ? "/index.md" : `${path}.md`
-}
+const absolute = (path: string) => (path === "/" ? SITE_URL : `${SITE_URL}${path}`)
+const mdUrl = (path: string) => (path === "/" ? `${SITE_URL}/index.md` : `${SITE_URL}${path}.md`)
 
-function absolutePath(path: string) {
-  return `${SITE_URL}${path}`
-}
-
-function frontmatter({
-  title,
-  description,
-  path,
-}: {
-  title: string
-  description: string
-  path: string
-}) {
-  return [
-    "---",
-    `title: ${JSON.stringify(title)}`,
-    `description: ${JSON.stringify(description)}`,
-    `canonical: ${JSON.stringify(absolutePath(path))}`,
-    `markdown: ${JSON.stringify(absolutePath(markdownPath(path)))}`,
-    `publisher: ${JSON.stringify(SITE_NAME)}`,
-    `language: ${JSON.stringify("en")}`,
-    "---",
-    "",
-  ].join("\n")
+function frontmatter(fields: Record<string, string>) {
+  return `---\n${Object.entries(fields).map(([key, value]) => `${key}: ${JSON.stringify(value)}`).join("\n")}\n---\n`
 }
 
 function faqMarkdown(faqs: FaqItem[]) {
-  if (!faqs.length) return ""
-
-  return [
-    "## Frequently asked questions",
-    "",
-    ...faqs.flatMap((faq) => [`### ${faq.question}`, "", faq.answer, ""]),
-  ].join("\n")
+  return faqs.length ? `\n## Frequently asked questions\n\n${faqs.map((faq) => `### ${faq.question}\n\n${faq.answer}`).join("\n\n")}\n` : ""
 }
 
-function linkList(items: Array<{ title: string; href: string; description?: string }>) {
-  return items
-    .map((item) => `- [${item.title}](${absolutePath(item.href)})${item.description ? `: ${item.description}` : ""}`)
-    .join("\n")
-}
+function marketingMarkdown(page: MarketingPage) {
+  const features = page.features.map((feature) => `### ${feature.title}\n\n${feature.body}`).join("\n\n")
+  const flows = page.seeIt.items.map((item) => `- **${item.title}**: ${item.description}`).join("\n")
+  const steps = page.steps.items.map((step, index) => `${index + 1}. **${step.title}**: ${step.body}`).join("\n")
+  const spotlight = page.spotlight
+    ? `\n## ${page.spotlight.title}\n\n${page.spotlight.body}\n\n${page.spotlight.cards
+        .map((card) => `- **${card.title}**${card.soon ? " (not built yet)" : ""}: ${card.body}`)
+        .join("\n")}\n`
+    : ""
+  return `${frontmatter({ title: page.seo.title, description: page.seo.description, canonical: absolute(page.path) })}
+# ${page.hero.title}
 
-function homepageMarkdown() {
-  const services = Object.values(serviceDefinitions)
+${page.hero.body}
 
-  return `${frontmatter({ title: homePageSeo.title, description: homePageSeo.description, path: "/" })}# ${homePageSeo.heroTitle}
+${page.summary}
 
-${homePageSeo.heroDescription}
+## ${page.intro.title}
 
-## What Awwtomation does
+${page.intro.body}
 
-Awwtomation is an AI automation agency that designs and implements connected workflows for growing businesses. The team focuses on repetitive, rules-based work across marketing, sales, content, support, reporting, and operations while keeping people in control of decisions that need context.
+${features}
 
-## Automation services
+## ${page.seeIt.title}
 
-${linkList(services.map((service) => ({ title: service.shortName, href: service.href, description: service.description })))}
+${flows}
 
-## How an engagement works
+${spotlight}
+## ${page.steps.title}
 
-- Find the constraint by mapping the process, tools, owners, handoffs, and intended outcome.
-- Build the workflow with appropriate integrations, access controls, approval gates, and failure handling.
-- Measure adoption and operational impact, then improve the system as the business changes.
+${steps}
+${faqMarkdown(page.faqs)}
+---
 
-## Measured client outcomes
-
-- $3,000 in monthly savings from automating booking and order workflows.
-- 15 hours reclaimed each week by reducing repetitive coordination and administration.
-- 35% fewer appointment no-shows after rebuilding reminders and follow-up rules.
-
-${faqMarkdown(homePageSeo.faqs)}
-## Contact
-
-- Website: ${SITE_URL}
-- Email: contact@awwtomation.com
-- Consultation: https://cal.com/awwtomation/awwtomation-consultation
+Start free: ${SIGNUP_URL}
 `
 }
 
-function servicesMarkdown() {
-  const services = Object.values(serviceDefinitions)
+function landingMarkdown(page: UseCasePage) {
+  const rows = page.rows.map((row) => `## ${row.title}\n\n${row.bullets.map((b) => `- **${b.bold}** ${b.rest}`).join("\n")}`).join("\n\n")
+  const steps = page.steps.items.map((step, index) => `${index + 1}. **${step.title}**: ${step.body}`).join("\n")
+  return `${frontmatter({ title: page.seo.title, description: page.seo.description, canonical: absolute(page.path) })}
+# ${page.hero.title}
 
-  return `${frontmatter({ title: servicesHubSeo.title, description: servicesHubSeo.description, path: "/services" })}# ${servicesHubSeo.heroTitle}
+${page.hero.body}
 
-${servicesHubSeo.heroDescription}
+${page.summary}
 
-## What is included
+${rows}
 
-An Awwtomation engagement can include process discovery, system and data mapping, workflow design, integration implementation, AI-assisted steps, permissions, human approvals, quality assurance, documentation, launch, monitoring, and optimization. Work can begin with one measurable workflow and expand after the first system is stable.
+## ${page.steps.title}
 
-## Available services
+${steps}
+${faqMarkdown(page.faqs)}
+---
 
-${linkList(services.map((service) => ({ title: service.shortName, href: service.href, description: service.description })))}
-
-## Where to start
-
-- Slow lead response: start with CRM and email automation.
-- Manual reporting: start with SEO or custom operations reporting automation.
-- Inconsistent content production: start with blog and social media automation.
-- Repetitive support demand: start with customer support automation.
-
-${faqMarkdown(servicesHubSeo.faqs)}`
-}
-
-function serviceMarkdown(key: ServiceKey) {
-  const service = serviceDefinitions[key]
-
-  return `${frontmatter({ title: service.title, description: service.description, path: service.href })}# ${service.name}
-
-${service.heroDescription}
-
-## What Awwtomation builds
-
-${serviceCapabilities[key].map((capability) => `- ${capability}`).join("\n")}
-
-## Implementation approach
-
-- Audit the current process, systems, owners, data, and baseline metric.
-- Design triggers, field mappings, business rules, permissions, approvals, and exception paths.
-- Build and test the workflow against realistic success and failure scenarios.
-- Launch with documentation, monitoring, and clear human ownership.
-- Review the measured result and refine the workflow after production use.
-
-## Related resources
-
-${linkList(service.relatedResources)}
-
-${faqMarkdown(service.faqs)}`
-}
-
-function aboutMarkdown() {
-  return `${frontmatter({ title: aboutPageSeo.title, description: aboutPageSeo.description, path: "/about" })}# About Awwtomation
-
-${aboutPageSeo.description}
-
-## Company facts
-
-- Leadership locations: Kathmandu, Nepal and Atlanta, United States.
-- Service area: Remote and worldwide.
-- Core expertise: AI automation, workflow design, systems integration, and reporting.
-- Engagement model: Discovery, implementation, quality assurance, launch, documentation, and optimization.
-
-## Leadership
-
-### Prakhyat Shrestha, Co-founder
-
-Prakhyat leads process mapping, integration architecture, and technical delivery. He is based in Kathmandu and has a B.Tech in Computer Science and Engineering from VIT.
-
-### Kushal Sarkar, Co-founder
-
-Kushal leads discovery, data design, and client delivery. He is based in Atlanta and has an MS in Data Science from Georgia State University.
-
-## Operating principles
-
-- Start with the business process and measurable outcome.
-- Keep permissions, approvals, monitoring, and recovery paths visible.
-- Build maintainable workflows that real teams can understand and own.
-
-${faqMarkdown(aboutPageSeo.faqs)}`
-}
-
-function templateIndexMarkdown() {
-  return `${frontmatter({ title: templateLibrarySeo.title, description: templateLibrarySeo.description, path: "/templates" })}# ${templateLibrarySeo.heroTitle}
-
-${templateLibrarySeo.heroDescription}
-
-## Available automation templates
-
-${linkList(automationTemplates.map((template) => ({ title: template.title, href: `/templates/${template.slug}`, description: template.excerpt })))}
-
-## Before production use
-
-- Review required applications, accounts, permissions, and credentials.
-- Map inputs, fields, schedules, destinations, and business ownership.
-- Test duplicate prevention, rate limits, retries, errors, and recovery behavior.
-- Add human review wherever the workflow can affect customers, brand, money, or sensitive data.
-
-${faqMarkdown(templateLibrarySeo.faqs)}`
-}
-
-function templateMarkdown(slug: string) {
-  const template = getTemplateBySlug(slug)
-  if (!template) return null
-  const path = `/templates/${template.slug}`
-
-  return `${frontmatter({ title: template.title, description: template.metaDescription, path })}# ${template.title}
-
-${template.excerpt}
-
-## Template facts
-
-- Platform: ${template.availability.platform}
-- Difficulty: ${template.difficulty}
-- Category: ${template.category}
-- Price: ${template.currentPrice === 0 ? "Free" : `$${template.currentPrice}`}
-- Creator: ${template.creator.name}
-- Topics: ${template.tags.join(", ")}
-
-## Introduction
-
-${template.introduction}
-
-## Workflow description
-
-${template.workflowDescription}
-
-## Benefits
-
-${template.benefits.map((benefit) => `- ${benefit}`).join("\n")}
-
-## Production checklist
-
-- Replace demonstration credentials and destinations with your own approved accounts.
-- Review permissions, field mappings, schedules, limits, retry behavior, and duplicate prevention.
-- Test the workflow with non-production data before enabling the live trigger.
-- Assign an owner for monitoring, failures, and future changes.
+Start free: ${SIGNUP_URL}
 `
 }
 
-function blogIndexMarkdown() {
-  const posts = getIndexablePostsData().sort(
-    (left, right) => new Date(right.date).getTime() - new Date(left.date).getTime(),
-  )
+function bespokeMarkdown(page: BespokePage) {
+  return `${frontmatter({ title: page.title, description: page.description, canonical: absolute(page.path) })}
+# ${page.heading}
 
-  return `${frontmatter({ title: blogIndexSeo.title, description: blogIndexSeo.description, path: "/blog" })}# ${blogIndexSeo.heroTitle}
-
-${blogIndexSeo.heroDescription}
-
-## Guides and articles
-
-${linkList(posts.map((post) => ({ title: post.title, href: `/blog/${post.slug}`, description: post.excerpt })))}
-
-## Editorial approach
-
-Awwtomation publishes explainers, comparisons, and workflow guides for teams deciding what to automate, what to keep manual, and what to test before launch. Platform features, prices, and policies can change, so readers should verify current provider documentation before production implementation.
-
-${faqMarkdown(blogIndexSeo.faqs)}`
+${page.markdown()}
+${faqMarkdown(page.faqs ?? [])}`
 }
 
-async function blogPostMarkdown(slug: string) {
-  const post = await getPostBySlug(slug)
-  if (!post || post.noindex) return null
-  const path = `/blog/${post.slug}`
-
-  return `${frontmatter({ title: post.title, description: post.excerpt, path })}# ${post.title}
-
-Published: ${post.date}
-
-${post.content.trim()}
-
-## About this guide
-
-Published by Awwtomation. Verify time-sensitive platform features, prices, and policies against current provider documentation before production use.
-`
-}
-
-export function getAgentContentEntries(): AgentContentEntry[] {
-  const core: AgentContentEntry[] = [
-    {
-      path: "/",
-      markdownPath: "/index.md",
-      title: homePageSeo.heroTitle,
-      description: homePageSeo.description,
-      section: "Core pages",
-    },
-    {
-      path: "/about",
-      markdownPath: "/about.md",
-      title: "About Awwtomation",
-      description: aboutPageSeo.description,
-      section: "Core pages",
-    },
-    {
-      path: "/services",
-      markdownPath: "/services.md",
-      title: servicesHubSeo.heroTitle,
-      description: servicesHubSeo.description,
-      section: "Core pages",
-    },
-    {
-      path: "/templates",
-      markdownPath: "/templates.md",
-      title: templateLibrarySeo.heroTitle,
-      description: templateLibrarySeo.description,
-      section: "Templates",
-    },
-    {
-      path: "/blog",
-      markdownPath: "/blog.md",
-      title: blogIndexSeo.heroTitle,
-      description: blogIndexSeo.description,
-      section: "Guides",
-    },
-  ]
-  const services = Object.values(serviceDefinitions).map<AgentContentEntry>((service) => ({
-    path: service.href,
-    markdownPath: markdownPath(service.href),
-    title: service.heroTitle,
-    description: service.description,
-    section: "Services",
-  }))
-  const templates = automationTemplates.map<AgentContentEntry>((template) => ({
-    path: `/templates/${template.slug}`,
-    markdownPath: `/templates/${template.slug}.md`,
-    title: template.title,
-    description: template.metaDescription,
-    section: "Templates",
-  }))
-  const guides = getIndexablePostsData().map<AgentContentEntry>((post) => ({
-    path: `/blog/${post.slug}`,
-    markdownPath: `/blog/${post.slug}.md`,
-    title: post.title,
-    description: post.excerpt,
-    section: "Guides",
-  }))
-
-  return [...core, ...services, ...templates, ...guides]
+function collectionIndex(collection: Collection, path: string, heading: string) {
+  const items = getArticles(collection)
+  const list = items.length ? items.map((a) => `- [${a.title}](${mdUrl(`${path}/${a.slug}`)}): ${a.description}`).join("\n") : "Nothing published yet."
+  return `${frontmatter({ title: heading, canonical: absolute(path) })}\n# ${heading}\n\n${list}\n`
 }
 
 export function isAgentContentPath(pathname: string) {
-  return getAgentContentEntries().some((entry) => entry.path === pathname)
+  return (
+    marketingByPath.has(pathname) ||
+    landingByPath.has(pathname) ||
+    Boolean(bespokePages[pathname]) ||
+    pathname === "/blog" ||
+    pathname === "/how-to" ||
+    /^\/(blog|how-to)\/[a-z0-9-]+$/.test(pathname)
+  )
 }
 
-export async function getAgentMarkdown(pathname: string) {
-  if (pathname === "/") return homepageMarkdown()
-  if (pathname === "/about") return aboutMarkdown()
-  if (pathname === "/services") return servicesMarkdown()
-  if (pathname === "/templates") return templateIndexMarkdown()
-  if (pathname === "/blog") return blogIndexMarkdown()
+export async function getAgentMarkdown(pathname: string): Promise<string | null> {
+  const marketing = marketingByPath.get(pathname)
+  if (marketing) return marketingMarkdown(marketing)
+  const landing = landingByPath.get(pathname)
+  if (landing) return landingMarkdown(landing)
+  const bespoke = bespokePages[pathname]
+  if (bespoke) return bespokeMarkdown(bespoke)
+  if (pathname === "/blog") return collectionIndex("blog", "/blog", "Blog")
+  if (pathname === "/how-to") return collectionIndex("guides", "/how-to", "How to guides")
 
-  const service = Object.values(serviceDefinitions).find((candidate) => candidate.href === pathname)
-  if (service) return serviceMarkdown(service.key)
-
-  if (pathname.startsWith("/templates/")) {
-    return templateMarkdown(pathname.slice("/templates/".length))
+  const match = pathname.match(/^\/(blog|how-to)\/([a-z0-9-]+)$/)
+  if (match) {
+    const article = getArticle(match[1] === "blog" ? "blog" : "guides", match[2])
+    if (!article || article.noindex) return null
+    return `${frontmatter({ title: article.title, description: article.description, canonical: absolute(pathname) })}\n# ${article.title}\n\n${article.content}\n`
   }
-
-  if (pathname.startsWith("/blog/")) {
-    return blogPostMarkdown(pathname.slice("/blog/".length))
-  }
-
   return null
 }
 
 export function buildLlmsTxt() {
-  const entries = getAgentContentEntries()
-  const sections: AgentContentEntry["section"][] = ["Core pages", "Services", "Templates", "Guides"]
+  const link = (path: string, title: string, description: string) => `- [${title}](${mdUrl(path)}): ${description}`
+  const group = (title: string, pages: { path: string; name: string; seo: { description: string } }[]) =>
+    `## ${title}\n\n${pages.map((p) => link(p.path, p.name, p.seo.description)).join("\n")}`
 
-  return `# Awwtomation
+  const products = marketingPages.filter((p) => p.path.startsWith("/product/"))
+  const business = marketingPages.filter((p) => p.path.startsWith("/solution/"))
+  const guides = getArticles("guides")
 
-> Awwtomation is an AI automation agency that designs and implements connected workflows for CRM, email marketing, SEO, content, social media, customer support, reporting, and business operations.
+  return `# ${brand.name}
 
-Use the Markdown links below for concise, machine-readable versions of Awwtomation pages. Canonical HTML pages remain the source URLs for citation and indexing.
+> ${brand.description} Built in Kathmandu, Nepal. Works with Instagram Business and Creator accounts and Facebook Pages, with a free plan of 100 DMs a month. It does not support WhatsApp, TikTok, Telegram, SMS or email.
 
-${sections
-  .map((section) => {
-    const links = entries
-      .filter((entry) => entry.section === section)
-      .map((entry) => `- [${entry.title}](${absolutePath(entry.markdownPath)}): ${entry.description}`)
-      .join("\n")
-    return `## ${section}\n\n${links}`
-  })
-  .join("\n\n")}
+${group("Product", products)}
+
+${group("Solutions by business type", business)}
+
+${group("Solutions by use case", useCasePages)}
+
+## Resources
+
+${link("/pricing", "Pricing", bespokePages["/pricing"].description)}
+${link("/how-to", "How to guides", "Step-by-step setups for Instagram and Messenger automation.")}
+${guides.map((g) => link(`/how-to/${g.slug}`, g.title, g.description)).join("\n")}
+${link("/about", "About", bespokePages["/about"].description)}
+${link("/manychat-alternative", "ManyChat alternative", manychatAlternativePage.seo.description)}
+${link("/instagram-automation-nepal", "Instagram automation in Nepal", nepalLandingPage.seo.description)}
 
 ## Optional
 
-- [Full site Markdown](${SITE_URL}/llms-full.txt): Combined Markdown for all public core, service, template, and guide pages.
-- [XML sitemap](${SITE_URL}/sitemap.xml): Canonical indexable HTML URLs.
+- [Full text of every page](${SITE_URL}/llms-full.txt)
 `
 }
 
 export async function buildLlmsFullTxt() {
-  const pages = await Promise.all(
-    getAgentContentEntries().map(async (entry) => ({
-      entry,
-      content: await getAgentMarkdown(entry.path),
-    })),
-  )
-
-  return `# Awwtomation: full site content
-
-> Combined Markdown representations of Awwtomation's public core, service, template, and guide pages.
-
-${pages
-  .filter((page) => page.content)
-  .map(
-    ({ entry, content }) =>
-      `\n---\n\nSource: ${absolutePath(entry.path)}\nMarkdown: ${absolutePath(entry.markdownPath)}\n\n${content}`,
-  )
-  .join("\n")}
-`
+  const paths = [
+    ...marketingPages.map((p) => p.path),
+    ...landingPages.map((p) => p.path),
+    ...Object.keys(bespokePages),
+    "/how-to",
+    ...getArticles("guides").map((g) => `/how-to/${g.slug}`),
+  ]
+  const docs = await Promise.all(paths.map((path) => getAgentMarkdown(path)))
+  return `# ${brand.name}: full site content\n\n${docs.filter(Boolean).join("\n\n")}`
 }
