@@ -1,7 +1,6 @@
 import { bespokePages, type BespokePage } from "@/content/bespoke"
 import { marketingPages } from "@/content/marketing"
 import type { MarketingPage, UseCasePage } from "@/content/mc-types"
-import { manychatAlternativePage, nepalLandingPage } from "@/content/seo-landing-pages"
 import { useCasePages } from "@/content/use-case-pages"
 import { getArticle, getArticles, type Collection } from "@/lib/articles"
 import { brand, SIGNUP_URL } from "@/lib/brand"
@@ -13,7 +12,7 @@ import { SITE_URL, type FaqItem } from "@/lib/seo"
  * HTML pages.
  */
 
-const landingPages: UseCasePage[] = [...useCasePages, manychatAlternativePage, nepalLandingPage]
+const landingPages: UseCasePage[] = useCasePages
 const marketingByPath = new Map(marketingPages.map((page) => [page.path, page]))
 const landingByPath = new Map(landingPages.map((page) => [page.path, page]))
 
@@ -106,9 +105,8 @@ export function isAgentContentPath(pathname: string) {
     marketingByPath.has(pathname) ||
     landingByPath.has(pathname) ||
     Boolean(bespokePages[pathname]) ||
-    pathname === "/blog" ||
     pathname === "/how-to" ||
-    /^\/(blog|how-to)\/[a-z0-9-]+$/.test(pathname)
+    /^\/how-to\/[a-z0-9-]+$/.test(pathname)
   )
 }
 
@@ -119,12 +117,11 @@ export async function getAgentMarkdown(pathname: string): Promise<string | null>
   if (landing) return landingMarkdown(landing)
   const bespoke = bespokePages[pathname]
   if (bespoke) return bespokeMarkdown(bespoke)
-  if (pathname === "/blog") return collectionIndex("blog", "/blog", "Blog")
   if (pathname === "/how-to") return collectionIndex("guides", "/how-to", "How to guides")
 
-  const match = pathname.match(/^\/(blog|how-to)\/([a-z0-9-]+)$/)
+  const match = pathname.match(/^\/how-to\/([a-z0-9-]+)$/)
   if (match) {
-    const article = getArticle(match[1] === "blog" ? "blog" : "guides", match[2])
+    const article = getArticle("guides", match[1])
     if (!article || article.noindex) return null
     return `${frontmatter({ title: article.title, description: article.description, canonical: absolute(pathname) })}\n# ${article.title}\n\n${article.content}\n`
   }
@@ -156,8 +153,6 @@ ${link("/pricing", "Pricing", bespokePages["/pricing"].description)}
 ${link("/how-to", "How to guides", "Step-by-step setups for Instagram and Messenger automation.")}
 ${guides.map((g) => link(`/how-to/${g.slug}`, g.title, g.description)).join("\n")}
 ${link("/about", "About", bespokePages["/about"].description)}
-${link("/manychat-alternative", "ManyChat alternative", manychatAlternativePage.seo.description)}
-${link("/instagram-automation-nepal", "Instagram automation in Nepal", nepalLandingPage.seo.description)}
 
 ## Optional
 

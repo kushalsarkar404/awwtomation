@@ -33,7 +33,7 @@ const goneTemplatePaths = [
   "/templates/reddit-commenting-automation",
 ]
 
-/** The 22 agency-era blog posts. `/blog` itself stays live for new writing. */
+/** The agency-era blog index and its 22 posts. */
 const goneBlogSlugs = [
   "age-of-automation-how-ai-became-essential",
   "ai-video-generator-creators-guide",
@@ -62,6 +62,7 @@ const goneBlogSlugs = [
 export const GONE_PATHS: ReadonlySet<string> = new Set([
   ...goneServicePaths,
   ...goneTemplatePaths,
+  "/blog",
   ...goneBlogSlugs.map((slug) => `/blog/${slug}`),
 ])
 

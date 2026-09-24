@@ -4,13 +4,13 @@ import path from "path"
 import matter from "gray-matter"
 
 /**
- * Markdown collections: content/blog and content/guides.
+ * Markdown collection: content/guides.
  *
  * Frontmatter: title (required), description, date (YYYY-MM-DD), color (card
  * background, hex), noindex. "## Q: … / A: …" blocks become FAQ schema.
  */
 
-export type Collection = "blog" | "guides"
+export type Collection = "guides"
 
 export interface Article {
   collection: Collection

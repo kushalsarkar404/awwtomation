@@ -1,5 +1,4 @@
 import { BecauseItWorks, FeatureRows, SeenThis, TestimonialRail } from "@/components/mc/landing/body"
-import { ManychatComparison, NepalPricing } from "@/components/mc/landing/extras"
 import { Finale } from "@/components/mc/landing/finale"
 import { LandingHero } from "@/components/mc/landing/hero"
 import { CascadeSteps } from "@/components/mc/landing/steps"
@@ -34,8 +33,6 @@ export function UseCasePageView({ page }: { page: UseCasePage }) {
       <LandingHero page={page} />
       <SeenThis page={page} />
       <BecauseItWorks page={page} />
-      {page.extra === "manychat-comparison" ? <ManychatComparison /> : null}
-      {page.extra === "nepal-pricing" ? <NepalPricing /> : null}
       <FeatureRows page={page} />
       <TestimonialRail title={page.testimonialsTitle} />
       <CascadeSteps page={page} />

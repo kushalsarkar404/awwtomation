@@ -9,10 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: absoluteUrl(path),
     lastModified: new Date(),
   }))
-  const articles = [
-    ...getArticles("blog").map((article) => `/blog/${article.slug}`),
-    ...getArticles("guides").map((article) => `/how-to/${article.slug}`),
-  ].map((path) => ({ url: absoluteUrl(path), lastModified: new Date() }))
+  const guides = getArticles("guides").map((article) => ({
+    url: absoluteUrl(`/how-to/${article.slug}`),
+    lastModified: new Date(),
+  }))
 
-  return [...staticPages, ...articles]
+  return [...staticPages, ...guides]
 }

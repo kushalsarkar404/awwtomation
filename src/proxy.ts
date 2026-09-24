@@ -49,7 +49,7 @@ function canonicalPath(pathname: string) {
 const publicContentPaths = new Set(allSitePaths)
 
 function isPublicContentPath(pathname: string) {
-  return publicContentPaths.has(pathname) || /^\/(blog|how-to)\/[^/]+$/.test(pathname)
+  return publicContentPaths.has(pathname) || /^\/how-to\/[^/]+$/.test(pathname)
 }
 
 function appendVary(headers: Headers, value: string) {

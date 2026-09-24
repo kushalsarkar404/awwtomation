@@ -5,7 +5,6 @@ import { test } from "node:test"
 
 import { bespokePages } from "@/content/bespoke"
 import { marketingPages } from "@/content/marketing"
-import { manychatAlternativePage, nepalLandingPage } from "@/content/seo-landing-pages"
 import { useCasePages } from "@/content/use-case-pages"
 import { getArticles } from "@/lib/articles"
 import { allSitePaths, businessLinks, headerMenus, resourceLinks, useCaseLinks } from "@/lib/nav"
@@ -19,7 +18,7 @@ test("menus match the requested architecture", () => {
   )
   assert.deepEqual(businessLinks.map((l) => l.label), ["for Creators", "for eCommerce", "for Agencies", "for Brands"])
   assert.deepEqual(useCaseLinks.map((l) => l.label), ["Collect Emails", "Request to Follow", "Respond to Comments", "Follow to DM"])
-  assert.deepEqual(resourceLinks.map((l) => l.label), ["Blog", "How To Guides", "About"])
+  assert.deepEqual(resourceLinks.map((l) => l.label), ["How To Guides", "About"])
 })
 
 test("every nav and sitemap path has a page file", () => {
@@ -37,7 +36,7 @@ test("every business and use-case link has content", () => {
 test("titles and descriptions fit search results and are unique", () => {
   const seos = [
     ...marketingPages.map((p) => ({ path: p.path, ...p.seo })),
-    ...[...useCasePages, manychatAlternativePage, nepalLandingPage].map((p) => ({ path: p.path, ...p.seo })),
+    ...useCasePages.map((p) => ({ path: p.path, ...p.seo })),
     ...Object.values(bespokePages).map((p) => ({ path: p.path, title: p.title, description: p.description })),
     ...getArticles("guides").map((g) => ({ path: `/how-to/${g.slug}`, title: g.title, description: g.description })),
   ]

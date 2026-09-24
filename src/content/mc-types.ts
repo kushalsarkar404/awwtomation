@@ -117,8 +117,6 @@ export interface UseCasePage {
   faqs: FaqItem[]
   footerBubbles: string[]
   summary: string
-  /** Optional page-specific block shown after the "because" section. */
-  extra?: "manychat-comparison" | "nepal-pricing"
 }
 
 export interface UseCaseStep {

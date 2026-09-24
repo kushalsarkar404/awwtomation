@@ -4,7 +4,7 @@ import type { Article } from "@/lib/articles"
 
 /** Card from ManyChat's How-to grid: colourful art on top, "How to" + title below. */
 export function ArticleCard({ article, prefix }: { article: Article; prefix?: string }) {
-  const href = article.collection === "guides" ? `/how-to/${article.slug}` : `/blog/${article.slug}`
+  const href = `/how-to/${article.slug}`
   const title = prefix && article.title.toLowerCase().startsWith(prefix.toLowerCase()) ? article.title.slice(prefix.length).trim() : article.title
   return (
     <Link href={href} className="group block overflow-hidden bg-white shadow-[0_2px_24px_-8px_rgba(0,0,0,0.18)] transition-transform duration-300 hover:-translate-y-1">

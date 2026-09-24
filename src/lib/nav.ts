@@ -50,7 +50,6 @@ export const useCaseLinks: NavLink[] = [
 ]
 
 export const resourceLinks: NavLink[] = [
-  { label: "Blog", href: "/blog" },
   { label: "How To Guides", href: "/how-to" },
   { label: "About", href: "/about" },
 ]
@@ -70,15 +69,10 @@ export const headerMenus: NavMenu[] = [
     label: "Resources",
     style: "text",
     columns: [
-      { heading: "Learn", links: resourceLinks.slice(0, 2) },
-      { heading: "Company", links: resourceLinks.slice(2) },
+      { heading: "Learn", links: resourceLinks.slice(0, 1) },
+      { heading: "Company", links: resourceLinks.slice(1) },
     ],
   },
-]
-
-export const compareLinks: NavLink[] = [
-  { label: "ManyChat alternative", href: "/manychat-alternative" },
-  { label: "Instagram automation Nepal", href: "/instagram-automation-nepal" },
 ]
 
 export const legalLinks: NavLink[] = [
@@ -92,18 +86,17 @@ export const footerColumns: NavColumn[] = [
   { heading: "Solutions", links: businessLinks },
   { heading: "Use cases", links: useCaseLinks },
   { heading: "Resources", links: resourceLinks },
-  { heading: "Compare", links: compareLinks },
   { heading: "Other", links: legalLinks },
 ]
 
 /** Routes that use the stripped-down landing header and footer (ManyChat's use-case pages). */
-export const LANDING_PREFIXES = ["/use-case/", "/manychat-alternative", "/instagram-automation-nepal"]
+export const LANDING_PREFIXES = ["/use-case/"]
 
 export function isLandingPath(pathname: string) {
   return LANDING_PREFIXES.some((prefix) => pathname.startsWith(prefix))
 }
 
-/** Every indexable static path. Guides and blog posts are added in sitemap.ts. */
+/** Every indexable static path. Guides are added in sitemap.ts. */
 export const allSitePaths: string[] = [
   "/",
   "/pricing",
@@ -111,6 +104,5 @@ export const allSitePaths: string[] = [
   ...businessLinks.map((l) => l.href),
   ...useCaseLinks.map((l) => l.href),
   ...resourceLinks.map((l) => l.href),
-  ...compareLinks.map((l) => l.href),
   ...legalLinks.map((l) => l.href),
 ]
