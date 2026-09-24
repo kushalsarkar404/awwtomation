@@ -12,10 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const post = getArticle("blog", slug)
   if (!post) return {}
-  return {
-    ...pageMetadata({ title: post.title, description: post.description, path: `/blog/${post.slug}` }),
-    robots: { index: false, follow: false },
-  }
+  return pageMetadata({ title: post.title, description: post.description, path: `/blog/${post.slug}` })
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {

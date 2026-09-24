@@ -63,7 +63,7 @@ function appendVary(headers: Headers, value: string) {
   headers.set("Vary", Array.from(values).join(", "))
 }
 
-function markNoindex(response: NextResponse) {
+function markMarkdownNoindex(response: NextResponse) {
   response.headers.set("X-Robots-Tag", "noindex, nofollow")
   return response
 }
@@ -127,7 +127,7 @@ export function proxy(request: NextRequest) {
 
   // 2. Markdown for AI crawlers.
   const path = canonicalPath(requestedPath)
-  if (!isPublicContentPath(path)) return markNoindex(NextResponse.next())
+  if (!isPublicContentPath(path)) return NextResponse.next()
 
   const explicitMarkdownPath = requestedPath.endsWith(".md")
   const explicitMarkdown = explicitMarkdownPath || request.nextUrl.searchParams.get("format") === "md"
@@ -141,14 +141,14 @@ export function proxy(request: NextRequest) {
       markdownUrl.search = ""
       const redirect = NextResponse.redirect(markdownUrl, 307)
       appendVary(redirect.headers, "Accept, User-Agent")
-      return markNoindex(redirect)
+      return markMarkdownNoindex(redirect)
     }
 
     const url = request.nextUrl.clone()
     url.pathname = "/api/agent-content"
     url.search = ""
     url.searchParams.set("path", path)
-    return markNoindex(NextResponse.rewrite(url))
+    return markMarkdownNoindex(NextResponse.rewrite(url))
   }
 
   const response = NextResponse.next()
@@ -158,7 +158,7 @@ export function proxy(request: NextRequest) {
     `<https://www.awwtomation.com${markdownPath}>; rel="alternate"; type="text/markdown"`,
   )
   appendVary(response.headers, "Accept, User-Agent")
-  return markNoindex(response)
+  return response
 }
 
 export const config = {

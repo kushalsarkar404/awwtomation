@@ -49,14 +49,11 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/favicon.png" },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
-      "max-snippet": 0,
-      "max-image-preview": "none",
-      "max-video-preview": 0,
+      index: true,
+      follow: true,
     },
   },
 }
