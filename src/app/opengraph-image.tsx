@@ -55,7 +55,7 @@ export default async function OpengraphImage() {
                 letterSpacing: "0.08em",
               }}
             >
-              GET STARTED FREE
+              GET STARTED
             </div>
           </div>
         </div>

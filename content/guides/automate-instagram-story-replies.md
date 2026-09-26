@@ -9,7 +9,7 @@ Story replies come in fast and disappear in 24 hours. Answer every one automatic
 
 ## Steps
 
-1. **Open Story reply link.** Go to **Automations → Templates → Story reply link**.
+1. **Open "Give coupons in stories".** Go to **Automations → Browse templates**, pick it and click **Use template**.
 2. **Set the keyword.** The word people reply with: `SALE`, `CODE` or `YES`.
 3. **Write the message.** The code or link, plus when it expires.
 4. **Turn it on before you post.** So the first replies are answered too.

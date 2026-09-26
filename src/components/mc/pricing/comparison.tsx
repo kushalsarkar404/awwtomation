@@ -26,14 +26,14 @@ function Value({ value, large }: { value: string | boolean; large?: boolean }) {
 /** Desktop: every plan side by side. Phones: pick a plan, see its column. */
 export function ComparisonTable() {
   const [full, setFull] = useState(false)
-  const [plan, setPlan] = useState(1)
+  const [plan, setPlan] = useState(0)
   const groups = full ? COMPARISON : COMPARISON.slice(0, 1)
 
   return (
     <section className="bg-white px-5 pb-28 sm:px-10 lg:pb-[9vw]">
       {/* Phones and tablets */}
       <div className="md:hidden">
-        <div role="radiogroup" aria-label="Plan" className="sticky top-[68px] z-10 grid grid-cols-4 gap-1 rounded-full bg-fog p-1">
+        <div role="radiogroup" aria-label="Plan" className="sticky top-[68px] z-10 grid grid-cols-3 gap-1 rounded-full bg-fog p-1">
           {PLANS.map((option, index) => (
             <button
               key={option.id}

@@ -1,6 +1,6 @@
 # awwtomation.com
 
-Marketing site for **Awwtomation**: Instagram and Facebook comment-to-DM automation, built in Kathmandu. The product itself lives in a separate repo and runs at `app.awwtomation.com`; every signup and login button on this site points there (`src/lib/brand.ts`).
+Marketing site for **Awwtomation**: Nepal's No.1 chat marketing platform for Instagram and Facebook Messenger, built in Kathmandu. The product itself lives in a separate repo and runs at `app.awwtomation.com`; every signup and login button on this site points there (`src/lib/brand.ts`).
 
 Next.js 16 (App Router, Turbopack) · React 19 · Tailwind CSS 4.
 
@@ -33,7 +33,7 @@ The site follows ManyChat's page architecture. Desktop sizes were measured from 
 | Chat mock-up scripts | `src/content/chats.ts` |
 | SEO + FAQs for pricing, about, legal | `src/content/bespoke.ts` |
 | How-to guides and blog posts (Markdown) | `content/guides/`, `content/blog/` |
-| Plans, rupee conversion (`NPR_PER_USD`) | `src/lib/pricing.ts` (keep USD in step with the app's `lib/billing/plans.ts`) |
+| Plans and prices (USD, no free plan) | `src/lib/pricing.ts` (keep in step with the app's `lib/billing/plans.ts`) |
 | Design tokens (colours, type scale, grid, glass nav) | `src/app/globals.css` |
 | Header (full logo at the top, glass bar with the mark once scrolled) | `src/components/nav/site-header.tsx` |
 | Sections and primitives | `src/components/mc/` |

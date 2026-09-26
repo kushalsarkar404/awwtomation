@@ -4,8 +4,8 @@ import { getArticles } from "@/lib/articles"
 import { buildBreadcrumbSchema, buildItemListSchema, buildWebPageSchema, pageMetadata } from "@/lib/seo"
 
 const seo = {
-  title: "How To Guides: Instagram & Messenger Automation",
-  description: "Step-by-step guides to Instagram and Facebook automation: send links from comments, collect emails, auto-reply to DMs and more.",
+  title: "How-To Guides: Instagram & Messenger Chat Marketing",
+  description: "Step-by-step chat marketing guides for Instagram and Facebook Messenger: send links from comments, collect emails, auto-reply to DMs and more.",
   path: "/how-to",
 }
 

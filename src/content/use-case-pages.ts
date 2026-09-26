@@ -1,6 +1,6 @@
 import type { UseCasePage } from "@/content/mc-types"
 
-const checks = ["Set up in minutes", "No credit card", "Cancel anytime"]
+const checks = ["Set up in minutes", "Build before you pay", "Cancel anytime"]
 
 const standardFinaleChecks = {
   smarter: ["Live in about five minutes", "Runs on the posts you choose", "Every interested fan answered", "More creating, less replying"],
@@ -11,14 +11,14 @@ export const collectEmailsPage: UseCasePage = {
   path: "/use-case/collect-emails",
   name: "Collect Emails",
   seo: {
-    title: "Collect Emails from Instagram DMs Automatically",
-    description: "Collect emails from Instagram comments and DMs: ask in the chat, check the address and save it to the contact automatically. Free plan.",
+    title: "Collect Emails from Instagram & Messenger DMs",
+    description: "Collect emails from comments and DMs on Instagram and Messenger: ask in the chat, check the address and save it to the contact automatically.",
   },
   accent: "#fb0df7",
   hero: {
-    title: "Collect emails from your Instagram DMs",
-    body: "Ask for an email in the DM, check it and send your freebie, automatically. No forms needed.",
-    social: "Free to start, no card needed",
+    title: "Collect emails from your DMs",
+    body: "Ask for an email in Instagram or Messenger, check it and send your freebie, automatically. No forms needed.",
+    social: "Build it now, pay when you go live",
   },
   showcase: {
     photo: "Creator walking through the city with her phone",
@@ -40,7 +40,7 @@ export const collectEmailsPage: UseCasePage = {
   because: {
     title: "Built to convert.",
     body: "Emails you collect are yours. No algorithm stands between you and your audience.",
-    checks: ["Set up in minutes", "No credit card", "Emails validated"],
+    checks: ["Set up in minutes", "Build before you pay", "Emails validated"],
   },
   rows: [
     {
@@ -81,28 +81,28 @@ export const collectEmailsPage: UseCasePage = {
     ],
   },
   faqs: [
-    { question: "How long does setup take?", answer: "About five minutes. Open the Collect Emails template, choose a keyword and switch it on." },
+    { question: "How long does setup take?", answer: "About five minutes. Open the \"Grow your email list\" template, choose a keyword and switch it on." },
     { question: "Will it sound like a bot?", answer: "No. You write every message, and your team can jump into any conversation." },
     { question: "Can I control what gets sent?", answer: "Yes. You write the messages, choose the trigger, and can pause the automation whenever you want." },
     { question: "Where do the emails go?", answer: "Onto each contact in Awwtomation. Export them to CSV any time." },
   ],
   footerBubbles: ["Want the free guide?", "Yes please!", "Check your inbox 💌"],
   summary:
-    "Awwtomation collects emails from Instagram comments and DMs inside the conversation. A keyword comment or DM starts a flow that asks for an email, validates it, re-asks if it's mistyped, saves it to the contact and tags them as a lead. Contacts export to CSV.",
+    "Awwtomation collects emails from Instagram and Facebook Messenger comments and DMs inside the conversation. A keyword comment or DM starts a flow that asks for an email, validates it, re-asks if it's mistyped, saves it to the contact and tags them as a lead. Contacts export to CSV.",
 }
 
 export const requestToFollowPage: UseCasePage = {
   path: "/use-case/request-to-follow",
   name: "Request to Follow",
   seo: {
-    title: "Request to Follow: Turn Comments into Followers",
-    description: "Ask people to follow before they get your link. Awwtomation checks follow status in the DM and sends the link once they follow. Free plan.",
+    title: "Instagram Follow Gate: Turn Comments into Followers",
+    description: "Ask people to follow before they get your link. Awwtomation checks Instagram follow status in the DM and sends the link once they follow.",
   },
   accent: "#7b34ce",
   hero: {
     title: "Turn every comment into a new follower",
     body: "Ask people to follow before they get the link. Awwtomation checks and delivers automatically.",
-    social: "Free to start, no card needed",
+    social: "Build it now, pay when you go live",
   },
   showcase: {
     photo: "Creator filming a reel outdoors",
@@ -124,7 +124,7 @@ export const requestToFollowPage: UseCasePage = {
   because: {
     title: "Built to convert.",
     body: "Every reel that travels becomes followers who stay, not views that vanish.",
-    checks: ["Set up in minutes", "No credit card", "Follows checked for you"],
+    checks: ["Set up in minutes", "Build before you pay", "Follows checked for you"],
   },
   rows: [
     {
@@ -179,14 +179,14 @@ export const respondToCommentsPage: UseCasePage = {
   path: "/use-case/respond-to-comments",
   name: "Respond to Comments",
   seo: {
-    title: "Auto-Reply to Instagram Comments with a DM",
-    description: "Automatically reply to every Instagram comment: publicly under the comment and privately by DM with your link or offer. Free plan.",
+    title: "Auto-Reply to Instagram & Facebook Comments by DM",
+    description: "Reply to every comment on Instagram and your Facebook Page automatically: publicly under the comment and privately by DM with your link or offer.",
   },
   accent: "#3c42c4",
   hero: {
     title: "Reply to every comment automatically",
     body: "Answer publicly under the comment and send the details by DM, in seconds.",
-    social: "Free to start, no card needed",
+    social: "Build it now, pay when you go live",
   },
   showcase: {
     photo: "Shop owner posting a new product",
@@ -225,8 +225,8 @@ export const respondToCommentsPage: UseCasePage = {
       photo: "Customer shopping on her phone",
       bullets: [
         { icon: "click", bold: "Send links by DM", rest: "with tappable buttons" },
-        { icon: "tag", bold: "Tag every commenter", rest: "by the post they came from" },
-        { icon: "trend", bold: "Track clicks", rest: "for every automation" },
+        { icon: "tag", bold: "Tag every commenter", rest: "for follow-up later" },
+        { icon: "trend", bold: "Track clicks", rest: "with tracked links" },
       ],
     },
   ],
@@ -256,7 +256,7 @@ export const respondToCommentsPage: UseCasePage = {
   ],
   footerBubbles: ["Price?", "Sent to your DMs!", "Got it, thanks 🙌"],
   summary:
-    "Awwtomation automatically responds to Instagram comments: a keyword comment (or any comment) on chosen posts triggers a public reply under the comment and a private DM with links and buttons, and saves the commenter as a contact.",
+    "Awwtomation automatically responds to Instagram and Facebook Page comments: a keyword comment (or any comment) on chosen posts triggers a public reply under the comment and a private DM or Messenger message with links and buttons, and saves the commenter as a contact.",
 }
 
 export const followToDmPage: UseCasePage = {
@@ -264,13 +264,13 @@ export const followToDmPage: UseCasePage = {
   name: "Follow to DM",
   seo: {
     title: "Follow to DM: Exclusive Instagram DMs for Your Followers",
-    description: "Reward followers with exclusive links and codes by DM. Awwtomation checks who follows you and sends the DM only to followers. Free plan.",
+    description: "Reward followers with exclusive links and codes by DM. Awwtomation checks who follows you and sends the DM only to followers.",
   },
   accent: "#ff4c00",
   hero: {
     title: "Reward followers with exclusive DMs",
     body: "Send exclusive links, codes and offers by DM, only to the people who follow you.",
-    social: "Free to start, no card needed",
+    social: "Build it now, pay when you go live",
   },
   showcase: {
     photo: "Friends shopping together",

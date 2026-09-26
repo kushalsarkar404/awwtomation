@@ -13,8 +13,8 @@ Plenty of customers still find you on Facebook. Answer their comments in Messeng
 
 ## Steps
 
-1. **Connect your Page.** Open **Channels** and log in with Facebook, then select your Page.
-2. **Create a comment automation.** Choose the Page post, or all posts.
+1. **Connect your Page.** On the **Dashboard**, click **Connect**, then **Connect Facebook Page**. Sign in with Facebook, choose your Page and click **Connect Page**.
+2. **Open "Auto-reply to Page comments".** Go to **Automations → Browse templates**, pick it and click **Use template**. Choose **All posts** or **Specific posts**.
 3. **Set the keyword.** `MENU`, `PRICE` or `INFO`.
 4. **Write the Messenger message.** Add buttons for your menu, price list or order link.
 5. **Add public replies.** So the next person sees that commenting works.
@@ -28,4 +28,4 @@ A: Yes. Messenger chats land in the shared inbox, where conversations can be ass
 
 ## Q: Are there limits on Facebook?
 
-A: Meta allows one private reply per comment and follow-up messages inside the 24-hour window. Awwtomation enforces both.
+A: Meta allows one private reply per comment (on Instagram too) and follow-up messages inside the 24-hour window. Awwtomation enforces both.

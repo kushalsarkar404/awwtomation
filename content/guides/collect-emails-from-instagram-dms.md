@@ -10,10 +10,10 @@ Forms lose people. Asking for an email inside the conversation doesn't. Here's h
 ## Steps
 
 1. **Pick an offer.** A guide, catalogue or price list works best.
-2. **Open the Collect Emails template.** Go to **Automations → Templates → Collect emails**.
+2. **Open "Grow your email list".** Go to **Automations → Browse templates**, pick it and click **Use template**. On a Facebook Page, use "Collect emails in Messenger".
 3. **Set the trigger.** A comment keyword like `GUIDE`, or a DM keyword.
 4. **Write the question.** Ask plainly: "What's the best email to send it to?" Email validation is already switched on.
-5. **Keep the lead tag.** Everyone who answers is tagged as a lead.
+5. **Keep the lead tag.** The template's **Add tag** step tags everyone who reaches it as a lead.
 6. **Turn it on.** New emails appear on each contact under **Contacts**.
 
 ## What happens with a typo

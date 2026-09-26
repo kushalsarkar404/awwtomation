@@ -96,7 +96,7 @@ export function BecauseItWorks({ page }: { page: UseCasePage }) {
       <p className="mc-sub mx-auto mt-6 max-w-[38rem] lg:mt-[2.3vw] lg:max-w-[37.8vw]">{page.because.body}</p>
       <div className="mt-8 flex flex-wrap items-center justify-center gap-5 lg:mt-[2vw] lg:gap-[3.4vw]">
         <McButton href={SIGNUP_URL} variant="magenta" size="lg">
-          Start for free
+          Get started
         </McButton>
         <ul className="flex max-w-[16rem] flex-wrap gap-x-5 gap-y-1.5 text-left text-[0.875rem] text-mute lg:max-w-[17vw] lg:text-[clamp(0.875rem,0.9vw,1rem)]">
           {page.because.checks.map((check) => (
@@ -140,7 +140,7 @@ export function FeatureRows({ page }: { page: UseCasePage }) {
                 ))}
               </ul>
               <McButton href={SIGNUP_URL} variant="black" size="lg" className="mt-9 lg:mt-[2.6vw]">
-                Try for free
+                Get started
               </McButton>
             </div>
           </div>

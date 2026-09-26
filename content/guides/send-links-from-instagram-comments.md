@@ -10,16 +10,16 @@ Asking people to "comment LINK" is the easiest call to action on Instagram. Here
 ## What you need
 
 - An Instagram **Business or Creator** account
-- A free Awwtomation account
+- An Awwtomation account on any plan
 
 ## Steps
 
-1. **Connect Instagram.** In Awwtomation, open **Channels** and log in with Instagram.
-2. **Open the Link in DM template.** Go to **Automations → Templates → Link in DM**.
+1. **Connect Instagram.** On the **Dashboard**, click **Connect**, then **Connect Instagram** and sign in with Instagram.
+2. **Open the "Auto-DM links from comments" template.** Go to **Automations → Browse templates**, pick it and click **Use template**.
 3. **Set your keyword.** Type the word people should comment, like `LINK` or `SHOP`. Add common misspellings too.
 4. **Choose the posts.** Pick a specific reel or post, or run it on all posts.
 5. **Write the DM.** Add a short message and a button with your link.
-6. **Add a public reply.** Write two or three short replies. One is picked at random for each comment.
+6. **Add a public reply.** Under **Reply under the comment**, write a few short replies. One is picked at random for each comment.
 7. **Turn it on.** Then tell people in your caption: "Comment LINK and I'll send it to you."
 
 ## Tips
@@ -34,4 +34,4 @@ A: Usually within a few seconds. On very busy posts, messages queue to stay unde
 
 ## Q: Can someone get the link twice?
 
-A: By default each person gets the message once per automation. You can change that in the automation's settings.
+A: By default each person gets the message once per automation (**Repeats → Once per person**). You can change that per automation.

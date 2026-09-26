@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation"
+import { permanentRedirect } from "next/navigation"
 
 export default function Page() {
-  redirect("/solution/for-agencies")
+  permanentRedirect("/solution/for-agencies")
 }

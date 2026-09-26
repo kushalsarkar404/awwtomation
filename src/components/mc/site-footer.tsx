@@ -1,11 +1,11 @@
 import Link from "next/link"
 
-import { PhotoSlot } from "@/components/mc/placeholder"
+import { FooterVideo } from "@/components/mc/footer-video"
 import { Logo } from "@/components/site/logo"
 import { brand } from "@/lib/brand"
 import { footerColumns } from "@/lib/nav"
 
-/** Black footer: logo and link columns on the left, a video slot on the right. */
+/** Black footer: logo and link columns on the left, the brand film on the right. */
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/25 bg-ink text-white">
@@ -35,7 +35,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <PhotoSlot video tone="dark" label="Brand film, Awwtomation in 60 seconds" className="aspect-[846/476] w-full" />
+          <FooterVideo className="aspect-video" />
           <p className="mc-label mt-4 text-right text-white/60 lg:mt-[1.05vw]">
             © {new Date().getFullYear()}, {brand.company}
           </p>

@@ -4,14 +4,14 @@ import { useEffect, useState } from "react"
 
 import { McButton } from "@/components/mc/button"
 import { SIGNUP_URL } from "@/lib/brand"
-import { formatNpr, PLANS, toNpr } from "@/lib/pricing"
+import { formatUsd, PLANS } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 
-/* Each answer maps to the smallest plan that covers it (0 Free … 3 Agency). */
+/* Each answer maps to the smallest plan that covers it (0 Starter … 2 Agency). */
 const questions = [
-  { q: "How many Instagram accounts and Facebook Pages?", options: [["1", 0], ["2–3", 1], ["4–10", 2], ["11 or more", 3]] },
-  { q: "How many DMs a month?", options: [["Up to 100", 0], ["Up to 2,000", 1], ["Up to 15,000", 2], ["More than that", 3]] },
-  { q: "How many people on your team?", options: [["Just me", 0], ["2–3", 1], ["4–10", 2], ["11 or more", 3]] },
+  { q: "How many Instagram accounts and Facebook Pages?", options: [["1–3", 0], ["4–10", 1], ["11–50", 2]] },
+  { q: "How many DMs a month?", options: [["Up to 2,000", 0], ["Up to 15,000", 1], ["Up to 100,000", 2]] },
+  { q: "How many people on your team?", options: [["1–3", 0], ["4–10", 1], ["11–50", 2]] },
 ] as const
 
 /** The floating yellow "Pick your plan in 30 seconds" button and its three-question picker. */
@@ -57,11 +57,11 @@ export function PlanQuiz() {
                 <p className="font-display text-[3rem] font-black leading-none tracking-[-0.04em]">{plan.label}</p>
                 <p className="mt-3 text-[1.0625rem]">{plan.description}</p>
                 <p className="mt-6 font-display text-[2rem] font-black tracking-tight">
-                  {plan.priceUsd === 0 ? "Free" : `${formatNpr(toNpr(plan.priceUsd))}/mo`}
+                  {`${formatUsd(plan.priceUsd)}/mo`}
                 </p>
                 <div className="mt-7 flex gap-3">
                   <McButton href={SIGNUP_URL} variant="black" full>
-                    {plan.priceUsd === 0 ? "Start for free" : "Get started"}
+                    Get started
                   </McButton>
                   <button type="button" onClick={() => setAnswers([])} className="mc-label shrink-0 px-4 underline underline-offset-4">
                     Retake

@@ -9,10 +9,10 @@ When a reel reaches people who don't follow you, a follow check turns views into
 
 ## Steps
 
-1. **Open the Follow to unlock template.** Go to **Automations → Templates → Follow to unlock**.
+1. **Open "Follow first, then freebie".** Go to **Automations → Browse templates**, pick it and click **Use template**.
 2. **Set the keyword and post.** Choose the reel you're promoting.
 3. **Write the follower message.** This DM carries your link.
-4. **Write the request.** One friendly line asking them to follow, with the **I'm following** button kept in.
+4. **Write the request.** In the **Follow gate** step, write one friendly line asking them to follow. Leave the **Not following** branch empty so the **I'm following** button is sent with it.
 5. **Turn it on.** Tell people: "Follow and comment GUIDE."
 
 ## How the check works

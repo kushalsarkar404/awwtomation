@@ -35,8 +35,8 @@ export default function DataDeletionPage() {
       <h2>1. Disconnect a channel (keeps data for reconnection)</h2>
       <p>Admins and owners can disconnect an Instagram account or Facebook Page from inside {brand.name}:</p>
       <ol>
-        <li>Sign in and open <strong>Channels</strong> in the sidebar.</li>
-        <li>Open the menu on the account card and choose <strong>Disconnect</strong>, then confirm.</li>
+        <li>Sign in and, on the <strong>Dashboard</strong>, click the account pictures beside the title to open your connected accounts.</li>
+        <li>Open the menu on the account and choose <strong>Disconnect</strong>, then confirm.</li>
       </ol>
       <p>
         Disconnecting destroys the stored access token immediately, asks Meta to stop sending webhooks for a Facebook
@@ -49,7 +49,7 @@ export default function DataDeletionPage() {
       <h2>2. Delete a channel and all of its data (permanent)</h2>
       <p>An owner can permanently erase everything an account ever produced in the workspace:</p>
       <ol>
-        <li>Open <strong>Channels</strong>, open the menu on the account card and choose <strong>Delete account and data</strong>.</li>
+        <li>Open your connected accounts from the <strong>Dashboard</strong>, open the menu on the account and choose <strong>Delete account and data</strong>.</li>
         <li>Type the account&apos;s username (or the Page name) to confirm.</li>
       </ol>
       <p>

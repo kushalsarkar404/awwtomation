@@ -46,7 +46,7 @@ const defaultHeroChat: HeroChatStep[] = [
     kind: "comment",
     name: "anisha.gurung",
     text: "PP 🙏",
-    avatar: "/site-assets/profiles/social/anisha-gurung.png",
+    avatar: "/site-assets/profiles/social/anisha-gurung.webp",
   },
   {
     kind: "us",
@@ -55,7 +55,7 @@ const defaultHeroChat: HeroChatStep[] = [
   {
     kind: "them",
     text: "Cash on delivery huncha?",
-    avatar: "/site-assets/profiles/social/anisha-gurung.png",
+    avatar: "/site-assets/profiles/social/anisha-gurung.webp",
   },
   { kind: "us", text: "Yes 🚚 Shall I pack one for you?" },
   { kind: "saved", text: "Contact saved · tagged Buyer" },

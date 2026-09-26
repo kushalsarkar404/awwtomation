@@ -7,9 +7,9 @@
 export const brand = {
   name: "Awwtomation",
   wordmark: "Awwtomation.",
-  tagline: "Instagram and Facebook comment-to-DM automation, built for Nepal.",
+  tagline: "Nepal's No.1 chat marketing platform for Instagram and Facebook Messenger.",
   description:
-    "Awwtomation sends an automatic DM to anyone who comments a keyword on your Instagram or Facebook post, replies publicly under their comment, and saves them as a contact you can follow up with.",
+    "Awwtomation is Nepal's No.1 chat marketing platform. It auto-replies to comments, DMs and story replies on Instagram and Facebook Messenger, captures leads and saves every chat as a contact you can follow up with.",
   supportEmail: "support@awwtomation.com",
   company: "Awwtomation",
   country: "Nepal",

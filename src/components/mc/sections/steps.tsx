@@ -67,7 +67,7 @@ function SignupArt({ step }: { step: number }) {
         className="mc-label relative flex h-[17%] items-center rounded-full bg-magenta px-[7.5%] text-white transition-transform duration-200"
         style={{ transform: clicked && !done ? "scale(0.93)" : "scale(1)" }}
       >
-        Get started free
+        Get started
         {clicked ? (
           <span aria-hidden className="scene-tap absolute left-1/2 top-1/2 size-[46%] rounded-full bg-white/50" style={{ aspectRatio: "1" }} />
         ) : null}
@@ -277,7 +277,7 @@ export function Steps({ page, compactTop = false }: { page: MarketingPage; compa
       </div>
       <div className="mt-14 flex flex-wrap justify-center gap-4 lg:mt-[3.9vw] lg:gap-[1.03vw]">
         <McButton href={SIGNUP_URL} variant="black" size="lg" className="lg:w-[max(12.86vw,240px)]">
-          Get started free
+          Get started
         </McButton>
         <McButton href="/pricing" variant="outline" size="lg" className="w-[180px] lg:w-[max(12.86vw,240px)]">
           See plans

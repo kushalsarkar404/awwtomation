@@ -29,7 +29,7 @@ export function LandingHero({ page }: { page: UseCasePage }) {
         <p className="mc-sub mx-auto mt-6 max-w-[30rem] lg:mt-[2vw] lg:max-w-[27vw]">{page.hero.body}</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:mt-[2.1vw]">
           <McButton href={SIGNUP_URL} variant="magenta" size="lg">
-            Start for free
+            Get started
           </McButton>
           <span className="flex items-center gap-2 text-left">
             <span className="flex -space-x-2.5" aria-hidden>

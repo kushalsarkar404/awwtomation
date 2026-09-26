@@ -1,5 +1,5 @@
 import { brand } from "@/lib/brand"
-import { formatNpr, limitText, NPR_PER_USD, PLANS, toNpr } from "@/lib/pricing"
+import { BILLING_NOTES, formatUsd, limitText, MIN_ANNUAL_SAVING, PLANS } from "@/lib/pricing"
 import type { FaqItem } from "@/lib/seo"
 
 /** SEO, FAQs and Markdown summaries for pages that don't use a content template. */
@@ -13,54 +13,37 @@ export interface BespokePage {
 }
 
 const starter = PLANS.find((plan) => plan.id === "starter")!
-const npr = (usd: number) => formatNpr(toNpr(usd))
 
 export const planLines = () =>
   PLANS.map((plan) => {
-    const price = plan.priceUsd === 0 ? "free" : `${npr(plan.priceUsd)} a month, billed as $${plan.priceUsd} USD`
-    return `- **${plan.label}** (${price}): ${plan.limits.map(limitText).join(", ")}.`
+    const price = `${formatUsd(plan.priceUsd)} a month, or ${formatUsd(plan.priceAnnualUsd)} a year`
+    return `- **${plan.label}** (${price}): ${[...plan.limits.map(limitText), ...plan.features].join(", ")}.`
   }).join("\n")
-
-/** ManyChat facts, checked against help.manychat.com in September 2026. */
-export const MANYCHAT_CHECKED = "September 2026"
-
-export const MANYCHAT_COMPARISON: { label: string; awwtomation: string; manychat: string }[] = [
-  { label: "Channels", awwtomation: "Instagram, Facebook Messenger", manychat: "Instagram, Messenger, WhatsApp, TikTok, Telegram, SMS, email" },
-  { label: "What you pay for", awwtomation: "DMs sent each month", manychat: "Active contacts each month" },
-  { label: "Free plan", awwtomation: "100 DMs a month, 3 automations", manychat: "Up to 25 active contacts a month" },
-  { label: "Entry paid plan", awwtomation: `Starter · ${npr(15)}/month ($15), 2,000 DMs, 3 accounts`, manychat: "Essential · $17/month, up to 250 active contacts" },
-  { label: "Mid plan", awwtomation: `Pro · ${npr(49)}/month ($49), 15,000 DMs, 10 accounts`, manychat: "Pro · $39/month, up to 2,500 active contacts" },
-  { label: "Going over the limit", awwtomation: "Sending pauses until next month. No overage charges.", manychat: "Pro charges $0.05 per extra active contact" },
-  { label: "Prices shown in", awwtomation: "Nepali rupees, charged in USD", manychat: "US dollars" },
-  { label: "AI-written replies", awwtomation: "No", manychat: "Yes, from Pro" },
-  { label: "Integrations and API", awwtomation: "No, CSV import and export", manychat: "Integrations; API on Advanced" },
-  { label: "Follow check before sending", awwtomation: "Yes", manychat: "Yes" },
-]
 
 export const pricingSeo: BespokePage = {
   path: "/pricing",
-  title: "Pricing: Free, Starter, Pro & Agency Plans",
-  description: `Free plan with 100 DMs a month. Paid plans from ${npr(starter.priceUsd)} a month. Save 20% with yearly billing. No overage charges.`,
+  title: "Pricing: Starter, Pro & Agency Chat Marketing Plans",
+  description: `Chat marketing plans for Instagram and Messenger from ${formatUsd(starter.priceUsd)} a month. Every feature on every plan, AI replies included. Save ${MIN_ANNUAL_SAVING}% yearly. No overage charges.`,
   heading: "Plans for every stage of growth",
   faqs: [
-    { question: "Is there a free plan?", answer: "Yes. One account, three automations and 100 DMs a month, free forever. No card needed." },
-    { question: "Why are prices in rupees but charged in dollars?", answer: "Payments are processed in US dollars. Rupee prices are a conversion so you can see the cost at a glance." },
-    { question: "Can I pay with a Nepali bank card?", answer: "Yes, if your card is enabled for international online payments in US dollars." },
-    { question: "What counts as a DM?", answer: "Every message sent through Awwtomation, including broadcasts and inbox replies. Messages you receive are free." },
-    { question: "What happens if I hit my DM limit?", answer: "Sending pauses until next month. You're never charged overage, and you can upgrade any time." },
-    { question: "Can I cancel any time?", answer: "Yes. Your plan keeps working until the end of the period you paid for." },
+    { question: "Is there a free plan?", answer: "No. You can sign up, connect an account and build automations before you pay, but nothing is sent until you choose a plan." },
+    { question: "What currency are prices in?", answer: `US dollars. Starter is ${formatUsd(starter.priceUsd)} a month, and paying yearly costs ${MIN_ANNUAL_SAVING}% less.` },
+    { question: "Can I pay with a Nepali bank card?", answer: "Yes, if your card is enabled for international online payments in US dollars. Payments are handled by Dodo Payments." },
+    { question: "What counts as a DM?", answer: "Automated replies, broadcasts and replies from the inbox. Public replies under comments don't count, and counts reset on the 1st of every month." },
+    { question: "What happens if I hit my DM limit?", answer: "Messages stop until the reset or until you upgrade. You're never charged for extra messages." },
+    { question: "Can I cancel any time?", answer: "Yes, from Settings. Your plan stays active until the end of the period you paid for." },
   ],
   markdown: () =>
-    `Awwtomation has four plans. Prices are shown in Nepali rupees (converted at Rs ${NPR_PER_USD} per US dollar, rounded to the nearest 100) and charged in US dollars.\n\n${planLines()}\n\nYearly billing saves about 20%. Every message sent through Awwtomation counts as one DM; incoming messages are free. At the monthly limit, sending pauses until the next month, and there are no overage charges. Broadcasts are included from Starter.`,
+    `Awwtomation has three plans, priced in US dollars. Every plan has every feature, including AI replies; plans differ by limits.\n\n${planLines()}\n\n${BILLING_NOTES.map((note) => `- ${note}`).join("\n")}`,
 }
 
 export const aboutSeo: BespokePage = {
   path: "/about",
-  title: "About Awwtomation: Built in Kathmandu",
-  description: "Awwtomation is Instagram and Facebook DM automation built in Kathmandu by Prakhyat Shrestha and Kushal Sarkar, for creators, shops and agencies.",
+  title: "About Us: Chat Marketing Built in Kathmandu, Nepal",
+  description: "Awwtomation is Nepal's No.1 chat marketing platform for Instagram and Messenger, built in Kathmandu by Prakhyat Shrestha and Kushal Sarkar.",
   heading: "We help businesses sell in the DMs",
   markdown: () =>
-    `Awwtomation is Instagram and Facebook Messenger automation built in Kathmandu, Nepal, for creators, shops and agencies.\n\n## Founders\n\n- **Prakhyat Shrestha**, co-founder, engineering. Kathmandu, Nepal.\n- **Kushal Sarkar**, co-founder, data and operations. Atlanta, USA.\n\n## Principles\n\n- Secure channel connections without password sharing.\n- Honest about limits: Instagram and Facebook only.\n- Your data is yours: export or delete it any time.\n\nContact: ${brand.supportEmail}`,
+    `Awwtomation is Nepal's No.1 chat marketing platform for Instagram and Facebook Messenger, built in Kathmandu for creators, shops and agencies.\n\n## Founders\n\n- **Prakhyat Shrestha**, co-founder, engineering. Kathmandu, Nepal.\n- **Kushal Sarkar**, co-founder, data and operations. Atlanta, USA.\n\n## Principles\n\n- Secure channel connections without password sharing.\n- Honest about limits: Instagram and Facebook only.\n- Your data is yours: export your contacts or delete everything any time.\n\nContact: ${brand.supportEmail}`,
 }
 
 export const legalSeo: BespokePage[] = [
@@ -71,7 +54,7 @@ export const legalSeo: BespokePage[] = [
     title: "Data Deletion Instructions",
     description: "How to delete data Awwtomation stores about an account, a channel or an audience member.",
     heading: "Data Deletion Instructions",
-    markdown: () => `Disconnect or delete a channel from Channels in the app, delete a workspace or organization from Settings, remove Awwtomation from Instagram or Facebook settings, use Facebook's data deletion request, or email ${brand.supportEmail}. Full instructions: https://www.awwtomation.com/legal/data-deletion.`,
+    markdown: () => `Disconnect or delete a connected account from the Dashboard in the app, delete a workspace or organization from Settings, remove Awwtomation from Instagram or Facebook settings, use Facebook's data deletion request, or email ${brand.supportEmail}. Full instructions: https://www.awwtomation.com/legal/data-deletion.`,
   },
 ]
 

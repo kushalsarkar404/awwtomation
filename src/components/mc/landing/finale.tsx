@@ -51,7 +51,7 @@ export function Finale({ page }: { page: UseCasePage }) {
               ))}
             </ul>
             <McButton href={SIGNUP_URL} variant="black" size="lg" className="mt-8 lg:mt-[2.1vw]">
-              Start for free
+              Get started
             </McButton>
           </div>
         ))}

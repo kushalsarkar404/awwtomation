@@ -23,7 +23,7 @@ const archivo = Archivo({ variable: "--font-archivo", subsets: ["latin"], weight
 const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"], display: "swap" })
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" })
 
-const defaultTitle = "Awwtomation · Instagram DM Automation & Comment Auto-Reply"
+const defaultTitle = "Awwtomation · Nepal's No.1 Chat Marketing Platform"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

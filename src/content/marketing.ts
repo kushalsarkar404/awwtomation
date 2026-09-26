@@ -5,6 +5,7 @@ import {
   messengerChats,
 } from "@/content/chats";
 import type { MarketingPage, PageTheme } from "@/content/mc-types";
+import { formatUsd, STARTING_PRICE_USD } from "@/lib/pricing";
 
 const YELLOW = "#fff200";
 const MAGENTA = "#fb0df7";
@@ -16,6 +17,7 @@ const LAVENDER = "#d8bee3";
 const SKY = "#96dae3";
 
 const theme = (t: PageTheme) => t;
+const fromPrice = formatUsd(STARTING_PRICE_USD);
 
 const bothChannels = [
   {
@@ -35,11 +37,11 @@ const bothChannels = [
 const stepsStandard: MarketingPage["steps"] = {
   icon: "rocket",
   title: "Live in three simple steps",
-  body: "No code. No credit card. Replying to customers in minutes.",
+  body: "No code. Build before you pay. Replying to customers in minutes.",
   items: [
     {
-      title: "Step 1: Create a free account",
-      body: "Start on the free plan, no credit card required",
+      title: "Step 1: Create an account",
+      body: "Sign up and build your automations before you pay",
       art: "signup",
     },
     {
@@ -49,7 +51,7 @@ const stepsStandard: MarketingPage["steps"] = {
     },
     {
       title: "Step 3: Switch on a template",
-      body: "Pick a flow, set your keyword, done",
+      body: "Pick a flow, set your keyword, choose a plan",
       art: "live",
     },
   ],
@@ -61,8 +63,8 @@ const stepsProduct: MarketingPage["steps"] = {
   body: "Pick a template, connect your account and switch it on.",
   items: [
     {
-      title: "Start free",
-      body: "The free plan needs no credit card",
+      title: "Build first",
+      body: "Set up automations before you pay",
       art: "signup",
     },
     {
@@ -95,9 +97,9 @@ export const homePage: MarketingPage = {
   path: "/",
   name: "Home",
   seo: {
-    title: "Awwtomation · Instagram DM Automation & Comment Auto-Reply",
+    title: "Awwtomation · Nepal's No.1 Chat Marketing Platform",
     description:
-      "Auto-reply to Instagram comments, DMs and story replies. Send links, answer FAQs and capture leads automatically. Free plan.",
+      "Nepal's No.1 chat marketing platform. Auto-reply to comments, DMs and story replies on Instagram and Facebook Messenger, and turn chats into sales. From $15 a month.",
   },
   theme: theme({
     accent: YELLOW,
@@ -110,11 +112,11 @@ export const homePage: MarketingPage = {
   hero: {
     kind: "photo",
     title: "Every comment, answered.",
-    body: "Send links, answer questions and capture leads on Instagram and Messenger, automatically.",
+    body: "Nepal's No.1 chat marketing platform. Send links, answer questions and capture leads on Instagram and Messenger, automatically.",
     cta: "Get started",
     photo: "Creator relaxing while DMs are answered",
     image: {
-      src: "/site-assets/home/hero.jpg",
+      src: "/site-assets/home/hero.webp",
       alt: "Creator leaning back at his desk in Kathmandu while his DMs are answered automatically",
     },
   },
@@ -150,9 +152,9 @@ export const homePage: MarketingPage = {
     },
     {
       title: "Take the order in the chat",
-      body: "Reserve stock, collect the phone number and confirm cash on delivery.",
+      body: "Ask the size, collect the phone number and confirm cash on delivery.",
       slides: [
-        { caption: "Reserve and confirm", chat: chats.orderChat },
+        { caption: "Take the order", chat: chats.orderChat },
         { caption: "Collect phone numbers", chat: chats.leadPhone },
         { caption: "Collect emails", chat: chats.leadEmail },
       ],
@@ -162,7 +164,7 @@ export const homePage: MarketingPage = {
     word: "Together",
     photo: "Customer smiling at her phone, blue sky",
     image: {
-      src: "/site-assets/home/together.jpg",
+      src: "/site-assets/home/together.webp",
       alt: "Woman smiling at her phone on a Kathmandu rooftop",
     },
   },
@@ -211,7 +213,7 @@ export const homePage: MarketingPage = {
       {
         title: "Take the order in Messenger",
         description:
-          "Reserve the size, confirm the price and hand over to you when it matters.",
+          "Ask the size, confirm the price and hand over to you when it matters.",
         chat: chats.orderChat,
       },
       {
@@ -236,12 +238,22 @@ export const homePage: MarketingPage = {
   },
   steps: stepsStandard,
   faqs: [
-    safeFaq,
+    {
+      question: "What is chat marketing?",
+      answer:
+        "Selling and supporting customers inside the chats they already use, like Instagram DMs and Facebook Messenger. Awwtomation automates it: instant replies, links, lead capture and broadcasts.",
+    },
     {
       question: "What can I automate with Awwtomation?",
       answer:
-        "Replies to Instagram comments, DMs and story replies, plus comments and messages on your Facebook Page.",
+        "Replies to Instagram comments, DMs and story replies, plus comments and messages on your Facebook Page in Messenger.",
     },
+    {
+      question: "Is Awwtomation built for Nepali businesses?",
+      answer:
+        "Yes. It's built in Kathmandu, keywords can be matched in Nepali, in Devanagari or Romanised, and AI replies can answer in Romanised Nepali.",
+    },
+    safeFaq,
     {
       question: "Will automations sound like a robot?",
       answer:
@@ -250,7 +262,7 @@ export const homePage: MarketingPage = {
     codeFaq,
   ],
   summary:
-    "Awwtomation is Instagram and Facebook Messenger automation built in Kathmandu, Nepal. It sends an automatic DM when someone comments a keyword, replies to a story or messages you; posts public replies; collects validated emails and phone numbers; checks follow status; and saves everyone as a contact with tags and pipelines. The free plan includes 100 DMs a month.",
+    `Awwtomation is Nepal's No.1 chat marketing platform for Instagram and Facebook Messenger, built in Kathmandu. It sends an automatic DM when someone comments a keyword, replies to a story or messages you; posts public replies; collects validated emails and phone numbers; checks follow status; and saves everyone as a contact with tags and pipelines. Plans start at ${fromPrice} a month.`,
 };
 
 /* -------------------------------------------------------------- Products */
@@ -259,9 +271,9 @@ export const instagramPage: MarketingPage = {
   path: "/product/instagram",
   name: "Instagram",
   seo: {
-    title: "Instagram DM Automation for Comments & Stories",
+    title: "Instagram Automation: Auto-Reply to DMs & Comments",
     description:
-      "Automatically DM anyone who comments a keyword on your Instagram post or reel, replies to your story, or messages you. Free plan.",
+      "Auto-DM anyone who comments a keyword on your post or reel, replies to your story or messages you. Instagram chat marketing, built in Nepal.",
   },
   theme: theme({
     accent: PURPLE,
@@ -281,7 +293,7 @@ export const instagramPage: MarketingPage = {
   automatically: {
     photo: "Creator outside his shop holding a phone",
     image: {
-      src: "/site-assets/products/instagram/hero.jpg",
+      src: "/site-assets/products/instagram/hero.webp",
       alt: "Creator smiling on a Patan street with his phone",
     },
     items: [
@@ -340,7 +352,7 @@ export const instagramPage: MarketingPage = {
     word: "Beyond",
     photo: "Creator taking a selfie on a rooftop",
     image: {
-      src: "/site-assets/products/instagram/beyond.jpg",
+      src: "/site-assets/products/instagram/beyond.webp",
       alt: "Creator taking a selfie on a Kathmandu rooftop at sunset",
     },
   },
@@ -430,16 +442,16 @@ export const instagramPage: MarketingPage = {
     codeFaq,
   ],
   summary:
-    "Awwtomation automates Instagram direct messages for Business and Creator accounts. Automations start from a keyword comment on a post or reel, a story reply, or a DM keyword; they can send links with buttons, post public replies, check follow status, collect validated emails and phone numbers, and save every person as a contact.",
+    "Awwtomation automates Instagram direct messages for Business and Creator accounts, as part of a chat marketing platform that also covers Facebook Messenger. Automations start from a keyword comment on a post or reel, a story reply, or a DM keyword; they can send links with buttons, post public replies, check follow status, collect validated emails and phone numbers, and save every person as a contact.",
 };
 
 export const messengerPage: MarketingPage = {
   path: "/product/messenger",
   name: "Messenger",
   seo: {
-    title: "Facebook Messenger Automation & Page Comment Auto-Reply",
+    title: "Messenger Chatbot & Facebook Comment Auto-Reply",
     description:
-      "Automatically message anyone who comments on your Facebook Page post, answer FAQs in Messenger and capture leads. Same flows and inbox as Instagram.",
+      "A Messenger chatbot for your Facebook Page: auto-reply to comments and messages, take orders and capture leads. Shares one inbox with Instagram.",
   },
   theme: theme({
     accent: INDIGO,
@@ -452,14 +464,14 @@ export const messengerPage: MarketingPage = {
   hero: {
     kind: "accent",
     title: "Turn Facebook Messenger into your sales desk",
-    body: "Reply to Page comments, answer questions and collect leads in Messenger, automatically.",
+    body: "A Messenger chatbot for your Facebook Page. Reply to comments, answer questions and collect leads, automatically.",
     cta: "Start with Messenger",
     photo: "Shop owner smiling in her studio",
   },
   automatically: {
     photo: "Shop owner smiling in her studio",
     image: {
-      src: "/site-assets/products/messenger/hero.jpg",
+      src: "/site-assets/products/messenger/hero.webp",
       alt: "Shop owner smiling at her desk with her phone",
     },
     items: [
@@ -493,7 +505,7 @@ export const messengerPage: MarketingPage = {
       slides: [
         { caption: "Answer price and delivery", chat: messengerChats.priceFaq },
         {
-          caption: "Hand wholesale leads to sales",
+          caption: "Flag wholesale leads for your team",
           chat: messengerChats.handoff,
         },
       ],
@@ -504,7 +516,7 @@ export const messengerPage: MarketingPage = {
       slides: [
         { caption: "Collect phone numbers", chat: messengerChats.leadPhone },
         {
-          caption: "Recover abandoned carts",
+          caption: "Send coupon codes",
           chat: messengerChats.cartRecovery,
         },
       ],
@@ -514,7 +526,7 @@ export const messengerPage: MarketingPage = {
     word: "Connect",
     photo: "Customer with coffee reading messages",
     image: {
-      src: "/site-assets/products/messenger/connect.jpg",
+      src: "/site-assets/products/messenger/connect.webp",
       alt: "Man with a coffee smiling at his laptop",
     },
   },
@@ -553,9 +565,9 @@ export const messengerPage: MarketingPage = {
     panelTitle: "See how it works",
     items: [
       {
-        title: "Send delivery updates",
+        title: "Reply outside opening hours",
         description:
-          "Proactive order updates reduce support questions and build trust.",
+          "Answer while you're closed, and let your team pick it up in the morning.",
         chat: messengerChats.deliveryUpdate,
       },
       {
@@ -578,13 +590,18 @@ export const messengerPage: MarketingPage = {
       {
         title: "Qualify bulk buyers",
         description:
-          "Quote large orders and route serious leads to the sales team.",
+          "Quote large orders and tag serious leads for your team.",
         chat: messengerChats.bulkQuote,
       },
     ],
   },
   steps: stepsProduct,
   faqs: [
+    {
+      question: "What is a Messenger chatbot?",
+      answer:
+        "An automation that replies in Facebook Messenger for your Page: answering comments and messages, sending links and saving leads, with your team one tap away.",
+    },
     {
       question: "Can I offer live chat support in Messenger?",
       answer:
@@ -599,7 +616,7 @@ export const messengerPage: MarketingPage = {
     codeFaq,
   ],
   summary:
-    "Awwtomation connects Facebook Pages through Facebook Login and automates Messenger replies to Page post comments and incoming messages. Facebook Pages share the same flow builder, contacts, pipelines, broadcasts, analytics and unified inbox as Instagram accounts.",
+    "Awwtomation is a Facebook Messenger chatbot and chat marketing platform for Facebook Pages. It connects Pages through Facebook Login and automates Messenger replies to Page post comments and incoming messages. Facebook Pages share the same flow builder, contacts, pipelines, broadcasts, analytics and unified inbox as Instagram accounts.",
 };
 
 /* -------------------------------------------------------- Business types */
@@ -623,9 +640,9 @@ export const creatorsPage = businessPage({
   path: "/solution/for-creators",
   name: "for Creators",
   seo: {
-    title: "Instagram Automation for Creators",
+    title: "DM Automation for Creators on Instagram & Facebook",
     description:
-      "Turn reel comments into followers, leads and sales. Send links by DM, gate them behind a follow and run giveaways that confirm every entry. Free plan.",
+      "Turn comments into followers, leads and sales. Send links by DM, gate them behind a follow and run giveaways that confirm every entry.",
   },
   theme: theme({
     accent: MAGENTA,
@@ -645,7 +662,7 @@ export const creatorsPage = businessPage({
   automatically: {
     photo: "Creator filming a reel",
     image: {
-      src: "/site-assets/solutions/creators/hero.png",
+      src: "/site-assets/solutions/creators/hero.webp",
       alt: "Creator relaxing with headphones while customer DMs are handled",
     },
     items: [
@@ -690,7 +707,7 @@ export const creatorsPage = businessPage({
     word: "Create",
     photo: "Creator laughing with friends",
     image: {
-      src: "/site-assets/solutions/creators/create.png",
+      src: "/site-assets/solutions/creators/create.webp",
       alt: "Creator using her phone on a sunny terrace",
     },
   },
@@ -747,9 +764,9 @@ export const creatorsPage = businessPage({
   },
   faqs: [
     {
-      question: "Is Awwtomation free for creators?",
+      question: "How much does it cost for creators?",
       answer:
-        "Yes. The free plan includes one account, three automations and 100 DMs a month.",
+        `Starter is ${fromPrice} a month for 3 accounts and 2,000 DMs. You can build your automations before you pay.`,
     },
     {
       question: "Does it work with Creator accounts?",
@@ -762,20 +779,20 @@ export const creatorsPage = businessPage({
     },
     {
       question: "Can I send affiliate links?",
-      answer: "Yes. Put them on a button and track clicks per post.",
+      answer: "Yes. Put them on a button, and use a tracked link to count clicks.",
     },
   ],
   summary:
-    "Awwtomation helps Instagram creators turn reel engagement into followers, contacts and sales with comment-to-DM links, follow-to-unlock flows, giveaway confirmations and email collection. The free plan includes one account, three automations and 100 DMs a month.",
+    `Awwtomation helps creators on Instagram and Facebook turn engagement into followers, contacts and sales with comment-to-DM links, follow-to-unlock flows, giveaway confirmations and email collection. Plans start at ${fromPrice} a month.`,
 });
 
 export const ecommercePage = businessPage({
   path: "/solution/for-ecommerce",
   name: "for eCommerce",
   seo: {
-    title: "Instagram & Facebook DM Automation for Online Stores",
+    title: "Messenger & Instagram Chatbot for Online Stores",
     description:
-      "Answer price and delivery questions instantly, send product links from comments and track every order in a sales pipeline. Built for online shops.",
+      "Answer price and delivery questions in Messenger and Instagram DMs instantly, send product links from comments and track every order. Built for Nepali shops.",
   },
   theme: theme({
     accent: GREEN,
@@ -795,13 +812,13 @@ export const ecommercePage = businessPage({
   automatically: {
     photo: "Shop owner packing orders",
     image: {
-      src: "/site-assets/solutions/ecommerce/hero.png",
+      src: "/site-assets/solutions/ecommerce/hero.webp",
       alt: "Online shop owner checking customer messages in his studio",
     },
     items: [
       { label: "Answer price questions", chat: businessChats.ecommercePrice },
-      { label: "Confirm stock", chat: businessChats.ecommerceStock },
-      { label: "Reserve orders", chat: businessChats.ecommerceOrder },
+      { label: "Answer stock questions", chat: businessChats.ecommerceStock },
+      { label: "Take orders in chat", chat: businessChats.ecommerceOrder },
       { label: "Handle delivery", chat: businessChats.ecommerceDelivery },
     ],
   },
@@ -817,7 +834,7 @@ export const ecommercePage = businessPage({
       body: "“Price?” gets a reply in seconds, day or night.",
       slides: [
         { caption: "Answer price questions", chat: businessChats.ecommercePrice },
-        { caption: "Confirm live stock", chat: businessChats.ecommerceStock },
+        { caption: "Answer stock questions", chat: businessChats.ecommerceStock },
       ],
     },
     {
@@ -841,7 +858,7 @@ export const ecommercePage = businessPage({
     word: "Sell",
     photo: "Customer unboxing an order",
     image: {
-      src: "/site-assets/solutions/ecommerce/sell.png",
+      src: "/site-assets/solutions/ecommerce/sell.webp",
       alt: "Online seller checking orders from his phone",
     },
   },
@@ -890,8 +907,8 @@ export const ecommercePage = businessPage({
         chat: businessChats.ecommerceDelivery,
       },
       {
-        title: "Reserve orders in chat",
-        description: "Buyers reserve with one tap.",
+        title: "Take orders in chat",
+        description: "Buyers order with one tap, tagged for your team.",
         chat: businessChats.ecommerceOrder,
       },
     ],
@@ -913,16 +930,16 @@ export const ecommercePage = businessPage({
     safeFaq,
   ],
   summary:
-    "Awwtomation is Instagram and Facebook DM automation for online stores: instant answers to price and delivery questions, product links sent from comments, phone number collection and order tracking in sales pipelines, with a shared team inbox.",
+    "Awwtomation is a Messenger and Instagram chatbot for online stores: instant answers to price and delivery questions, product links sent from comments, phone number collection and order tracking in sales pipelines, with a shared team inbox.",
 });
 
 export const agenciesPage = businessPage({
   path: "/solution/for-agencies",
   name: "for Agencies",
   seo: {
-    title: "Instagram Automation for Agencies",
+    title: "Chat Marketing Platform for Agencies & Clients",
     description:
-      "Run Instagram and Facebook automation for every client from one login. A workspace per client, team roles, up to 50 accounts and 100,000 DMs a month.",
+      "Run Instagram and Messenger chat marketing for every client from one login. A workspace per client, team roles, up to 50 accounts and 100,000 DMs a month.",
   },
   theme: theme({
     accent: ORANGE,
@@ -942,7 +959,7 @@ export const agenciesPage = businessPage({
   automatically: {
     photo: "Agency team in a planning session",
     image: {
-      src: "/site-assets/solutions/agencies/hero.png",
+      src: "/site-assets/solutions/agencies/hero.webp",
       alt: "Agency owner managing client conversations from her phone",
     },
     items: [
@@ -974,7 +991,7 @@ export const agenciesPage = businessPage({
     },
     {
       title: "Report results clients read",
-      body: "Funnels and keywords, exportable to CSV.",
+      body: "Funnels and top keywords, with daily numbers in CSV.",
       slides: [{ caption: "Report results", chat: businessChats.agencyReport }],
     },
   ],
@@ -982,7 +999,7 @@ export const agenciesPage = businessPage({
     word: "Grow",
     photo: "Agency founders celebrating a launch",
     image: {
-      src: "/site-assets/solutions/agencies/grow.png",
+      src: "/site-assets/solutions/agencies/grow.webp",
       alt: "Agency founders reviewing campaign results together",
     },
   },
@@ -1004,7 +1021,7 @@ export const agenciesPage = businessPage({
       items: [
         "A workspace per client.",
         "Flows duplicated in seconds.",
-        "CSV reports per automation.",
+        "Daily numbers exported to CSV.",
         "50 seats on the Agency plan.",
       ],
     },
@@ -1041,7 +1058,7 @@ export const agenciesPage = businessPage({
     {
       question: "Can clients see only their own workspace?",
       answer:
-        "Access is set per organization. For strict separation, give each client their own organization or share CSV reports.",
+        "No. Roles cover the whole organization. For strict separation, a client needs their own organization and plan, or you can share CSV reports.",
     },
     {
       question: "What counts as a connected account?",
@@ -1058,16 +1075,16 @@ export const agenciesPage = businessPage({
     },
   ],
   summary:
-    "Awwtomation supports agencies managing Instagram and Facebook automation for many clients: an organization holds the plan and team and contains a workspace per client. The Agency plan includes 50 connected accounts, 1,000 automations, 100,000 DMs a month, 50 team members and dedicated onboarding.",
+    "Awwtomation is a chat marketing platform for agencies managing Instagram and Facebook Messenger automation for many clients: an organization holds the plan and team and contains a workspace per client. The Agency plan includes 50 connected accounts, 1,000 automations, 100,000 DMs a month, 50 team members and dedicated onboarding.",
 });
 
 export const brandsPage = businessPage({
   path: "/solution/for-brand",
   name: "for Brands",
   seo: {
-    title: "Instagram & Messenger Automation for Brands",
+    title: "Chat Marketing for Brands on Instagram & Messenger",
     description:
-      "Answer customers 24/7, run giveaways, broadcast to segments and capture leads across Instagram and Facebook, on brand and at scale.",
+      "Answer customers 24/7, run giveaways, broadcast to segments and capture leads across Instagram and Facebook Messenger, on brand and at scale.",
   },
   theme: theme({
     accent: LAVENDER,
@@ -1087,7 +1104,7 @@ export const brandsPage = businessPage({
   automatically: {
     photo: "Brand campaign shoot",
     image: {
-      src: "/site-assets/solutions/brands/hero.png",
+      src: "/site-assets/solutions/brands/hero.webp",
       alt: "Brand team reviewing a campaign together",
     },
     items: [
@@ -1130,7 +1147,7 @@ export const brandsPage = businessPage({
     word: "Engage",
     photo: "Fans at a brand event",
     image: {
-      src: "/site-assets/solutions/brands/engage.png",
+      src: "/site-assets/solutions/brands/engage.webp",
       alt: "Brand manager reviewing customer engagement on her laptop",
     },
   },
@@ -1202,25 +1219,28 @@ export const brandsPage = businessPage({
     safeFaq,
   ],
   summary:
-    "Awwtomation helps brands run Instagram and Facebook conversations at scale: 24/7 FAQ answers, giveaway and story-reply campaigns, email collection, segment broadcasts and a shared team inbox.",
+    "Awwtomation helps brands run chat marketing on Instagram and Facebook Messenger at scale: 24/7 FAQ answers, giveaway and story-reply campaigns, email collection, segment broadcasts and a shared team inbox.",
 });
 
 /* --------------------------------------------------------------- AI */
 
 /*
- * The AI product page. Everything claimed here is what lib/services/ai.ts in
- * the product app actually does: the workspace's own provider key, an agent
- * built from a prompt, a knowledge block, guardrails and a fallback reply, an
- * "AI reply" node inside the flow builder, and per-agent token counters.
- * The MCP showcase demonstrates the same seller workflows as the product UI.
+ * The AI product page. Everything claimed here is what lib/ai and
+ * lib/services/ai.ts in the product app actually do: Awwtomation AI (the
+ * built-in model on our key) by default, or a workspace's own key from 24
+ * provider presets or a public custom endpoint; an agent built from a prompt,
+ * a knowledge block, guardrails, a fallback reply and link buttons; an "AI
+ * reply" step with Done and Needs a human exits; replies in English or
+ * Romanised Nepali only, by DM only (never public comment replies); and
+ * per-agent reply and token counters. The MCP showcase uses real MCP tools.
  */
 export const aiPage: MarketingPage = {
   path: "/product/ai",
   name: "Awwtomation AI",
   seo: {
-    title: "Awwtomation AI for Instagram & Messenger DMs",
+    title: "AI Chatbot for Instagram & Messenger DMs",
     description:
-      "Let an AI agent answer Instagram and Messenger DMs in your words. Bring your own OpenAI, Anthropic or Gemini key: no shared key, no proxy, no per-message fee.",
+      "An AI chatbot that answers Instagram and Messenger DMs in your words, with your prices and policies. Built in on every plan, or bring your own AI key.",
   },
   theme: theme({
     accent: GREEN,
@@ -1246,7 +1266,7 @@ export const aiPage: MarketingPage = {
       { label: "Hand over to you", chat: chats.aiHandoff },
     ],
   },
-  proof: "🔑 Your key, your model, your bill",
+  proof: "🤖 Built in, or bring your own key",
   intro: {
     icon: "bolt",
     title: "Your always-on DM assistant",
@@ -1263,7 +1283,7 @@ export const aiPage: MarketingPage = {
     },
     {
       title: "AI on comments",
-      body: "Catch the buyer while the post is still warm, inside the window Meta gives you to reply.",
+      body: "A comment starts the flow and the AI answers the buyer in a private DM, while the post is still warm.",
       slides: [
         { caption: "Answer PP comments", chat: chats.commentPost },
         { caption: "Send the price by DM", chat: chats.commentToDm },
@@ -1271,7 +1291,7 @@ export const aiPage: MarketingPage = {
     },
     {
       title: "AI that knows its limits",
-      body: "Guardrails say what it must never do. Past that it stops guessing and puts a person in the chat.",
+      body: "Guardrails say what it must never do. Past that it stops guessing and leaves the chat for your team.",
       slides: [
         { caption: "Your returns policy", chat: chats.aiPolicy },
         { caption: "Hand off to your team", chat: chats.aiHandoff },
@@ -1319,11 +1339,11 @@ export const aiPage: MarketingPage = {
       {
         title: "AI reply step",
         description:
-          "Drop it into any flow, next to Message, Ask and Follow gate.",
+          "Drop it into any flow, next to Send message, Ask a question and Follow gate.",
         chat: chats.aiReply,
         checks: [
           "Tell it the goal, then let it do the talking",
-          "It answers for as many turns as you allow, up to twelve",
+          "It answers for as many turns as you allow (four by default, up to twelve)",
           "One agent can play several parts in the same flow",
         ],
       },
@@ -1356,7 +1376,7 @@ export const aiPage: MarketingPage = {
         checks: [
           "It stops rather than inventing an answer",
           "The flow takes its handover branch automatically",
-          "The conversation lands in your shared inbox",
+          "The whole conversation is in your inbox for the team",
         ],
       },
     ],
@@ -1387,26 +1407,26 @@ export const aiPage: MarketingPage = {
       {
         label: "Pull the numbers",
         prompt:
-          "How did last week go? Which keyword brought the most buyers, and where did people drop off?",
+          "How did last week go? Which keyword triggered most, and where did people drop off?",
         answer:
-          "1,240 DMs sent across three accounts. PP is doing the work; the size question is where people stop.",
+          "1,240 DMs sent across three accounts. PP is doing the work; most people drop off between getting the DM and replying.",
         result: {
           kind: "stats",
           title: "Last 7 days",
           rows: [
             { label: "DMs sent", value: "1,240" },
             { label: "New contacts", value: "86" },
-            { label: "Top keyword", value: "PP · 412" },
-            { label: "Biggest drop-off", value: "Ask size · 31%" },
+            { label: "Top keyword", value: "PP · 412 triggers" },
+            { label: "Clicked or replied", value: "38%" },
           ],
         },
       },
       {
         label: "Draft a reply",
         prompt:
-          "Anisha asked about bulk pricing for 50 totes. Draft a reply in our voice and leave it for me to send.",
+          "Anisha asked about bulk pricing for 50 totes. Draft a reply in our voice for me to check first.",
         answer:
-          "Draft saved to the inbox. It is not sent, and nothing goes out until you press send.",
+          "Here is a draft for you to check. Nothing is sent until you tell me to send it.",
         result: {
           kind: "draft",
           title: "Draft · not sent",
@@ -1418,13 +1438,13 @@ export const aiPage: MarketingPage = {
   },
   spotlight: {
     icon: "bolt",
-    title: "Bring your own key",
-    body: "There is no shared key, no proxy and no per-message charge. You choose the provider and you see the bill.",
+    title: "Built in, or bring your own key",
+    body: "Awwtomation AI works out of the box on every plan. Prefer your own provider? Connect a key and that provider bills you directly.",
     cards: [
       {
         label: "Providers",
-        title: "OpenAI, Anthropic, Gemini",
-        body: "Plus anything that speaks OpenAI's chat API: Groq, OpenRouter, DeepSeek, Together, Mistral or a server of your own.",
+        title: "24 providers, or your own endpoint",
+        body: "OpenAI, Anthropic, Google Gemini, OpenRouter, xAI, Mistral, DeepSeek, Groq and more, or any public OpenAI-compatible endpoint.",
       },
       {
         label: "Storage",
@@ -1433,8 +1453,8 @@ export const aiPage: MarketingPage = {
       },
       {
         label: "Cost",
-        title: "You can see what it spends",
-        body: "Replies sent, prompt tokens and completion tokens are counted per agent, so the spend on your key is never a mystery.",
+        title: "You can see what it does",
+        body: "Replies sent, tokens in and tokens out are counted per agent, whichever model it runs on. Every AI reply counts as one DM.",
       },
       {
         label: "Control",
@@ -1446,11 +1466,11 @@ export const aiPage: MarketingPage = {
   steps: {
     icon: "rocket",
     title: "Live in five. Literally.",
-    body: "From your key to your first answered DM in less time than it takes to make tea.",
+    body: "From a blank agent to your first answered DM in less time than it takes to make tea.",
     items: [
       {
-        title: "Paste your key",
-        body: "Pick a provider, paste the key, choose a model",
+        title: "Pick a model",
+        body: "Use Awwtomation AI, or connect your own key",
         art: "signup",
       },
       {
@@ -1467,9 +1487,19 @@ export const aiPage: MarketingPage = {
   },
   faqs: [
     {
-      question: "Whose API key does the AI use?",
+      question: "Do I need my own AI key?",
       answer:
-        "Yours. You add an OpenAI, Anthropic or Gemini key in the workspace and every reply is billed by that provider, not by us.",
+        "No. Agents use Awwtomation AI, our built-in model, by default. You can switch any agent to your own OpenAI, Anthropic, Gemini or other provider key, billed by that provider.",
+    },
+    {
+      question: "Does AI cost extra?",
+      answer:
+        "No. AI replies are included on every plan. Each one counts as a DM, like any other message you send.",
+    },
+    {
+      question: "Which languages does it reply in?",
+      answer:
+        "English or Romanised Nepali. A message written in Devanagari gets a reply in Romanised Nepali.",
     },
     {
       question: "Can the AI invent a price or a link?",
@@ -1477,9 +1507,9 @@ export const aiPage: MarketingPage = {
         "It can only send links you added as buttons, because it names a button and we fill in the URL. Prices come from the knowledge block you paste in.",
     },
     {
-      question: "What happens if my key fails?",
+      question: "What happens if the AI can't answer?",
       answer:
-        "The contact gets the fallback reply you wrote, and the failure is in the logs with the reason.",
+        "It stops instead of guessing: the contact gets the fallback reply you wrote and the flow takes its Needs a human branch, with the whole chat in your inbox.",
     },
     {
       question: "Do I have to use AI at all?",
@@ -1489,7 +1519,7 @@ export const aiPage: MarketingPage = {
     safeFaq,
   ],
   summary:
-    "Awwtomation AI answers Instagram and Facebook DMs with an agent that runs on the workspace's own provider key: OpenAI-compatible, Anthropic or Google Gemini, including self-hosted endpoints. An agent is a prompt, a knowledge block, guardrails, a fallback reply and approved link buttons. It is added to a flow as an AI reply step, answers for a set number of turns and hands over to a human when it cannot help. Keys are encrypted at rest and never returned to the browser.",
+    "Awwtomation AI is an AI chatbot that answers Instagram and Facebook Messenger DMs. Agents run on Awwtomation AI, the built-in model included on every plan, or on the workspace's own key from 24 providers (OpenAI, Anthropic, Google Gemini, OpenRouter, xAI, Mistral, DeepSeek, Groq and more) or a public OpenAI-compatible endpoint. An agent is a prompt, a knowledge block, guardrails, a fallback reply and approved link buttons. It is added to a flow as an AI reply step, replies by DM in English or Romanised Nepali for a set number of turns, and takes a handover branch when it cannot help. Every AI reply counts as a DM. Workspace keys are encrypted at rest and never returned to the browser.",
 };
 
 export const marketingPages: MarketingPage[] = [

@@ -16,25 +16,25 @@ import type { ChatScript } from "@/components/mc/chat";
  */
 
 const face = {
-  sita: "/site-assets/profiles/social/sita-rai.png",
-  anisha: "/site-assets/profiles/social/anisha-gurung.png",
-  aarav: "/site-assets/profiles/social/aarav-shrestha.png",
-  rohan: "/site-assets/profiles/social/rohan-kc.png",
-  kiran: "/site-assets/profiles/social/kiran-thapa.png",
-  bikram: "/site-assets/profiles/social/bikram-tamang.png",
-  samuel: "/site-assets/profiles/social/summit-samuel.png",
-  samira: "/site-assets/profiles/social/study-samira.png",
-  sujan: "/site-assets/profiles/social/street-sujan.png",
-  sana: "/site-assets/profiles/social/sunset-sana.png",
+  sita: "/site-assets/profiles/social/sita-rai.webp",
+  anisha: "/site-assets/profiles/social/anisha-gurung.webp",
+  aarav: "/site-assets/profiles/social/aarav-shrestha.webp",
+  rohan: "/site-assets/profiles/social/rohan-kc.webp",
+  kiran: "/site-assets/profiles/social/kiran-thapa.webp",
+  bikram: "/site-assets/profiles/social/bikram-tamang.webp",
+  samuel: "/site-assets/profiles/social/summit-samuel.webp",
+  samira: "/site-assets/profiles/social/study-samira.webp",
+  sujan: "/site-assets/profiles/social/street-sujan.webp",
+  sana: "/site-assets/profiles/social/sunset-sana.webp",
 };
 
 const photo = {
-  creator: "/mockups/post-sita.jpg",
-  rooftop: "/mockups/post-kiran.jpg",
-  street: "/mockups/story-rohan.jpg",
-  desk: "/mockups/story-aarav.jpg",
-  cafe: "/mockups/photo-bikram.jpg",
-  studio: "/mockups/post-anisha.jpg",
+  creator: "/mockups/post-sita.webp",
+  rooftop: "/mockups/post-kiran.webp",
+  street: "/mockups/story-rohan.webp",
+  desk: "/mockups/story-aarav.webp",
+  cafe: "/mockups/photo-bikram.webp",
+  studio: "/mockups/post-anisha.webp",
 };
 
 const shop = "everest.threads";
@@ -43,95 +43,95 @@ const instagramCast = {
   milan: {
     name: "Milan Shrestha",
     username: "milan.frames",
-    avatar: "/site-assets/profiles/social/mirror-milan.png",
+    avatar: "/site-assets/profiles/social/mirror-milan.webp",
   },
   tara: {
     name: "Tara Rai",
     username: "tara.trails",
-    avatar: "/site-assets/profiles/social/trail-tara.png",
+    avatar: "/site-assets/profiles/social/trail-tara.webp",
   },
   kavya: {
     name: "Kavya Maharjan",
     username: "kathmandu.frames",
-    avatar: "/site-assets/profiles/social/kathmandu-window.png",
+    avatar: "/site-assets/profiles/social/kathmandu-window.webp",
   },
   anisha: {
     name: "Anisha Karki",
     username: "anisha.alley",
-    avatar: "/site-assets/profiles/social/alley-anisha.png",
+    avatar: "/site-assets/profiles/social/alley-anisha.webp",
   },
   gagan: {
     name: "Gagan Rai",
     username: "gagan.plays",
-    avatar: "/site-assets/profiles/social/guitar-gagan.png",
+    avatar: "/site-assets/profiles/social/guitar-gagan.webp",
   },
   dipen: {
     name: "Dipen Shahi",
     username: "dipen.dives",
-    avatar: "/site-assets/profiles/social/dive-dipen.png",
+    avatar: "/site-assets/profiles/social/dive-dipen.webp",
   },
   bibek: {
     name: "Bibek Lama",
     username: "bibek.boudha",
-    avatar: "/site-assets/profiles/social/boudha-bibek.png",
+    avatar: "/site-assets/profiles/social/boudha-bibek.webp",
   },
   kriti: {
     name: "Kriti Poudel",
     username: "kriti.and.cat",
-    avatar: "/site-assets/profiles/social/cat-kriti.png",
+    avatar: "/site-assets/profiles/social/cat-kriti.webp",
   },
   nabin: {
     name: "Nabin Gurung",
     username: "nabin.noir",
-    avatar: "/site-assets/profiles/social/noir-nabin.png",
+    avatar: "/site-assets/profiles/social/noir-nabin.webp",
   },
   tejas: {
     name: "Tejas Karki",
     username: "tejas.treks",
-    avatar: "/site-assets/profiles/social/trek-tejas.png",
+    avatar: "/site-assets/profiles/social/trek-tejas.webp",
   },
 };
 
 const messengerCast = {
   maya: {
     name: "Maya Thapa",
-    avatar: "/site-assets/profiles/social/mirror-maya.png",
+    avatar: "/site-assets/profiles/social/mirror-maya.webp",
   },
   mira: {
     name: "Mira Shrestha",
-    avatar: "/site-assets/profiles/social/music-mira.png",
+    avatar: "/site-assets/profiles/social/music-mira.webp",
   },
   hima: {
     name: "Hima Rai",
-    avatar: "/site-assets/profiles/social/heritage-hima.png",
+    avatar: "/site-assets/profiles/social/heritage-hima.webp",
   },
   deepak: {
     name: "Deepak Gurung",
-    avatar: "/site-assets/profiles/social/dusk-deepak.png",
+    avatar: "/site-assets/profiles/social/dusk-deepak.webp",
   },
   tanmay: {
     name: "Tanmay Lama",
-    avatar: "/site-assets/profiles/social/topi-tanmay.png",
+    avatar: "/site-assets/profiles/social/topi-tanmay.webp",
   },
   prisha: {
     name: "Prisha Karki",
-    avatar: "/site-assets/profiles/social/plumeria-prisha.png",
+    avatar: "/site-assets/profiles/social/plumeria-prisha.webp",
   },
   harsha: {
     name: "Harsha Bista",
-    avatar: "/site-assets/profiles/social/hike-harsha.png",
+    avatar: "/site-assets/profiles/social/hike-harsha.webp",
   },
   chiran: {
     name: "Chiran Poudel",
-    avatar: "/site-assets/profiles/social/city-chiran.png",
+    avatar: "/site-assets/profiles/social/city-chiran.webp",
   },
   garima: {
     name: "Garima KC",
-    avatar: "/site-assets/profiles/social/glasses-garima.png",
+    avatar: "/site-assets/profiles/social/glasses-garima.webp",
   },
   eshaan: {
     name: "Eshaan Shahi",
-    avatar: "/site-assets/profiles/social/expedition-eshaan.png",
+    avatar: "/site-assets/profiles/social/expedition-eshaan.webp",
   },
 };
 
@@ -488,7 +488,7 @@ export const chats = {
         from: "bot",
         text: "Bulk order, nice! Someone from our team will reply here shortly.",
       },
-      { kind: "note", text: "Assigned to Bikash · needs reply" },
+      { kind: "note", text: "Tagged Needs reply · waiting in the inbox" },
     ],
   },
 
@@ -573,7 +573,7 @@ export const chats = {
         from: "bot",
         text: "That is past what I can quote. Let me get someone from the team onto this chat.",
       },
-      { kind: "note", text: "Handed to Bikash · needs reply" },
+      { kind: "note", text: "Handover branch · chat waiting in your inbox" },
     ],
   },
 
@@ -712,7 +712,7 @@ export const businessChats = {
       { from: "bot", text: "Reserved. It’s Rs 2,850 with cash on delivery." },
       { from: "bot", text: "What phone number should the courier use?" },
       { from: "user", avatar: messengerCast.maya.avatar, text: "98XXXXXXXX" },
-      { kind: "note", text: "Order #1842 · Confirmed" },
+      { kind: "note", text: "Tagged Buyer · pipeline stage Confirmed" },
     ],
   },
   ecommerceDelivery: {
@@ -762,7 +762,7 @@ export const businessChats = {
     lines: [
       { from: "user", avatar: messengerCast.tanmay.avatar, text: "We need coffee for three branches" },
       { from: "bot", text: "Great fit. I’m bringing Northstar’s wholesale manager into this chat." },
-      { kind: "note", text: "Assigned to Asha · High-value lead" },
+      { kind: "note", text: "Tagged High-value lead · added to pipeline" },
       { from: "bot", text: "Asha will reply with volume pricing today." },
     ],
   },
@@ -803,7 +803,7 @@ export const businessChats = {
       { from: "bot", text: "Yes, unopened products can be exchanged within 14 days." },
       { from: "bot", text: "Share your order number and I’ll start it here." },
       { from: "user", avatar: messengerCast.prisha.avatar, text: "NW-4821" },
-      { kind: "note", text: "Exchange request · Created" },
+      { kind: "note", text: "Tagged Exchange · added to pipeline" },
     ],
   },
   brandStory: {
@@ -830,7 +830,7 @@ export const businessChats = {
       { from: "bot", text: "You’ve unlocked Insider status after your third order." },
       { from: "user", avatar: instagramCast.tejas.avatar, text: "What do I get?" },
       { from: "bot", text: "Free delivery, early drops and 15% off your birthday order." },
-      { kind: "note", text: "Loyalty tier · Insider" },
+      { kind: "note", text: "Tagged Insider" },
     ],
   },
 } satisfies Record<string, ChatScript>;
@@ -1163,7 +1163,7 @@ export const messengerChats = {
         from: "bot",
         text: "Yes, that needs a custom quote. I have sent your quantity and deadline to our sales team.",
       },
-      { kind: "note", text: "Assigned to Bina · priority wholesale lead" },
+      { kind: "note", text: "Tagged Wholesale · added to pipeline" },
     ],
   },
   giveaway: {
@@ -1202,25 +1202,22 @@ export const messengerChats = {
         avatar: messengerCast.harsha.avatar,
         text: "Send size 42",
       },
-      { from: "bot", text: "Added to your cart. Checkout link sent." },
+      { from: "bot", text: "Here is the order link for size 42 👇" },
     ],
   },
   cartRecovery: {
     channel: "messenger",
     header: messengerCast.chiran,
     lines: [
+      { from: "user", avatar: messengerCast.chiran.avatar, text: "OFFER" },
       {
         from: "bot",
-        text: "Your city backpack is still reserved, Chiran. Want to finish the order?",
+        text: "Here is 10% off for Messenger fans, Chiran: MSG10. It works until Sunday.",
       },
-      {
-        from: "user",
-        avatar: messengerCast.chiran.avatar,
-        text: "Yes, but can I pay on delivery?",
-      },
+      { from: "user", avatar: messengerCast.chiran.avatar, text: "Cash on delivery huncha?" },
       {
         from: "bot",
-        text: "Absolutely. Cash on delivery selected. Confirm your address to place it.",
+        text: "Yes 🚚 Send your delivery area and phone number and we will confirm.",
       },
     ],
   },
@@ -1228,19 +1225,12 @@ export const messengerChats = {
     channel: "messenger",
     header: messengerCast.garima,
     lines: [
+      { from: "user", avatar: messengerCast.garima.avatar, text: "Are you open now?" },
       {
         from: "bot",
-        text: "Good news, Garima. Order #1842 has left our Kathmandu store.",
+        text: "We are closed until 10 AM, Garima. Prices and delivery charges are below, and the team replies here first thing.",
       },
-      {
-        from: "user",
-        avatar: messengerCast.garima.avatar,
-        text: "When will it arrive?",
-      },
-      {
-        from: "bot",
-        text: "Tomorrow between 11 AM and 2 PM. Track it here anytime.",
-      },
+      { from: "user", avatar: messengerCast.garima.avatar, text: "Okay, thank you!" },
     ],
   },
   bulkQuote: {
@@ -1263,7 +1253,7 @@ export const messengerChats = {
       },
       {
         from: "bot",
-        text: "Sent to your email and assigned to our wholesale desk.",
+        text: "Noted ✅ Our wholesale team will send the formal quote right here.",
       },
     ],
   },

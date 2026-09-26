@@ -14,14 +14,14 @@ const seo = { title: aboutSeo.title, description: aboutSeo.description, path: ab
 export const metadata = pageMetadata(seo)
 
 const founders = [
-  { name: "Prakhyat Shrestha", role: "Co-founder · Engineering", place: "Kathmandu, Nepal", image: "/team/prakhyat-shrestha.jpg", bg: "#fff200", linkedin: "https://www.linkedin.com/in/prakhyat-shrestha/" },
-  { name: "Kushal Sarkar", role: "Co-founder · Data & Operations", place: "Atlanta, USA", image: "/team/kushal-sarkar.jpg", bg: "#96dae3", linkedin: "https://www.linkedin.com/in/ksarkar011/" },
+  { name: "Prakhyat Shrestha", role: "Co-founder · Engineering", place: "Kathmandu, Nepal", image: "/team/prakhyat-shrestha.webp", bg: "#fff200", linkedin: "https://www.linkedin.com/in/prakhyat-shrestha/" },
+  { name: "Kushal Sarkar", role: "Co-founder · Data & Operations", place: "Atlanta, USA", image: "/team/kushal-sarkar.webp", bg: "#96dae3", linkedin: "https://www.linkedin.com/in/ksarkar011/" },
 ]
 
 const principles = [
   { title: "No password sharing", body: "Connect your channels directly and keep control of your account.", bg: "#3c42c4", light: true, icon: "bolt" as const },
   { title: "Honest about limits", body: "Instagram and Facebook only, and we say so.", bg: "#fb0df7", light: true, icon: "eyes" as const },
-  { title: "Your data is yours", body: "Export anything, delete everything, any time.", bg: "#007257", light: true, icon: "heart" as const },
+  { title: "Your data is yours", body: "Export your contacts, delete everything, any time.", bg: "#007257", light: true, icon: "heart" as const },
 ]
 
 export default function AboutPage() {
@@ -49,7 +49,7 @@ export default function AboutPage() {
       <section data-nav="dark" className="mc-grid bg-yellow px-5 pb-12 pt-28 lg:px-11 lg:pb-[66px] lg:pt-[142px]">
         <h1 className="mc-h1 max-w-[52rem]">We help businesses sell in the DMs</h1>
         <p className="mc-sub mt-5 max-w-[41rem] lg:mt-[27px]">
-          Awwtomation is built in Kathmandu for the creators, shops and agencies who grow on Instagram and Facebook.
+          Awwtomation is Nepal&apos;s chat marketing platform, built in Kathmandu for the creators, shops and agencies who grow on Instagram and Facebook Messenger.
         </p>
         <div className="mt-9 flex flex-col gap-8 lg:mt-[43px] lg:flex-row lg:items-center lg:justify-between">
           <McButton href={SIGNUP_URL} variant="black" size="lg" className="self-start">

@@ -60,7 +60,7 @@ ${steps}
 ${faqMarkdown(page.faqs)}
 ---
 
-Start free: ${SIGNUP_URL}
+Get started: ${SIGNUP_URL}
 `
 }
 
@@ -82,7 +82,7 @@ ${steps}
 ${faqMarkdown(page.faqs)}
 ---
 
-Start free: ${SIGNUP_URL}
+Get started: ${SIGNUP_URL}
 `
 }
 
@@ -139,7 +139,7 @@ export function buildLlmsTxt() {
 
   return `# ${brand.name}
 
-> ${brand.description} Built in Kathmandu, Nepal. Works with Instagram Business and Creator accounts and Facebook Pages, with a free plan of 100 DMs a month. It does not support WhatsApp, TikTok, Telegram, SMS or email.
+> ${brand.description} Built in Kathmandu, Nepal. Works with Instagram Business and Creator accounts and Facebook Pages. Paid plans from $15 a month (USD); there is no free plan, but you can build automations before paying. It does not support WhatsApp, TikTok, Telegram, SMS or email.
 
 ${group("Product", products)}
 
@@ -150,7 +150,7 @@ ${group("Solutions by use case", useCasePages)}
 ## Resources
 
 ${link("/pricing", "Pricing", bespokePages["/pricing"].description)}
-${link("/how-to", "How to guides", "Step-by-step setups for Instagram and Messenger automation.")}
+${link("/how-to", "How to guides", "Step-by-step chat marketing setups for Instagram and Messenger.")}
 ${guides.map((g) => link(`/how-to/${g.slug}`, g.title, g.description)).join("\n")}
 ${link("/about", "About", bespokePages["/about"].description)}
 

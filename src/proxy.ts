@@ -98,12 +98,13 @@ function gonePage(path: string) {
 <body>
 <main>
   <h1>This page has been removed</h1>
-  <p><code>${path.replace(/[<>&"]/g, "")}</code> was part of our old automation-agency site. Awwtomation is now a product: comment-to-DM automation for Instagram and Facebook.</p>
+  <p><code>${path.replace(/[<>&"]/g, "")}</code> was part of our old automation-agency site. Awwtomation is now a product: a chat marketing platform for Instagram and Facebook Messenger.</p>
   <a class="btn" href="/">Go to the homepage</a>
   <ul>
     <li><a href="/product/instagram">Instagram automation</a></li>
-    <li><a href="/use-case/comment-to-dm">Comment-to-DM, explained</a></li>
-    <li><a href="/pricing">Pricing in rupees</a></li>
+    <li><a href="/product/messenger">Messenger chatbot</a></li>
+    <li><a href="/use-case/respond-to-comments">Auto-reply to comments</a></li>
+    <li><a href="/pricing">Pricing</a></li>
   </ul>
 </main>
 </body>

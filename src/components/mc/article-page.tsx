@@ -47,7 +47,7 @@ export async function ArticleView({ article, backHref, backLabel }: { article: A
         <div className="mx-auto mb-28 flex max-w-[720px] flex-col items-start gap-5 rounded-[28px] bg-yellow px-8 py-10 sm:mx-auto">
           <p className="mc-h4">Try it on your account</p>
           <McButton href={SIGNUP_URL} variant="black" size="lg">
-            Start for free
+            Get started
           </McButton>
         </div>
       </article>

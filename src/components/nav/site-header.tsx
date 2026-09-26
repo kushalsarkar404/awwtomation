@@ -187,7 +187,7 @@ export function SiteHeader() {
                 size="sm"
                 className="h-[34px] px-4 lg:h-[43px] lg:px-[26px]"
               >
-                Start for free
+                Get started
               </McButton>
             ) : (
               <>

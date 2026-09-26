@@ -5,7 +5,7 @@ import { useState } from "react"
 import { McButton } from "@/components/mc/button"
 import { BoxCheck } from "@/components/mc/icons"
 import { SIGNUP_URL } from "@/lib/brand"
-import { formatNpr, limitText, MIN_ANNUAL_SAVING, PLANS, toNpr } from "@/lib/pricing"
+import { formatUsd, limitText, MIN_ANNUAL_SAVING, PLANS } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 
 export function PricingPlans() {
@@ -33,7 +33,7 @@ export function PricingPlans() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-[1200px] gap-3 sm:grid-cols-2 lg:mt-[3.3vw] xl:w-[77.8vw] xl:max-w-none xl:grid-cols-4 xl:gap-[0.9vw]">
+      <div className="mx-auto mt-12 grid max-w-[1200px] gap-3 sm:grid-cols-2 lg:mt-[3.3vw] xl:w-[77.8vw] xl:max-w-none lg:grid-cols-3 xl:gap-[0.9vw]">
         {PLANS.map((plan) => {
           const featured = plan.featured
           const monthlyUsd = yearly ? plan.priceAnnualUsd / 12 : plan.priceUsd
@@ -46,15 +46,15 @@ export function PricingPlans() {
               <p className="mt-1 text-[1rem] leading-snug xl:text-[clamp(1rem,1.06vw,1.25rem)]">{plan.description}</p>
               <p className="mt-8 flex flex-wrap items-baseline gap-x-2">
                 <span className="whitespace-nowrap font-display text-[2.75rem] font-black leading-none tracking-[-0.04em] xl:text-[clamp(2.25rem,2.6vw,3.25rem)]">
-                  {plan.priceUsd === 0 ? "Free" : formatNpr(toNpr(monthlyUsd))}
+                  {formatUsd(monthlyUsd)}
                 </span>
-                {plan.priceUsd > 0 ? <span className="mc-label-sm text-mute">/mo</span> : null}
+                <span className="mc-label-sm text-mute">/mo</span>
               </p>
               <p className="mc-label-sm mt-2 min-h-[1.25em] text-mute">
-                {plan.priceUsd === 0 ? "Forever" : yearly ? `$${plan.priceAnnualUsd} billed yearly` : `$${plan.priceUsd} billed monthly`}
+                {yearly ? `${formatUsd(plan.priceAnnualUsd)} billed yearly` : `${formatUsd(plan.priceUsd)} billed monthly`}
               </p>
               <McButton href={SIGNUP_URL} variant={featured ? "black" : "outline"} size="lg" full className="mt-7">
-                {plan.priceUsd === 0 ? "Start for free" : "Get started"}
+                Get started
               </McButton>
               <ul className="mt-8 space-y-3 text-[0.9375rem] xl:text-[clamp(0.9375rem,1vw,1.1875rem)]">
                 {[...plan.limits.map(limitText), ...plan.features].map((feature) => (
