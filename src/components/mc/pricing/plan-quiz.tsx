@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils"
 
 /* Each answer maps to the smallest plan that covers it (0 Starter … 2 Agency). */
 const questions = [
-  { q: "How many Instagram accounts and Facebook Pages?", options: [["1–3", 0], ["4–10", 1], ["11–50", 2]] },
-  { q: "How many DMs a month?", options: [["Up to 2,000", 0], ["Up to 15,000", 1], ["Up to 100,000", 2]] },
-  { q: "How many people on your team?", options: [["1–3", 0], ["4–10", 1], ["11–50", 2]] },
+  { q: "How many Instagram accounts and Facebook Pages?", options: [["1–2", 0], ["3–10", 1], ["11–40", 2]] },
+  { q: "How many contacts do you expect?", options: [["Up to 2,500", 0], ["Up to 10,000", 1], ["Up to 50,000", 2]] },
+  { q: "How many people on your team?", options: [["Just me", 0], ["2–5", 1], ["6–20", 2]] },
 ] as const
 
 /** The floating yellow "Pick your plan in 30 seconds" button and its three-question picker. */

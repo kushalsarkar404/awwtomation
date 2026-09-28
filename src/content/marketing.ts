@@ -99,7 +99,7 @@ export const homePage: MarketingPage = {
   seo: {
     title: "Awwtomation · Nepal's No.1 Chat Marketing Platform",
     description:
-      "Nepal's No.1 chat marketing platform. Auto-reply to comments, DMs and story replies on Instagram and Facebook Messenger, and turn chats into sales. From $15 a month.",
+      `Nepal's No.1 chat marketing platform. Auto-reply to comments, DMs and story replies on Instagram and Facebook Messenger, and turn chats into sales. From ${fromPrice} a month.`,
   },
   theme: theme({
     accent: YELLOW,
@@ -766,7 +766,7 @@ export const creatorsPage = businessPage({
     {
       question: "How much does it cost for creators?",
       answer:
-        `Starter is ${fromPrice} a month for 3 accounts and 2,000 DMs. You can build your automations before you pay.`,
+        `Starter is ${fromPrice} a month for 2 accounts and 2,500 contacts, with no limit on DMs. You can build your automations before you pay.`,
     },
     {
       question: "Does it work with Creator accounts?",
@@ -921,7 +921,7 @@ export const ecommercePage = businessPage({
     },
     {
       question: "Can my whole team use it?",
-      answer: "Yes. Starter includes 3 team members and Pro includes 10.",
+      answer: "Yes, on Pro (5 team members) and Agency (20). Starter is for one person.",
     },
     {
       question: "Does it work with Facebook Pages?",
@@ -939,7 +939,7 @@ export const agenciesPage = businessPage({
   seo: {
     title: "Chat Marketing Platform for Agencies & Clients",
     description:
-      "Run Instagram and Messenger chat marketing for every client from one login. A workspace per client, team roles, up to 50 accounts and 100,000 DMs a month.",
+      "Run Instagram and Messenger chat marketing for every client from one login. A workspace per client, team roles, up to 40 accounts and no DM limit.",
   },
   theme: theme({
     accent: ORANGE,
@@ -1022,7 +1022,7 @@ export const agenciesPage = businessPage({
         "A workspace per client.",
         "Flows duplicated in seconds.",
         "Daily numbers exported to CSV.",
-        "50 seats on the Agency plan.",
+        "20 seats on the Agency plan.",
       ],
     },
   },
@@ -1063,7 +1063,7 @@ export const agenciesPage = businessPage({
     {
       question: "What counts as a connected account?",
       answer:
-        "Each Instagram account or Facebook Page. The Agency plan includes 50.",
+        "Each Instagram account or Facebook Page. The Agency plan includes 40.",
     },
     {
       question: "Can I white-label Awwtomation?",
@@ -1075,7 +1075,7 @@ export const agenciesPage = businessPage({
     },
   ],
   summary:
-    "Awwtomation is a chat marketing platform for agencies managing Instagram and Facebook Messenger automation for many clients: an organization holds the plan and team and contains a workspace per client. The Agency plan includes 50 connected accounts, 1,000 automations, 100,000 DMs a month, 50 team members and dedicated onboarding.",
+    "Awwtomation is a chat marketing platform for agencies managing Instagram and Facebook Messenger automation for many clients: an organization holds the plan and team and contains a workspace per client. The Agency plan includes 40 connected accounts, 20 workspaces, 500 automations, 50,000 contacts, no DM limit, 15,000 built-in AI replies a month, 20 team members and dedicated onboarding.",
 });
 
 export const brandsPage = businessPage({
@@ -1227,7 +1227,7 @@ export const brandsPage = businessPage({
 /*
  * The AI product page. Everything claimed here is what lib/ai and
  * lib/services/ai.ts in the product app actually do: Awwtomation AI (the
- * built-in model on our key) by default, or a workspace's own key from 24
+ * built-in model on our key) by default on Pro and Agency, or a workspace's own key from 24
  * provider presets or a public custom endpoint; an agent built from a prompt,
  * a knowledge block, guardrails, a fallback reply and link buttons; an "AI
  * reply" step with Done and Needs a human exits; replies in English or
@@ -1240,7 +1240,7 @@ export const aiPage: MarketingPage = {
   seo: {
     title: "AI Chatbot for Instagram & Messenger DMs",
     description:
-      "An AI chatbot that answers Instagram and Messenger DMs in your words, with your prices and policies. Built in on every plan, or bring your own AI key.",
+      "An AI chatbot that answers Instagram and Messenger DMs in your words, with your prices and policies. Built in on Pro and Agency, or bring your own AI key.",
   },
   theme: theme({
     accent: GREEN,
@@ -1439,7 +1439,7 @@ export const aiPage: MarketingPage = {
   spotlight: {
     icon: "bolt",
     title: "Built in, or bring your own key",
-    body: "Awwtomation AI works out of the box on every plan. Prefer your own provider? Connect a key and that provider bills you directly.",
+    body: "Awwtomation AI works out of the box on Pro and Agency. On any plan, connect your own provider's key and that provider bills you directly.",
     cards: [
       {
         label: "Providers",
@@ -1454,7 +1454,7 @@ export const aiPage: MarketingPage = {
       {
         label: "Cost",
         title: "You can see what it does",
-        body: "Replies sent, tokens in and tokens out are counted per agent, whichever model it runs on. Every AI reply counts as one DM.",
+        body: "Replies sent, tokens in and tokens out are counted per agent, whichever model it runs on. Built-in replies count toward your plan's monthly AI replies.",
       },
       {
         label: "Control",
@@ -1489,12 +1489,12 @@ export const aiPage: MarketingPage = {
     {
       question: "Do I need my own AI key?",
       answer:
-        "No. Agents use Awwtomation AI, our built-in model, by default. You can switch any agent to your own OpenAI, Anthropic, Gemini or other provider key, billed by that provider.",
+        "Only on Starter. On Pro and Agency, agents use Awwtomation AI, our built-in model, by default. On any plan you can switch an agent to your own OpenAI, Anthropic, Gemini or other provider key, billed by that provider.",
     },
     {
       question: "Does AI cost extra?",
       answer:
-        "No. AI replies are included on every plan. Each one counts as a DM, like any other message you send.",
+        "No. Pro includes 3,000 built-in AI replies a month and Agency 15,000. At the limit, AI steps send your fallback reply until the 1st, and agents on your own key keep replying. Your own key is billed by your provider.",
     },
     {
       question: "Which languages does it reply in?",
@@ -1519,7 +1519,7 @@ export const aiPage: MarketingPage = {
     safeFaq,
   ],
   summary:
-    "Awwtomation AI is an AI chatbot that answers Instagram and Facebook Messenger DMs. Agents run on Awwtomation AI, the built-in model included on every plan, or on the workspace's own key from 24 providers (OpenAI, Anthropic, Google Gemini, OpenRouter, xAI, Mistral, DeepSeek, Groq and more) or a public OpenAI-compatible endpoint. An agent is a prompt, a knowledge block, guardrails, a fallback reply and approved link buttons. It is added to a flow as an AI reply step, replies by DM in English or Romanised Nepali for a set number of turns, and takes a handover branch when it cannot help. Every AI reply counts as a DM. Workspace keys are encrypted at rest and never returned to the browser.",
+    "Awwtomation AI is an AI chatbot that answers Instagram and Facebook Messenger DMs. Agents run on Awwtomation AI, the built-in model included on Pro and Agency, or on the workspace's own key from 24 providers (OpenAI, Anthropic, Google Gemini, OpenRouter, xAI, Mistral, DeepSeek, Groq and more) or a public OpenAI-compatible endpoint. An agent is a prompt, a knowledge block, guardrails, a fallback reply and approved link buttons. It is added to a flow as an AI reply step, replies by DM in English or Romanised Nepali for a set number of turns, and takes a handover branch when it cannot help. Workspace keys are encrypted at rest and never returned to the browser.",
 };
 
 export const marketingPages: MarketingPage[] = [

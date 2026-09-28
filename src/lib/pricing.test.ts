@@ -6,7 +6,7 @@ import { annualSavingsPercent, COMPARISON, formatUsd, limitText, MIN_ANNUAL_SAVI
 test("USD prices match the product app's plan matrix", () => {
   assert.deepEqual(
     PLANS.map((plan) => [plan.id, plan.priceUsd, plan.priceAnnualUsd]),
-    [["starter", 15, 144], ["pro", 49, 470], ["agency", 149, 1430]],
+    [["starter", 20, 192], ["pro", 49, 470], ["agency", 149, 1430]],
   )
 })
 
@@ -15,14 +15,15 @@ test("there is no free plan", () => {
 })
 
 test("prices format as US dollars", () => {
-  assert.equal(formatUsd(15), "$15")
+  assert.equal(formatUsd(20), "$20")
   assert.equal(formatUsd(1430), "$1,430")
-  assert.equal(formatUsd(144 / 12), "$12")
+  assert.equal(formatUsd(192 / 12), "$16")
 })
 
 test("limits read naturally in the singular and plural", () => {
-  assert.equal(limitText(PLANS[0].limits[0]), "3 connected accounts")
-  assert.equal(limitText(PLANS[0].limits[2]), "2,000 DMs a month")
+  assert.equal(limitText(PLANS[0].limits[0]), "2 connected accounts")
+  assert.equal(limitText(PLANS[0].limits[5]), "1 team member")
+  assert.equal(limitText(PLANS[1].limits[3]), "10,000 contacts")
   assert.equal(limitText({ label: "", value: "1", one: "team member", many: "team members" }), "1 team member")
 })
 

@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
   path: "/legal/privacy-policy",
 });
 
-const UPDATED = "September 6, 2026";
+const UPDATED = "September 28, 2026";
 
 export default function PrivacyPage() {
   return (
@@ -52,11 +52,14 @@ export default function PrivacyPage() {
         <li>Direct messages and story replies sent to your connected account, and the replies you or your automations send.</li>
         <li>Basic public profile data of End Users who interact with you (name, username, profile picture, whether they follow you).</li>
         <li>Metadata about your posts (captions, thumbnails, permalinks, comment counts) so you can pick posts to automate.</li>
+        <li>Email addresses and phone numbers End Users type into a conversation, saved to their contact record.</li>
       </ul>
       <h3>2.4 Usage and technical data</h3>
       <p>
         We log requests to the Service, delivery results for each message, clicks on tracked links (with a hashed IP
-        address and user agent) and product events needed to run and secure the Service. We use strictly necessary
+        address and user agent) and product events needed to run and secure the Service. We also record product events such as signing up,
+        connecting an account or starting a subscription, and send them with your email address to our analytics
+        provider (see section 5) to understand how the Service is used. We use strictly necessary
         cookies for sign-in, the active organization and workspace, and interface preferences; we do not use advertising cookies.
       </p>
 
@@ -102,6 +105,20 @@ export default function PrivacyPage() {
         <li>
           <strong>An email delivery provider</strong>: transactional email, where enabled.
         </li>
+        <li>
+          <strong>Dodo Payments</strong>: checkout, subscriptions, tax and invoices, as the merchant of record. Card
+          details go to Dodo Payments directly and never reach us.
+        </li>
+        <li>
+          <strong>Mixpanel</strong>: product analytics. It receives Customer events with your email address,
+          organization, plan, IP address and operating system. We never send it message text or anything about End
+          Users.
+        </li>
+        <li>
+          <strong>AI model providers</strong>: when an automation uses an AI reply, the conversation and your
+          agent&apos;s instructions are sent to the model that writes the reply, either our built-in model&apos;s
+          provider or a provider you connect with your own key, whose own terms then apply.
+        </li>
       </ul>
       <p>
         We may also disclose data when required by law, to protect the rights and safety of our users, or as part of a
@@ -110,9 +127,11 @@ export default function PrivacyPage() {
 
       <h2>6. Retention</h2>
       <p>
-        Account data is retained while your account is active. Comments, messages and contact records are retained while
-        the workspace that owns them exists. Raw webhook receipts and job records are kept for debugging and idempotency;
-        those that reference a deleted channel are removed with it. Deleting an organization, a workspace, or a channel together with its
+        Account data is retained while your account is active. The text and attachments of messages are cleared after 30
+        days on every plan. Delivery logs, message records, tracked link clicks and analytics are deleted once they are
+        older than your plan&apos;s log history (90 days, 180 days or one year). Contacts, automations and totals are
+        retained while the workspace that owns them exists. Raw webhook receipts are deleted after 15 days, and those
+        that reference a deleted channel are removed with it. Deleting an organization, a workspace, or a channel together with its
         data, removes the associated records immediately, and deletion requests received through Meta are processed at
         once. Requests made by email (see our <Link href="/legal/data-deletion">data deletion page</Link>) are completed within
         30 days. Minimal audit records may be kept where we must meet legal obligations.

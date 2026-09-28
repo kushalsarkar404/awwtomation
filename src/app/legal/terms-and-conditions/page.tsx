@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
   path: "/legal/terms-and-conditions",
 });
 
-const UPDATED = "September 6, 2026";
+const UPDATED = "September 28, 2026";
 
 export default function TermsPage() {
   return (
@@ -67,7 +67,7 @@ export default function TermsPage() {
 
       <h2>6. Plans, billing and limits</h2>
       <ul>
-        <li>Plans are described on the <Link href="/pricing">pricing page</Link>. Limits (channels, automations, monthly DMs, team members) are enforced automatically; messages beyond your DM limit are not sent.</li>
+        <li>Plans are described on the <Link href="/pricing">pricing page</Link>. Plan limits (connected accounts, automations, contacts, broadcasts, built-in AI replies, team members and others) are enforced automatically. No plan limits how many DMs you send a month, but one contact receives at most 50 automated DMs a day from one account.</li>
         <li>Paid plans are billed monthly or yearly in advance, depending on the option you choose. Prices exclude taxes, which we add where required.</li>
         <li>You can upgrade, downgrade or cancel at any time from Settings. Upgrades and downgrades apply immediately: an upgrade charges the difference for the rest of the billing period, and a downgrade credits unused time to your billing balance for future invoices. Cancelling keeps your plan until the end of the period you have paid for.</li>
         <li>Fees are non-refundable except where required by law or stated otherwise in writing.</li>

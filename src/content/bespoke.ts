@@ -1,5 +1,5 @@
 import { brand } from "@/lib/brand"
-import { BILLING_NOTES, formatUsd, limitText, MIN_ANNUAL_SAVING, PLANS } from "@/lib/pricing"
+import { BILLING_NOTES, FAIR_USE_DMS_PER_CONTACT_PER_DAY, formatUsd, limitText, MIN_ANNUAL_SAVING, PLANS } from "@/lib/pricing"
 import type { FaqItem } from "@/lib/seo"
 
 /** SEO, FAQs and Markdown summaries for pages that don't use a content template. */
@@ -23,18 +23,19 @@ export const planLines = () =>
 export const pricingSeo: BespokePage = {
   path: "/pricing",
   title: "Pricing: Starter, Pro & Agency Chat Marketing Plans",
-  description: `Chat marketing plans for Instagram and Messenger from ${formatUsd(starter.priceUsd)} a month. Every feature on every plan, AI replies included. Save ${MIN_ANNUAL_SAVING}% yearly. No overage charges.`,
+  description: `Chat marketing plans for Instagram and Messenger from ${formatUsd(starter.priceUsd)} a month. Every feature on every plan and no DM limit. Save ${MIN_ANNUAL_SAVING}% yearly. No overage charges.`,
   heading: "Plans for every stage of growth",
   faqs: [
     { question: "Is there a free plan?", answer: "No. You can sign up, connect an account and build automations before you pay, but nothing is sent until you choose a plan." },
     { question: "What currency are prices in?", answer: `US dollars. Starter is ${formatUsd(starter.priceUsd)} a month, and paying yearly costs ${MIN_ANNUAL_SAVING}% less.` },
     { question: "Can I pay with a Nepali bank card?", answer: "Yes, if your card is enabled for international online payments in US dollars. Payments are handled by Dodo Payments." },
-    { question: "What counts as a DM?", answer: "Automated replies, broadcasts and replies from the inbox. Public replies under comments don't count, and counts reset on the 1st of every month." },
-    { question: "What happens if I hit my DM limit?", answer: "Messages stop until the reset or until you upgrade. You're never charged for extra messages." },
+    { question: "Is there a limit on DMs?", answer: `No. Every plan sends as many DMs as Instagram and Facebook allow. To keep your accounts safe, one contact gets at most ${FAIR_USE_DMS_PER_CONTACT_PER_DAY} automated DMs a day from one account.` },
+    { question: "Are AI replies included?", answer: "On Pro and Agency, yes: 3,000 and 15,000 built-in AI replies a month. On Starter, AI agents reply with your own OpenAI, Anthropic, Gemini or other key, billed by that provider." },
+    { question: "What happens at my contact limit?", answer: "New people who comment or message you are not saved and get no automated reply until you upgrade. You're never charged for extra." },
     { question: "Can I cancel any time?", answer: "Yes, from Settings. Your plan stays active until the end of the period you paid for." },
   ],
   markdown: () =>
-    `Awwtomation has three plans, priced in US dollars. Every plan has every feature, including AI replies; plans differ by limits.\n\n${planLines()}\n\n${BILLING_NOTES.map((note) => `- ${note}`).join("\n")}`,
+    `Awwtomation has three plans, priced in US dollars. Every plan has every feature and no DM limit; plans differ by limits, and Pro and Agency include built-in AI replies.\n\n${planLines()}\n\n${BILLING_NOTES.map((note) => `- ${note}`).join("\n")}`,
 }
 
 export const aboutSeo: BespokePage = {

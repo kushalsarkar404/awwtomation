@@ -137,7 +137,7 @@ export function buildSoftwareSchema() {
       "Instagram follow check before sending",
       "Facebook Page comment automation",
       "Facebook Messenger chatbot and keyword autoresponder",
-      "AI replies with your own OpenAI, Anthropic or Gemini key",
+      "AI replies with the built-in model or your own OpenAI, Anthropic or Gemini key",
       "Email and phone number collection in chat",
       "Visual flow builder",
       "Unified Instagram and Messenger inbox",

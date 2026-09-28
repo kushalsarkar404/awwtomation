@@ -28,12 +28,12 @@ export default function PricingPage() {
 
       <section data-nav="dark" className="bg-white px-5 pb-16 pt-32 text-center lg:pb-[4vw] lg:pt-[9.5vw]">
         <h1 className="mc-h1 mx-auto max-w-[28rem] lg:max-w-[66vw]">Plans for every stage of growth</h1>
-        <p className="mc-sub mx-auto mt-6 max-w-[30rem] lg:mt-[2vw] lg:max-w-[34vw]">Every feature on every plan. Choose by how many accounts, DMs and teammates you need.</p>
+        <p className="mc-sub mx-auto mt-6 max-w-[30rem] lg:mt-[2vw] lg:max-w-[34vw]">Every feature on every plan, and no limit on DMs. Choose by how many accounts, contacts and teammates you need.</p>
       </section>
 
       <section className="bg-white px-5 pb-8 sm:px-10">
         <PricingPlans />
-        <p className="mc-label-sm mt-6 text-center text-mute">Prices in US dollars · build before you pay, nothing is sent until you choose a plan</p>
+        <p className="mc-label-sm mt-6 text-center text-mute">Prices in US dollars · no DM limit on any plan · build before you pay, nothing is sent until you choose a plan</p>
       </section>
 
       <section className="bg-white px-5 pb-10 pt-24 text-center lg:pb-[3.3vw] lg:pt-[9vw]">

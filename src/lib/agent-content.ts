@@ -4,6 +4,7 @@ import type { MarketingPage, UseCasePage } from "@/content/mc-types"
 import { useCasePages } from "@/content/use-case-pages"
 import { getArticle, getArticles, type Collection } from "@/lib/articles"
 import { brand, SIGNUP_URL } from "@/lib/brand"
+import { formatUsd, STARTING_PRICE_USD } from "@/lib/pricing"
 import { SITE_URL, type FaqItem } from "@/lib/seo"
 
 /*
@@ -139,7 +140,7 @@ export function buildLlmsTxt() {
 
   return `# ${brand.name}
 
-> ${brand.description} Built in Kathmandu, Nepal. Works with Instagram Business and Creator accounts and Facebook Pages. Paid plans from $15 a month (USD); there is no free plan, but you can build automations before paying. It does not support WhatsApp, TikTok, Telegram, SMS or email.
+> ${brand.description} Built in Kathmandu, Nepal. Works with Instagram Business and Creator accounts and Facebook Pages. Paid plans from ${formatUsd(STARTING_PRICE_USD)} a month (USD) with no DM limit; there is no free plan, but you can build automations before paying. It does not support WhatsApp, TikTok, Telegram, SMS or email.
 
 ${group("Product", products)}
 
