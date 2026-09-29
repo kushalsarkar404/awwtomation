@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
 
-import { annualSavingsPercent, COMPARISON, formatUsd, limitText, MIN_ANNUAL_SAVING, PLANS } from "@/lib/pricing"
+import { annualSavingsPercent, COMPARISON, formatNpr, formatUsd, limitText, MIN_ANNUAL_SAVING, NEPAL_PRICES_NPR, nepalPlanOption, PLANS } from "@/lib/pricing"
 
 test("USD prices match the product app's plan matrix", () => {
   assert.deepEqual(
@@ -33,4 +33,13 @@ test("the yearly toggle never promises more than every plan saves", () => {
 
 test("every comparison row has a value per plan", () => {
   for (const group of COMPARISON) for (const row of group.rows) assert.equal(row.values.length, PLANS.length, row.label)
+})
+
+test("Nepal prices are yearly rupee prices for every plan", () => {
+  assert.deepEqual(NEPAL_PRICES_NPR, { starter: 19999, pro: 49999, agency: 149999 })
+  assert.equal(formatNpr(149999), "Rs 149,999")
+})
+
+test("Nepal plan options match the GoHighLevel dropdown", () => {
+  assert.deepEqual(PLANS.map(nepalPlanOption), ["Starter (Rs 19,999 a year)", "Pro (Rs 49,999 a year)", "Agency (Rs 149,999 a year)"])
 })

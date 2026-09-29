@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 import { McButton } from "@/components/mc/button"
 import { SIGNUP_URL } from "@/lib/brand"
-import { formatUsd, PLANS } from "@/lib/pricing"
+import { formatNpr, formatUsd, NEPAL_PRICES_NPR, PLANS } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 
 /* Each answer maps to the smallest plan that covers it (0 Starter … 2 Agency). */
@@ -59,6 +59,7 @@ export function PlanQuiz() {
                 <p className="mt-6 font-display text-[2rem] font-black tracking-tight">
                   {`${formatUsd(plan.priceUsd)}/mo`}
                 </p>
+                <p className="mc-label-sm mt-2 text-nepal">{`In Nepal: ${formatNpr(NEPAL_PRICES_NPR[plan.id])} a year`}</p>
                 <div className="mt-7 flex gap-3">
                   <McButton href={SIGNUP_URL} variant="black" full>
                     Get started

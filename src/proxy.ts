@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
 
+import { COUNTRY_COOKIE } from "@/lib/geo"
 import { isGonePath } from "@/lib/gone-paths"
 import { allSitePaths } from "@/lib/nav"
 
 /*
- * Two jobs:
+ * Three jobs:
  *
  * 1. Answer 410 Gone for every URL from the previous agency site, so those
  *    pages leave the index quickly and stay out.
@@ -61,6 +62,17 @@ function appendVary(headers: Headers, value: string) {
       .filter(Boolean),
   )
   headers.set("Vary", Array.from(values).join(", "))
+}
+
+/** Country header set by Vercel, Cloudflare or CloudFront, whichever serves the site. */
+const COUNTRY_HEADERS = ["x-vercel-ip-country", "cf-ipcountry", "cloudfront-viewer-country"]
+
+function withCountry(request: NextRequest, response: NextResponse) {
+  const country = COUNTRY_HEADERS.map((name) => request.headers.get(name)).find(Boolean)?.toUpperCase()
+  if (country && /^[A-Z]{2}$/.test(country) && request.cookies.get(COUNTRY_COOKIE)?.value !== country) {
+    response.cookies.set(COUNTRY_COOKIE, country, { path: "/", maxAge: 60 * 60 * 24, sameSite: "lax" })
+  }
+  return response
 }
 
 function markNoindex(response: NextResponse) {
@@ -128,7 +140,7 @@ export function proxy(request: NextRequest) {
 
   // 2. Markdown for AI crawlers.
   const path = canonicalPath(requestedPath)
-  if (!isPublicContentPath(path)) return markNoindex(NextResponse.next())
+  if (!isPublicContentPath(path)) return markNoindex(withCountry(request, NextResponse.next()))
 
   const explicitMarkdownPath = requestedPath.endsWith(".md")
   const explicitMarkdown = explicitMarkdownPath || request.nextUrl.searchParams.get("format") === "md"
@@ -159,7 +171,7 @@ export function proxy(request: NextRequest) {
     `<https://www.awwtomation.com${markdownPath}>; rel="alternate"; type="text/markdown"`,
   )
   appendVary(response.headers, "Accept, User-Agent")
-  return markNoindex(response)
+  return markNoindex(withCountry(request, response))
 }
 
 export const config = {

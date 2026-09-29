@@ -33,7 +33,6 @@ export default function PricingPage() {
 
       <section className="bg-white px-5 pb-8 sm:px-10">
         <PricingPlans />
-        <p className="mc-label-sm mt-6 text-center text-mute">Prices in US dollars · no DM limit on any plan · build before you pay, nothing is sent until you choose a plan</p>
       </section>
 
       <section className="bg-white px-5 pb-10 pt-24 text-center lg:pb-[3.3vw] lg:pt-[9vw]">

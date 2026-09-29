@@ -99,6 +99,32 @@ export const MIN_ANNUAL_SAVING = Math.min(...PLANS.map(annualSavingsPercent))
 /** The cheapest monthly price, for "from $X a month" copy. */
 export const STARTING_PRICE_USD = Math.min(...PLANS.map((plan) => plan.priceUsd))
 
+/**
+ * Special pricing for Nepal: yearly only, in Nepali rupees. Not charged by
+ * the app's checkout; a Nepal visitor fills the "Nepal Pricing" form in
+ * GoHighLevel and the team sets the plan up. The option labels must match the
+ * "Nepal Plan" dropdown field in GoHighLevel exactly, or the form can't
+ * preselect the plan.
+ */
+export const NEPAL_PRICES_NPR: Record<PlanId, number> = { starter: 19999, pro: 49999, agency: 149999 }
+
+/** "Rs 19,999", "Rs 149,999". */
+export function formatNpr(amount: number): string {
+  return `Rs ${amount.toLocaleString("en-US")}`
+}
+
+/** The GoHighLevel dropdown option for a plan: "Pro (Rs 49,999 a year)". */
+export function nepalPlanOption(plan: Plan): string {
+  return `${plan.label} (${formatNpr(NEPAL_PRICES_NPR[plan.id])} a year)`
+}
+
+/** GoHighLevel form "Nepal Pricing", opened from the Nepal pricing cards. */
+export const NEPAL_FORM_ID = "fEy4HvDbLSGOmgRZd0Ne"
+export const NEPAL_FORM_URL = `https://api.leadconnectorhq.com/widget/form/${NEPAL_FORM_ID}`
+
+/** Link that opens the pricing page on its Nepal tab. */
+export const NEPAL_PRICING_PATH = "/pricing?region=np"
+
 /** At most this many automated DMs go to one contact from one account in a day, on every plan. */
 export const FAIR_USE_DMS_PER_CONTACT_PER_DAY = 50
 
