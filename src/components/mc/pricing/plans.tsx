@@ -90,7 +90,7 @@ export function PricingPlans() {
             [
               { value: "monthly", label: "Monthly" },
               { value: "yearly", label: `Yearly · save ${MIN_ANNUAL_SAVING}%` },
-              { value: "nepal", label: "Nepal · yearly in NPR" },
+              { value: "nepal", label: "Pricing for Nepal" },
             ] as const
           ).map((option) => (
             <button
@@ -144,8 +144,8 @@ export function PricingPlans() {
                     featured ? "bg-ink text-white hover:bg-black" : "bg-nepal text-white hover:brightness-95",
                   )}
                 >
-                  <span className="sr-only">Get Nepal pricing</span>
-                  <RollingLabel>Get Nepal pricing</RollingLabel>
+                  <span className="sr-only">Get started</span>
+                  <RollingLabel>Get started</RollingLabel>
                 </button>
               ) : (
                 <McButton href={SIGNUP_URL} variant={featured ? "black" : "outline"} size="lg" full className="mt-7">

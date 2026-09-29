@@ -124,7 +124,7 @@ export async function getAgentMarkdown(pathname: string): Promise<string | null>
   if (match) {
     const article = getArticle("guides", match[1])
     if (!article || article.noindex) return null
-    return `${frontmatter({ title: article.title, description: article.description, canonical: absolute(pathname) })}\n# ${article.title}\n\n${article.content}\n`
+    return `${frontmatter({ title: article.title, description: article.description, canonical: absolute(pathname) })}\n# ${article.title}\n\n${article.content.replace(/\]\(\//g, `](${SITE_URL}/`)}\n`
   }
   return null
 }

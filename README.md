@@ -32,7 +32,9 @@ The site follows ManyChat's page architecture. Desktop sizes were measured from 
 | Use-case copy | `src/content/use-case-pages.ts` (+ `seo-landing-pages.ts`) |
 | Chat mock-up scripts | `src/content/chats.ts` |
 | SEO + FAQs for pricing, about, legal | `src/content/bespoke.ts` |
-| How-to guides and blog posts (Markdown) | `content/guides/`, `content/blog/` |
+| How-to guides (Markdown) | `content/guides/`: frontmatter `art`, `category`, `platform` and `order` place each guide; a `## Steps` section of `###` headings renders as numbered steps |
+| How-to screenshots | `public/how-to/<slug>/`, 2x WebP taken from the app's demo data; the image title is the address shown above it |
+| How-to card drawings | `src/components/mc/guide-art.tsx`, one scene per `art` name |
 | Plans and prices (USD, no free plan) | `src/lib/pricing.ts` (keep in step with the app's `lib/billing/plans.ts`) |
 | Design tokens (colours, type scale, grid, glass nav) | `src/app/globals.css` |
 | Header (full logo at the top, glass bar with the mark once scrolled) | `src/components/nav/site-header.tsx` |
@@ -45,6 +47,7 @@ The site follows ManyChat's page architecture. Desktop sizes were measured from 
 - **Only claim what the app does.** No WhatsApp, TikTok, SMS, email or AI pages. The app supports Instagram and Facebook only. Instagram doesn't tell apps about new follows, so nothing may promise a DM "when someone follows".
 - **Keep copy short** and original: layouts follow ManyChat, words don't. `npm test` enforces title and description lengths.
 - **No em dashes.** Use a comma, a colon, a full stop or brackets instead. `npm test` fails on any `\u2014` in `src/`, `content/` or this file.
+- **Guides match the app.** Every label in a guide is the app's own wording, and every step screenshot comes from the app. `npm test` checks each guide has steps and that its screenshots exist.
 - **Placeholders.** `PhotoSlot` marks every photo and video still to be shot and names what goes there; testimonial cards are placeholders until real, approved quotes exist. Never invent customer quotes or numbers.
 
 ## SEO notes

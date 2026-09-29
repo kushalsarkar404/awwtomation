@@ -6,7 +6,9 @@ import { test } from "node:test"
 import { bespokePages } from "@/content/bespoke"
 import { marketingPages } from "@/content/marketing"
 import { useCasePages } from "@/content/use-case-pages"
-import { getArticles } from "@/lib/articles"
+import { getArticles, guideSeoTitle, parseGuide } from "@/lib/articles"
+import { GUIDE_ART_NAMES } from "@/components/mc/guide-art"
+import { readImageSize } from "@/lib/image-size"
 import { allSitePaths, businessLinks, headerMenus, resourceLinks, useCaseLinks } from "@/lib/nav"
 
 const SUFFIX = " · Awwtomation".length
@@ -38,7 +40,7 @@ test("titles and descriptions fit search results and are unique", () => {
     ...marketingPages.map((p) => ({ path: p.path, ...p.seo })),
     ...useCasePages.map((p) => ({ path: p.path, ...p.seo })),
     ...Object.values(bespokePages).map((p) => ({ path: p.path, title: p.title, description: p.description })),
-    ...getArticles("guides").map((g) => ({ path: `/how-to/${g.slug}`, title: g.title, description: g.description })),
+    ...getArticles("guides").map((g) => ({ path: `/how-to/${g.slug}`, title: guideSeoTitle(g), description: g.description })),
   ]
   for (const seo of seos) {
     const length = seo.title.length + (seo.path === "/" ? 0 : SUFFIX)
@@ -61,5 +63,18 @@ test("pages keep the ManyChat section shape", () => {
     assert.equal(page.rows.length, 2, page.path)
     // ManyChat's finale runs three cards: right, left, right.
     assert.equal(page.finale.cards.length, 3, page.path)
+  }
+})
+
+test("every guide has a drawing, steps and screenshots that exist", () => {
+  for (const guide of getArticles("guides", { includeNoindex: true })) {
+    assert.ok(GUIDE_ART_NAMES.includes(guide.art as (typeof GUIDE_ART_NAMES)[number]), `${guide.slug} has an unknown art "${guide.art}"`)
+    const steps = parseGuide(guide.content).sections.flatMap((section) => section.steps)
+    assert.ok(steps.length >= 3, `${guide.slug} needs numbered steps`)
+    for (const image of steps.flatMap((step) => step.images)) {
+      assert.ok(image.src.startsWith(`/how-to/${guide.slug}/`), `${image.src} belongs in public/how-to/${guide.slug}/`)
+      assert.ok(image.alt.trim(), `${image.src} needs alt text`)
+      assert.ok(readImageSize(image.src), `${image.src} is missing or unreadable`)
+    }
   }
 })
