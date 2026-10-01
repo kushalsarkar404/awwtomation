@@ -1075,7 +1075,7 @@ export const agenciesPage = businessPage({
     },
   ],
   summary:
-    "Awwtomation is a chat marketing platform for agencies managing Instagram and Facebook Messenger automation for many clients: an organization holds the plan and team and contains a workspace per client. The Agency plan includes 40 connected accounts, 20 workspaces, 500 automations, 50,000 contacts, no DM limit, 15,000 built-in AI replies a month, 20 team members and dedicated onboarding.",
+    "Awwtomation is a chat marketing platform for agencies managing Instagram and Facebook Messenger automation for many clients: an organization holds the plan and team and contains a workspace per client. The Agency plan includes 40 connected accounts, 20 workspaces, 500 active automations, 50,000 contacts, no DM limit, 15,000 built-in AI replies a month, 20 team members and dedicated onboarding.",
 });
 
 export const brandsPage = businessPage({

@@ -7,7 +7,8 @@
  * nothing is sent until it picks a plan.
  *
  * Every plan has every feature and no plan caps DMs; plans differ by the
- * limits below. The built-in AI model comes with Pro and Agency; Starter's AI
+ * limits below. The automation limit counts only automations that are
+ * switched on: drafts and paused ones are free on every plan. The built-in AI model comes with Pro and Agency; Starter's AI
  * agents use the workspace's own key. Keep the numbers in step with the app
  * when they change there.
  */
@@ -36,7 +37,7 @@ export const PLANS: Plan[] = [
     limits: [
       { label: "Connected accounts", value: "2", one: "connected account", many: "connected accounts" },
       { label: "Workspaces", value: "1", one: "workspace", many: "workspaces" },
-      { label: "Automations", value: "10", one: "automation", many: "automations" },
+      { label: "Active automations", value: "25", one: "active automation", many: "active automations" },
       { label: "Contacts", value: "2,500", one: "contact", many: "contacts" },
       { label: "Broadcasts a month", value: "10", one: "broadcast a month", many: "broadcasts a month" },
       { label: "Team members", value: "1", one: "team member", many: "team members" },
@@ -53,7 +54,7 @@ export const PLANS: Plan[] = [
     limits: [
       { label: "Connected accounts", value: "10", one: "connected account", many: "connected accounts" },
       { label: "Workspaces", value: "5", one: "workspace", many: "workspaces" },
-      { label: "Automations", value: "100", one: "automation", many: "automations" },
+      { label: "Active automations", value: "100", one: "active automation", many: "active automations" },
       { label: "Contacts", value: "10,000", one: "contact", many: "contacts" },
       { label: "Broadcasts a month", value: "50", one: "broadcast a month", many: "broadcasts a month" },
       { label: "Team members", value: "5", one: "team member", many: "team members" },
@@ -69,7 +70,7 @@ export const PLANS: Plan[] = [
     limits: [
       { label: "Connected accounts", value: "40", one: "connected account", many: "connected accounts" },
       { label: "Workspaces", value: "20", one: "workspace", many: "workspaces" },
-      { label: "Automations", value: "500", one: "automation", many: "automations" },
+      { label: "Active automations", value: "500", one: "active automation", many: "active automations" },
       { label: "Contacts", value: "50,000", one: "contact", many: "contacts" },
       { label: "Broadcasts a month", value: "200", one: "broadcast a month", many: "broadcasts a month" },
       { label: "Team members", value: "20", one: "team member", many: "team members" },
@@ -136,6 +137,7 @@ export const BILLING_NOTES = [
   `Prices are in US dollars. Paying yearly costs ${MIN_ANNUAL_SAVING}% less than twelve monthly payments.`,
   "Payments are handled by Dodo Payments, which also takes care of tax and invoices.",
   "You can sign up, connect an account and build automations before you pay. Nothing is sent until you choose a plan.",
+  "Only automations that are switched on count towards your plan. Drafts and paused automations have no limit, so you can build and keep as many as you like.",
   "DMs have no monthly limit on any plan. Instagram and Facebook still pace how fast an account can send, and we follow that.",
   `To keep your accounts safe, one contact gets at most ${FAIR_USE_DMS_PER_CONTACT_PER_DAY} automated DMs a day from one account.`,
   "On Starter, AI agents reply with your own AI key, billed by your provider. Pro and Agency include built-in AI replies, which reset on the 1st of every month. At the limit, AI steps send the agent's fallback reply until the reset. Agents on your own key keep replying, and you are never charged for extra.",
@@ -155,7 +157,8 @@ export const COMPARISON: { group: string; rows: { label: string; values: (string
     rows: [
       { label: "Connected Instagram accounts and Facebook Pages", values: ["2", "10", "40"] },
       { label: "Workspaces", values: ["1", "5", "20"] },
-      { label: "Automations", values: ["10", "100", "500"] },
+      { label: "Active automations", values: ["25", "100", "500"] },
+      { label: "Draft and paused automations", values: ["No limit", "No limit", "No limit"] },
       { label: "DMs sent a month", values: ["No limit", "No limit", "No limit"] },
       { label: "Contacts", values: ["2,500", "10,000", "50,000"] },
       { label: "Broadcasts a month", values: ["10", "50", "200"] },
